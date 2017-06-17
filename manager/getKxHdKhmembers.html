@@ -1,0 +1,520 @@
+<html lang="zh-CN"><head>
+    <meta http-equiv="Content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>南航学生科协</title>
+	<!--
+	<link href="../font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+	<link href="../font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 仍可以用 <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+	
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+	<link href="../bootstrap-wysiwyg-master/external/google-code-prettify/prettify.css" rel="stylesheet">
+	<link href="../bootstrap-wysiwyg-master/index.css" rel="stylesheet">
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+
+    <!-- Custom styles for this template -->
+    
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link href="css/Kx.css" rel="stylesheet">
+	<style>
+	.control-parent{
+	max-width:500px;
+	
+	margin:0 auto;
+	}
+	.control-group{
+	display:table;
+	margin-top:30px;
+	margin-bottom:30px;
+	}
+	.control-label{
+	display:table-cell;
+	width:100px;
+	text-align:left;
+	vertical-align:top;
+	}
+	.controls{
+	display:inline-block;
+	margin-left:10px;
+	}
+	.controls input{
+	padding-left:7px;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-right:7px;
+
+	}
+	.controls button{
+	width:200px;
+	}
+	</style>
+	
+
+  </head>
+
+  <body style="overflow:auto;">
+
+
+
+	<!-- 显示部门成员 -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" to="home" href="index.html">科协线上管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+           
+          </ul>
+          <div class="navbar-form navbar-right">
+            <input type="text" class="form-control" to="search" placeholder="搜索部门成员...">
+			<input type="hidden">
+          </div>
+        </div>
+      </div>
+    </nav>
+	<div class="container" style="">
+		<div id="CKW" class="" cont="content" to="CKW" style="display:none;">
+			<div class="row" style="height:55px;">
+			</div>
+			<div class="">
+			  <span class="sub-header" style="font-size:30px;">部门成员</span>
+			  <a class="" href="#add" style="float:right;font-size: 30px; text-decoration: none;" to="add">Add</a>
+			</div>
+			
+			<p></p>
+			<div class="table-responsive" id="members">
+				<table class="table table-striped">
+				  <thead>
+					<tr>
+					  <th>#</th>
+					  <th>成员账号</th>
+					  <th>成员名称</th>
+					  <th>成员邮箱</th>
+					  <th>成员手机</th>
+					  <th>删除成员</th>
+					  <th>发送邮件</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					
+				  </tbody>
+				</table>
+			  </div>
+			  <!-- 换页按钮 -->
+			 <div>
+				 <div id="sendall" align="left" style="display:inline-block;">
+						<a href="#edit"><button type="button" class="btn btn-default" > sendall </button></a>
+					</div>
+				<div id="chpage" align="right" style="display:inline-block; float:right;">
+					
+					<span chpagenum="1" chpageall="1"></span>
+					<button type="button" class="btn btn-default" to="pre"> < </button>
+					<button type="button" class="btn btn-default" to="aft"> > </button>
+					<input type="text" class="form-control" style="display:inline-block; width:50px;" placeholder="">
+					<button type="button" class="btn btn-default" to="submit"> >> </button>
+				</div>
+			</div>
+			<!-- .....................................................  -->
+		</div>
+			
+	</div>
+		
+	
+	<!-- ......................................  -->
+	<!-- 增加部门成员 表单 -->
+	<div id="add" class="container" cont="content" to="add">
+		<div style="height:51px;">
+		</div>
+		
+		<form  id="addform" action="">
+		<fieldset>
+		<div class="control-parent">
+			<button type="button" class="btn btn-link" style="display:none;" to="CKW"> << back</button>
+			
+			  <div id="legend" class="">
+				<legend class="">添加部门成员</legend>
+			 </div>
+				<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="" for="input01">学号/账号</label>
+				
+				  <input type="text" name="add" placeholder="请输入要添加的学号/账号" class="form-control" ty="stId">
+					
+				
+				
+				</div>
+			<div class="form-group">
+			  
+
+			  <!-- Button -->
+			 
+				<button class="btn btn-success" type="submit" style="width:100%;" to="submit">提交</button>
+			 
+			  
+			</div>
+			
+		</div>
+		</fieldset>
+	 </form>
+		
+	</div>
+<!-- ........................................  -->
+
+
+
+<!--  文本编辑器 -->
+	<div id="edit" class="container" cont="content" to="edit" style="display:none;" style="min-width:400px; max-width:700px;">
+		<div style="height:51px;"></div>
+	  <div >
+		<button type="button" class="btn btn-link" style="display:none;" to="CKW"> << back</button>
+		<h2>邮件编辑器 <br> <small>您可在当前页面编辑邮件</small></h2>
+		<hr>
+		
+		<div id="alerts"></div>
+		<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+		  <div class="btn-group">
+			<a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+			  <ul class="dropdown-menu">
+			  <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+			</div>
+		  <div class="btn-group">
+			<a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+			  <ul class="dropdown-menu">
+			  <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+			  <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+			  <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+			  </ul>
+		  </div>
+		  <div class="btn-group">
+			<a class="btn" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+			<a class="btn" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+			<a class="btn" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+			<a class="btn" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+		  </div>
+		  <div class="btn-group">
+			<a class="btn" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+			<a class="btn" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+			<a class="btn" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+			<a class="btn" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+		  </div>
+		  <div class="btn-group">
+			<a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+			<a class="btn" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+			<a class="btn" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+			<a class="btn" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+		  </div>
+		  <div class="btn-group">
+			  <a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+				<div class="dropdown-menu input-append">
+					<input class="span2" placeholder="URL" type="text" data-edit="createLink">
+					<button class="btn" type="button">Add</button>
+			</div>
+			<a class="btn" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+		  </div>
+		  
+		  <div class="btn-group">
+			<a class="btn" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+			<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+		  </div>
+		  <div class="btn-group">
+			<a class="btn" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+			<a class="btn" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+		  </div>
+		  <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+		</div>
+
+		<div id="editor" contenteditable="true">
+		  </div>
+		 <div class="control-group" style=" width:100%;">
+						  
+
+			  <!-- Button -->
+			  <div class="controls" style="margin-left:0px; width:100%;">
+				<button class="btn btn-success" style="width:100%;" to="submit">发布</button>
+			  </div>
+			  
+			</div>
+	</div>
+  </div>
+  <!-- ...................................  -->
+<!-- 招新报名本部门的人 -->
+	<div class="container" style="overflow:auto;" id="recruit" cont="content">
+		<div>
+			<div style="height:55px;"></div>
+			<div><h3>报名成员</h3> <span><span >报名总人数:</span><span id="recruitnum" style="float:right;"></span></span></div>
+			<div class="panel-group" id="recruit1" style="margin-bottom:0px;">
+			
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#stId">
+							
+							学号姓名
+					
+
+						</h3>
+					</div>
+					<div id="stId" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="form-group">
+								<label >学号:</label>
+								<input type="text" class="form-control" disabled cont="stId">
+							</div>
+							<div class="form-group">
+								<label >姓名:</label>
+								<input type="text" class="form-control" disabled cont="name">
+							</div>
+							<div class="form-group">
+								<label >手机:</label>
+								<input type="text" class="form-control" disabled cont="phone">
+							</div>
+							<div class="form-group">
+								<label >邮箱:</label>
+								<input type="text" class="form-control" disabled cont="email">
+							</div>
+							<div class="form-group">
+								<label >简介:</label>
+								<textarea class="form-control" disabled cont="description"></textarea>
+							</div>、
+							<div class="form-group">
+								<label >部门:<span class="label label-default" >一面意向</span><span class="label label-default" >二面意向</span></label>
+								<div class="form-control" cont="recruitdepartment">
+									评论
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+					</div>
+					
+				</div>
+			
+		</div>
+	</div>
+
+
+
+<!--.................................................  -->
+
+<!-- 活动发布 -->
+	<div class="container" style="overflow:auto;" id="hdrelease" cont="content">
+		<div>
+			<div style="height:55px;"></div>
+			<form role="form">
+			  <div class="form-group">
+				<label for="name">活动名称:</label>
+				<input type="text" class="form-control" name="hdname" placeholder="请输入要发布的活动名称。。">
+			  </div>
+			  <div class="form-group">
+				<label for="name">活动介绍:</label>
+				<textarea class="form-control" name="hdcontent" style="height:120px;" placeholder="请输入要发布的活动介绍。。"></textarea>
+			  </div>
+			  <div class="form-group">
+				<label for="name">添加报名:</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" name="hdsign" value="1">选中自动添加报名程序
+				  </label>
+
+			  </div>
+			  <div class="form-group" id="hdsignendtime" style="display:none;">
+				<label for="name">报名结束时间:</label>
+				<table class="table">
+				  <tbody>
+					<tr >
+						<td>
+							<select name="hdyear" class="form-control" style="width:60px;display:inline-block;padding-left:1px; padding-right:1px;">
+							 
+
+							</select>
+							年
+					  </td>
+					  <td>
+							<select name="hdmonth" class="form-control" style="width:50px;display:inline-block; padding-left:1px; padding-right:1px;">
+							 
+
+							</select>
+							月
+					  </td>
+					   <td>
+						<select name="hdday" class="form-control"  style="width:45px; display:inline-block; padding-left:1px; padding-right:1px;">
+						 
+						</select>
+						日
+					  </td>
+					  <td>
+						<select name="hdhour" class="form-control"  style="width:45px; display:inline-block; padding-left:1px; padding-right:1px;">
+						 
+						</select>
+						时
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			  <div class="form-group">
+				<label for="name">添加推送链接:</label>
+				<input type="text" class="form-control" name="hdurl" placeholder="请输入要发布的活动推送链接。。">
+				<p>可不添加</p>
+			  </div>
+              <div class="form-group">
+				<label for="name">允许最大人数:</label>
+				<input class="form-control" name="hdmax" placeholder="请输入要发布的活动允许最大人数。。">
+			  </div>
+			  <div class="form-group">
+				<button class="form-control" type="submit">提交</button>
+			  </div>
+			
+			  
+			  
+			 </form>
+			
+		</div>
+	</div>
+
+
+
+
+<!-- ......................................  -->
+<!-- 活动查看 -->
+	<div class="container" style="overflow:auto;" id="gethd" cont="content">
+		<div>
+			<div style="height:55px;"></div>
+			<h3>已发布活动</h3>
+			<div class="panel-group" id="gethd1" style="margin-bottom:0px;">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#hdid">
+							活动名称 报名总人数
+						</h3>
+					</div>
+					<div id="hdid" class="panel-collapse collapse">
+						<div class="panel-body">
+							<table class="table table-striped">
+							
+							  <thead>
+								<tr>
+								  <th>姓名</th>
+								  <th>手机</th>
+								  <th>邮箱</th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr hdid="" stId="">
+								  <td>Tanmay</td>
+								  <td>Bangalore</td>
+								  <td>560001</td>
+								</tr>
+							  </tbody>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+					
+				
+			</div>
+		</div>
+	</div>
+<!--输入-->
+	<div id="rootinput" style="width:100%; position:fixed; bottom:0px; left:0px; z-index:3; display:none; " >
+		<form id="" class="" style="display:table; width:100%; background-color:#fff; margin-bottom:0px; padding-left:10px; padding-top:5px; padding-bottom:5px; padding-right:5px;" action="submitPostcomment.php" role="form">
+		  <div class="form-group" style="display:table-row;" >
+			<div style="display:table-cell; width:100%; vertical-align:middle;"><textarea class="form-control" style="height:50px;  " placeholder="内容"></textarea></div>
+			<div style="display:table-cell; width:50px; text-align:center; vertical-align:center;">
+				<button type="submit" class="btn btn-default" style="border:0px; display:table-cell;height:50px; vertical-align:middle;" ><span class="glyphicon glyphicon-send" style=" font-size:35px; display:table-cell; vertical-align:middle;" ></span></button>
+		    </div>
+		  </div>
+		  
+		 
+		</form>
+		
+	</div>
+	<div id="background" style="position:fixed; top:0px; left:0px; z-index:2; width:100%; display:none;">
+	</div>
+    
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 或者用 <script src="../js/jquery-3.2.1.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 或者用 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->
+	<script src="../bootstrap-wysiwyg-master/external/jquery.hotkeys.js"></script>
+	<script src="../bootstrap-wysiwyg-master/external/google-code-prettify/prettify.js"></script>
+	<script src="js/bootstrap-wysiwygchangedmd5.js"></script>
+	<script src="../js/jquerysongplugin.js" ></script>
+	<script src="js/songprintf.js" ></script>
+	<script>
+		window.tableName="KxHdKh";
+	</script>
+	<script src="js/HdKh.js"></script>
+	<script src="js/getmembersindex.js"></script>	
+	<script>
+	  $(function(){
+		function initToolbarBootstrapBindings() {
+		  var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
+				'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+				'Times New Roman', 'Verdana'],
+				fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+		  $.each(fonts, function (idx, fontName) {
+			  fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
+		  });
+		  $('a[title]').tooltip({container:'body'});
+			$('.dropdown-menu input').click(function() {return false;})
+				.change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
+			.keydown('esc', function () {this.value='';$(this).change();});
+
+		  $('[data-role=magic-overlay]').each(function () { 
+			var overlay = $(this), target = $(overlay.data('target')); 
+			overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+		  });
+		  if ("onwebkitspeechchange"  in document.createElement("input")) {
+			var editorOffset = $('#editor').offset();
+			$('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
+		  } else {
+			$('#voiceBtn').hide();
+		  }
+		};
+		function showErrorAlert (reason, detail) {
+			var msg='';
+			if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+			else {
+				console.log("error uploading file", reason, detail);
+			}
+			$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+			 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+		};
+		initToolbarBootstrapBindings();  
+		$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+		window.prettyPrint && prettyPrint();
+	  });
+	</script>
+
+  
+
+</body></html>

@@ -1,0 +1,269 @@
+<html lang="zh-CN"><head>
+    <meta http-equiv="Content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Static Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 仍可以用 <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+
+    <!-- Custom styles for this template -->
+    
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link href="css/Kx.css" rel="stylesheet">
+  </head>
+
+  <body style="overflow:auto;">
+
+<nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">登录</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" to="home" href="index.html">科协线上管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          <ul class="nav navbar-nav navbar-right" to="nologin">
+            <li><a href="#login" to="login" makenavhide="1">登录</a></li>
+            <li><a href="#register" to="register" makenavhide="1">注册</a></li>
+          </ul>
+		   <ul class="nav navbar-nav navbar-right" to="alreadylogin" style="display:none;">
+            <li><a href="#exit" to="logout" makenavhide="1">退出</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<!--  登陆框 -->
+	<div class="container" style="display:none;" to="login" id="login" cont="content" >
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">请登录</h2>
+        <label for="inputEmail" class="sr-only">学号</label>
+        <input type="text" names="stId" class="form-control" placeholder="学号/邮箱" to="id" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" names="Password" class="form-control" placeholder="密码" to="code" required="">
+		<!--
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住密码
+          </label>
+        </div>-->
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+
+    </div>
+   <!-- .........................    -->、
+<!--  注册框 -->
+	<div class="container" style="display:none;" to="register" id="register" cont="content" >
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">注册</h2>
+		<label for="" class="sr-only">emial</label>
+        <input type="email" names="email" class="form-control" placeholder="邮箱" to="emial" required="">
+        
+        <label for="" class="sr-only">Password</label>
+        <input type="password" names="Password" class="form-control" placeholder="密码" to="code" required="">
+		<label for="" class="sr-only">Password</label>
+        <input type="password" names="Password" class="form-control" placeholder="确认密码" to="code" required="">
+		<!--
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住密码
+          </label>
+        </div>-->
+        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+      </form>
+
+    </div>
+
+
+<!-- ................................................. -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 或者用 <script src="../js/jquery-3.2.1.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 或者用 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->
+	<script src="../js/md5.js"></script>
+	<script >
+		$(document).ready(function(){
+			//显示界面
+			(function(){
+				var to = "login";
+				$("div[to=\""+to+"\"]").show('slow');
+				$("div[cont=\"content\"]").filter(function(){
+				return this.getAttribute("to")!=to;}).hide();
+				})();
+			
+			//检测是否登录并改变导航栏
+			$.get("KxJudge.php?1").done(function(data){
+				if(data!="")
+				{
+					//切换显示状态
+					$("#navbar ul[to=\"nologin\"]").hide();
+					$("#navbar ul[to=\"alreadylogin\"]").show();
+					(function(){
+						$("div[to=\"login\"]").hide();
+						$("div[to=\"alreadylogin\"]").hide();
+						
+					})();
+					
+				}
+			});
+			//添加退出登录代码
+			$("#navbar a[to=\"logout\"]").click(function(){
+				$.get("logout.php").done(function(){
+					window.location="http://nuaakx.com/test/manager";
+				});
+			});
+			
+			//屏蔽登陆表单提交
+			$("#login form").submit(function(e){
+				e.preventDefault();
+				});
+			//添加登录提交
+			$("#login button").click(function(){
+				var json={};
+				var stoppost=false;
+				var password="";
+				$("#login input").filter(function(){
+					if(stoppost)
+						return 0;
+					if(password=="" && $(this).attr("names")=="Password")
+						password=this.value;
+					if(password!="" && $(this).attr("names")=="Password" && password!=this.value)
+					{
+						stoppost=true;
+						this.value="";
+						alert("密码输入不一致");
+						return 0;
+					}
+					if(this.value=="")
+					{
+						this.focus();
+						stoppost=true;
+						return 0;
+					}
+					return 1;
+				}).each(function(){
+					json[$(this).attr("names")]=this.value;
+					if($(this).attr("names")=="Password")
+						json[$(this).attr("names")]=hex_md5(this.value);
+				});
+				
+				if(stoppost)
+					return;
+				$.post("login.php",json).done(function(data){
+					console.log(data);
+					if(data=="200")
+					{
+						history.back();
+					}
+					else if(data=="404"){
+						alert("账号不存在");
+					}
+				});
+			});
+			//屏蔽注册表单提交
+			$("#register form").submit(function(e){
+				e.preventDefault();
+				});
+			//添加注册提交
+			$("#register button").click(function(){
+				var json={};
+				var email=/(@qq.com)$/;
+				var stoppost=false;
+				$("#register input").filter(function(){
+					if(stoppost)
+						return 0;
+					if(this.value=="")
+					{
+						this.focus();
+						stoppost=true;
+						return 0;
+					}
+					if($(this).attr("names")=="email" && !email.test(this.value))
+					{
+						alert("邮箱必须是qq邮箱");
+						this.focus();
+						stoppost=true;
+						return 0;
+					}
+					return 1;
+				}).each(function(){
+					json[$(this).attr("names")]=this.value;
+				});
+				
+				if(stoppost)
+					return;
+				$.post("register.php",json).done(function(data){
+					if(data=="200")
+					{
+						alert("注册成功");
+						
+						setTimeout($.get("KxJudge.php?1").done(function(data){
+							if(data!="")
+								history.back();
+						}),2000);
+					}
+					else if(data!="")
+					{
+						console.log(data);
+						alert(data);
+					}
+					else
+					{
+						alert("注册失败");
+					}
+				});
+			});
+			//添加手机显示导航栏被点击后隐藏
+			(function(){
+				$("#navbar a[makenavhide=\"1\"]").click(function(){
+					$("#navbar").removeClass("in").attr("aria-expanded","false");
+				});
+			})();
+			
+			//为导航栏 每个具有 to 属性的 a 添加对应的显示界面
+			$("#navbar a").filter(function(){
+				var to = this.getAttribute("to");
+				if(to)
+					return 1;
+				}).click(function(){
+				var to=$(this).attr("to");
+				$("div[to=\""+to+"\"]").show("fast");
+				$("div[cont=\"content\"]").filter(function(){
+				return this.getAttribute("to")!=to;}).hide();
+				
+				return false;
+			});
+			
+		});
+	</script>	
+
+
+  
+
+</body></html>

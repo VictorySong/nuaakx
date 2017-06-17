@@ -1,0 +1,541 @@
+<html lang="zh-CN"><head>
+    <meta http-equiv="Content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>南航学生科协</title>
+	<link href="../font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+	<link href="../font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 仍可以用 <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+
+    <!-- Custom styles for this template -->
+    
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link href="css/Kx.css" rel="stylesheet">
+	<style>
+	.control-parent{
+	max-width:500px;
+	
+	margin:0 auto;
+	}
+	.control-group{
+	display:table;
+	margin-top:30px;
+	margin-bottom:30px;
+	}
+	.control-label{
+	display:table-cell;
+	width:100px;
+	text-align:left;
+	vertical-align:top;
+	}
+	.controls{
+	display:inline-block;
+	margin-left:10px;
+	}
+	.controls input{
+	padding-left:7px;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-right:7px;
+
+	}
+	.controls button{
+	width:200px;
+	}
+	</style>
+	
+
+  </head>
+
+  <body style="overflow:auto;">
+
+
+
+	<!-- 显示自定义关键词 -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" to="home" href="index.html">科协线上管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+           
+          </ul>
+          <div class="navbar-form navbar-right">
+            <input type="text" class="form-control" to="search" placeholder="Search...">
+			<input type="hidden">
+          </div>
+        </div>
+      </div>
+    </nav>
+	<div class="container" style="">
+		<div id="CKW" class="" cont="content" to="CKW" style="display:none;">
+			<div class="row" style="height:53px;">
+			</div>
+			
+			
+			<div class="">
+			  <span class="sub-header" style="font-size:30px;"> 已定义关键词</span>
+			  <a class="navbar-brand" href="#add" style="float:right;font-size:30px;" to="add" >Add</a>
+			</div>
+			
+			<p></p>
+			<div class="table-responsive" id="keywords">
+				<table class="table table-striped">
+				  <thead>
+					<tr>
+					  <th>#</th>
+					  <th>关键词</th>
+					  <th>回复类型</th>
+					  <th>回复值</th>
+					  <th>操作</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>1,001</td>
+					  <td>Lorem</td>
+					  <td>ipsum</td>
+					  <td>dolor</td>
+					  <td>sit</td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			
+			<!-- 换页按钮 -->
+			<div id="chpage" align="right">
+				<span chpagenum="1" chpageall="1"></span>
+				<button type="button" class="btn btn-default" to="pre"> < </button>
+				<button type="button" class="btn btn-default" to="aft"> > </button>
+				<input type="text" class="form-control" style="display:inline-block; width:50px;" placeholder="">
+				<button type="button" class="btn btn-default" to="submit"> >> </button>
+			</div>
+			<!-- .....................................................  -->
+		</div>
+		
+	</div>
+	<!-- ......................................  -->
+	<!-- 增加自定义关键词 表单 -->
+	<div id="add" class="container" cont="content" to="add">
+		<div class="row" style="height:53px;">
+			</div>
+		<form  id="addform" action="">
+		
+		<div class="control-parent">
+			<button type="button" class="btn btn-link" style="display:none;" to="CKW"> << back</button>
+			
+			  <div id="legend" class="">
+				<legend class="">添加自定义回复</legend>
+			 </div>
+				<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="control-label" for="input01">关键词</label>
+				  
+					<input type="text" name="add" placeholder="请输入要添加的关键词" class="form-control" ty="keywords">
+					
+				
+				</div>
+				<div class="form-group">
+
+				  <!-- Select Basic -->
+				  <label class="control-label">回复消息类型</label>
+				
+					<select class="form-control" ty="msgtype">
+					  <option>text</option>
+					  <option>news</option>
+					 </select>
+					<p class="help-block">text 为文字 news 为推送</p>
+				 
+
+				</div>
+
+			<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="control-label" for="input01">回复内容</label>
+				 
+					<input type="text" name="addtext" placeholder="类型为text 时填写" class="form-control" ty="content">
+					
+				
+				</div>
+
+			<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="control-label" for="input01">图文消息标题</label>
+				
+					<input type="text" name="addnews" placeholder="输入推送标题" class="form-control" ty="title">
+					
+				 
+				</div>
+
+			<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="control-label" for="input01">图文消息描述</label>
+				  
+					<input type="text" name="addnews" placeholder="输入推送描述" class="form-control" ty="description">
+					
+				  
+				</div>
+
+			<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="control-label" for="input01">图文消息照片</label>
+				  
+					<input type="text" name="addnews" placeholder="输入推送照片链接" class="form-control" ty="picurl">
+					
+				 
+				</div>
+
+			<div class="form-group">
+
+				  <!-- Text input-->
+				  <label class="control-label" for="input01">图文消息链接</label>
+				 
+					<input type="text" name="addnews" placeholder="输入推送链接" class="form-control" ty="url">
+					<p class="help-block">请务必输入从微信客户端看到的推送的链接 （判断标准：链接不会太长）</p>
+				
+				</div>
+			<div class="form-group">
+			  
+
+			  <!-- Button -->
+			
+				<button class="btn btn-success" style="width:100%;" type="submit" to="submit">提交</button>
+		
+			  
+			</div>
+			
+		</div>
+		
+	 </form>
+		
+	</div>
+<!-- ........................................  -->
+
+
+    
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 或者用 <script src="../js/jquery-3.2.1.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 或者用 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->
+	<script src="../js/jquerysongplugin.js" ></script>
+	<script >
+		//数据处理函数
+		function chapage(){
+			var to = "CKW";
+			var chpage=$("#chpage span");
+			/*未采用hash 时
+			$("div[to=\""+to+"\"]").show('slow');
+			$("div[cont=\"content\"]").filter(function(){
+			return this.getAttribute("to")!=to;}).hide();
+			*/
+			$.get("getkeywords.php",{p:chpage.attr("chpagenum")}).done(function(data){
+				var keywords=JSON.parse(data);
+				$("#keywords tbody>tr").remove();
+				var i=1;
+				for(var p in keywords)
+				{
+					var str="";
+					if(p<(keywords.length-1))
+					{
+						if(keywords[p]["msgtype"]=="news")
+						{
+							
+							str="<tr><td>"+i+"</td><td>"+keywords[p]["keywords"]+"</td><td>"+keywords[p]["msgtype"]+"</td><td>"+keywords[p]["url"]+"</td><td><a href=\"#\" delete=\""+keywords[p]["keywords"]+"\">delete</a></td></tr>";
+						}
+						else
+						{
+							
+							str="<tr><td>"+i+"</td><td>"+keywords[p]["keywords"]+"</td><td>"+keywords[p]["msgtype"]+"</td><td>"+keywords[p]["content"]+"</td><td><a  href=\"#\" delete=\""+keywords[p]["keywords"]+"\">delete</a></td></tr>";
+						}
+						$("#keywords tbody").append(str);
+					}
+					else{
+					
+					chpage.attr("chpageall",Math.ceil(keywords[p]/10));
+					chpage.text(chpage.attr("chpagenum")+"/"+chpage.attr("chpageall"));
+					
+					}
+					i++;
+				}
+				deleted();
+				});
+			}
+		$(document).ready(function(){
+			//取消表单默认提交刷新的功能
+			$("#addform").submit(function(e){
+				e.preventDefault();
+			});
+			//隐藏news对应输入
+			$("#addform [name=\"addnews\"]").parent().hide();
+			//为 add 按钮添加 切换
+			$("a[to=\"add\"]").click(function(){
+				/*未采用hash 时
+				var to= "add";
+				
+				$("div[to=\"add\"]").show("fast");
+				$("[cont=\"content\"]").filter(function(){
+				  return this.getAttribute("to")!=to;}).hide();
+				  return false;
+				  */
+			});
+			//为select 添加change事件 以实现动态显示某些选项
+			$("#addform select[ty=\"msgtype\"]").change(function(){
+				if(this.value=="news")
+				{
+					$("#addform [name=\"addnews\"]").parent().show();
+					$("#addform [name=\"addtext\"]").parent().hide();
+				}
+				else{
+					$("#addform [name=\"addnews\"]").parent().hide();
+					$("#addform [name=\"addtext\"]").parent().show();
+				}
+				});
+			/*处理新增关键词*/
+			$("#addform").on("submit",function(e){
+				e.preventDefault();
+				var json={};
+				var select=$("#addform select");
+				var stoppost=false;//判断是否要停止表单提交
+				json[select.attr("ty")]=select.val();
+				var keyword=$("#addform input[ty=\"keywords\"]");
+				if(keyword.val()=="")
+				{
+					stoppost=true;
+					keyword.focus();
+				}
+				json[keyword.attr("ty")]=keyword.val();
+				
+				$("#addform input").filter(function(){
+				return this.name=="add"+select.val();
+				}).filter(function(){
+					if(stoppost)
+						return 0;
+					if(this.value=="")
+					{
+						stoppost=true;
+						this.focus();
+						return 0;
+					}
+					return 1;
+				}).map(function(){
+					json[this.getAttribute("ty")]=this.value;
+					});
+				if(stoppost)
+					return ;
+				window.addjson=json;
+				console.log(json);
+				$.get("insertkey.php",json).done(function(data){
+					console.log(data);
+					if(data=="200")
+					{
+						alert("添加成功");
+						if(window.addjson["msgtype"]=="news")
+						{
+							
+							str="<tr><td></td><td>"+window.addjson["keywords"]+"</td><td>"+window.addjson["msgtype"]+"</td><td>"+window.addjson["url"]+"</td><td><a href=\"#\" delete=\""+window.addjson["keywords"]+"\">delete</a></td></tr>";
+						}
+						else
+						{
+							
+							str="<tr><td></td><td>"+window.addjson["keywords"]+"</td><td>"+window.addjson["msgtype"]+"</td><td>"+window.addjson["content"]+"</td><td><a  href=\"#\" delete=\""+window.addjson["keywords"]+"\">delete</a></td></tr>";
+						}
+						$("#keywords tbody").append(str);
+						history.back();
+						deleted()
+					}
+					
+					});
+				
+				return 0;
+				
+			});
+			//设定换页函数
+			//上一页
+			$("#chpage button[to=\"pre\"]").click(function(){
+				var chpage=$("#chpage span");
+				if(chpage.attr("chpagenum")>"1")
+					chpage.attr("chpagenum",(Number(chpage.attr("chpagenum"))-1));
+				else
+				{
+					chpage.attr("chpagenum","1");
+					return ;
+				}
+				chapage();
+				});
+			//下一页
+			$("#chpage button[to=\"aft\"]").click(function(){
+				var chpage=$("#chpage span");
+				if(chpage.attr("chpagenum")>"0" && chpage.attr("chpagenum")<chpage.attr("chpageall"))
+					chpage.attr("chpagenum",(Number(chpage.attr("chpagenum"))+1));
+				else
+					return ;
+				chapage();
+				});
+				
+			//指定页
+			$("#chpage button[to=\"submit\"]").click(function(){
+				var chpage=$("#chpage span");
+				var chpagein=$("#chpage input");
+				if(chpagein.val()>"0" && chpagein.val()<(chpage.attr("chpageall")+1))
+					chpage.attr("chpagenum",chpagein.val());
+				else
+					return ;
+				chapage();
+				});
+			//设置搜索关键词
+			$("nav input[to=\"search\"]").keypress(function(){
+				if(event.keyCode == 13)
+				{
+					$.get("searchkeywords.php",{keywords:this.value}).done(function(data){
+						if(data)
+						{
+							$("#keywords tbody>tr").remove();
+							var keywords=JSON.parse(data);
+							var i=1;
+							for(var p in keywords)
+							{
+								var str="";
+								
+								if(keywords[p]["msgtype"]=="news")
+								{
+									
+									str="<tr><td>"+i+"</td><td>"+keywords[p]["keywords"]+"</td><td>"+keywords[p]["msgtype"]+"</td><td>"+keywords[p]["url"]+"</td><td><a href=\"#\" delete=\""+keywords[p]["keywords"]+"\">delete</a></td></tr>";
+								}
+								else
+								{
+									
+									str="<tr><td>"+i+"</td><td>"+keywords[p]["keywords"]+"</td><td>"+keywords[p]["msgtype"]+"</td><td>"+keywords[p]["content"]+"</td><td><a href=\"#\" delete=\""+keywords[p]["keywords"]+"\">delete</a></td></tr>";
+								}
+								$("#keywords tbody").append(str);
+								i++;
+							}
+							deleted();
+						}
+						else{alert("无结果");
+						}
+					});
+				}
+			});
+			//设置添加关键词后返回键
+			$("div[to=\"add\"] button[to=\"CKW\"]").click(function(){
+				/*未用hash 时
+				var to = "CKW";
+				$("div[to=\""+to+"\"]").show('slow');
+				$("div[cont=\"content\"]").filter(function(){
+				return this.getAttribute("to")!=to;}).hide();
+				return false;*/
+				history.back();
+				});
+				
+			// ajax 获取数据
+			(function(){
+				chapage();
+				})();
+				
+			//为所有 a 添加click 事件 
+			$("a").filter(function(){
+				if($(this).attr("href")!="#" && $(this).attr("href").slice(0,1)=="#")
+				{
+					return 1
+				}
+				else
+				{/*
+					$(this).click(function(){
+						return false;
+					});*/
+					return 0;
+				}
+			}).click(function(){
+				var to=$(this).attr("href");
+				var ob=$(to);
+				ob.show();
+				console.log(ob.attr("class"));
+				
+				$("[cont=\"content\"]").filter(function(){
+					
+					if(("#"+$(this).attr("id"))==to)
+						return 0;
+					else
+						return 1;
+				}).hide();
+			});
+			//设置初始 hash 并显示
+			if(location.hash=="")
+				history.replaceState(null,null,"#CKW");
+			$(location.hash).show();
+			$("[cont=\"content\"]").filter(function(){
+				if(("#"+$(this).attr("id"))==location.hash)
+					return 0;
+				else
+					return 1;
+			}).hide();
+			//添加返回键监听
+			$(window).on("hashchange",function(){
+				console.log(location.hash);
+				$(location.hash).show();
+				$("[cont=\"content\"]").filter(function(){
+					
+					if(("#"+$(this).attr("id"))==location.hash)
+						return 0;
+					else
+						return 1;
+				}).hide();
+				
+			});
+	
+		}); 
+		//刷新删除的函数
+		function deleted(){
+			$("#keywords tbody a").filter(function(){
+				if($(this).attr("delete"))
+					return 1;
+				else 
+					return 0;
+			}).on("click",deletedkey);
+		}
+		function deletedkey(){
+			$.get("deletekeywords.php",{keywords:$(this).attr("delete")}).done(function(data){
+				console.log(data);
+				if(data=="200")
+					chapage();
+				
+			});
+			return false;
+		}
+	</script>	
+
+
+  
+
+</body></html>
