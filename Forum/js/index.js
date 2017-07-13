@@ -106,7 +106,7 @@ function ready(){
 	});
 	//设置退出登录
 	$("#accordion a#logout").click(function(){
-		$.get("http://nuaakx.com/test/user/logout.php").done(function(){
+		$.get("../user/logout.php").done(function(){
 			$("#accordion").find("[cont=\"nologin\"]").show();
 			$("#accordion").find("[cont=\"alreadylogin\"]").hide();
 		});

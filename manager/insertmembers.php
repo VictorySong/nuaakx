@@ -23,12 +23,19 @@ if(!empty($_SESSION["tableName"]) && !empty($_POST["tableName"]) && !empty($_POS
 					echo $mysql->errmsg();
 				}
 				*/
-				if(!$mysql->runsql("INSERT INTO `KxBm` (`stId`,`Department`) VALUE ('".$_POST["stId"]."','".$_POST["tableName"]."')"))
+				$dataexist=$mysql->getLine("SELECT `stId` FROM `KxBm` WHERE `stId`='".$_POST["stId"]."'&& `Department`='".$_POST["tableName"]."' ");
+				if(empty($dataexist))
 				{
-					echo "200";
+					if(!$mysql->runsql("INSERT INTO `KxBm` (`stId`,`Department`) VALUE ('".$_POST["stId"]."','".$_POST["tableName"]."')"))
+					{
+						echo "200";
+					}
+					else{
+						echo $mysql->errmsg();
+					}
 				}
 				else{
-					echo $mysql->errmsg();
+					die("201");
 				}
 			}
 		}

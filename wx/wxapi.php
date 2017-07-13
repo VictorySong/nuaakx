@@ -30,7 +30,8 @@ class wechatCallbackapiTest
     {
 										//新建Memcache类
 		//$mc=memcache_init();
-		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+		//$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+		$postStr=file_get_contents("php://input");
 		if (!empty($postStr)){
                 
               	$postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);

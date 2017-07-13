@@ -16,7 +16,7 @@ if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["table
 	
 	//报名这个部门的总人数
 	//$data=$mysql->getData("SELECT `stId`,`description` FROM `KxRecruit` AS A WHERE num = (SELECT MAX(num) FROM `KxRecruit` WHERE `stId`=A.stId order by `stId`) && `department`='".$_POST["tableName"]."' ");
-	$sql="SELECT `stId`,`description` FROM `KxRecruit` AS A WHERE num = (SELECT MAX(num) FROM `KxRecruit` WHERE `stId`=A.stId order by `stId` && `department`='".$_POST["tableName"]."') ";
+	$sql="SELECT `stId`,`description` FROM `KxRecruit` AS A WHERE num = (SELECT MAX(num) FROM `KxRecruit` WHERE `stId`=A.stId  && `department`='".$_POST["tableName"]."' order by `stId`) ";
 
 	$result1=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result1);

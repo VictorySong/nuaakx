@@ -115,6 +115,7 @@ function getrecruit(){
 								</div>\
 								<div id="'+da["msg"][p]["stId"]+'" class="panel-collapse collapse">\
 									<div class="panel-body">\
+										<div class="img-circle" style="width: 60px;height: 60px;margin:0 auto; overflow: hidden;"><img class="" src="getimg.php?stid='+da["msg"][p]["stId"]+'&department='+window.tableName+'" style="width: 60px;margin-top: -5px;"></div>\
 										<div class="form-group">\
 											<label >学号:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["stId"]+'" cont="stId">\
@@ -408,6 +409,10 @@ $(document).ready(function(){
 			if(data=="")
 			{
 				alert("无该账号");
+			}
+			if(data=="201")
+			{
+				alert("不能重复添加");
 			}
 		});
 

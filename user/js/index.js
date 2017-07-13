@@ -1,52 +1,26 @@
 $(document).ready(function(){
 	//获取用户信息 ，如获取出现问题则跳到登录界面 
 	window.inf={};
-	$.get("userinf.php").done(function(data){
-		console.log(data);
-		try{
-			var da=JSON.parse(data);
-		}
-		catch(e){
-			window.location="login.html";
-			return ;
-		}
-		
-		if(da["error"]==0)
+	var interval=setInterval(function(){
+		if(window.inf.stId!=undefined)
 		{
-			window.inf=da["inf"];
-			for(var p in da["inf"])
-			{
-				
-				if(da["inf"][p])
-				{
-					$("span[cont=\""+p+"\"]").text(da["inf"][p]);
-					$("input[cont=\""+p+"\"]").val(da["inf"][p]);
-				}
-			}
-			$("#head a").attr("href","#");
-		}
-		
-	});
-	//判断是否是科协的
-	$.get("../manager/KxJudge.php?1").done(function(data){
-		console.log(data);
-		try{
-			var da=JSON.parse(data);
-		}catch(e){
-			console.log(e);
+			clearInterval(interval);
 			return;
 		}
-		
-		if(data=="")
-		{
-			window.location="../user/login.html";
-		}
-		else if(da["inf"]["tableName"].length>0)
-		{
-			$("#Kx").show();
-		}
-	});
-			
+		userinfget();
+		kxjudge();
+		//获取可预约时间
+		checkfixtime();
+		//评价
+		fixcomment();
+		//检测是否已经参加招新报名，以及报名了哪些部门
+		getrecruit();
+		//获取通知
+		//getnotice();
+		//获取未读通知数
+		getnoreadnoticenum();
+	},1000);
+	
 	
 	//调整 background 高度
 	$("#background").css("height",window.innerHeight+"px");
@@ -266,220 +240,7 @@ $(document).ready(function(){
 		else
 			$("#other").slideUp();
 	});
-	//查看设置的可维修时间
-	$.post("checkfixtime.php").done(function(data){
-		console.log(data);
-		try{
-			var da=JSON.parse(data);
-		}
-		catch(e){
-			console.log(e);
-			return;
-		}
-		if(da["error"]==0)
-		{
-			window.fixconf=da["conf"];
-			var timeallowed={};//用来记录可预约的时间
-			var time;
-			var d=new Date();
-			var weekdays=[];
-			weekdays[0]="周日";
-			weekdays[1]="周一";
-			weekdays[2]="周二";
-			weekdays[3]="周三";
-			weekdays[4]="周四";
-			weekdays[5]="周五";
-			weekdays[6]="周六";
-			
-			var day=d.getDay();
-			var hours=d.getHours();
-			var t=false;//今天是否可以预约
-			var i=-1;
-			//找到今天是否符合预约条件
-			console.log(day);
-			
-			for(var p in da["msg"])
-			{
-				if(day>da["msg"][p]["week"])
-				{
-					i=p;
-				}
-				if(day==da["msg"][p]["week"])
-				{
-					t=true;
-					i=p;
-					break;
-				}
-				if(day<da["msg"][p]["week"])
-				{
-					break;
-				}
-			}
-			console.log(i);
-			i=Number(i);
-			//如果今天符合预约条件，按照可预约几天的设置，找到最近的符合预约条件的几天
-			if(t)
-			{
-				console.log(hours);
-				var next=false;//判断是不是下周；
-				var dday;
-				if(hours<"19")
-				{
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" checked value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-				else
-				{
-					next=false;		
-					console.log(i+1);
-					console.log(da["msg"].length);
-					
-					if((i+1)<da["msg"].length)
-					{
-						i++;
-						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						console.log(d.getTime());
-						console.log(d.getDate());
-					}
-					else
-					{
-						next=true;
-						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						i=0;
-					}
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" checked value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-				timeallowed[time]=1;
-				for(var j=1;j<da["conf"]["days"];j++)
-				{
-					//next=false;//判断是不是下周；
-					if((i+1)<da["msg"].length)
-					{
-						i++;
-						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						console.log(d.getTime());
-						console.log(d.getDate());
-					}
-					else
-					{
-						next=true;
-						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						i=0;
-					}
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					timeallowed[time]=1;
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-			}
-			else
-			{
-				next=false;//判断是不是下周；
-				if((i+1)<da["msg"].length && i!=-1)
-				{
-					i++;
-					dday=Number(da["msg"][i]["week"])-Number(day);
-					d.setTime(d.getTime()+86400000*dday);
-					console.log(d.getTime());
-					console.log(d.getDate());
-				}
-				else
-				{
-					next=true;
-					dday=Number(da["msg"][0]["week"])+7-Number(day);
-					d.setTime(d.getTime()+86400000*dday);
-					i=0;
-				}
-				time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-				timeallowed[time]=1;
-				var html='<div class="radio">\
-							<label>\
-							<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
-							</label>\
-						</div>'
-				$("#fixtime").append(html);
-				for(var j=1;j<da["conf"]["days"];j++)
-				{
-					next=false;//判断是不是下周；
-					if((i+1)<da["msg"].length)
-					{
-						i++;
-						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						console.log(d.getTime());
-						console.log(d.getDate());
-					}
-					else
-					{
-						next=true;
-						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						i=0;
-					}
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					timeallowed[time]=1;
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-			}
-			//验证几个日期是否都满了
-			console.log(timeallowed);
-			$.post("getfixfull.php",timeallowed).done(function(data){
-				console.log(data);
-				try{
-					var da=JSON.parse(data);
-				}
-				catch(e){
-					console.log(e);
-					return;
-				}
-				getfix();//获取是否已经有预约
-				for(var p in da)
-				{
-					if(!(da[p]<window.fixconf["numperday"]))
-					{
-						$("#fixtime").find(("input[name=\"time\"][value="+p+"]")).prop("disabled",true);
-						$("#fixtime").find(("input[name=\"time\"][value="+p+"]")).prop("checked",false);
-					}
-				}
-				//设定时间预选项
-				var alreadychoised=false;
-				$("#fixtime").find("input[name=\"time\"]").each(function(){
-					if(alreadychoised)
-						return;
-					if(!$(this).prop("disabled"))
-					{
-						alreadychoised=true;
-						$(this).prop("checked",true);
-					}
-				});
-			});
-			
-		}
-	});
+	
 	//维修预约表单提交
 	$("#fixcomputer").find("form").submit(function(e){
 		e.preventDefault();
@@ -646,8 +407,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-	//评价
-	fixcomment();
+	
 	//设置点击背景时 评论表单隐藏  
 	$("#background").click(function(){
 		//$("#rootinput").find("textarea").val("");
@@ -684,6 +444,12 @@ $(document).ready(function(){
 			json["description"]=description.val();
 		window.recruitjson=json;
 		window.recruitform=$("#recruit").find("form");
+		//判断个人信息是否完整
+		if(window.inf["phone"]==null || window.inf["phone"]=="" || window.inf["email"]==null || window.inf["email"]=="")
+		{
+			alert("请先完善个人信息");
+			history.back;
+		}
 		console.log(json);
 		$.post("recordrecruit.php",json).done(function(data){
 			console.log(data);
@@ -701,12 +467,7 @@ $(document).ready(function(){
 		});
 			
 	});
-	//检测是否已经参加招新报名，以及报名了哪些部门
-	getrecruit();
-	//获取通知
-	//getnotice();
-    //获取未读通知数
-    getnoreadnoticenum();
+	
 					
 });
 function getfix(){
@@ -1005,4 +766,270 @@ function marknoticeread(){
             }
         });
     }
+}
+function userinfget(){
+	//获取用户个人信息
+	$.get("userinf.php").done(function(data){
+		console.log(data);
+		try{
+			var da=JSON.parse(data);
+		}
+		catch(e){
+			setTimeout(function(){document.location.href="../user/login.html"},1000);
+			return ;
+		}
+		
+		if(da["error"]==0)
+		{
+			window.inf=da["inf"];
+			for(var p in da["inf"])
+			{
+				
+				if(da["inf"][p])
+				{
+					$("span[cont=\""+p+"\"]").text(da["inf"][p]);
+					$("input[cont=\""+p+"\"]").val(da["inf"][p]);
+				}
+			}
+			$("#head a").attr("href","#");
+		}
+		
+	});
+}
+function kxjudge(){
+	//判断是否是科协的
+	$.get("../manager/KxJudge.php?1").done(function(data){
+		console.log(data);
+		try{
+			var da=JSON.parse(data);
+		}catch(e){
+			console.log(e);
+			return;
+		}
+		
+		if(data=="")
+		{
+			//document.location.href="login.html";
+		}
+		else if(da["inf"]["tableName"].length>0)
+		{
+			$("#Kx").show();
+		}
+	});
+}
+function checkfixtime(){
+	//查看设置的可维修时间
+	$.post("checkfixtime.php").done(function(data){
+		console.log(data);
+		try{
+			var da=JSON.parse(data);
+		}
+		catch(e){
+			console.log(e);
+			return;
+		}
+		if(da["error"]==0)
+		{
+			window.fixconf=da["conf"];
+			var timeallowed={};//用来记录可预约的时间
+			var time;
+			var d=new Date();
+			var weekdays=[];
+			weekdays[0]="周日";
+			weekdays[1]="周一";
+			weekdays[2]="周二";
+			weekdays[3]="周三";
+			weekdays[4]="周四";
+			weekdays[5]="周五";
+			weekdays[6]="周六";
+			
+			var day=d.getDay();
+			var hours=d.getHours();
+			var t=false;//今天是否可以预约
+			var i=-1;
+			//找到今天是否符合预约条件
+			console.log(day);
+			
+			for(var p in da["msg"])
+			{
+				if(day>da["msg"][p]["week"])
+				{
+					i=p;
+				}
+				if(day==da["msg"][p]["week"])
+				{
+					t=true;
+					i=p;
+					break;
+				}
+				if(day<da["msg"][p]["week"])
+				{
+					break;
+				}
+			}
+			console.log(i);
+			i=Number(i);
+			//如果今天符合预约条件，按照可预约几天的设置，找到最近的符合预约条件的几天
+			if(t)
+			{
+				console.log(hours);
+				var next=false;//判断是不是下周；
+				var dday;
+				if(hours<"19")
+				{
+					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+					var html='<div class="radio">\
+								<label>\
+								<input type="radio" name="time" checked value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								</label>\
+							</div>'
+					$("#fixtime").append(html);
+				}
+				else
+				{
+					next=false;		
+					console.log(i+1);
+					console.log(da["msg"].length);
+					
+					if((i+1)<da["msg"].length)
+					{
+						i++;
+						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
+						d.setTime(d.getTime()+86400000*dday);
+						console.log(d.getTime());
+						console.log(d.getDate());
+					}
+					else
+					{
+						next=true;
+						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
+						d.setTime(d.getTime()+86400000*dday);
+						i=0;
+					}
+					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+					var html='<div class="radio">\
+								<label>\
+								<input type="radio" name="time" checked value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								</label>\
+							</div>'
+					$("#fixtime").append(html);
+				}
+				timeallowed[time]=1;
+				for(var j=1;j<da["conf"]["days"];j++)
+				{
+					//next=false;//判断是不是下周；
+					if((i+1)<da["msg"].length)
+					{
+						i++;
+						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
+						d.setTime(d.getTime()+86400000*dday);
+						console.log(d.getTime());
+						console.log(d.getDate());
+					}
+					else
+					{
+						next=true;
+						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
+						d.setTime(d.getTime()+86400000*dday);
+						i=0;
+					}
+					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+					timeallowed[time]=1;
+					var html='<div class="radio">\
+								<label>\
+								<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								</label>\
+							</div>'
+					$("#fixtime").append(html);
+				}
+			}
+			else
+			{
+				next=false;//判断是不是下周；
+				if((i+1)<da["msg"].length && i!=-1)
+				{
+					i++;
+					dday=Number(da["msg"][i]["week"])-Number(day);
+					d.setTime(d.getTime()+86400000*dday);
+					console.log(d.getTime());
+					console.log(d.getDate());
+				}
+				else
+				{
+					next=true;
+					dday=Number(da["msg"][0]["week"])+7-Number(day);
+					d.setTime(d.getTime()+86400000*dday);
+					i=0;
+				}
+				time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+				timeallowed[time]=1;
+				var html='<div class="radio">\
+							<label>\
+							<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+							</label>\
+						</div>'
+				$("#fixtime").append(html);
+				for(var j=1;j<da["conf"]["days"];j++)
+				{
+					next=false;//判断是不是下周；
+					if((i+1)<da["msg"].length)
+					{
+						i++;
+						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
+						d.setTime(d.getTime()+86400000*dday);
+						console.log(d.getTime());
+						console.log(d.getDate());
+					}
+					else
+					{
+						next=true;
+						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
+						d.setTime(d.getTime()+86400000*dday);
+						i=0;
+					}
+					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+					timeallowed[time]=1;
+					var html='<div class="radio">\
+								<label>\
+								<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								</label>\
+							</div>'
+					$("#fixtime").append(html);
+				}
+			}
+			//验证几个日期是否都满了
+			console.log(timeallowed);
+			$.post("getfixfull.php",timeallowed).done(function(data){
+				console.log(data);
+				try{
+					var da=JSON.parse(data);
+				}
+				catch(e){
+					console.log(e);
+					return;
+				}
+				getfix();//获取是否已经有预约
+				for(var p in da)
+				{
+					if(!(da[p]<window.fixconf["numperday"]))
+					{
+						$("#fixtime").find(("input[name=\"time\"][value="+p+"]")).prop("disabled",true);
+						$("#fixtime").find(("input[name=\"time\"][value="+p+"]")).prop("checked",false);
+					}
+				}
+				//设定时间预选项
+				var alreadychoised=false;
+				$("#fixtime").find("input[name=\"time\"]").each(function(){
+					if(alreadychoised)
+						return;
+					if(!$(this).prop("disabled"))
+					{
+						alreadychoised=true;
+						$(this).prop("checked",true);
+					}
+				});
+			});
+			
+		}
+	});
 }
