@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//获取用户信息 ，如获取出现问题则跳到登录界面 
 	window.inf={};
-	var interval=setInterval(function(){
+	window.interval=setInterval(function(){
 		userinfget();
 		kxjudge();
 		//获取可预约时间
@@ -787,7 +787,7 @@ function userinfget(){
 				}
 			}
 			$("#head a").attr("href","#");
-			clearInterval(interval);
+			clearInterval(window.interval);
 		}
 		
 	});
