@@ -14,7 +14,7 @@ $(document).ready(function(){
 		//getnotice();
 		//获取未读通知数
 		getnoreadnoticenum();
-	},1000);
+	},2000);
 	
 	
 	//调整 background 高度
