@@ -1,16 +1,16 @@
 $(document).ready(function(){
 	//获取用户信息 ，如获取出现问题则跳到登录界面 
 	window.inf={};
-	var interval=setInterval(function(){
+	
 		if(window.inf.stId!=undefined)
 		{
 			clearInterval(interval);
 			return;
 		}
 		else{
-			setTimeout(function(){location.reload();},2000);
+			setTimeout(function(){location.reload();},3000);
 		}
-	},3000);
+	
 	userinfget();
 		kxjudge();
 		//获取可预约时间
