@@ -8,9 +8,9 @@ $(document).ready(function(){
 			return;
 		}
 		else{
-			location.reload();
+			setTimeout(function(){location.reload();},2000);
 		}
-	},1500);
+	},5000);
 	userinfget();
 		kxjudge();
 		//获取可预约时间
