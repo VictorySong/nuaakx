@@ -10,7 +10,7 @@ $(document).ready(function(){
 		else{
 			setTimeout(function(){location.reload();},2000);
 		}
-	},5000);
+	},3000);
 	userinfget();
 		kxjudge();
 		//获取可预约时间
