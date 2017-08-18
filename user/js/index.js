@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	//获取用户信息 ，如获取出现问题则跳到登录界面 
 	window.inf={};
-	window.interval=setInterval(function(){
-		userinfget();
+	userinfget();
 		kxjudge();
 		//获取可预约时间
 		checkfixtime();
@@ -14,7 +13,6 @@ $(document).ready(function(){
 		//getnotice();
 		//获取未读通知数
 		getnoreadnoticenum();
-	},2000);
 	
 	
 	//调整 background 高度
