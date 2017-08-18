@@ -2,15 +2,6 @@ $(document).ready(function(){
 	//获取用户信息 ，如获取出现问题则跳到登录界面 
 	window.inf={};
 	
-		if(window.inf.stId!=undefined)
-		{
-			clearInterval(interval);
-			return;
-		}
-		else{
-			setTimeout(function(){location.reload();},3000);
-		}
-	
 	userinfget();
 		kxjudge();
 		//获取可预约时间
@@ -779,6 +770,7 @@ function userinfget(){
 		}
 		catch(e){
 			setTimeout(function(){document.location.href="../user/login.html"},1000);
+			setTimeout(function(){location.reload();},3000);//解决uc浏览器登陆后返回历史记录的问题页面不刷新的问题
 			return ;
 		}
 		
@@ -795,7 +787,7 @@ function userinfget(){
 				}
 			}
 			$("#head a").attr("href","#");
-			clearInterval(window.interval);
+			
 		}
 		
 	});
