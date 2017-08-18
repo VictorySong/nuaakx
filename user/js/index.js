@@ -2,7 +2,7 @@ $(document).ready(function(){
 	//获取用户信息 ，如获取出现问题则跳到登录界面 
 	window.inf={};
 	
-	userinfget();
+	
 		kxjudge();
 		//获取可预约时间
 		checkfixtime();
@@ -39,6 +39,7 @@ $(document).ready(function(){
 				$("div[cont=\"head\"]").css("height",500*rate);
 				window.headheight=500*rate;
 			}
+			userinfget();//获取个人信息 确保整个页面加载后获取
 		}
 	})();
 	//设置间距
