@@ -877,7 +877,7 @@ function checkfixtime(){
 					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
 					var html='<div class="radio">\
 								<label>\
-								<input type="radio" name="time" checked value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								<input type="radio" name="time" checked week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
 								</label>\
 							</div>'
 					$("#fixtime").append(html);
@@ -906,7 +906,7 @@ function checkfixtime(){
 					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
 					var html='<div class="radio">\
 								<label>\
-								<input type="radio" name="time" checked value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								<input type="radio" name="time" checked week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
 								</label>\
 							</div>'
 					$("#fixtime").append(html);
@@ -914,7 +914,7 @@ function checkfixtime(){
 				timeallowed[time]=1;
 				for(var j=1;j<da["conf"]["days"];j++)
 				{
-					//next=false;//判断是不是下周；
+					
 					if((i+1)<da["msg"].length)
 					{
 						i++;
@@ -934,7 +934,7 @@ function checkfixtime(){
 					timeallowed[time]=1;
 					var html='<div class="radio">\
 								<label>\
-								<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								<input type="radio" name="time" week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
 								</label>\
 							</div>'
 					$("#fixtime").append(html);
@@ -962,13 +962,13 @@ function checkfixtime(){
 				timeallowed[time]=1;
 				var html='<div class="radio">\
 							<label>\
-							<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+							<input type="radio" name="time" week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
 							</label>\
 						</div>'
 				$("#fixtime").append(html);
 				for(var j=1;j<da["conf"]["days"];j++)
 				{
-					next=false;//判断是不是下周；
+					
 					if((i+1)<da["msg"].length)
 					{
 						i++;
@@ -988,7 +988,7 @@ function checkfixtime(){
 					timeallowed[time]=1;
 					var html='<div class="radio">\
 								<label>\
-								<input type="radio" name="time" value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00\
+								<input type="radio" name="time" week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
 								</label>\
 							</div>'
 					$("#fixtime").append(html);
