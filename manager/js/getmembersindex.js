@@ -505,6 +505,7 @@ $(document).ready(function(){
 						var da=JSON.parse(data);
 					}catch(e){
 						console.log(e);
+						console.log(data);
 						$("#recruit1").append('<div style="text-align:center;">出错</div>');
 						return;
 					}
