@@ -453,6 +453,7 @@ $(document).ready(function(){
 		});
 	//设置搜索 成员名称
 	$("nav input[to=\"search\"]").keypress(function(){
+		console.log(event.keyCode);
 		if(event.keyCode == 13)
 		{
 			console.log({name:this.value,tableName:window.tableName});
