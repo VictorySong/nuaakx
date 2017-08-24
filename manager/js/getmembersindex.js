@@ -452,9 +452,9 @@ $(document).ready(function(){
 		chapage();
 		});
 	//设置搜索 成员名称
-	$("nav input[to=\"search\"]").keypress(function(){
-		console.log(event.keyCode);
-		if(event.keyCode == 13)
+	$("nav input[to=\"search\"]").keypress(function(e){
+		console.log(e.keyCode);
+		if(e.keyCode == 13)
 		{
 			console.log({name:this.value,tableName:window.tableName});
 			if(location.hash=="#CKW"){
