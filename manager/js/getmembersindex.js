@@ -568,6 +568,7 @@ $(document).ready(function(){
 						}
 					
 				});
+			}
 		}
 	});
 	//设置发送邮件后返回键
