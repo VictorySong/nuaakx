@@ -165,6 +165,7 @@ function getrecruit(){
 		
 	});
 }
+
 //意向确认函数
 function recruitintention(){
 	if($(this).hasClass("label-success"))
@@ -455,14 +456,20 @@ $(document).ready(function(){
 		if(event.keyCode == 13)
 		{
 			console.log({name:this.value,tableName:window.tableName});
+			if(location.hash="#CKW"){
 			$.get("searchmembers.php",{name:this.value,tableName:window.tableName}).done(function(data){
 				console.log(data);
 				if(data)
 				{
 					$("#members tbody>tr").remove();
+					try{
 					var keywords=JSON.parse(data);
+					}catch{
+						console.log(e);
+						return;
+					}
 					var i=1;
-					location.hash="#CKW";
+					
 					for(var p in keywords)
 					{
 						var str="";
@@ -479,6 +486,88 @@ $(document).ready(function(){
 				else{alert("无结果");
 				}
 			});
+			}else{
+				$.post("searchrecruitmembers.php",{name:this.value,tableName:window.tableName}).done(function(data){
+					console.log(data);
+					var department={};
+					department["KxXqDm"]="WEB研发部";
+					department["KxXqChy"]="创意设计部";
+					department["KxXqTs"]="网络宣传部";
+					department["KxJsJf"]="技术服务部";
+					department["KxJsDj"]="大疆俱乐部";
+					department["KxShwWl"]="外联部";
+					department["KxShwYj"]="院校交流部";
+					department["KxShwGl"]="管理部";
+					department["KxHdKh"]="科技活动部";
+					department["KxHdKp"]="科技培训部";
+					$("#recruit1>div").remove();
+					try{
+						var da=JSON.parse(data);
+					}catch(e){
+						console.log(e);
+						$("#recruit1").append('<div style="text-align:center;">出错</div>');
+						return;
+					}
+						if(da["error"]==0)
+						{
+							
+							for(var p in da["msg"])
+							{
+								var html='<div class="panel panel-default" >\
+											<div class="panel-heading">\
+												<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
+													'+da["msg"][p]["stId"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["name"]+'\
+												</h3>\
+											</div>\
+											<div id="'+da["msg"][p]["stId"]+'" class="panel-collapse collapse">\
+												<div class="panel-body">\
+													<div class="img-circle" style="width: 60px;height: 60px;margin:0 auto; overflow: hidden;"><img class="" src="getimg.php?stid='+da["msg"][p]["stId"]+'&department='+window.tableName+'" style="width: 60px;margin-top: -5px;"></div>\
+													<div class="form-group">\
+														<label >学号:</label>\
+														<input type="text" class="form-control" disabled value="'+da["msg"][p]["stId"]+'" cont="stId">\
+													</div>\
+													<div class="form-group">\
+														<label >姓名:</label>\
+														<input type="text" class="form-control" disabled value="'+da["msg"][p]["name"]+'" cont="name">\
+													</div>\
+													<div class="form-group">\
+														<label >手机:</label>\
+														<input type="text" class="form-control" disabled value="'+da["msg"][p]["phone"]+'" cont="phone">\
+													</div>\
+													<div class="form-group">\
+														<label >邮箱:</label>\
+														<input type="text" class="form-control" disabled value="'+da["msg"][p]["email"]+'" cont="email">\
+													</div>\
+													<div class="form-group">\
+														<label >简介:</label>\
+														<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" cont="description">'+da["msg"][p]["description"]+'</div>\
+													</div>';
+									for(var z in da["msg"][p]["department"])
+									{
+										html+='<div class="form-group">\
+													<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span></label>\
+													<br><label style="font-size:12px; font-weight:normal;">一面评价</label>\
+													<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["firstevaluate"]==null || da["msg"][p]["department"][z]["firstevaluate"]==""? "":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="first">'+(da["msg"][p]["department"][z]["firstevaluate"]==null? "":da["msg"][p]["department"][z]["firstevaluate"])+'\
+													</div>\
+													<label style="font-size:12px; font-weight:normal;">二面评价</label>\
+													<div class=""  style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["secondevaluate"]==null || da["msg"][p]["department"][z]["secondevaluate"]==""?"":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="second">'+(da["msg"][p]["department"][z]["secondevaluate"]==null?"":da["msg"][p]["department"][z]["secondevaluate"])+'\
+													</div>\
+												</div>';
+									}
+													
+									html+='</div>\
+												</div>\
+											</div>';
+								$("#recruit1").append(html);
+							}
+							$("[intention=\"1\"]").click(recruitintention);//意向
+							$("[intention=\"2\"]").click(recruitintention);//意向
+							$("[cont=\"recruitdepartment\"]").click(recruitevaluate);//评价函数
+							if(da["msg"].length==0)
+								$("#recruit1").append('<div style="text-align:center;">无结果</div>');
+						}
+					
+				});
 		}
 	});
 	//设置发送邮件后返回键
