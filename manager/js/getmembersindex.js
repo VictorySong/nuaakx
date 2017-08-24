@@ -456,7 +456,7 @@ $(document).ready(function(){
 		if(event.keyCode == 13)
 		{
 			console.log({name:this.value,tableName:window.tableName});
-			if(location.hash="#CKW"){
+			if(location.hash=="#CKW"){
 			$.get("searchmembers.php",{name:this.value,tableName:window.tableName}).done(function(data){
 				console.log(data);
 				if(data)
@@ -486,7 +486,7 @@ $(document).ready(function(){
 				else{alert("无结果");
 				}
 			});
-			}else{
+			}else if(location.hash=="#recruit"){
 				$.post("searchrecruitmembers.php",{name:this.value,tableName:window.tableName}).done(function(data){
 					console.log(data);
 					var department={};
