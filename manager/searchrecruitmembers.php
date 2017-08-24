@@ -3,28 +3,28 @@ include("../SaeMysql.php");
 //session_set_cookie_params(7200,'/','nuaakx.com');
 session_start();
 
-if(isset($_GET["tableName"]) && isset($_GET["name"]) && !empty($_SESSION["tableName"]))
+if(isset($_POST["tableName"]) && isset($_POST["name"]) && !empty($_SESSION["tableName"]))
 {
 
 	//判断查询人是不是要查询的部门的
 	$t=false;
 	foreach($_SESSION["tableName"] as $value)
 	{
-		if($value==$_GET["tableName"])
+		if($value==$_POST["tableName"])
 			$t=true;
 	}
 	$mysql=new SaeMysql();
 	$result=array();
 	if($t)
 	{
-		$data=$mysql->getData("SELECT `name`,`number`,`phone`,`email` FROM `wx_user` WHERE `name`='".$_GET["name"]."' || `number`='".$_GET["name"]."'");
+		$data=$mysql->getData("SELECT `name`,`number`,`phone`,`email` FROM `wx_user` WHERE `name`='".$_POST["name"]."' || `number`='".$_POST["name"]."'");
 	
 		if(!empty($data))
 		{
 			$i=0;
 			foreach($data as $value)
 			{
-				$datarel=$mysql->getLine("SELECT `stId`,`description` FROM `KxRecruit` WHERE `stId`='".$value["number"]."' && `Department`='".$_GET["tableName"]."'");
+				$datarel=$mysql->getLine("SELECT `stId`,`description` FROM `KxRecruit` WHERE `stId`='".$value["number"]."' && `Department`='".$_POST["tableName"]."'");
 				if(!empty($datarel))
 				{
 					
