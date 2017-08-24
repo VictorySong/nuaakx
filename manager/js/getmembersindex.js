@@ -464,7 +464,7 @@ $(document).ready(function(){
 					$("#members tbody>tr").remove();
 					try{
 					var keywords=JSON.parse(data);
-					}catch{
+					}catch(e){
 						console.log(e);
 						return;
 					}
