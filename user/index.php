@@ -6,7 +6,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>荒芜星空</title>
+    <title>南航学生科协</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -45,13 +45,16 @@
 						</a>
 					</div>
 				</div>-->
-				<a href="login.html" style="font-size:30px; margin-left:20px; color:rgb(221, 221, 221); display:table-row; padding-bottom:10px;padding-left:10px;" to="login">
+				<div style="font-size:30px; margin-left:20px; color:rgb(221, 221, 221); display:table-row; padding-bottom:10px;padding-left:10px;" to="login">
 					<div style="display:table-cell; vertical-align:top;">
 						<!--<span class="glyphicon glyphicon-user" style="margin-bottom:20px; margin-left:20px;font-size:40px;"></span> -->
-						<div class="img-circle" style="width: 40px;height: 40px;margin-top: 10px;margin-left:20px;overflow: hidden;"><img class="" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
+						<div class="img-circle" onclick="javascript:window.history.back(-1);" style="width: 40px;height: 40px;margin-top: 15px;margin-left:15px;overflow: hidden;float:left;color:rgb(221, 221, 221);">
+							<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+						</div>
+						<div class="img-circle" style="width: 40px;height: 40px;margin-top: 10px;margin-right:20px;overflow: hidden;float:right;"><img class="" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
 						<!--<span id="nickname" cont="nickname"></span>-->
 					</div>
-				</a>
+				</div>
 			</div>
 			
 			<!--  下边是个人主页菜单列表  -->
@@ -66,11 +69,11 @@
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-pencil" ></span>
 										</td>
 										<td>
 											<span id="name"></span>
-											 <br>个人资料
+											 <br>招新报名第一步————完善个人资料
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
@@ -178,11 +181,11 @@
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-pencil" ></span>
 										</td>
 										<td>
 											<span ></span>
-											<br>招新报名
+											<br>招新报名第二步————填写报名表单
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
@@ -384,7 +387,7 @@
 					
 				</div>
 			
-				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+				<button type="submit" class="btn btn-default" style="width:100%;" onclick="javascript:window.history.go(-1);">提交</button>
 			</form>
 
 			
@@ -446,7 +449,7 @@
 				</div>
 			
 				
-					  <button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+					  <button type="submit" class="btn btn-default" style="width:100%;" onclick="javascript:window.history.go(-1);">提交</button>
 				
 
 			</form>
@@ -468,7 +471,7 @@
 					
 				</div>
 				
-				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+				<button type="submit" class="btn btn-default" style="width:100%;" onclick="javascript:window.history.go(-1);">提交</button>
 
 			</form>
 
@@ -565,7 +568,7 @@
 						<input type="text" class="form-control" disabled cont="email">
 					</div>
 					<div class="form-group">
-						<label>部门选择</label>
+						<label>部门选择（最多选择三个部门）</label>
 						<div class="" style="padding-left:10px;">
 							<div class="checkbox">
 							  <label>
