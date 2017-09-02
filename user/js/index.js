@@ -672,7 +672,7 @@ function getallhd(){
 			for(var p in da["msg"]){
 				var html='<div class="panel panel-default" >\
 									<div class="panel-heading">\
-								<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#kxhd1" data-target="#'+da["msg"][p]["hdid"]+'">\
+								<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#kxhd1" data-target="#'+da["msg"][p]["hdid"]+'">\
 								'+da["msg"][p]["name"]+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span cont="hdnownum" hdid="'+da["msg"][p]["hdid"]+'">'+da["msg"][p]["nownum"]+'</span>\/'+da["msg"][p]["max"]+'\
 								</h3>\
 							</div>\

@@ -736,7 +736,7 @@
 			<div class="panel-group" id="kxhd1" style="margin-bottom:0px;">
 				<div class="panel panel-default" >
 					<div class="panel-heading">
-						<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#kxhd1" data-target="#stId">
+						<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#kxhd1" data-target="#stId">
 						活动名称
 						</h3>
 					</div>
