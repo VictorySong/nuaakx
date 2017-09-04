@@ -1,5 +1,5 @@
 <?php 
-require_once "jssdk.php";
+require_once "../wx/jssdk.php";
 require_once "../SaeMysql.php";
 $mysql=new SaeMysql();
 $app=$mysql->getLine("SELECT `appid`,`secret` FROM `wxappid` WHERE 1");
