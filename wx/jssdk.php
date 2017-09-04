@@ -60,6 +60,9 @@ class JSSDK {
 		
 			return $data->ticket;
 		}
+		else{
+			die($mysql->errmsg());
+		}
 	}else{
 		return $exist["ticket"];
 	}
@@ -82,7 +85,9 @@ class JSSDK {
 		
 			return $data->access_token;
 		}
-
+		else{
+			die($mysql->errmsg());
+		}
 		
 	}
 	else{
