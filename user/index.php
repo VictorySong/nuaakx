@@ -872,6 +872,7 @@ $signPackage = $jssdk->GetSignPackage();
 		  });
 		});
 	</script>
+	</script src="js/wx.js"></script>
 	
   </body>
 </html>

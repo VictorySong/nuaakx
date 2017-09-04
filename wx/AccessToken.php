@@ -1,5 +1,5 @@
 <?php
-include("../SaeMysql.php");
+include_once("../SaeMysql.php");
 function getaccesstoken(){
 	$mysql=new SaeMysql();
 	$exist=$mysql->getLine("SELECT `token` ,`time` FROM `accesstoken` WHERE 1");
