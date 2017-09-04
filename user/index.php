@@ -3,7 +3,7 @@ require_once "../wx/jssdk.php";
 require_once "../SaeMysql.php";
 session_start();
 if(!isset($_SESSION["openid"])){
-	header("Location: scope.php");
+	header("Location: ../wx/scope.php");
 	die();
 }
 $mysql=new SaeMysql();
