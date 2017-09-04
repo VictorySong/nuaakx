@@ -1,3 +1,12 @@
+<?php 
+require_once "jssdk.php";
+require_once "../SaeMysql.php";
+$mysql=new SaeMysql();
+$app=$mysql->getLine("SELECT `appid`,`secret` FROM `wxappid` WHERE 1");
+$jssdk = new JSSDK($app["appid"], $app["secret"]);
+$signPackage = $jssdk->GetSignPackage();
+?>
+
 <html lang="zh-CN"><head>
     <meta http-equiv="Content-type" content="text/html">
     <meta charset="utf-8">
@@ -849,7 +858,20 @@
 	
 	<script src="js/index.js"></script>
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-	
+	<script>
+		$(document).ready(function(){
+			wx.config({
+			debug: true,
+			appId: '<?php echo $signPackage["appId"];?>',
+			timestamp: <?php echo $signPackage["timestamp"];?>,
+			nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+			signature: '<?php echo $signPackage["signature"];?>',
+			jsApiList: [
+			  "onMenuShareQQ"
+			]
+		  });
+		});
+	</script>
 	
   </body>
 </html>
