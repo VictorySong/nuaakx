@@ -3,7 +3,10 @@ require_once("../SaeMysql.php");
 session_start();
 $mysql=new SaeMysql();
 $data=$mysql->getLine("SELECT `appid` , `secret` FROM `wxappid` WHERE 1");
-
+if(empty($_GET["code"])){
+	header("Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5815c030faf2288c&redirect_uri=http%3a%2f%2fnuaakx.com%2fm%2fwx%2fscope.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
+	die();
+}
 $ch=curl_init("https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$data["appid"]."&secret=".$data["secret"]."&code=".$_GET["code"]."&grant_type=authorization_code");
 curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
 $data1=curl_exec($ch);
