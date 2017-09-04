@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//显示界面
 	(function(){
-		var to = "login";
+		var to = "bound";
 		$("div[to=\""+to+"\"]").show();
 		$("div[cont=\"content\"]").filter(function(){
 		return this.getAttribute("to")!=to;}).hide();
@@ -11,12 +11,6 @@ $(document).ready(function(){
 		console.log(data);
 		try{
 			var da=JSON.parse(data);
-		}catch(e){
-			console.log(e);
-			return;
-		}
-		if(da["error"]==0)
-		{
 			//切换显示状态
 			$("#navbar ul[to=\"nologin\"]").hide();
 			$("#navbar ul[to=\"alreadylogin\"]").show();
@@ -25,23 +19,15 @@ $(document).ready(function(){
 				$("div[to=\"alreadylogin\"]").hide();
 				
 			})();
-			
+		}catch(e){
+			console.log(e);
+			return;
 		}
-	});
-	//添加退出登录代码
-	$("#navbar a[to=\"logout\"]").click(function(){
-		$.get("logout.php").done(function(){
-			$("#navbar ul[to=\"nologin\"]").show();
-			$("#navbar ul[to=\"alreadylogin\"]").hide();
-		});
 	});
 	
 	//屏蔽登陆表单提交
 	$("#login form").submit(function(e){
 		e.preventDefault();
-		});
-	//添加登录提交
-	$("#login button").click(function(){
 		var json={};
 		var stoppost=false;
 		
@@ -101,6 +87,80 @@ $(document).ready(function(){
 			
 		});
 	});
+	
+	
+	
+	//添加退出登录代码
+	$("#navbar a[to=\"logout\"]").click(function(){
+		$.get("logout.php").done(function(){
+			$("#navbar ul[to=\"nologin\"]").show();
+			$("#navbar ul[to=\"alreadylogin\"]").hide();
+		});
+	});
+	
+	//屏蔽绑定表单提交
+	$("#bound form").submit(function(e){
+		e.preventDefault();
+		var json={};
+		var stoppost=false;
+		
+		$("#bound input").filter(function(){
+			if(stoppost)
+				return 0;
+			
+			if(this.value=="")
+			{
+				this.focus();
+				stoppost=true;
+				return 0;
+			}
+			return 1;
+		}).each(function(){
+			json[$(this).attr("names")]=this.value;
+			if($(this).attr("names")=="Password")
+			{
+				json[$(this).attr("names")]=hex_md5(this.value);
+				window.code=this.value;
+			}
+		});
+		
+		if(stoppost)
+			return;
+		$.post("bound.php",json).done(function(data){
+			console.log(data);
+			if(data=="200")
+			{
+				history.back();
+				return;
+			}
+			if(data=="405")
+			{
+				alert("账号不存在/账号密码错误");
+			}
+			if(data=="again")
+			{
+				json["oricode"]=window.code;
+				console.log(json);
+				
+				$.post("bound.php",json).done(function(data){
+					console.log(data);
+					if(data=="200")
+					{
+						history.back();
+						return ;
+					}
+					if(data=="405")
+					{
+						alert("账号不存在/账号密码错误");
+					}
+					
+				});
+			}
+			
+			
+		});
+		});
+	
 	//屏蔽注册表单提交
 	$("#register form").submit(function(e){
 		e.preventDefault();
@@ -175,6 +235,20 @@ $(document).ready(function(){
 	
 	//为导航栏 每个具有 to 属性的 a 添加对应的显示界面
 	$("#navbar a").filter(function(){
+		var to = this.getAttribute("to");
+		if(to)
+			return 1;
+		}).click(function(){
+		var to=$(this).attr("to");
+		$("div[to=\""+to+"\"]").show("fast");
+		$("div[cont=\"content\"]").filter(function(){
+		return this.getAttribute("to")!=to;}).hide();
+		
+		return false;
+	});
+	//添加切换
+	//为导航栏 每个具有 to 属性的 a 添加对应的显示界面
+	$("div[name=\"switch\"] a").filter(function(){
 		var to = this.getAttribute("to");
 		if(to)
 			return 1;

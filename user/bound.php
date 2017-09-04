@@ -5,60 +5,65 @@ include("../SaeMysql.php");
 include_once("../simple_html_dom.php");
 //session_set_cookie_params(7200*12*7,'/','nuaakx.com');
 session_start();
-if(!isset($_POST["stId"]) || !isset($_POST["Password"]))
-	die();
 
-if(empty($_SESSION["stId"]))
-{
-	$mysql=new SaeMysql();
+if(!empty($_SESSION["openid"])){
+	$mysql=new SaeMysql(); 
 	
-	$data=$mysql->getLine("SELECT `code`,`number` FROM `wx_user` WHERE `number`='".$_POST["stId"]."' || `email`= '".$_POST["stId"]."'");
-	if(!empty($data))
-	{
-		if( $_POST["Password"] == md5($data["code"]))
+		if(empty($_SESSION["stId"]) )
 		{
-			$_SESSION["stId"]=$data["number"];
-			die("200");
-		}
-		else
-		{
-			/*
-			if(!empty($_SESSION["curl"]) && $_SESSION["curl"]=="1")
-				submit();//拿到教务处那边验证
-			else
+			
+			if(!isset($_POST["stId"]) || !isset($_POST["Password"]))
+				die();
+			$data=$mysql->getLine("SELECT `code`,`number` FROM `wx_user` WHERE `number`='".$_POST["stId"]."' || `email`= '".$_POST["stId"]."'");
+			if(!empty($data))
 			{
-				$_SESSION["curl"]="1";//标志我要去获取非MD5加密的密码 然后放到教务处那边去验证
-				echo "again";
-			}	*/
-			if(empty($_POST["oricode"]))
-			{
-				die("again");
-				
+				if( $_POST["Password"] == md5($data["code"]))
+				{
+					$_SESSION["stId"]=$data["number"];
+					bound();
+					die("200");
+				}
+				else
+				{
+					/*
+					if(!empty($_SESSION["curl"]) && $_SESSION["curl"]=="1")
+						submit();//拿到教务处那边验证
+					else
+					{
+						$_SESSION["curl"]="1";//标志我要去获取非MD5加密的密码 然后放到教务处那边去验证
+						echo "again";
+					}	*/
+					if(empty($_POST["oricode"]))
+					{
+						die("again");
+						
+					}
+					else
+						submit();
+				}
 			}
 			else
-				submit();
+			{
+				/*
+				if(!empty($_SESSION["curl"]) && $_SESSION["curl"]=="1")
+					submit();//拿到教务处那边验证
+				else
+				{
+					$_SESSION["curl"]="1";//标志我要去获取非MD5加密的密码 然后放到教务处那边去验证
+					echo "again";
+				}	*/
+				if(empty($_POST["oricode"]))
+				{
+					die("again");
+				}
+				else
+					submit();
+			}
 		}
-	}
-	else
-	{
-		/*
-		if(!empty($_SESSION["curl"]) && $_SESSION["curl"]=="1")
-			submit();//拿到教务处那边验证
-		else
-		{
-			$_SESSION["curl"]="1";//标志我要去获取非MD5加密的密码 然后放到教务处那边去验证
-			echo "again";
-		}	*/
-		if(empty($_POST["oricode"]))
-		{
-			die("again");
+		else{
+			bound();
+			die("200");
 		}
-		else
-			submit();
-	}
-}
-else{
-	die("200");
 }
 function submit()
 {
@@ -146,6 +151,8 @@ function submit()
 		}
         
 		$_SESSION['stId']=$_POST['stId'];
+		
+		bound();
 		echo "200";
 		
     }
@@ -163,5 +170,18 @@ function http_Get($url)
     $file_content=curl_exec($curl);
     curl_close($curl);
     return $file_content;
+}
+function bound(){
+	$mysql=$GLOBALS["mysql"];
+	$exist=$mysql->getLine("SELECT `id`,`sex`,`headimgurl` FROM `wx_user` WHERE `openid`='".$_SESSION["openid"]."'");
+	$stid=empty($_POST["stId"])?$_SESSION["stId"]:$_POST["stId"];
+	$exist1=$mysql->getLine("SELECT `id` FROM `wx_user` WHERE `number`='".$stid."'");
+	if(!empty($exist)){
+		if($exist["id"]!=$exist1["id"]){
+			$mysql->runsql("DELETE FROM `wx_user` WHERE `id`='".$exist["id"]."'");
+			$mysql->runsql("UPDATE `wx_user` SET `openid`='".$_SESSION["openid"]."' ,`sex`='".$exist["sex"]."', `headimgurl`='".$exist["headimgurl"]."' WHERE `number`='".$_SESSION["stId"]."'");
+		}
+	}
+	
 }
 ?>

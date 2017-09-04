@@ -452,7 +452,7 @@ function detail(){
 	window.open($(this).attr("href"));
 	return false;
 }
-//开始获取数据   必不可少，如果这一部分内容加到 scrollto() 中则会出现 刚进入时有可能不获取数据的情况 亦或是可能存在 递归出不来指导所有数据获取 而这不是我想要的
+//开始获取数据   必不可少，如果这一部分内容加到 scrollto() 中则会出现 刚进入时有可能不获取数据的情况 亦或是可能存在 递归出不来直到所有数据获取 而这不是我想要的
 function scrolltobegin(){
 	if(location.hash=="#search" && $.cookie("description")!=undefined)
 	{

@@ -48,7 +48,9 @@ if(!empty($_SESSION["stId"]))
 	}
 	$person=$mysql->getLine("SELECT `nickname`,`name`,`phone`,`email` FROM `wx_user` WHERE `number`='".$_SESSION["stId"]."'");
 	$json["error"]=0;
-	$person["tableName"]=$_SESSION["tableName"];
+	if(isset($_SESSION["tableName"])){
+		$person["tableName"]=$_SESSION["tableName"];
+	}
 	$json["inf"]=$person;
 	echo json_encode($json);
 	

@@ -109,7 +109,7 @@ function getrecruit(){
 				{
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
-									<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
+									<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
 										'+da["msg"][p]["stId"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["name"]+'\
 									</h3>\
 								</div>\
@@ -517,7 +517,7 @@ $(document).ready(function(){
 							{
 								var html='<div class="panel panel-default" >\
 											<div class="panel-heading">\
-												<h3 class="panel-title" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
+												<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
 													'+da["msg"][p]["stId"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["name"]+'\
 												</h3>\
 											</div>\

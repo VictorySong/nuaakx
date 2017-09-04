@@ -3,7 +3,7 @@ $(document).ready(function(){
 	window.inf={};
 	
 	
-		kxjudge();
+		
 		//获取可预约时间
 		checkfixtime();
 		//评价
@@ -463,6 +463,7 @@ $(document).ready(function(){
 			
 	});
 	
+	
 					
 });
 function getfix(){
@@ -770,13 +771,17 @@ function userinfget(){
 			var da=JSON.parse(data);
 		}
 		catch(e){
-			setTimeout(function(){document.location.href="../user/login.html"},1000);
+			var a=[];
+			a["login"]=1;
+			a["bound"]=1;
+			setTimeout(function(){document.location.href="../user/"+(a[data]==1?data:"login")+".html"},1000);
 			setTimeout(function(){location.reload();},3000);//解决uc浏览器登陆后返回历史记录的问题页面不刷新的问题
 			return ;
 		}
 		
 		if(da["error"]==0)
 		{
+			kxjudge();
 			window.inf=da["inf"];
 			for(var p in da["inf"])
 			{
@@ -787,6 +792,26 @@ function userinfget(){
 					$("input[cont=\""+p+"\"]").val(da["inf"][p]);
 				}
 			}
+			if(da["inf"]["sex"]!=null)
+				da["inf"]["sex"]==1 ?$("span[cont=\"sex\"]").text("男"):$("span[cont=\"sex\"]").text("女");
+			if(da["inf"]["openid"]==da["inf"]["seopenid"]){
+				$("span[cont=\"bound\"]").text("已绑定当前微信号,点击解绑");
+				//解绑微信号
+				$("span[cont=\"bound\"]").parent().parent().click(unlink);
+			}else{
+				$("span[cont=\"bound\"]").text("绑定微信号非当前微信号");
+				//绑定当前微信号
+				$("span[cont=\"bound\"]").parent().parent().click(bound);
+			}
+			//关于头像的处理
+			var img=new Image();
+			img.src="getimg.php";
+			img.onerror=function(){
+				$("#headimgurl").attr("src",window.inf["headimgurl"]);
+			}
+			
+			
+			
 			$("#head a").attr("href","#");
 			
 		}
@@ -1029,4 +1054,41 @@ function checkfixtime(){
 			
 		}
 	});
+}
+function unlink(){
+	if(confirm("确认解绑当前微信号？")){
+		$.post("unlink.php").done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0){
+				$("span[cont=\"bound\"]").text("无绑定微信号,点击绑定");
+				$("span[cont=\"bound\"]").parent().parent().off("click",unlink);
+				$("span[cont=\"bound\"]").parent().parent().on("click",bound);
+			}
+		});
+	}
+}
+function bound(){
+	if(confirm("确认绑定当前微信号？")){
+		$.post("bound.php").done(function(data){
+			console.log(data);
+			if(data=="200"){
+				$("span[cont=\"bound\"]").text("已绑定当前微信号,点击解绑");
+				$("span[cont=\"bound\"]").parent().parent().off("click",bound);
+				$("span[cont=\"bound\"]").parent().parent().on("click",unlink);
+			}
+			try{
+				var da=JSON.parse(data);
+			}catch(e){
+				console.log(e);
+				
+
+			}
+		});
+	}
 }
