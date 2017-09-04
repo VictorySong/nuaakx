@@ -44,11 +44,11 @@ class SaeMysql{
 		return mysql_error($this->ico);
 	}
 	public function close(){
-		if(!empty($this->ico))
+		if(gettype($this->ico)=="resource")
 			mysql_close($this->ico);
 	}
 	function __destruct(){
-		if(!empty($this->ico))
+		if(gettype($this->ico)=="resource")
 			mysql_close($this->ico);
 	}
 }
