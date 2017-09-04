@@ -1,5 +1,5 @@
 <?php
-include("../SaeMysql.php");
+require_once("../SaeMysql.php");
 session_start();
 $mysql=new SaeMysql();
 $data=$mysql->getLine("SELECT `appid` , `secret` FROM `wxappid` WHERE 1");

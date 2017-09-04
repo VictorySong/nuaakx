@@ -3,9 +3,9 @@
 	微信后台代码 real
     作者：陈喆
   */
-include("SaeMysql.php");
-include('emoji.php');
-include('simple_html_dom.php');
+require_once("SaeMysql.php");
+require_once('emoji.php');
+require_once('simple_html_dom.php');
 $wechatObj = new wechatCallbackapiTest();
 //$wechatObj->valid();                    //被注释的token验证			 simple_html_dom 
 $wechatObj->responseMsg();
@@ -375,7 +375,7 @@ class wechatCallbackapiTest
                 break;
             case "CLICK":
             {
-                include("click.php");
+                require_once("click.php");
                 $contentStr = click($object->EventKey,$object);
                 
             }
