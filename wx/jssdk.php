@@ -55,7 +55,7 @@ class JSSDK {
 		$data=json_decode($data);
 		
 		
-		$mysql->runsql("DELETE FROM `jsapiTicket` WHERE 1");
+		$mysql->runsql("DELETE FROM `jsapiticket` WHERE 1");
 		if(!$mysql->runsql("INSERT INTO `jsapiticket` (`ticket`,`time`) VALUES ('".$data->ticket."','".time()."')")){
 		
 			return $data->ticket;
