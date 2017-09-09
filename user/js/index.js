@@ -416,6 +416,22 @@ $(document).ready(function(){
 		var json={}
 		json["department"]=[];
 		
+		var phone=$(this).find("#p");
+		if(phone.val()==""){
+			
+			phone.focus();
+			return;
+		}
+		else
+			json["phone"]=phone.val();
+		var email=$(this).find("#e");
+		if(email.val()==""){
+			
+			email.focus();
+			return;
+		}
+		else
+			json["email"]=email.val();
 		var department=$(this).find("input[name=\"department\"]").filter(function(){
 			if($(this).prop("checked"))
 				return 1;
@@ -447,14 +463,16 @@ $(document).ready(function(){
 		window.recruitjson=json;
 		window.recruitform=$("#recruit").find("form");
 		//判断个人信息是否完整
-		if(window.inf["phone"]==null || window.inf["phone"]=="" || window.inf["email"]==null || window.inf["email"]=="")
+		/*if(window.inf["phone"]==null || window.inf["phone"]=="" || window.inf["email"]==null || window.inf["email"]=="")
 		{
 			alert("请先完善个人信息");
 			location.hash="#personalinf";
 			return;
-		}
-		console.log(json);
-		$.post("recordrecruit.php",json).done(function(data){
+		}*/
+		if(confirm("本次操作将同步修改个人信息且个人简介不可修改请确认是否提交"))
+		{
+			console.log(json);
+			$.post("recordrecruit.php",json).done(function(data){
 			console.log(data);
 			try{
 				var da=JSON.parse(data);
@@ -468,6 +486,9 @@ $(document).ready(function(){
 				getrecruit();
 			}
 		});
+			alert("恭喜你报名成功！");
+		}
+		
 			
 	});
 	
