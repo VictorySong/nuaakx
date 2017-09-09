@@ -235,6 +235,29 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				
+				<div class="panel panel-default">
+					<a class="panel-title" href="#kxts"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table style="box-sizing:border-box;min-width:180px;">
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-cog" ></span>
+										</td>
+										<td>
+											<span ></span>
+											<br>投诉与建议
+										</td>
+										<td align="right">
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				
 				
 			  <div id="Kx" style="display:none;">
 				
@@ -838,6 +861,19 @@ $signPackage = $jssdk->GetSignPackage();
 			
 		</div>
 		<!-- ............................................    -->
+		
+		
+		<!--   投诉与建议-->
+		<div id="kxts" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+			<div style="width:100%;" cont="head">
+			</div>
+			
+				
+			
+		</div>
+		
+		<!-- ............................................    -->
+		
 		<!--  讲座    -->
 		<div id="kxjz" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
