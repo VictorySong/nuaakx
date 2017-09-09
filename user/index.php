@@ -887,8 +887,8 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 					
 					<div class="form-group">
-						<label>个人简介:</label>
-						<textarea class="form-control" placeholder="请输入..."></textarea>
+						<label>投诉与建议:</label>
+						<textarea class="form-control" placeholder="请简短的描述系统出现问题时的情况..."></textarea>
 					</div>
 			
 				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
