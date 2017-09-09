@@ -472,7 +472,7 @@ $(document).ready(function(){
 	});
 	//退出登录
 	$("#logout").click(function(){
-		$.get("logout.php").done(function(){
+		$.get("logout.php").done(function(data){
 			location.reload;
 		});
 	});
