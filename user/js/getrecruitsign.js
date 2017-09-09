@@ -47,20 +47,23 @@ function kxjudge(){
 	//判断是否是科协的
 	$.get("../manager/KxJudge.php?1").done(function(data){
 		console.log(data);
+		
 		try{
 			var da=JSON.parse(data);
 		}catch(e){
+			//获取数据
+			getrecruit();
 			console.log(e);
 			return;
 		}
 		console.log(da);
 		console.log(da["inf"]["tableName"]);
-		console.log(da["inf"]["tableName"].length);
+		
 		if(data=="")
 		{
 			//document.location.href="login.html";
 		}
-		else if(da["inf"]["tableName"].length>0)
+		else if(da["inf"]["tableName"]!=undefined && da["inf"]["tableName"].length>0)
 		{
 			window.inf["tableName"]=da["inf"]["tableName"];
 			$("#operation").text("操作者");
@@ -210,7 +213,8 @@ function getrecruit(){
 				var html;
 				//对顺序进行重新调整
 				da["result"][p]=newsort(da["result"][p]);
-				if(window.inf["tableName"].length>0){
+				
+				if(window.inf["tableName"]!=undefined){
 					for(var p1 in da["result"][p]){
 						
 						sta="等待";
@@ -333,8 +337,10 @@ function newsort(a){
 	var j=0;
 	var tem;
 	while(i<a.length){
+		j=0;
 		if(a[i]["postpone"]!=0 && a[i]["sort"]==undefined){
 			for(j;j<a[i]["postpone"];j++){
+				
 				if((i+j+1)<a.length){
 					tem=a[i+j];
 					a[i+j]=a[i+j+1]
