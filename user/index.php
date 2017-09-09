@@ -72,10 +72,10 @@ $signPackage = $jssdk->GetSignPackage();
 				
 			
 			
-			
+			<!--
 			<div class="img-circle" id="logout"  style="font-size:30px;width: 40px;height: 40px;margin-bottom: 15px;margin-right:15px;overflow: hidden;float:right;color:red;">
 							<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-				</div>
+				</div>-->
 			
 				
 			<!--  下边是个人主页菜单列表  -->
@@ -272,6 +272,29 @@ $signPackage = $jssdk->GetSignPackage();
 			</div>
 			<p>&nbsp;</p>
 		</div>
+		
+		<div class="panel panel-default">
+					<a class="panel-title" href="#notice"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-cog" ></span>
+										</td>
+										<td>
+											<span id="personal"></span>
+											<br>退出登录
+										</td>
+										<td align="right">
+											
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
 		<!--  ...................................   -->
 		
 		<!-- 下边是个人信息菜单  -->
