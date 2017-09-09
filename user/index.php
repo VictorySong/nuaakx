@@ -69,6 +69,10 @@ $signPackage = $jssdk->GetSignPackage();
 						<!--<span id="nickname" cont="nickname"></span>-->
 					</div>
 				</div>
+				
+				<div class="img-circle"  style="width: 40px;height: 40px;margin-bottom: 15px;margin-right:15px;overflow: hidden;float:right;color:rgb(221, 221, 221);">
+							<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+						</div>
 			</div>
 			
 			<!--  下边是个人主页菜单列表  -->
