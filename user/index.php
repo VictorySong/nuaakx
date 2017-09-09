@@ -65,19 +65,13 @@ $signPackage = $jssdk->GetSignPackage();
 						<div class="img-circle" onclick="javascript:window.history.back(-1);" style="width: 40px;height: 40px;margin-top: 15px;margin-left:15px;overflow: hidden;float:left;color:rgb(221, 221, 221);">
 							<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 						</div>
-						<div class="img-circle" style="width: 40px;height: 40px;margin-top: 10px;margin-right:20px;overflow: hidden;float:right;"><img class="" id="headimgurl" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
+						<div id="logoutbutton" class="img-circle"  style="width: 40px;height: 40px;margin-top: 10px;margin-right:20px;overflow: hidden;float:right;">
+						<img class="" id="headimgurl" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
 						<!--<span id="nickname" cont="nickname"></span>-->
 					</div>
 				</div>
-				
+			</div>
 			
-			
-			<!--
-			<div class="img-circle" id="logout"  style="font-size:30px;width: 40px;height: 40px;margin-bottom: 15px;margin-right:15px;overflow: hidden;float:right;color:red;">
-							<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-				</div>-->
-			
-				
 			<!--  下边是个人主页菜单列表  -->
 			<div id="accordion" cont="content">
 				<div style="width:100%;" cont="head">
@@ -242,8 +236,6 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 				
-				
-				
 			  <div id="Kx" style="display:none;">
 				
 				<div class="panel panel-default">
@@ -269,7 +261,8 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 					
 				</div>
-				<div class="panel panel-default" id="logout" style="margin-top:10px;">
+			  </div>
+			  <div class="panel panel-default" id="logout" style="margin-top:10px;">
 					<a class="panel-title" href="javascript:void(0);"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
@@ -291,13 +284,9 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-			  </div>
-			  
 			</div>
 			<p>&nbsp;</p>
 		</div>
-		
-		
 		<!--  ...................................   -->
 		
 		<!-- 下边是个人信息菜单  -->
@@ -373,7 +362,7 @@ $signPackage = $jssdk->GetSignPackage();
 				</a>
 				
 			</div>
-			<div class="panel panel-default">
+			<div class="panel panel-default" style="display:none;">
 				<a class="panel-title" href="javascript:void(0)"  >
 					<div class="panel-heading">
 						<table>
@@ -912,7 +901,7 @@ $signPackage = $jssdk->GetSignPackage();
 		  });
 		});
 		
-		$("#logout").click(function(){
+		$("#logoutbutton").click(function(){
 		$.get("logout.php").done(function(){
 			window.location="http://www.nuaakx.com";
 		});
