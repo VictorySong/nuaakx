@@ -381,9 +381,9 @@ $(document).ready(function(){
 			}
 			if(da["error"]==0)
 			{
-				$("#hfixcheckcomment>div").remove();
-				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				$("#tsasuggestion").remove();
+				$("#tsasuggestion").append('<div style="width:100%;" cont="head"></div>');
+				//$("div[cont=\"head\"]").css("height",window.headheight+"px");
 				for(var p in da["msg"])
 				{
 					var html='<div class="panel panel-default">\
