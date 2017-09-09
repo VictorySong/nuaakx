@@ -8,7 +8,7 @@ if(!empty($_SESSION["stId"]) && !empty($_POST["phone"]) && !empty($_POST["email"
 	$mysql=new SaeMysql();
 	
 	$department=$_POST["department"];
-	$sql = "SELECT `stId` FROM `KxRecruit` WHERE `stId` LIKE '151640106'";
+	$sql = "SELECT `stId` FROM `KxRecruit` WHERE `stId` LIKE '".$_SESSION["stId"]."'";
 	$data=$mysql->getLine($sql);
 	if(empty($data)){
 		foreach($department as $value)
