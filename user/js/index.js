@@ -365,6 +365,56 @@ $(document).ready(function(){
 		});
 	});			
 	
+	
+	
+	//显示已提交的投诉与建议
+	$("#tsasuggestion").click(function(){
+		//$.post("                  .php").done(function(data){
+			var data="{\"error\":0,\"msg\":[{\"time\":\"2017-05-07\",\"content\":\"233\",\"response\":\"233\"},{\"time\":\"2017-05-07\",\"content\":\"233\",\"response\":\"233\"}]}";
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				$("#hfixcheckcomment>div").remove();
+				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default">\
+									<div class="panel-heading">\
+										<span >'+da["msg"][p]["date"]+'</span>\
+									</div>\
+									<div class="panel-body">\
+										<p>'+da["msg"][p]["problem"]+'</p>\
+										<span style="font-weight:bold;">解决措施:</span>\
+										<p style="padding-left:10px;">'+da["msg"][p]["solution"]+'</p>\
+										<span style="font-weight:bold;">评价:</span>\
+										<p style="padding-left:10px;">'+da["msg"][p]["evaluate"]+'</p>\
+										<span style="font-weight:bold;">回复:</span>\
+										<p style="padding-left:10px;">'+da["msg"][p]["response"]+'</p>\
+									</div>\
+							</div>';
+					$("#hfixcheckcomment").append(html);
+				}
+			}
+			else if(da["error"]==1)
+			{
+				$("#hfixcheckcomment>div").remove();
+				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				$("#hfixcheckcomment").append('<p style="text-align:center;">无</p>');
+			}
+	//	});
+	});			
+	
+	
+	
 	//设置评价提交
 	$("#rootinput").find("form").submit(function(e){
 		e.preventDefault();
@@ -491,7 +541,17 @@ $(document).ready(function(){
 		
 			
 	});
-	
+	//退出登录
+	$("#logout").click(function(){
+		if(confirm("如果已绑定微信号，则退出登录后仍会根据微信号重新登录,如想换号登录，请解绑后退出")){
+			
+			$.get("logout.php").done(function(data){
+				
+				location.replace("./");
+			});
+			window.close();
+		}
+	});
 	
 					
 });

@@ -65,7 +65,8 @@ $signPackage = $jssdk->GetSignPackage();
 						<div class="img-circle" onclick="javascript:window.history.back(-1);" style="width: 40px;height: 40px;margin-top: 15px;margin-left:15px;overflow: hidden;float:left;color:rgb(221, 221, 221);">
 							<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 						</div>
-						<div class="img-circle" style="width: 40px;height: 40px;margin-top: 10px;margin-right:20px;overflow: hidden;float:right;"><img class="" id="headimgurl" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
+						<div id="logoutbutton" class="img-circle"  style="width: 40px;height: 40px;margin-top: 10px;margin-right:20px;overflow: hidden;float:right;">
+						<img class="" id="headimgurl" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
 						<!--<span id="nickname" cont="nickname"></span>-->
 					</div>
 				</div>
@@ -234,6 +235,29 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				
+				<div class="panel panel-default">
+					<a class="panel-title" href="#kxts"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table style="box-sizing:border-box;min-width:180px;">
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-cog" ></span>
+										</td>
+										<td>
+											<span ></span>
+											<br>投诉与建议
+										</td>
+										<td align="right">
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				
 				
 			  <div id="Kx" style="display:none;">
 				
@@ -261,7 +285,28 @@ $signPackage = $jssdk->GetSignPackage();
 					
 				</div>
 			  </div>
-			  
+			  <div class="panel panel-default" id="logout" style="margin-top:10px;">
+					<a class="panel-title" href="##"  data-parent="#accordion">
+						<div class="panel-heading" style="padding-top: 0px;">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											
+										</td>
+										<td align="center">
+											<span id="personal"></span>
+											<br>退出登录
+										</td>
+										<td align="right">
+											
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
 			</div>
 			<p>&nbsp;</p>
 		</div>
@@ -340,7 +385,7 @@ $signPackage = $jssdk->GetSignPackage();
 				</a>
 				
 			</div>
-			<div class="panel panel-default">
+			<div class="panel panel-default" style="display:none;">
 				<a class="panel-title" href="javascript:void(0)"  >
 					<div class="panel-heading">
 						<table>
@@ -816,6 +861,40 @@ $signPackage = $jssdk->GetSignPackage();
 			
 		</div>
 		<!-- ............................................    -->
+		
+		
+		<!--   投诉与建议-->
+		<div id="kxts" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+			<div style="width:100%;" cont="head">
+			</div>
+			
+			
+			<div id="tsasuggestion" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+				<div style="width:100%;" cont="head">
+				</div>
+			</div>
+			
+			
+			
+			<form class="form" action="" >
+				
+					<div class="form-group">
+						<label>投诉与建议:</label>
+						<textarea class="form-control" placeholder="请简短的描述系统出现问题时的情况..."></textarea>
+					</div>
+			
+				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+
+			</form>
+			
+			
+			
+			
+			
+		</div>
+		
+		<!-- ............................................    -->
+		
 		<!--  讲座    -->
 		<div id="kxjz" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
@@ -878,6 +957,8 @@ $signPackage = $jssdk->GetSignPackage();
 			]
 		  });
 		});
+		
+		
 	</script>
 	<script src="js/wx.js"></script>
 	
