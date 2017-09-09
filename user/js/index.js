@@ -381,9 +381,9 @@ $(document).ready(function(){
 			}
 			if(da["error"]==0)
 			{
-				$("#tsasuggestion").remove();
+				$("#tsasuggestion>div").remove();
 				$("#tsasuggestion").append('<div style="width:100%;" cont="head"></div>');
-				//$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
 				for(var p in da["msg"])
 				{
 					var html='<div class="panel panel-default">\
@@ -405,10 +405,10 @@ $(document).ready(function(){
 			}
 			else if(da["error"]==1)
 			{
-				$("#hfixcheckcomment>div").remove();
-				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("#tsasuggestion>div").remove();
+				$("#tsasuggestion").append('<div style="width:100%;" cont="head"></div>');
 				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				$("#hfixcheckcomment").append('<p style="text-align:center;">无</p>');
+				$("#tsasuggestion").append('<p style="text-align:center;">无</p>');
 			}
 	//	});
 	});			
