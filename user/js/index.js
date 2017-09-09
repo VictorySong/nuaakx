@@ -521,7 +521,7 @@ $(document).ready(function(){
 		}*/
 		if(json["phone"]==window.inf["phone"]&&json["email"]==window.inf["email"])
 		{
-			if(confirm("个人简介不可修改请确认是否提交"))
+			if(confirm("提交后不可修改请确认是否提交"))
 		{
 			console.log(json);
 			$.post("recordrecruit.php",json).done(function(data){
@@ -542,7 +542,7 @@ $(document).ready(function(){
 			alert("恭喜你报名成功！");
 		}
 		}
-		else{if(confirm("本次操作将同步修改个人信息且个人简介不可修改请确认是否提交"))
+		else{if(confirm("本次操作将同步修改个人信息且个人简介提交后不可修改请确认是否提交"))
 		{
 			console.log(json);
 			$.post("recordrecruit.php",json).done(function(data){
