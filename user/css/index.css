@@ -36,6 +36,15 @@
 	color:black;
 	font-size:14px;
 }
+
+#logout{
+	position:fixed;
+	bottom:0;
+	right:0;
+
+}
+
+
 .opacity{
 	opacity:0.6;
 }
