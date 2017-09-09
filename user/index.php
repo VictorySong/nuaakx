@@ -241,28 +241,7 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				
-				<div class="panel panel-default" id="logout">
-					<a class="panel-title" href="javascript:void(0);"  data-parent="#accordion">
-						<div class="panel-heading">
-							<table>
-								<tbody>
-									<tr>
-										<td valign="top">
-											<span class="glyphicon glyphicon-off" ></span>
-										</td>
-										<td>
-											<span id="personal"></span>
-											<br>退出登录
-										</td>
-										<td align="right">
-											
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</a>
-				</div>
+				
 				
 				
 			  <div id="Kx" style="display:none;">
@@ -289,6 +268,28 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 					
+				</div>
+				<div class="panel panel-default" id="logout" style="margin-top:10px;">
+					<a class="panel-title" href="javascript:void(0);"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											
+										</td>
+										<td align="center">
+											<span id="personal"></span>
+											<br>退出登录
+										</td>
+										<td align="right">
+											
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
 				</div>
 			  </div>
 			  
