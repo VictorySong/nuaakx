@@ -863,13 +863,11 @@ $signPackage = $jssdk->GetSignPackage();
 		<!-- ............................................    -->
 		
 		
-		<!--   投诉与建议-->
+		<!--   投诉与建议--><!--
 		<div id="kxts" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
-			<div style="width:100%;" cont="head">
-			</div>
 			
 			
-			<div id="tsasuggestion" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+			<div id="tsasuggestion" style="padding-left:15px; padding-right:15px; padding-bottom:30px;">
 				<div style="width:100%;" cont="head">
 				</div>
 			</div>
@@ -892,6 +890,7 @@ $signPackage = $jssdk->GetSignPackage();
 			
 			
 		</div>
+		-->
 		
 		<!-- ............................................    -->
 		
