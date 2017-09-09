@@ -867,8 +867,38 @@ $signPackage = $jssdk->GetSignPackage();
 		<div id="kxts" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
-			
+			<form class="form" action="" >
 				
+					<div class="form-group">
+						<label >学号:</label>
+						<input type="text" class="form-control" disabled cont="stId">
+					</div>
+					<div class="form-group">
+						<label >姓名:</label>
+						<input type="text" class="form-control" disabled cont="name">
+					</div>
+					<div class="form-group">
+						<label >手机:</label>
+						<input type="text" class="form-control" disabled cont="phone">
+					</div>
+					<div class="form-group">
+						<label >邮箱:</label>
+						<input type="text" class="form-control" disabled cont="email">
+					</div>
+					
+					</div>
+					<div class="form-group">
+						<label>个人简介:</label>
+						<textarea class="form-control" placeholder="请输入..."></textarea>
+					</div>
+			
+				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+
+			</form>
+			
+			
+			
+			
 			
 		</div>
 		
