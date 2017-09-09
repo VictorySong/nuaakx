@@ -886,7 +886,6 @@ $signPackage = $jssdk->GetSignPackage();
 						<input type="text" class="form-control" disabled cont="email">
 					</div>
 					
-					</div>
 					<div class="form-group">
 						<label>个人简介:</label>
 						<textarea class="form-control" placeholder="请输入..."></textarea>
