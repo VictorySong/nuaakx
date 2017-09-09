@@ -472,12 +472,14 @@ $(document).ready(function(){
 	});
 	//退出登录
 	$("#logout").click(function(){
-		
+		if(confirm("如果已绑定微信号，则退出登录后仍会根据微信号重新登录,如想换号登录，请解绑后退出")){
+			
 			$.get("logout.php").done(function(data){
 				
 				location.replace("./");
 			});
 			window.close();
+		}
 	});
 	
 					
