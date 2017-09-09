@@ -241,14 +241,14 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				
-				<div class="panel panel-default">
-					<a class="panel-title" href="#notice"  data-parent="#accordion">
+				<div class="panel panel-default" id="logout">
+					
 						<div class="panel-heading">
 							<table>
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-off" ></span>
 										</td>
 										<td>
 											<span id="personal"></span>
@@ -261,7 +261,7 @@ $signPackage = $jssdk->GetSignPackage();
 								</tbody>
 							</table>
 						</div>
-					</a>
+					
 				</div>
 				
 				
@@ -910,6 +910,12 @@ $signPackage = $jssdk->GetSignPackage();
 			]
 		  });
 		});
+		
+		$("#logout").click(function(){
+		$.get("logout.php").done(function(){
+			window.location="http://www.nuaakx.com";
+		});
+	});
 	</script>
 	<script src="js/wx.js"></script>
 	
