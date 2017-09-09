@@ -88,7 +88,7 @@ $signPackage = $jssdk->GetSignPackage();
 										</td>
 										<td>
 											<span id="name"></span>
-											 <br>招新报名第一步————完善个人资料
+											 <br>完善个人资料
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
@@ -200,7 +200,7 @@ $signPackage = $jssdk->GetSignPackage();
 										</td>
 										<td>
 											<span ></span>
-											<br>招新报名第二步————填写报名表单
+											<br>招新报名通道
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
@@ -666,11 +666,11 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 					<div class="form-group">
 						<label >手机:</label>
-						<input type="text" class="form-control" disabled cont="phone">
+						<input id="p" type="text" class="form-control" placeholder="请输入手机号" cont="phone">
 					</div>
 					<div class="form-group">
 						<label >邮箱:</label>
-						<input type="text" class="form-control" disabled cont="email">
+						<input id="e" type="text" class="form-control" placeholder="请输入邮箱" cont="email">
 					</div>
 					<div class="form-group">
 						<label>部门选择（最多选择三个部门）</label>
