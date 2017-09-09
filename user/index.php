@@ -77,6 +77,28 @@ $signPackage = $jssdk->GetSignPackage();
 				<div style="width:100%;" cont="head">
 				</div>
 				<div class="panel panel-default">
+					<a class="panel-title" href="#recruit"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table style="box-sizing:border-box;min-width:180px;">
+								<tbody>
+									<tr>
+										<td valign="middle">
+											<span class="glyphicon glyphicon-heart" style="color:red;" ></span>
+										</td>
+										<td>
+											<span ></span>
+											<br>招新报名
+										</td>
+										<td align="right">
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				<div class="panel panel-default">
 					
 					<a class="panel-title" href="#personalinf"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -189,28 +211,7 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				
-				<div class="panel panel-default">
-					<a class="panel-title" href="#recruit"  data-parent="#accordion">
-						<div class="panel-heading">
-							<table style="box-sizing:border-box;min-width:180px;">
-								<tbody>
-									<tr>
-										<td valign="top">
-											<span class="glyphicon glyphicon-pencil" ></span>
-										</td>
-										<td>
-											<span ></span>
-											<br>招新报名通道
-										</td>
-										<td align="right">
-											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</a>
-				</div>
+				
 				
 				<div class="panel panel-default">
 					<a class="panel-title" href="#kxhd"  data-parent="#accordion">
