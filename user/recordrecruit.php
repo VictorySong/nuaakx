@@ -16,7 +16,7 @@ if(!empty($_SESSION["stId"]) && !empty($_POST["phone"]) && !empty($_POST["email"
 			if($mysql->runsql("INSERT INTO `KxRecruit` (`stId`,`department`,`description`) VALUES ('".$_SESSION["stId"]."','".$value."','".$_POST["description"]."')"))
 				die($mysql->errmsg());
 		}
-		if($mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '$_POST["phone"]', `email` = '$_POST["email"]' WHERE `wx_user`.`number` = '$_SESSION["stId"]'; "))
+		if($mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '".$_POST["phone"]."', `email` = '".$_POST["email"]."' WHERE `wx_user`.`number` = '".$_SESSION["stId"]."' "))
 				die($mysql->errmsg());
 	}
 	$json["error"]=0;
