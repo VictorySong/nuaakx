@@ -400,7 +400,7 @@ $(document).ready(function(){
 										<p style="padding-left:10px;">'+da["msg"][p]["response"]+'</p>\
 									</div>\
 							</div>';
-					$("#hfixcheckcomment").append(html);
+					$("#tsasuggestion").append(html);
 				}
 			}
 			else if(da["error"]==1)
