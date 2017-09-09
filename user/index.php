@@ -1,4 +1,4 @@
-<?php 
+<?php /*
 require_once "../wx/jssdk.php";
 require_once "../SaeMysql.php";
 session_start();
@@ -9,7 +9,7 @@ if(!isset($_SESSION["openid"])){
 $mysql=new SaeMysql();
 $app=$mysql->getLine("SELECT `appid`,`secret` FROM `wxappid` WHERE 1");
 $jssdk = new JSSDK($app["appid"], $app["secret"]);
-$signPackage = $jssdk->GetSignPackage();
+$signPackage = $jssdk->GetSignPackage();*/
 ?>
 
 <html lang="zh-CN"><head>
