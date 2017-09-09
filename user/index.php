@@ -72,11 +72,11 @@ $signPackage = $jssdk->GetSignPackage();
 				
 			
 			
-			<div id="logout" style="font-size:30px; margin-left:20px; color:red; display:table-row; padding-bottom:10px;padding-left:10px;" to="login">
-			<div class="img-circle"  style="width: 40px;height: 40px;margin-bottom: 15px;margin-right:15px;overflow: hidden;float:right;color:rgb(221, 221, 221);">
+			
+			<div class="img-circle" id="logout"  style="font-size:30px;width: 40px;height: 40px;margin-bottom: 15px;margin-right:15px;overflow: hidden;float:right;color:red;">
 							<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
 				</div>
-			</div>	
+			
 				
 			<!--  下边是个人主页菜单列表  -->
 			<div id="accordion" cont="content">
