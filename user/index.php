@@ -866,13 +866,15 @@ $signPackage = $jssdk->GetSignPackage();
 	<script>
 		$(document).ready(function(){
 			wx.config({
-			debug: true,
+			debug: false,
 			appId: '<?php echo $signPackage["appId"];?>',
 			timestamp: <?php echo $signPackage["timestamp"];?>,
 			nonceStr: '<?php echo $signPackage["nonceStr"];?>',
 			signature: '<?php echo $signPackage["signature"];?>',
 			jsApiList: [
-			  "onMenuShareQQ"
+			  "onMenuShareQQ",
+			  "onMenuShareTimeline",
+			  "onMenuShareAppMessage"
 			]
 		  });
 		});

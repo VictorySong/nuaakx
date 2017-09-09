@@ -222,6 +222,7 @@ $(document).ready(function(){
 			}
 			if(da["error"]==0)
 			{
+				userinfget();
 				$("span[cont=\""+p+"\"]").text(json[p]);
 				$("input[cont=\""+p+"\"]").val(json[p]);
 			}
@@ -427,14 +428,20 @@ $(document).ready(function(){
 				json["department"][json["department"].length]=$(this).val();
 			});
 		}
-		else
+		else if(department.length==0){
+			alert("请选择部门");
+			return;
+		}else
 		{
 			alert("最多选三个部门");
 			return;
 		}
 		var description=$(this).find("textarea");
-		if(description.val()=="")
+		if(description.val()==""){
+			
 			description.focus();
+			return;
+		}
 		else
 			json["description"]=description.val();
 		window.recruitjson=json;
@@ -443,7 +450,8 @@ $(document).ready(function(){
 		if(window.inf["phone"]==null || window.inf["phone"]=="" || window.inf["email"]==null || window.inf["email"]=="")
 		{
 			alert("请先完善个人信息");
-			history.back;
+			location.hash="#personalinf";
+			return;
 		}
 		console.log(json);
 		$.post("recordrecruit.php",json).done(function(data){

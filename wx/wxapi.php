@@ -241,8 +241,11 @@ class wechatCallbackapiTest
 			}
 		}
 		
-		if(empty($contentStr))
-			die("");
+		if(empty($contentStr)){
+			$resultStr=$this->customerservice($object);
+			return $resultStr;
+		}
+			
 		
         if (is_array($contentStr)){
             $resultStr = $this->transmitNews($object, $contentStr);
@@ -435,7 +438,17 @@ class wechatCallbackapiTest
         $resultStr = sprintf($newsTpl, $object->FromUserName, $object->ToUserName, time(), count($arr_item), $funcFlag);
         return $resultStr;
     }
-    
+     private function customerservice($object)
+    {
+        $textTpl = "<xml>
+					<ToUserName><![CDATA[%s]]></ToUserName>
+					<FromUserName><![CDATA[%s]]></FromUserName>
+					<CreateTime>%s</CreateTime>
+					<MsgType><![CDATA[transfer_customer_service]]></MsgType>
+					</xml>";
+        $resultStr = sprintf($textTpl, $object->FromUserName, $object->ToUserName, time());
+        return $resultStr;
+    }
 
     private function checkSignature()
     {
