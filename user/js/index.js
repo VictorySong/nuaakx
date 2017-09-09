@@ -534,6 +534,7 @@ $(document).ready(function(){
 			if(da["error"]==0)
 			{
 				getrecruit();
+				userinfget();
 			}
 		});
 			alert("恭喜你报名成功！");
