@@ -241,6 +241,29 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				
+				<div class="panel panel-default">
+					<a class="panel-title" href="#notice"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-cog" ></span>
+										</td>
+										<td>
+											<span id="personal"></span>
+											<br>退出登录
+										</td>
+										<td align="right">
+											
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				
 				
 			  <div id="Kx" style="display:none;">
 				
@@ -273,28 +296,7 @@ $signPackage = $jssdk->GetSignPackage();
 			<p>&nbsp;</p>
 		</div>
 		
-		<div class="panel panel-default">
-					<a class="panel-title" href="#notice"  data-parent="#accordion">
-						<div class="panel-heading">
-							<table>
-								<tbody>
-									<tr>
-										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
-										</td>
-										<td>
-											<span id="personal"></span>
-											<br>退出登录
-										</td>
-										<td align="right">
-											
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</a>
-				</div>
+		
 		<!--  ...................................   -->
 		
 		<!-- 下边是个人信息菜单  -->
