@@ -263,7 +263,7 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 			  </div>
 			  <div class="panel panel-default" id="logout" style="margin-top:10px;">
-					<a class="panel-title" href="javascript:void(0);"  data-parent="#accordion">
+					<a class="panel-title" href=""  data-parent="#accordion">
 						<div class="panel-heading" style="padding-top: 0px;">
 							<table>
 								<tbody>
@@ -901,11 +901,7 @@ $signPackage = $jssdk->GetSignPackage();
 		  });
 		});
 		
-		$("#logoutbutton").click(function(){
-		$.get("logout.php").done(function(){
-			window.location="http://www.nuaakx.com";
-		});
-	});
+		
 	</script>
 	<script src="js/wx.js"></script>
 	
