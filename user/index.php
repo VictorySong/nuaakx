@@ -242,7 +242,7 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 				<div class="panel panel-default" id="logout">
-					
+					<a class="panel-title" href="javascript:void(0);"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
 								<tbody>
@@ -261,7 +261,7 @@ $signPackage = $jssdk->GetSignPackage();
 								</tbody>
 							</table>
 						</div>
-					
+					</a>
 				</div>
 				
 				
