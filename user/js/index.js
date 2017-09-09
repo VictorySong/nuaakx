@@ -368,7 +368,7 @@ $(document).ready(function(){
 	
 	
 	//显示已提交的投诉与建议
-	$("#tsasuggestion").click(function(){
+	$("#kxtsas").click(function(){
 		//$.post("                  .php").done(function(data){
 			var data="{\"error\":0,\"msg\":[{\"time\":\"2017-05-07\",\"content\":\"233\",\"response\":\"233\"},{\"time\":\"2017-05-07\",\"content\":\"233\",\"response\":\"233\"}]}";
 			console.log(data);
