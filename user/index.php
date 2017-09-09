@@ -234,7 +234,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				
+				<!--
 				<div class="panel panel-default" id="kxtsas">
 					<a class="panel-title" href="#kxts"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -257,7 +257,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				
+				-->
 				
 			  <div id="Kx" style="display:none;">
 				
