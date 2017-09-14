@@ -816,7 +816,7 @@ function changedp(){
 	if($("#changedp").length==0){
 		var html='<div id="changedp" style="width:100%;position: fixed;overflow: scroll;left:0px; top:0px; z-index: 1031; background-color:black;">\
 			<span class="glyphicon glyphicon-remove" id="changedpde" style="float:right; right:10px;top:10px;color:white;font-size:16px;"></span>\
-			<form role="form"  style="position: relative;margin-left:50px;margin-top:50px;background-color: white;border-radius: 10px;width: 80%; padding-bottom:10px;">\
+			<form role="form" stId="'+$(this).attr("stId")+'"  style="position: relative;margin-left:50px;margin-top:50px;background-color: white;border-radius: 10px;width: 80%; padding-bottom:10px;">\
 				<div class="form-group" style="padding-left:10px;padding-top:10px;">\
 					<label>请选择推荐至的部门：</label>\
 					<div style="padding-left:10px;">';
@@ -858,6 +858,8 @@ function changedp(){
 			}).val();
 			if(!t){
 			return;}
+			json["stId"]=$(this).attr("stId");
+			json["fromdp"]=window.tableName;
 			console.log(json);
 			$.post("changedp.php",json).done(function(data){
 				console.log(data);
