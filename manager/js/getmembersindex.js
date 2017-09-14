@@ -841,7 +841,7 @@ function changedp(){
 		$("#changedp").css("height",window.innerHeight+"px");
 		$("#changedpde").click(function(){
 			$("#changedp").hide();
-		}
+		});
 		$("#changedp").find("form").submit(function(e){
 			e.preventDefault();
 			var json={};
