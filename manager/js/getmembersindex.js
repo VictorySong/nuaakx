@@ -550,15 +550,16 @@ $(document).ready(function(){
 									for(var z in da["msg"][p]["department"])
 									{
 										html+='<div class="form-group">\
-													<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span>\
-													<span class="label '+(da["msg"][p]["department"][z]["department"]==window.tableName? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" changedp="'+(da["msg"][p]["department"][z]["department"]==window.tableName? 1:0)+'">推荐</span></label>\
-													<br><label style="font-size:12px; font-weight:normal;">一面评价</label>\
-													<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["firstevaluate"]==null || da["msg"][p]["department"][z]["firstevaluate"]==""? "":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="first">'+(da["msg"][p]["department"][z]["firstevaluate"]==null? "":da["msg"][p]["department"][z]["firstevaluate"])+'\
-													</div>\
-													<label style="font-size:12px; font-weight:normal;">二面评价</label>\
-													<div class=""  style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["secondevaluate"]==null || da["msg"][p]["department"][z]["secondevaluate"]==""?"":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="second">'+(da["msg"][p]["department"][z]["secondevaluate"]==null?"":da["msg"][p]["department"][z]["secondevaluate"])+'\
-													</div>\
-												</div>';
+												<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span>\
+												<span class="label '+(da["msg"][p]["department"][z]["department"]==window.tableName? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" changedp="'+(da["msg"][p]["department"][z]["department"]==window.tableName? 1:0)+'">推荐</span></label>\
+												'+(da["msg"][p]["department"][z]["fromdp"]!=null?'<span class="label label-success" style="margin-right:5px; margin-left:5px;" >'+department[da["msg"][p]["department"][z]["fromdp"]]+'推荐</span>':"")+'</label>\
+												<br><label style="font-size:12px; font-weight:normal;">一面评价</label>\
+												<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["firstevaluate"]==null || da["msg"][p]["department"][z]["firstevaluate"]==""? "":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="first">'+(da["msg"][p]["department"][z]["firstevaluate"]==null? "":da["msg"][p]["department"][z]["firstevaluate"])+'\
+												</div>\
+												<label style="font-size:12px; font-weight:normal;">二面评价</label>\
+												<div class=""  style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["secondevaluate"]==null || da["msg"][p]["department"][z]["secondevaluate"]==""?"":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="second">'+(da["msg"][p]["department"][z]["secondevaluate"]==null?"":da["msg"][p]["department"][z]["secondevaluate"])+'\
+												</div>\
+											</div>';
 									}
 													
 									html+='</div>\

@@ -15,7 +15,7 @@ if(!empty($_POST["department"]) && !empty($_POST["stId"]) && !empty($_POST["from
 	if($t){
 		$data1=$mysql->getLine("SELECT `stId` FROM `KxRecruit` WHERE `department`='".$_POST["department"]."' && `stId`='".$_POST["stId"]."'");
 		if(empty($data1)){
-			if(!$mysql->runsql("INSERT INTO `KxRecruit` (`stId`,`department`,`fromdp`,`description`) VALUES ('".$_POST["stId"]."','".$_POST["department"]."','".$_POST["fromdp"]."','".$description."')")){
+			if(!$mysql->runsql("INSERT INTO `KxRecruit` (`stId`,`department`,`fromdp`,`description`,`fromdpstId`) VALUES ('".$_POST["stId"]."','".$_POST["department"]."','".$_POST["fromdp"]."','".$description."','".$_SESSION["stId"]."')")){
 				$data=$mysql->getLine("SELECT `number` FROM `KxRecruitSign` WHERE `stId`='".$_POST["stId"]."'");
 				if(!empty($data)){
 					if(!$mysql->runsql("INSERT INTO `KxRecruitSign` (`stId`,`department`,`number`) VALUES ('".$_POST["stId"]."','".$_POST["department"]."','".$data["number"]."')")){
