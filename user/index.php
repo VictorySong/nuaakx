@@ -110,7 +110,7 @@ $signPackage = $jssdk->GetSignPackage();
 										</td>
 										<td>
 											<span id="name"></span>
-											 <br>完善个人资料
+											 <br>个人资料
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>

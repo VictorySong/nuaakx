@@ -22,13 +22,52 @@ $(document).ready(function(){
 	//设置所有a 无下划线
 	$("a").css("text-decoration","none");
 	
+	//随机显示图片
+	window.mao=[];
+	for(var i=0;i<11;i++)
+	{
+		var j=i%6;
+		switch(j){
+			case 0:{
+				window.mao[i]="mao.jpg";
+			}
+			break;
+			case 1:{
+				window.mao[i]="title.jpg";
+			}
+			break;
+			case 2:{
+				window.mao[i]="gouye.jpg";
+			}
+			break;
+			case 3:{
+				window.mao[i]="gouye1.jpg";
+			}
+			break;
+			case 4:{
+				window.mao[i]="gouye2.jpg";
+			}
+			break;
+			case 5:{
+				window.mao[i]="gouye3.jpg";
+			}
+			break;
+		}
+	}
+	window.a=Math.floor((Math.random()*10));
+	
+	window.imgurl="http://nuaakx.com/ftp/img/"+window.mao[a];
+	$("#headback").css("background-image","url(\""+window.imgurl+"\")");
 	//设置背景图像处的高度
 	(function(){
 		var img=new Image();
-		img.src="../manager/image/title.jpg";
+		//img.src="../manager/image/title.jpg";
+		img.src=window.imgurl;
 		img.onload=function(){
+			
 			console.log(img.height/img.width);
 			var rate=((img.height/img.width)> 3/5)? 3/5:(img.height/img.width) ;
+			//var rate=img.height/img.width;
 			if(window.innerWidth<500)
 			{
 				$("div[cont=\"head\"]").css("height",window.innerWidth*rate);

@@ -22,10 +22,16 @@ if(!empty($_SESSION["stId"]) )
 	}else{
 		$data=$mysql->getData("SELECT `department` FROM `KxRecruit` WHERE `stId`='".$_SESSION["stId"]."'");
 		foreach($data as $value){
-			$data=$mysql->getData("SELECT `number`,`stId`,`department`,`jpostpone`,`interviewing`,`end` FROM `KxRecruitSign` WHERE `department`='".$value["department"]."' order by `number`");
-			$json["error"]=0;
-			$json["result"][$value["department"]]=$data;
+			$data1=$mysql->getData("SELECT `number`,`stId`,`department`,`postpone`,`interviewing`,`end` FROM `KxRecruitSign` WHERE `department`='".$value["department"]."' order by `number`");
+			$i=0;
+			foreach($data1 as $value){
+				$tem=$mysql->getLine("SELECT `name` FROM `wx_user` WHERE `number`='".$value["stId"]."'");
+				$data1[$i]["name"]=$tem["name"];
+				$i++;
+			}
+			$json["result"][$value["department"]]=$data1;
 		}
+		$json["error"]=0;
 	}
 	echo json_encode($json);
 }			

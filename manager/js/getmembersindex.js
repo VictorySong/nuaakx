@@ -109,11 +109,11 @@ function getrecruit(){
 				{
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
-									<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
+									<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+remove_at_fromstid(da["msg"][p]["stId"])+'">\
 										'+da["msg"][p]["stId"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["name"]+'\
 									</h3>\
 								</div>\
-								<div id="'+da["msg"][p]["stId"]+'" class="panel-collapse collapse">\
+								<div id="'+remove_at_fromstid(da["msg"][p]["stId"])+'" class="panel-collapse collapse">\
 									<div class="panel-body">\
 										<div class="img-circle" style="width: 60px;height: 60px;margin:0 auto; overflow: hidden;"><img class="" src="getimg.php?stid='+da["msg"][p]["stId"]+'&department='+window.tableName+'" style="width: 60px;margin-top: -5px;"></div>\
 										<div class="form-group">\
@@ -517,11 +517,11 @@ $(document).ready(function(){
 							{
 								var html='<div class="panel panel-default" >\
 											<div class="panel-heading">\
-												<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["stId"]+'">\
+												<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#recruit1" data-target="#'+remove_at_fromstid(da["msg"][p]["stId"])+'">\
 													'+da["msg"][p]["stId"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["name"]+'\
 												</h3>\
 											</div>\
-											<div id="'+da["msg"][p]["stId"]+'" class="panel-collapse collapse">\
+											<div id="'+remove_at_fromstid(da["msg"][p]["stId"])+'" class="panel-collapse collapse">\
 												<div class="panel-body">\
 													<div class="img-circle" style="width: 60px;height: 60px;margin:0 auto; overflow: hidden;"><img class="" src="getimg.php?stid='+da["msg"][p]["stId"]+'&department='+window.tableName+'" style="width: 60px;margin-top: -5px;"></div>\
 													<div class="form-group">\
@@ -790,3 +790,9 @@ $(document).ready(function(){
 		getrecruit();
 	}
 }); 
+
+function remove_at_fromstid(stid){
+	//去掉账号中的非数字字母字符，以解决id= 当中不能存在@的问题
+	var re=/[^a-zA-Z0-9]/g;
+	return stid.replace(re,"");
+}

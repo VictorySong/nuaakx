@@ -1,5 +1,5 @@
 #headback{
-	background-image: url(https://nuaakx.com/test/manager/image/title.jpg);
+	background-image: url(http://nuaakx.com/ftp/img/gouye.jpg);
 	background-repeat:no-repeat;
 	background-size:100% ;
 	opacity:0.95;
@@ -12,6 +12,7 @@
 	
 }
 #head{
+	
 	opacity:1;
 	z-index:1;
 	position:absolute;
