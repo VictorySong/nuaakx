@@ -139,7 +139,8 @@ function getrecruit(){
 						for(var z in da["msg"][p]["department"])
 						{
 							html+='<div class="form-group">\
-										<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span></label>\
+										<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span>\
+										<span class="label '+(da["msg"][p]["department"][z]["department"]==window.tableName? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" changedp="'+(da["msg"][p]["department"][z]["department"]==window.tableName? 1:0)+'">推荐</span></label>\
 										<br><label style="font-size:12px; font-weight:normal;">一面评价</label>\
 										<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["firstevaluate"]==null || da["msg"][p]["department"][z]["firstevaluate"]==""? "":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="first">'+(da["msg"][p]["department"][z]["firstevaluate"]==null? "":da["msg"][p]["department"][z]["firstevaluate"])+'\
 										</div>\
@@ -156,6 +157,7 @@ function getrecruit(){
 				}
 				$("[intention=\"1\"]").click(recruitintention);//意向
 				$("[intention=\"2\"]").click(recruitintention);//意向
+				$("[changedp=\"1\"]").click(changedp);//推荐部门
 				$("[cont=\"recruitdepartment\"]").click(recruitevaluate);//评价函数
 				if(window.recruitend)
 				{
@@ -547,7 +549,8 @@ $(document).ready(function(){
 									for(var z in da["msg"][p]["department"])
 									{
 										html+='<div class="form-group">\
-													<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span></label>\
+													<label >部门:'+department[da["msg"][p]["department"][z]["department"]]+'<span class="label '+(da["msg"][p]["department"][z]["first"]==1? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" intention="1" department="'+da["msg"][p]["department"][z]["department"]+'">一面意向</span><span class="label '+(da["msg"][p]["department"][z]["second"]==1? "label-success":"label-default")+'" stId="'+da["msg"][p]["stId"]+'" intention="2" department="'+da["msg"][p]["department"][z]["department"]+'">二面意向</span>\
+													<span class="label '+(da["msg"][p]["department"][z]["department"]==window.tableName? "label-success":"label-default")+'" style="margin-right:5px; margin-left:5px;" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" changedp="'+(da["msg"][p]["department"][z]["department"]==window.tableName? 1:0)+'">推荐</span></label>\
 													<br><label style="font-size:12px; font-weight:normal;">一面评价</label>\
 													<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" '+(da["msg"][p]["department"][z]["firstevaluate"]==null || da["msg"][p]["department"][z]["firstevaluate"]==""? "":"already=\"1\"")+' cont="recruitdepartment" stId="'+da["msg"][p]["stId"]+'" department="'+da["msg"][p]["department"][z]["department"]+'" action="insertevaluate.php" time="first">'+(da["msg"][p]["department"][z]["firstevaluate"]==null? "":da["msg"][p]["department"][z]["firstevaluate"])+'\
 													</div>\
@@ -564,6 +567,7 @@ $(document).ready(function(){
 							}
 							$("[intention=\"1\"]").click(recruitintention);//意向
 							$("[intention=\"2\"]").click(recruitintention);//意向
+							$("[changedp=\"1\"]").click(changedp);//推荐部门
 							$("[cont=\"recruitdepartment\"]").click(recruitevaluate);//评价函数
 							if(da["msg"].length==0)
 								$("#recruit1").append('<div style="text-align:center;">无结果</div>');
@@ -795,4 +799,79 @@ function remove_at_fromstid(stid){
 	//去掉账号中的非数字字母字符，以解决id= 当中不能存在@的问题
 	var re=/[^a-zA-Z0-9]/g;
 	return stid.replace(re,"");
+}
+
+function changedp(){
+	var department={};
+	department["KxXqDm"]="WEB研发部";
+	department["KxXqChy"]="创意设计部";
+	department["KxXqTs"]="网络宣传部";
+	department["KxJsJf"]="技术服务部";
+	department["KxJsDj"]="大疆俱乐部";
+	department["KxShwWl"]="外联部";
+	department["KxShwYj"]="院校交流部";
+	department["KxShwGl"]="管理部";
+	department["KxHdKh"]="科技活动部";
+	department["KxHdKp"]="科技培训部";
+	if($("#changedp").length==0){
+		var html='<div id="changedp" style="width:100%;position: fixed;overflow: scroll;left:0px; top:0px; z-index: 1031; background-color:black;">\
+			<span class="glyphicon glyphicon-remove" id="changedpde" style="float:right; right:10px;top:10px;color:white;font-size:16px;"></span>\
+			<form role="form"  style="position: relative;margin-left:50px;margin-top:50px;background-color: white;border-radius: 10px;width: 80%; padding-bottom:10px;">\
+				<div class="form-group" style="padding-left:10px;padding-top:10px;">\
+					<label>请选择推荐至的部门：</label>\
+					<div style="padding-left:10px;">';
+		for(var p in department){
+			if(p!=window.tableName){
+				html+='<div class="radio">\
+							<label>\
+								<input type="radio" name="dp"  value="'+p+'" >'+department[p]+'\
+							</label>\
+						</div>';
+			}
+		}
+						
+				html+='</div>\
+					</div>\
+					<div align="center" >\
+						<button type="submit" class="btn btn-success btn-block" style="width:95%;">提交</button>\
+					</div>\
+				</form>\
+			</div>';
+		$("body").append(html);
+		$("#changedp").css("height",window.innerHeight+"px");
+		$("#changedpde").click(function(){
+			$("#changedp").hide();
+		}
+		$("#changedp").find("form").submit(function(e){
+			e.preventDefault();
+			var json={};
+			json["department"]=$(this).find("[name=\"dp\"]").filter(function(){
+				if($(this).prop("checked")){
+					return 1;
+				}
+				else{
+					return 0;
+				}
+			}).val();
+			$.post("changedp.php",json).done(function(data){
+				console.log(data);
+				try{
+					var da=JSON.parse(data);
+				}catch(e){
+					console.log(e);
+					alert("推荐失败");
+					return;
+				}
+				if(da["error"]==0){
+					alert("推荐成功");
+				}else{
+					alert("推荐失败");
+				}
+			});
+		});
+	}
+	else{
+		$("#changedp").show();
+	}
+	
 }
