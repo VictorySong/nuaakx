@@ -845,14 +845,20 @@ function changedp(){
 		$("#changedp").find("form").submit(function(e){
 			e.preventDefault();
 			var json={};
+			var t=false;
 			json["department"]=$(this).find("[name=\"dp\"]").filter(function(){
 				if($(this).prop("checked")){
+					t=true;
 					return 1;
+					
 				}
 				else{
 					return 0;
 				}
 			}).val();
+			if(!t){
+			return;}
+			console.log(json);
 			$.post("changedp.php",json).done(function(data){
 				console.log(data);
 				try{
