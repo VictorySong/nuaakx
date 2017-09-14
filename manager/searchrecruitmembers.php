@@ -31,7 +31,7 @@ if(isset($_POST["tableName"]) && isset($_POST["name"]) && !empty($_SESSION["tabl
 					$result[$i]=$value;
 					$result[$i]["stId"]=$datarel["stId"];
 					$result[$i]["description"]=$datarel["description"];
-					$result[$i]["department"]=$mysql->getData("SELECT `department`,`first`,`second`,`firstevaluate`,`secondevaluate` FROM `KxRecruit` WHERE `stId`='".$result[$i]["stId"]."'");
+					$result[$i]["department"]=$mysql->getData("SELECT `department`,`first`,`second`,`firstevaluate`,`secondevaluate`,`fromdp` FROM `KxRecruit` WHERE `stId`='".$result[$i]["stId"]."'");
 				}
 			}
 		}
