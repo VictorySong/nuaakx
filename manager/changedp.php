@@ -23,6 +23,10 @@ if(!empty($_POST["department"]) && !empty($_POST["stId"]) && !empty($_POST["from
 						echo json_encode($json);
 					}
 				}
+				else{
+					$json["error"]=0;
+					echo json_encode($json);
+				}
 			}
 		}
 	}

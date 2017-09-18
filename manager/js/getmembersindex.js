@@ -78,6 +78,15 @@ function getrecruit(){
 	console.log({p:window.recruitp,tableName:window.tableName});
 	if(window.recruitend)
 		return;
+	//2017年九月十八号临时改动
+	
+	if($("#renotice").length==0 && window.recruitp!=1){
+		$("#recruit1").append('<div id="renotice" style="text-align:center;"> 请使用 右上角 搜索功能 </div>');
+	}
+	if(window.recruitp!=1)
+		return;
+	
+	/////////
 	$.post("getrecruit.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
 		console.log(data);
 		var department={};
@@ -103,7 +112,7 @@ function getrecruit(){
 				//显示报名总人数
 				$("#recruitnum").text(da["num"]);
 				
-				if(da["msg"].length<20)
+				if(da["msg"].length<1)
 					window.recruitend=true;
 				for(var p in da["msg"])
 				{
@@ -160,10 +169,13 @@ function getrecruit(){
 				$("[intention=\"2\"]").click(recruitintention);//意向
 				$("[changedp=\"1\"]").click(changedp);//推荐部门
 				$("[cont=\"recruitdepartment\"]").click(recruitevaluate);//评价函数
-				if(window.recruitend)
+				if(window.recruitend && $("#nomore").length==0 )
 				{
-					$("#recruit1").append('<div style="text-align:center;">无更多</div>');
+					$("#recruit1").append('<div id="nomore" style="text-align:center;">无更多</div>');
 				}
+				console.log(window.recruitp);
+				//使显示长度要超过屏幕高度
+				$("#recruit").trigger("scroll");
 			}
 		
 	});
@@ -218,8 +230,12 @@ function recruitevaluate(){
 }
 //滚动监听处理函数
 function nextrecruit(){
-	if(($(this).scrollTop()+$(this)[0].clientHeight)==$("#recruit>div")[0].clientHeight && !window.recruitend)
+	console.log($(this).scrollTop());
+	console.log($(this)[0].clientHeight);
+	console.log($("#recruit>div")[0].clientHeight);
+	if((($(this).scrollTop()+$(this)[0].clientHeight)==$("#recruit>div")[0].clientHeight || $(this)[0].clientHeight>$("#recruit>div")[0].clientHeight ) && !window.recruitend)
 	{
+		
 		window.recruitp++;
 		getrecruit();
 	}
@@ -337,7 +353,7 @@ $(document).ready(function(){
 	if(location.hash=="")
 		history.replaceState(null,null,"#CKW");
 	console.log(location.hash);
-	hashrequest();
+	
 	$(location.hash).show();
 	$("[cont=\"content\"]").filter(function(){
 		if(("#"+$(this).attr("id"))==location.hash)
@@ -378,6 +394,10 @@ $(document).ready(function(){
 		if(data=="")
 		{
 			window.location="../user/login.html";
+		}
+		else
+		{
+			$("body").trigger("hashchange");
 		}
 	});
 	/*处理新增成员*/
@@ -571,8 +591,8 @@ $(document).ready(function(){
 							$("[intention=\"2\"]").click(recruitintention);//意向
 							$("[changedp=\"1\"]").click(changedp);//推荐部门
 							$("[cont=\"recruitdepartment\"]").click(recruitevaluate);//评价函数
-							if(da["msg"].length==0)
-								$("#recruit1").append('<div style="text-align:center;">无结果</div>');
+							if(da["msg"].length==0 && $("#noresult").length==0)
+								$("#recruit1").append('<div id="noresult" style="text-align:center;">无结果</div>');
 						}
 					
 				});
@@ -790,11 +810,7 @@ $(document).ready(function(){
 		$("#background").hide();
 		$("#rootinput").hide();
 	});
-	// 循环使内容显示 超过 #recruit 的clientHeight
-	while(($("#recruit").scrollTop()+$("#recruit")[0].clientHeight)<$("#recruit>div")[0].clientHeight && !window.recruitend)
-	{
-		getrecruit();
-	}
+	
 }); 
 
 function remove_at_fromstid(stid){
