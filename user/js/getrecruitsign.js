@@ -36,7 +36,7 @@ $(document).ready(function(){
 			}
 			else 
 				return 1;
-		}).removeClass("label-success").addClass("label-default").
+		}).removeClass("label-success").addClass("label-default");
 		
 	});
 	
