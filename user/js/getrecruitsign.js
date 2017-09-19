@@ -16,7 +16,7 @@ $(document).ready(function(){
 		window.department["KxHdKh"]="科创活动部";
 		window.department["KxHdKp"]="科技培训部";
 	
-	var t=setInterval(getrecruit,10000);
+	var t=setInterval(getrecruit,20000);
 	
 });
 function userinfget(){
