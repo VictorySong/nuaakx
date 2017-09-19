@@ -2,12 +2,13 @@
 include("../SaeMysql.php");
 //session_set_cookie_params(7200,'/','nuaakx.com');
 session_start();
-if(!empty($_SESSION["stId"]) )
+if(!empty($_SESSION["stId"]) && !empty($_POST["department"]))
 {
 	$mysql=new SaeMysql();
 	if(!empty($_SESSION["tableName"]))
 	{
 		foreach($_SESSION["tableName"] as $value){
+			if($value==$_POST["department"]){
 			$data=$mysql->getData("SELECT `number`,`stId`,`department`,`postpone`,`interviewing`,`end` FROM `KxRecruitSign` WHERE `department`='".$value."' order by `number`");
 			$i=0;
 			foreach($data as $value1){
@@ -16,6 +17,7 @@ if(!empty($_SESSION["stId"]) )
 				
 			}
 			$json["result"][$value]=$data;
+			}
 		}
 		$json["error"]=0;
 		

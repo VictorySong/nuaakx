@@ -36,7 +36,7 @@ $(document).ready(function(){
 			}
 			else 
 				return 1;
-		}).removeClass("label-success").addClass("label-default");
+		}).find("span").removeClass("label-success").addClass("label-default");
 		
 	});
 	
@@ -216,7 +216,8 @@ function funcpostpone(){
 	});
 }
 function getrecruit(){
-	$.post("getrecsign.php",{id:window.inf["stId"]}).done(function(data){
+	var department=location.hash.substring(1);
+	$.post("getrecsign.php",{id:window.inf["stId"],department:department }).done(function(data){
 		console.log(data);
 		try{
 			var da=JSON.parse(data);
