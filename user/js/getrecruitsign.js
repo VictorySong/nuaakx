@@ -16,7 +16,29 @@ $(document).ready(function(){
 		window.department["KxHdKh"]="科创活动部";
 		window.department["KxHdKp"]="科技培训部";
 	
-	var t=setInterval(getrecruit,20000);
+	//var t=setInterval(getrecruit,20000);
+	//添加hash改变监听
+	$(window).on("hashchange",function(){
+		console.log(location.hash);
+		$(location.hash).show();
+		getrecruithashfunc();
+		$("[cont=\"department\"]").filter(function(){
+			
+			if(("#"+$(this).attr("id"))==location.hash)
+				return 0;
+			else
+				return 1;
+		}).hide();
+		$(".control").filter(function(){
+			if($(this).attr("href")==location.hash){
+				$(this).find("span").removeClass("label-default").addClass("label-success");
+				return 0;
+			}
+			else 
+				return 1;
+		}).removeClass("label-success").addClass("label-default").
+		
+	});
 	
 });
 function userinfget(){
@@ -261,7 +283,7 @@ function getrecruit(){
 							getpersonstatus(da["result"][p][p1]["stId"],p);
 						}
 						
-						$("#"+p).show().find("tbody").append(html);
+						$("#"+p).find("tbody").append(html);
 						//添加点击事件
 						funcbound();
 						
@@ -303,7 +325,7 @@ function getrecruit(){
 						else{
 							getpersonstatus(da["result"][p][p1]["stId"],p);
 						}
-						$("#"+p).show().find("tbody").append(html);
+						$("#"+p).find("tbody").append(html);
 						//添加点击事件
 						funcbound();
 						
@@ -359,6 +381,7 @@ function newsort(a){
 	return a;
 }
 
-	
-	
+function getrecruithashfunc(){
+	getrecruit();
+}
 	
