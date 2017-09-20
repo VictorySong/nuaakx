@@ -2,7 +2,7 @@
 include("../SaeMysql.php");
 //session_set_cookie_params(7200,'/','nuaakx.com');
 session_start();
-define("N",1);
+define("N",20);
 if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["tableName"]))
 {
 	$mysql=new SaeMysql();

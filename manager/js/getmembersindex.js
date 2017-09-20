@@ -78,15 +78,7 @@ function getrecruit(){
 	console.log({p:window.recruitp,tableName:window.tableName});
 	if(window.recruitend)
 		return;
-	//2017年九月十八号临时改动
 	
-	if($("#renotice").length==0 && window.recruitp!=1){
-		$("#recruit1").append('<div id="renotice" style="text-align:center;"> 请使用 右上角 搜索功能 </div>');
-	}
-	if(window.recruitp!=1)
-		return;
-	
-	/////////
 	$.post("getrecruit.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
 		console.log(data);
 		var department={};
