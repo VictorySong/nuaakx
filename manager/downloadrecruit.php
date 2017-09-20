@@ -63,17 +63,17 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 			$second=$mysql->getData("SELECT `department` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `second`=1");
 			$str.=$result["stId"]."\t".$data["name"]."\t".$data["phone"]."\t".$result["description"]."\t".$evaluate["firstevaluate"]."\t".$evaluate["secondevaluate"]."\t";
 			foreach($first as $value){
-				$str.=$department[$value["department"]]."\n";
+				$str.=$department[$value["department"]].",";
 			}
 			$str.="\t";
 			foreach($second as $value){
-				$str.=$department[$value["department"]]."\n";
+				$str.=$department[$value["department"]].",";
 			}
 			$str.="\r";
 			
 		}
 	}
-	//$str=iconv('UTF-8',"GB2312//IGNORE",$str);    
+	   
     exit(mb_convert_encoding($str,"GB2312","UTF-8"));
 	
 }
