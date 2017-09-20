@@ -3,7 +3,7 @@ include("../SaeMysql.php");
 //session_set_cookie_params(7200,'/','nuaakx.com');
 session_start();
 define("N",20);
-if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["tableName"]))
+if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["tableName"]) && !empty($_POST["type"]))
 {
 	$mysql=new SaeMysql();
 	//判断查询人是不是要查询的部门的
@@ -14,11 +14,23 @@ if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["table
 			$t=true;
 	}
 	
-	//报名这个部门的总人数
-	//$data=$mysql->getData("SELECT `stId`,`description` FROM `KxRecruit` AS A WHERE num = (SELECT MAX(num) FROM `KxRecruit` WHERE `stId`=A.stId order by `stId`) && `department`='".$_POST["tableName"]."' ");
-	$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."' group by `stId` order by `stId` ";
+	switch($_POST["type"]){
+		case "all":{
+			$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."' group by `stId` order by `stId` ";
+		}
+		break;
+		case "1":{
+			$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."' && `first`=1 group by `stId` order by `stId` ";
+		}
+		break;
+		case "2":{
+			$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."' && `second`=1 group by `stId` order by `stId` ";
+		}
+		break;
+	}
 
 	$result1=mysql_query($sql,$mysql->ico);
+	//报名这个部门的总人数
 	$num=mysql_num_rows($result1);
 	
 	$j=(($_POST["p"]*N)>$num) ? $num : $_POST["p"]*N;

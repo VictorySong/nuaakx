@@ -79,7 +79,7 @@ function getrecruit(){
 	if(window.recruitend)
 		return;
 	
-	$.post("getrecruit.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
+	$.post("getrecruit.php",{p:window.recruitp,tableName:window.tableName,type:window.getrecruittype}).done(function(data){
 		console.log(data);
 		var department={};
 		department["KxXqDm"]="WEB研发部";
@@ -157,9 +157,16 @@ function getrecruit(){
 								</div>';
 					$("#recruit1").append(html);
 				}
+				$("[intention=\"1\"]").off("click",recruitintention);
 				$("[intention=\"1\"]").click(recruitintention);//意向
+				
+				$("[intention=\"2\"]").off("click",recruitintention);
 				$("[intention=\"2\"]").click(recruitintention);//意向
+				
+				$("[changedp=\"1\"]").off("click",changedp);
 				$("[changedp=\"1\"]").click(changedp);//推荐部门
+				
+				$("[cont=\"recruitdepartment\"]").off("click",recruitevaluate);
 				$("[cont=\"recruitdepartment\"]").click(recruitevaluate);//评价函数
 				if(window.recruitend && $("#nomore").length==0 )
 				{
@@ -279,6 +286,8 @@ $(document).ready(function(){
 	window.recruitend=false;
 	//定义全局变量 为当前页面所属部门   需要到具体引入的文件中定义
 	//window.tableName="";
+	//定义获取招新人员类型 默认获取所有
+	window.getrecruittype="all";
 	//取消表单默认提交刷新的功能
 	$("#addform").submit(function(e){
 		e.preventDefault();
@@ -297,10 +306,6 @@ $(document).ready(function(){
 		return false;
 	});*/
 	//上边的这段采用另一种方式呢 一种更通用的方式
-	
-	
-	
-	
 	
 	
 	
@@ -802,6 +807,20 @@ $(document).ready(function(){
 		$("#background").hide();
 		$("#rootinput").hide();
 	});
+	
+	//设置获取招新信息控制
+	$("[cont=\"getrecruittype\"]").click(function(){
+		$("[cont=\"getrecruittype\"]").removeClass("label-success").removeClass("label-default").addClass("label-default");
+		$(this).removeClass("label-default").addClass("label-success");
+		
+		window.getrecruittype=$(this).attr("va");
+		getrecruit();
+	});
+	//设置下载招新信息控制
+	$("[cont=\"downloadrecruit\"]").click(function(){
+		window.open("downloadrecruit.php?tableName="+window.tableName+"&type="+$(this).attr("va"));
+	});
+	
 	
 }); 
 
