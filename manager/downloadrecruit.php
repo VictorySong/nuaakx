@@ -28,15 +28,15 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 	
 	switch($_GET["type"]){
 		case "all":{
-			$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_GET["tableName"]."' group by `stId` order by `stId` ";
+			$sql="SELECT `stId` FROM `KxRecruit` WHERE `department`='".$_GET["tableName"]."' group by `stId` order by `stId` ";
 		}
 		break;
 		case "1":{
-			$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_GET["tableName"]."' && `first`=1 group by `stId` order by `stId` ";
+			$sql="SELECT `stId` FROM `KxRecruit` WHERE `department`='".$_GET["tableName"]."' && `first`=1 group by `stId` order by `stId` ";
 		}
 		break;
 		case "2":{
-			$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_GET["tableName"]."' && `second`=1 group by `stId` order by `stId` ";
+			$sql="SELECT `stId` FROM `KxRecruit` WHERE `department`='".$_GET["tableName"]."' && `second`=1 group by `stId` order by `stId` ";
 		}
 		break;
 	}
@@ -45,7 +45,7 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 	//报名这个部门的总人数
 	$num=mysql_num_rows($result1);
 	//输出字符串
-	$str="学号\t姓名\t手机\t描述\t一面评价\t二面评价\t一面所过部门\t二面所过部门\r";
+	$str="学号\t姓名\t手机\t一面所过部门\t二面所过部门\r";
 	$j=$num ;
 	
 	if($t)
@@ -58,10 +58,10 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 			$result["phone"]=$data["phone"];
 			
 			
-			$evaluate=$mysql->getLine("SELECT `firstevaluate`,`secondevaluate` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `department`='".$_GET["tableName"]."'");
+			//$evaluate=$mysql->getLine("SELECT `firstevaluate`,`secondevaluate` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `department`='".$_GET["tableName"]."'");
 			$first=$mysql->getData("SELECT `department` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `first`=1");
 			$second=$mysql->getData("SELECT `department` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `second`=1");
-			$str.=$result["stId"]."\t".$data["name"]."\t".$data["phone"]."\t".$result["description"]."\t".$evaluate["firstevaluate"]."\t".$evaluate["secondevaluate"]."\t";
+			$str.=$result["stId"]."\t".$data["name"]."\t".$data["phone"]."\t";
 			foreach($first as $value){
 				$str.=$department[$value["department"]].",";
 			}
