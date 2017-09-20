@@ -74,7 +74,7 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 		}
 	}
 	//$str=iconv('UTF-8',"GB2312//IGNORE",$str);    
-    exit(iconv('urf-8',"gb2312//IGNORE",$str));
+    exit(mb_convert_encoding($str,"GB2312//IGNORE","UTF-8"));
 	
 }
 ?>
