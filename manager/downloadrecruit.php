@@ -73,7 +73,7 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 			
 		}
 	}
-	$str=iconv('UTF-8',"GB2312//IGNORE",$str);    
+	//$str=iconv('UTF-8',"GB2312//IGNORE",$str);    
     exit($str);
 	
 }
