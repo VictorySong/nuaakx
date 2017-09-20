@@ -62,11 +62,11 @@ if(!empty($_SESSION["tableName"])  && !empty($_GET["tableName"]) && !empty($_GET
 			$first=$mysql->getData("SELECT `department` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `first`=1");
 			$second=$mysql->getData("SELECT `department` FROM `KxRecruit` WHERE `stId`='".$result["stId"]."' && `second`=1");
 			$str.=$result["stId"]."\t".$data["name"]."\t".$data["phone"]."\t".$result["description"]."\t".$evaluate["firstevaluate"]."\t".$evaluate["secondevaluate"]."\t";
-			for($first as $value){
+			foreach($first as $value){
 				$str.=$department[$value["department"]]."\n";
 			}
 			$str.="\t";
-			for($second as $value){
+			foreach($second as $value){
 				$str.=$department[$value["department"]]."\n";
 			}
 			$str.="\r";
