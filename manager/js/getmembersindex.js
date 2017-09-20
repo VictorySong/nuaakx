@@ -812,7 +812,9 @@ $(document).ready(function(){
 	$("[cont=\"getrecruittype\"]").click(function(){
 		$("[cont=\"getrecruittype\"]").removeClass("label-success").removeClass("label-default").addClass("label-default");
 		$(this).removeClass("label-default").addClass("label-success");
-		
+		window.recruitp=1;
+		window.recruitend=false;
+		$("#recruit1>div").remove();
 		window.getrecruittype=$(this).attr("va");
 		getrecruit();
 	});
