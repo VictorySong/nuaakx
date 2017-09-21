@@ -32,6 +32,10 @@ $(document).ready(function(){
 							alert("您未报名，无法签到");
 						}
 						break;
+						case "402":{
+							alert("您未通过一面，无法签到");
+						}
+						break;
 					}
 				}else{
 					alert("签到出错");

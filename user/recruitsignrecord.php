@@ -8,7 +8,10 @@ if(!empty($_SESSION["stId"]) && !empty($_POST["stId"]) && $_SESSION["stId"]==$_P
 	
 	$exist=$mysql->getLine("SELECT `stId` FROM `KxRecruitSign` WHERE `stId`='".$_POST["stId"]."'");
 	if(empty($exist)){
-		$inf=$mysql->getData("SELECT `stId` ,`department` FROM `KxRecruit` WHERE `stId`='".$_POST["stId"]."'");
+		//一面前
+		//$inf=$mysql->getData("SELECT `stId` ,`department` FROM `KxRecruit` WHERE `stId`='".$_POST["stId"]."'");
+		//二面前
+		$inf=$mysql->getData("SELECT `stId` ,`department` FROM `KxRecruit` WHERE `stId`='".$_POST["stId"]."' && `first`=1");
 		$data=$mysql->getLine("SELECT `number` FROM `KxRecruitSign` order by `number` desc");
 		empty($data)?$number=1:$number=$data["number"]+1;
 		if(!empty($inf)){
@@ -28,7 +31,10 @@ if(!empty($_SESSION["stId"]) && !empty($_POST["stId"]) && $_SESSION["stId"]==$_P
 			$json["status"]="200";
 		}else{
 			$json["error"]=0;
-			$json["status"]="401";
+			//一面前
+			//$json["status"]="401";
+			//二面前
+			$json["status"]="402";
 		}
 	}
 	else{

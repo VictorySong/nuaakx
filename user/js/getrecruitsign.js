@@ -39,6 +39,7 @@ $(document).ready(function(){
 		}).find("span").removeClass("label-success").addClass("label-default");
 		
 	});
+	$(window).trigger("hashchange");
 	
 });
 function userinfget(){
