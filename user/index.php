@@ -639,21 +639,7 @@ $signPackage = $jssdk->GetSignPackage();
 					<div class="form-group">
 						<label>预约时间:</label>
 						<div id="fixtime" class="" style="padding-left:10px;">
-						    <div class="radio">
-							  <label>
-								<input type="radio" name="time" value="时间1" checked>hhh
-							  </label>
-							</div>
-							<div class="radio">
-								<label>
-								<input type="radio" name="time" value="时间2">hhhhh
-								</label>
-							</div>
-							<div class="radio">
-							  <label>
-								<input type="radio" name="time" value="时间3">hh
-							  </label>
-							</div>  
+						 
 							
 						</div>
 					</div>
