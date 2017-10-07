@@ -194,6 +194,29 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 				<div class="panel panel-default">
+					<a class="panel-title" href="#vote"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-cog" ></span>
+										</td>
+										<td>
+											<span ></span>
+											<br>活动投票
+										</td>
+										<td align="right">
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				
+				<div class="panel panel-default">
 					<a class="panel-title" href="#fixcheck"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
@@ -624,6 +647,70 @@ $signPackage = $jssdk->GetSignPackage();
 							<div class="radio">
 								<label>
 								<input type="radio" name="problem" value="电脑清灰">电脑清灰
+								</label>
+							</div>
+							<div class="radio">
+							  <label>
+								<input type="radio" name="problem" value="3">其他
+							  </label>
+							</div>
+							<div id="other" style="display:none;">
+								<textarea class="form-control" placeholder="请输入问题描述"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>预约时间:</label>
+						<div id="fixtime" class="" style="padding-left:10px;">
+						 
+							
+						</div>
+					</div>
+			
+				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+
+			</form>
+			
+			
+			
+			
+			
+		</div>
+		<!-- ............................................    -->
+		
+		<!--  活动投票    -->
+		<div id="vote" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+			<div style="width:100%;" cont="head">
+			</div>
+			<form class="form" action="" >
+				
+					<div class="form-group">
+						<label >学号:</label>
+						<input type="text" class="form-control" disabled cont="stId">
+					</div>
+					<div class="form-group">
+						<label >姓名:</label>
+						<input type="text" class="form-control" disabled cont="name">
+					</div>
+					<div class="form-group">
+						<label >手机:</label>
+						<input type="text" class="form-control" disabled cont="phone">
+					</div>
+					<div class="form-group">
+						<label >邮箱:</label>
+						<input type="text" class="form-control" disabled cont="email">
+					</div>
+					<div class="form-group">
+						<label>投票选项:</label>
+						<div class="" style="padding-left:10px;">
+							<div class="radio">
+							  <label>
+								<input type="radio" name="activity" value="活动1" checked>活动1
+							  </label>
+							</div>
+							<div class="radio">
+								<label>
+								<input type="radio" name="activity" value="活动2">活动2
 								</label>
 							</div>
 							<div class="radio">
