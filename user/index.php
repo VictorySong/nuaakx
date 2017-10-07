@@ -722,108 +722,81 @@ $signPackage = $jssdk->GetSignPackage();
 		<div id="vote" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
-		<!-- 	
-			<div id="cphMainContent_rptTopicList_pnlOptionList_0" class="OptionList TextOnly TextOnly-ThreeColumn" topicid="2822183" optionlistpagesize="0" isvoterequired="true" columncount="3">
-			
-                            <form action="form_action.asp" method="get">
-							<ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL">
-									<!--
-                                        <li class="OptionListItem" >
+		<div class="container marketing">
 
-                                            <div class="OptionTitleWrapper">
-                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
-                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
-                                                    
-                                                    
-                                                    <span>
-                                                        <i>1.</i> 1</span></label>
-                                            </div>
-											
-											<div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
-                                                
-												<p>注释：在开始标签中有一个惊叹号，但是结束标签中没有。浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。
-													您可以利用注释在 HTML 中放置通知和提醒信息：
-												</p>
-											</div>
-
-                                        </li>
-										
-										
-										
-										<li class="OptionListItem" >
-
-                                            <div class="OptionTitleWrapper">
-                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
-                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
-                                                    
-                                                    
-                                                    <span>
-                                                        <i>1.</i> 这是节目标题</span></label>
-                                            </div>
-
-                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-												
-												<img src="/i/eg_mouse.jpg" width="128" height="128" />
-												
-												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
-												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
-												
-											</div>
-									
-                                        </li>
-										
-                            </ul>
-
-							<input type="submit" value="投 票！" id="lbtnVote" class="btn btn-primary btn-lg VoteButton" style="width:50%; height:45px; margin:0 auto;">
-					<form action="form_action.asp" method="get">
-                        
-		</div> -->
-		
-	<div class="row wrapper">
-        <div class="col-lg-6">
-          <img class="img-circle" src="IMG3.JPG" alt="Generic placeholder image" width="140" height="140">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-6">
-          <img class="img-circle" src="IMG1.JPG" alt="Generic placeholder image" width="140" height="140">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-		<div class="col-lg-6">
-          <img class="img-circle" src="IMG1.JPG" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-		<div class="col-lg-6">
-          <img class="img-circle" src="IMG1.JPG" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-		<div class="col-lg-6">
-          <img class="img-circle" src="IMG1.JPG" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-6">
-          <img class="img-circle" src="IMG2.JPG" alt="Generic placeholder image" width="140" height="140">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
-     </div><!-- /.row -->
-			
-			
-			
-			
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+    </div><!-- /.container -->
+
 		</div>
 		<!-- ............................................    -->
 		
