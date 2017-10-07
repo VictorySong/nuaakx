@@ -739,7 +739,7 @@ $signPackage = $jssdk->GetSignPackage();
 				
 			  </div><!-- /.row -->
 			  
-			  <div class="col-xs-12" style="padding-bottom:25px;margin:0 auto;">
+			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
 			  <a class="btn btn-lg btn-primary" href="#" role="button">点击投票</a>
 			  </div>
 			</form> 
