@@ -703,22 +703,22 @@ $signPackage = $jssdk->GetSignPackage();
 					<div class="form-group">
 						<label>投票选项:</label>
 						<div class="" style="padding-left:10px;">
-							<div class="radio">
+							<div class="checkbox">
 							  <label>
-								<input type="radio" name="activity" value="活动1" checked>活动1
+								<input type="checkbox" name="activity" value="活动1" checked>活动1
 							  </label>
 							</div>
-							<div class="radio">
+							<div class="checkbox">
 								<label>
-								<input type="radio" name="activity" value="活动2">活动2
+								<input type="checkbox" name="activity" value="活动2">活动2
 								</label>
 							</div>
-							<div class="radio">
+							<div class="checkbox">
 							  <label>
-								<input type="radio" name="activity" value="活动3">活动3
+								<input type="checkbox" name="activity" value="活动3">活动3
 							  </label>
 							</div>
-							<div id="reason" style="display:none;">
+							<div id="reason" >
 								<textarea class="form-control" placeholder="请输入投票理由"></textarea>
 							</div>
 						</div>
