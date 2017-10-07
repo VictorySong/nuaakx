@@ -698,7 +698,7 @@ $signPackage = $jssdk->GetSignPackage();
 			<div id="cphMainContent_rptTopicList_pnlOptionList_0" class="OptionList TextOnly TextOnly-ThreeColumn" topicid="2822183" optionlistpagesize="0" isvoterequired="true" columncount="3">
 			
                             <ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL">
-                                
+									<!--
                                         <li class="OptionListItem" >
 
                                             
@@ -735,9 +735,8 @@ $signPackage = $jssdk->GetSignPackage();
 
                                         </li>
 										
+										-->
 										<li class="OptionListItem" >
-
-                                            
 
                                             <div class="OptionTitleWrapper">
                                                 <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
@@ -745,30 +744,84 @@ $signPackage = $jssdk->GetSignPackage();
                                                     
                                                     
                                                     <span>
-                                                        <i>1.</i> 1</span></label>
+                                                        <i>1.</i> 这是节目标题</span></label>
                                             </div>
-
-                                            
-                                            
-
-                                            
-
-                                            
-
 
                                             <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
 				
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
-                                                
-												<p>注释：在开始标签中有一个惊叹号，但是结束标签中没有。
-浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。
-您可以利用注释在 HTML 中放置通知和提醒信息：
-                                            </p>
-			</div>
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
+												
+												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
+											</div>
+									
+                                        </li>
+										
+										<li class="OptionListItem" >
 
-                                            
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 这是节目标题</span></label>
+                                            </div>
 
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+				
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
+												
+												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
+											</div>
+									
+                                        </li>
+										
+										<li class="OptionListItem" >
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 这是节目标题</span></label>
+                                            </div>
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+				
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
+												
+												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
+											</div>
+									
+                                        </li>
+										
+										<li class="OptionListItem" >
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 这是节目标题</span></label>
+                                            </div>
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+				
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
+												
+												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
+											</div>
+									
                                         </li>
 										
                                     
