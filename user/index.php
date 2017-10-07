@@ -689,7 +689,7 @@ $signPackage = $jssdk->GetSignPackage();
 			
 			<div id="cphMainContent_rptTopicList_pnlOptionList_0" class="OptionList TextOnly TextOnly-ThreeColumn" topicid="2822183" optionlistpagesize="0" isvoterequired="true" columncount="3">
 			
-                            <ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL" selectiontype="2" minvotequantity="1" maxvotequantity="3" columncount="3">
+                            <ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL" selectiontype="2" minvotequantity="1" maxvotequantity="3" columncount="1">
                                 
                                         <li class="OptionListItem" >
 
@@ -726,104 +726,7 @@ $signPackage = $jssdk->GetSignPackage();
                                             
 
                                         </li>
-										<li class="OptionListItem" style="height: 92px;">
-
-                                            
-
-                                            <div class="OptionTitleWrapper">
-                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
-                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
-                                                    
-                                                    
-                                                    <span>
-                                                        <i>1.</i> 1</span></label>
-                                            </div>
-
-                                            
-                                            
-
-                                            
-
-                                            
-
-
-                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
-                                                
-                                            
-			</div>
-
-                                            
-
-                                        </li><li class="OptionListItem" style="height: 92px;">
-
-                                            
-
-                                            <div class="OptionTitleWrapper">
-                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
-                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
-                                                    
-                                                    
-                                                    <span>
-                                                        <i>1.</i> 1</span></label>
-                                            </div>
-
-                                            
-                                            
-
-                                            
-
-                                            
-
-
-                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
-                                                
-                                            
-			</div>
-
-                                            
-
-                                        </li>
-                                    
-                                        
-                                    
-                                        <li class="OptionListItem" style="height: 92px;">
-
-                                            
-
-                                            <div class="OptionTitleWrapper">
-                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_7" title="8">
-                                                    <input id="option_6820969" type="checkbox" name="VoteOption_2822183" value="6820969">
-                                                    
-                                                    
-                                                    <span>
-                                                        <i>8.</i> 8</span></label>
-                                            </div>
-
-                                            
-                                            
-
-                                            
-
-                                            
-
-
-                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_7" class="Stat" stat="0">
-				
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_7" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
-                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_7" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
-                                                
-                                            
-			</div>
-
-                                            
-
-                                        </li>
+										
                                     
                             </ul>
 
