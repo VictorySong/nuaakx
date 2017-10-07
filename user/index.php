@@ -691,14 +691,12 @@ $signPackage = $jssdk->GetSignPackage();
 			  <div class="row">
 				<div class="col-xs-6">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2><label><div class="btn btn-default" href="#" role="button">
-					<input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading
-				  </label></div></h2>
+				  <label><div class="btn btn-default" role="button" style="margin:0 auto;">
+						<h2><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</h2>
+				  </label></div>
 				  <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-						<label>
-				  <label><div class="btn btn-default" href="#" role="button">
-					<input type="checkbox" name="department" value="KxXqChy" >创意设计部
-				  </div></label>
+						
+				  
 				</div>
 				
 				<div class="col-xs-6">
