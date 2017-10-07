@@ -715,21 +715,15 @@ $signPackage = $jssdk->GetSignPackage();
 							</div>
 							<div class="radio">
 							  <label>
-								<input type="radio" name="problem" value="3">其他
+								<input type="radio" name="activity" value="活动3">活动3
 							  </label>
 							</div>
-							<div id="other" style="display:none;">
-								<textarea class="form-control" placeholder="请输入问题描述"></textarea>
+							<div id="reason" style="display:none;">
+								<textarea class="form-control" placeholder="请输入投票理由"></textarea>
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label>预约时间:</label>
-						<div id="fixtime" class="" style="padding-left:10px;">
-						 
-							
-						</div>
-					</div>
+					
 			
 				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
 
