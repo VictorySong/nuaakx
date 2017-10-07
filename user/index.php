@@ -702,8 +702,6 @@ $signPackage = $jssdk->GetSignPackage();
 									<!--
                                         <li class="OptionListItem" >
 
-                                            
-
                                             <div class="OptionTitleWrapper">
                                                 <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
                                                     <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
@@ -712,27 +710,16 @@ $signPackage = $jssdk->GetSignPackage();
                                                     <span>
                                                         <i>1.</i> 1</span></label>
                                             </div>
-
-                                            
-                                            
-
-                                            
-
-                                            
-
-
-                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+											
+											<div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
 				
                                                 <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
                                                 <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
                                                 
-												<p>注释：在开始标签中有一个惊叹号，但是结束标签中没有。
-浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。
-您可以利用注释在 HTML 中放置通知和提醒信息：
-                                            </p>
-			</div>
-
-                                            
+												<p>注释：在开始标签中有一个惊叹号，但是结束标签中没有。浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。
+													您可以利用注释在 HTML 中放置通知和提醒信息：
+												</p>
+											</div>
 
                                         </li>
 										
@@ -845,20 +832,8 @@ $signPackage = $jssdk->GetSignPackage();
                                     
                             </ul>
 
-							<a id="lbtnVote" class="btn btn-primary btn-lg VoteButton" href="javascript:__doPostBack('ctl00$cphMainContent$lbtnVote','')"><i class="fa fa-check-square-o"></i> 投 票！</a>
-							<input type="submit" value="投 票！" id="lbtnVote" class="btn btn-primary btn-lg VoteButton">
+							<input type="submit" value="投 票！" id="lbtnVote" class="btn btn-primary btn-lg VoteButton" style="width:50%; height:20px;">
 					<form action="form_action.asp" method="get">
-                            
-			<!-- AspNetPager 7.5.1 Copyright:2003-2015 Webdiyer (www.webdiyer.com) -->
-			<!--记录总数只有一页，AspNetPager已自动隐藏，若需在只有一页数据时显示AspNetPager，请将AlwaysShow属性值设为true！-->
-			<!-- AspNetPager 7.5.1 Copyright:2003-2015 Webdiyer (www.webdiyer.com) -->
-
-			
-
-
-                            <input type="hidden" name="ctl00$cphMainContent$rptTopicList$ctl00$hiddenTopicID" id="cphMainContent_rptTopicList_hiddenTopicID_0" value="2822183">
-                            
-
                         
 		</div>
 			
