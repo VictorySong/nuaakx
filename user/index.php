@@ -48,9 +48,9 @@ $signPackage = $jssdk->GetSignPackage();
 	<style type="text/css">
 	
 		.OptionListItem
-		{	background-color:#e5c3d8 ! important;
-			width: 48% ! important;
-			margin:0px 2px;
+		{	background-color:#66bbdd ! important;
+			width: 46%;
+			margin:0px 10px;
 			 	
 		}
 	</style>
