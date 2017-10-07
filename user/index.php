@@ -48,7 +48,7 @@ $signPackage = $jssdk->GetSignPackage();
 	<style type="text/css">
 	
 		.OptionListItem
-		{	background-color:#66bbdd ! important;
+		{	background-color:#bfd9e3 ! important;
 			width: 46% ! important;
 			margin:0px 10px;
 			 	
@@ -697,7 +697,8 @@ $signPackage = $jssdk->GetSignPackage();
 			
 			<div id="cphMainContent_rptTopicList_pnlOptionList_0" class="OptionList TextOnly TextOnly-ThreeColumn" topicid="2822183" optionlistpagesize="0" isvoterequired="true" columncount="3">
 			
-                            <ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL">
+                            <form action="form_action.asp" method="get">
+							<ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL">
 									<!--
                                         <li class="OptionListItem" >
 
@@ -736,6 +737,7 @@ $signPackage = $jssdk->GetSignPackage();
                                         </li>
 										
 										-->
+										
 										<li class="OptionListItem" >
 
                                             <div class="OptionTitleWrapper">
@@ -748,11 +750,11 @@ $signPackage = $jssdk->GetSignPackage();
                                             </div>
 
                                             <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
-												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
-												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
 												
 												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
 												
 											</div>
 									
@@ -770,17 +772,15 @@ $signPackage = $jssdk->GetSignPackage();
                                             </div>
 
                                             <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
-												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
-												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
 												
 												<img src="/i/eg_mouse.jpg" width="128" height="128" />
 												
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
+												
 											</div>
 									
-                                        </li>
-										
-										<li class="OptionListItem" >
+                                        </li><li class="OptionListItem" >
 
                                             <div class="OptionTitleWrapper">
                                                 <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
@@ -792,17 +792,15 @@ $signPackage = $jssdk->GetSignPackage();
                                             </div>
 
                                             <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
-												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
-												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
 												
 												<img src="/i/eg_mouse.jpg" width="128" height="128" />
 												
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
+												
 											</div>
 									
-                                        </li>
-										
-										<li class="OptionListItem" >
+                                        </li><li class="OptionListItem" >
 
                                             <div class="OptionTitleWrapper">
                                                 <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
@@ -814,11 +812,31 @@ $signPackage = $jssdk->GetSignPackage();
                                             </div>
 
                                             <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
-				
+												
+												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
 												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
 												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
 												
+											</div>
+									
+                                        </li><li class="OptionListItem" >
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 这是节目标题</span></label>
+                                            </div>
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+												
 												<img src="/i/eg_mouse.jpg" width="128" height="128" />
+												
+												<p>这是节目介绍：在开始标签中有一个惊叹号，但是结束标签中没有。
+												浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。您可以利用注释在 HTML 中放置通知和提醒信息</p>
 												
 											</div>
 									
@@ -827,8 +845,9 @@ $signPackage = $jssdk->GetSignPackage();
                                     
                             </ul>
 
-
-
+							<a id="lbtnVote" class="btn btn-primary btn-lg VoteButton" href="javascript:__doPostBack('ctl00$cphMainContent$lbtnVote','')"><i class="fa fa-check-square-o"></i> 投 票！</a>
+							<input type="submit" value="投 票！" id="lbtnVote" class="btn btn-primary btn-lg VoteButton">
+					<form action="form_action.asp" method="get">
                             
 			<!-- AspNetPager 7.5.1 Copyright:2003-2015 Webdiyer (www.webdiyer.com) -->
 			<!--记录总数只有一页，AspNetPager已自动隐藏，若需在只有一页数据时显示AspNetPager，请将AlwaysShow属性值设为true！-->
