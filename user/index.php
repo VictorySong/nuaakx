@@ -42,9 +42,8 @@ $signPackage = $jssdk->GetSignPackage();
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<link href="css/index.css" rel="stylesheet">
-	
+
   </head>
-  
   <body>
 	<div style="max-width:500px; margin:0 auto; position:relative; background-color:#f5f5f5; font-size:12px; min-width:347;">
 		<div id="index"  >
@@ -77,8 +76,6 @@ $signPackage = $jssdk->GetSignPackage();
 			<div id="accordion" cont="content">
 				<div style="width:100%;" cont="head">
 				</div>
-				
-				<!--
 				<div class="panel panel-default">
 					<a class="panel-title" href="#recruit"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -101,9 +98,6 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				-->
-				
-				
 				<div class="panel panel-default">
 					
 					<a class="panel-title" href="#personalinf"  data-parent="#accordion">
@@ -172,6 +166,28 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 				<div class="panel panel-default">
+					<a class="panel-title" href="#actvote"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-cog" ></span>
+										</td>
+										<td>
+											<span ></span>
+											<br>活动投票
+										</td>
+										<td align="right">
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				<div class="panel panel-default">
 					<a class="panel-title" href="#fixcomputer"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
@@ -183,29 +199,6 @@ $signPackage = $jssdk->GetSignPackage();
 										<td>
 											<span ></span>
 											<br>电脑报修
-										</td>
-										<td align="right">
-											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</a>
-				</div>
-				
-				<div class="panel panel-default">
-					<a class="panel-title" href="#vote"  data-parent="#accordion">
-						<div class="panel-heading">
-							<table>
-								<tbody>
-									<tr>
-										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
-										</td>
-										<td>
-											<span ></span>
-											<br>活动投票
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
@@ -663,7 +656,6 @@ $signPackage = $jssdk->GetSignPackage();
 					<div class="form-group">
 						<label>预约时间:</label>
 						<div id="fixtime" class="" style="padding-left:10px;">
-						 
 							
 						</div>
 					</div>
@@ -676,77 +668,6 @@ $signPackage = $jssdk->GetSignPackage();
 			
 			
 			
-		</div>
-		<!-- ............................................    -->
-		
-		<!--  活动投票    -->
-		<div id="vote" style="padding-left:25px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
-			<div style="width:100%;" cont="head">
-			</div>
-		
-			  
-			  
-			<form action="/demo/vote.php">  
-			  <!-- two columns-->
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
-				</div>
-				
-			  </div><!-- /.row -->
-			  
-			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
-			  <a class="btn btn-lg btn-primary" href="#" role="button">点击投票</a>
-			  </div>
-			</form> 
-	  
-
-
-      
 		</div>
 		<!-- ............................................    -->
 		
@@ -846,7 +767,76 @@ $signPackage = $jssdk->GetSignPackage();
 		</div>
 		<!-- ............................................    -->
 		
+		<!--  活动投票    -->
+		<div id="vote" style="padding-left:25px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+			<div style="width:100%;" cont="head">
+			</div>
 		
+			  
+			  
+			<form action="vote.php">  
+			  <!-- two columns-->
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+			  </div><!-- /.row -->
+			  
+			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
+			  <a class="btn btn-lg btn-primary" href="#" role="button">点击投票</a>
+			  </div>
+			</form> 
+	  
+
+
+      
+		</div>
+		<!-- ............................................    -->
 		
 		
 		<!-- 查看预约维修情况 -->
