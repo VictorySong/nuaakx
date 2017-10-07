@@ -832,7 +832,7 @@ $signPackage = $jssdk->GetSignPackage();
                                     
                             </ul>
 
-							<input type="submit" value="投 票！" id="lbtnVote" class="btn btn-primary btn-lg VoteButton" style="width:50%; height:20px;">
+							<input type="submit" value="投 票！" id="lbtnVote" class="btn btn-primary btn-lg VoteButton" style="width:50%; height:45px; margin:0 auto;">
 					<form action="form_action.asp" method="get">
                         
 		</div>
