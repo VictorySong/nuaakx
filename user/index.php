@@ -738,6 +738,8 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 			  </div><!-- /.row -->
+			  
+			  <a class="btn btn-lg btn-primary" href="#" role="button">点击投票</a>
 			</form> 
 	  
 
