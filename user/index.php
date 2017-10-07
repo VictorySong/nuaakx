@@ -768,7 +768,7 @@ $signPackage = $jssdk->GetSignPackage();
 		<!-- ............................................    -->
 		
 		<!--  活动投票    -->
-		<div id="vote" style="padding-left:25px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+		<div id="actvote" style="padding-left:25px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
 		
