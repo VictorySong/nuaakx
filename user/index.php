@@ -42,6 +42,10 @@ $signPackage = $jssdk->GetSignPackage();
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<link href="css/index.css" rel="stylesheet">
+	
+	
+	<link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Skin/default/bootstrap.min.css?V=20171001-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/fontAwesome/4.7.0/css/font-awesome.min.css?V=20171001-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Skin/default/combind_pc.min.css?V=20171001-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Colorbox/Style1/colorbox.css?V=20171001-1" /><script id="j_f55dd6de90d50aba" src="http://static.vote8.cn/JS/jquery-3.1.1.min.js?V=20171001-1" type="text/javascript"></script><script id="j_e3682becb1c908b8" src="http://static.vote8.cn/bootstrap/3.3.7/js/bootstrap.min.js?V=20171001-1" type="text/javascript"></script><script id="j_9d62dea272e13415" src="http://static.vote8.cn/JS/jquery.colorbox-min.js?V=20171001-1" type="text/javascript"></script><script id="j_528872b8f61629ba" src="http://static.vote8.cn/JS/Front/Global.js?V=20171001-1" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Colorbox/Style1/colorbox.css?V=20171001-1" /><script id="j_2e4651bd25acb1ea" src="http://static.vote8.cn/JS/UI.js?V=20171001-1" type="text/javascript"></script><script id="j_81582262331b8d66" src="http://static.vote8.cn/JS/jquery.countdown.min.js?V=20171001-1" type="text/javascript"></script><script id="j_9bd10f205e50d435" src="http://static.vote8.cn/JS/jquery.json.min.js?V=20171001-1" type="text/javascript"></script><script id="j_3835d2234d7253d6" src="http://static.vote8.cn/JS/jquery.cookie.js?V=20171001-1" type="text/javascript"></script><script id="j_486bb6d5f9bcb555" src="http://static.vote8.cn/JS/VideoUrl.js?V=20171001-1" type="text/javascript"></script><script id="j_f7df22b399e7beef" src="http://static.vote8.cn/JS/jqueryPlugin.js?V=20171001-1" type="text/javascript"></script><script id="j_88d4b9a3a00249c8" src="http://static.vote8.cn/JS/Front/Home.js?V=20171001-1" type="text/javascript"></script><script id="j_22016f07c9c3e838" src="http://static.vote8.cn/JS/Common.js?V=20171001-1" type="text/javascript"></script></head>
+
 
   </head>
   <body>
@@ -682,85 +686,162 @@ $signPackage = $jssdk->GetSignPackage();
 		<div id="vote" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
-			<form class="form" action="" >
-				
-					<div class="form-group">
-						<label >学号:</label>
-						<input type="text" class="form-control" disabled cont="stId">
-					</div>
-					<div class="form-group">
-						<label >姓名:</label>
-						<input type="text" class="form-control" disabled cont="name">
-					</div>
-					<div class="form-group">
-						<label >手机:</label>
-						<input type="text" class="form-control" disabled cont="phone">
-					</div>
-					<div class="form-group">
-						<label >邮箱:</label>
-						<input type="text" class="form-control" disabled cont="email">
-					</div>
-					<div class="form-group">
-						<label>部门选择（最多选择三个部门）</label>
-						<div class="" style="padding-left:10px;">
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxXqChy" >创意设计部
-							  </label>
-							</div>
-							<div class="checkbox">
-								<label>
-								<input type="checkbox" name="department" value="KxXqTs">网络宣传部
-								</label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxXqDm">WEB研发部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxJsJf">技术服务部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxJsDj">大疆俱乐部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxShwGl">管理部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxShwWl">外联部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxShwYj">院校交流部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxHdKh">科技活动部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxHdKp">科创培训部
-							  </label>
-							</div>
-							
-						</div>
-					</div>
-					
 			
-				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+			<div id="cphMainContent_rptTopicList_pnlOptionList_0" class="OptionList TextOnly TextOnly-ThreeColumn" topicid="2822183" optionlistpagesize="0" isvoterequired="true" columncount="3">
+			
+                            <ul id="cphMainContent_rptTopicList_ulOptionList_0" class="list-unstyled OptionListUL" selectiontype="2" minvotequantity="1" maxvotequantity="3" columncount="3">
+                                
+                                        <li class="OptionListItem" >
 
-			</form>
+                                            
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 1</span></label>
+                                            </div>
+
+                                            
+                                            
+
+                                            
+
+                                            
+
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+				
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
+                                                
+												<p>注释：在开始标签中有一个惊叹号，但是结束标签中没有。
+浏览器不会显示注释，但是能够帮助记录您的 HTML 文档。
+您可以利用注释在 HTML 中放置通知和提醒信息：
+                                            </p>
+			</div>
+
+                                            
+
+                                        </li>
+										<li class="OptionListItem" style="height: 92px;">
+
+                                            
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 1</span></label>
+                                            </div>
+
+                                            
+                                            
+
+                                            
+
+                                            
+
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+				
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
+                                                
+                                            
+			</div>
+
+                                            
+
+                                        </li><li class="OptionListItem" style="height: 92px;">
+
+                                            
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_0" title="1">
+                                                    <input id="option_6820962" type="checkbox" name="VoteOption_2822183" value="6820962">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>1.</i> 1</span></label>
+                                            </div>
+
+                                            
+                                            
+
+                                            
+
+                                            
+
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_0" class="Stat" stat="0">
+				
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_0" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_0" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
+                                                
+                                            
+			</div>
+
+                                            
+
+                                        </li>
+                                    
+                                        
+                                    
+                                        <li class="OptionListItem" style="height: 92px;">
+
+                                            
+
+                                            <div class="OptionTitleWrapper">
+                                                <label id="cphMainContent_rptTopicList_rptOptions_0_labelOptionTitle_7" title="8">
+                                                    <input id="option_6820969" type="checkbox" name="VoteOption_2822183" value="6820969">
+                                                    
+                                                    
+                                                    <span>
+                                                        <i>8.</i> 8</span></label>
+                                            </div>
+
+                                            
+                                            
+
+                                            
+
+                                            
+
+
+                                            <div id="cphMainContent_rptTopicList_rptOptions_0_pnlStat_7" class="Stat" stat="0">
+				
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbQuantity_7" title="票数" class="Quantity"><small>票数 <span class="badge">0</span></small></span>
+                                                <span id="cphMainContent_rptTopicList_rptOptions_0_lbRank_7" title="名次" class="Rank"><small>名次 <span class="badge">1</span></small></span>
+                                                
+                                            
+			</div>
+
+                                            
+
+                                        </li>
+                                    
+                            </ul>
+
+
+
+                            
+			<!-- AspNetPager 7.5.1 Copyright:2003-2015 Webdiyer (www.webdiyer.com) -->
+			<!--记录总数只有一页，AspNetPager已自动隐藏，若需在只有一页数据时显示AspNetPager，请将AlwaysShow属性值设为true！-->
+			<!-- AspNetPager 7.5.1 Copyright:2003-2015 Webdiyer (www.webdiyer.com) -->
+
+			
+
+
+                            <input type="hidden" name="ctl00$cphMainContent$rptTopicList$ctl00$hiddenTopicID" id="cphMainContent_rptTopicList_hiddenTopicID_0" value="2822183">
+                            
+
+                        
+		</div>
 			
 			
 			
