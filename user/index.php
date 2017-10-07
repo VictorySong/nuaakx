@@ -195,7 +195,7 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 				<div class="panel panel-default">
-					<a class="panel-title" href="#vote"  data-parent="#accordion">
+					<a class="panel-title" href="#actvote"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
 								<tbody>
@@ -680,7 +680,7 @@ $signPackage = $jssdk->GetSignPackage();
 		<!-- ............................................    -->
 		
 		<!--  活动投票    -->
-		<div id="vote" style="padding-left:25px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+		<div id="actvote" style="padding-left:25px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
 		
@@ -692,34 +692,35 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
 				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><div class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="KxXqChy" ><i>1.</i>Heading</div></p>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
 				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><div class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="KxXqChy" ><i>1.</i>Heading</div></p>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
 				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><div class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="KxXqChy" ><i>1.</i>Heading</div></p>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
 				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><div class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="KxXqChy" ><i>1.</i>Heading</div></p>
 				</div>
 				
 			  </div><!-- /.row -->
 			  
-			  <div class="btn btn-lg btn-primary col-xs-12" style="padding-bottom:25px;text-align:center;" onclick="javascript:" role="button">点击投票</div>
-			  
+			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
+			  <button type="submit" class="btn btn-default" id="vote">点击投票</button>
+			  </div>
 			</form> 
 	  
 
