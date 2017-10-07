@@ -701,26 +701,59 @@ $signPackage = $jssdk->GetSignPackage();
 						<input type="text" class="form-control" disabled cont="email">
 					</div>
 					<div class="form-group">
-						<label>投票选项:</label>
+						<label>部门选择（最多选择三个部门）</label>
 						<div class="" style="padding-left:10px;">
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" name="activity" value="活动1" >活动1
+								<input type="checkbox" name="department" value="KxXqChy" >创意设计部
 							  </label>
 							</div>
 							<div class="checkbox">
 								<label>
-								<input type="checkbox" name="activity" value="活动2">活动2
+								<input type="checkbox" name="department" value="KxXqTs">网络宣传部
 								</label>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" name="activity" value="活动3">活动3
+								<input type="checkbox" name="department" value="KxXqDm">WEB研发部
 							  </label>
 							</div>
-							<div id="reason" >
-								<textarea class="form-control" placeholder="请输入投票理由"></textarea>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxJsJf">技术服务部
+							  </label>
 							</div>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxJsDj">大疆俱乐部
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxShwGl">管理部
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxShwWl">外联部
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxShwYj">院校交流部
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxHdKh">科技活动部
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" name="department" value="KxHdKp">科创培训部
+							  </label>
+							</div>
+							
 						</div>
 					</div>
 					
