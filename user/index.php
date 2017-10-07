@@ -688,22 +688,20 @@ $signPackage = $jssdk->GetSignPackage();
 			  
 			<form action="/demo/vote.php">  
 			  <!-- two columns-->
-			  <div class="row">
 				<div class="col-xs-6">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <label><div class="btn btn-default" role="button" style="margin:0 auto;">
-						<h2><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</h2>
-				  </label></div>
-				  <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-						
-				  
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
 				</div>
+				
+				<hr class="featurette-divider">
 				
 				<div class="col-xs-6">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
 				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
 				</div>
 				
 				<hr class="featurette-divider">
