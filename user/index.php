@@ -705,7 +705,7 @@ $signPackage = $jssdk->GetSignPackage();
 						<div class="" style="padding-left:10px;">
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" name="activity" value="活动1" checked>活动1
+								<input type="checkbox" name="activity" value="活动1" >活动1
 							  </label>
 							</div>
 							<div class="checkbox">
