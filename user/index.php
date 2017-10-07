@@ -43,47 +43,8 @@ $signPackage = $jssdk->GetSignPackage();
     <![endif]-->
 	<link href="css/index.css" rel="stylesheet">
 	
-	<!--  为活动投票引入的奇怪样式表  
-	<link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Skin/default/bootstrap.min.css?V=20171001-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/fontAwesome/4.7.0/css/font-awesome.min.css?V=20171001-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Skin/default/combind_pc.min.css?V=20171001-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Colorbox/Style1/colorbox.css?V=20171001-1" /><script id="j_f55dd6de90d50aba" src="http://static.vote8.cn/JS/jquery-3.1.1.min.js?V=20171001-1" type="text/javascript"></script><script id="j_e3682becb1c908b8" src="http://static.vote8.cn/bootstrap/3.3.7/js/bootstrap.min.js?V=20171001-1" type="text/javascript"></script><script id="j_9d62dea272e13415" src="http://static.vote8.cn/JS/jquery.colorbox-min.js?V=20171001-1" type="text/javascript"></script><script id="j_528872b8f61629ba" src="http://static.vote8.cn/JS/Front/Global.js?V=20171001-1" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Colorbox/Style1/colorbox.css?V=20171001-1" /><script id="j_2e4651bd25acb1ea" src="http://static.vote8.cn/JS/UI.js?V=20171001-1" type="text/javascript"></script><script id="j_81582262331b8d66" src="http://static.vote8.cn/JS/jquery.countdown.min.js?V=20171001-1" type="text/javascript"></script><script id="j_9bd10f205e50d435" src="http://static.vote8.cn/JS/jquery.json.min.js?V=20171001-1" type="text/javascript"></script><script id="j_3835d2234d7253d6" src="http://static.vote8.cn/JS/jquery.cookie.js?V=20171001-1" type="text/javascript"></script><script id="j_486bb6d5f9bcb555" src="http://static.vote8.cn/JS/VideoUrl.js?V=20171001-1" type="text/javascript"></script><script id="j_f7df22b399e7beef" src="http://static.vote8.cn/JS/jqueryPlugin.js?V=20171001-1" type="text/javascript"></script><script id="j_88d4b9a3a00249c8" src="http://static.vote8.cn/JS/Front/Home.js?V=20171001-1" type="text/javascript"></script><script id="j_22016f07c9c3e838" src="http://static.vote8.cn/JS/Common.js?V=20171001-1" type="text/javascript"></script></head>
-	<style type="text/css">
-	
-		.OptionListItem
-		{	background-color:#bfd9e3 ! important;
-			width: 46% ! important;
-			margin:0px 10px;
-			 	
-		}
-	</style>
-	 待完成：把内联css整理一下；调整提交按钮居中效果，调整块颜色  -->
-	 
-	<style type="text/css">
-		.wrapper {
-			max-width:1100px;
-			margin:70px auto;
-		}
-		
-		.green-section {
-			text-align:center;
-			background:#089D80;
-			color:#fff;
-			padding:80px;
-		}
-		
-		.grey-section {
-			text-align:center;
-			background:#3f3965;
-			color:#fff;
-			padding:80px;
-		}
-		
-		.footer {
-			margin:0 auto;
-			max-width:1100px;
-		}
-	</style>
-	
-
   </head>
+  
   <body>
 	<div style="max-width:500px; margin:0 auto; position:relative; background-color:#f5f5f5; font-size:12px; min-width:347;">
 		<div id="index"  >
@@ -722,103 +683,47 @@ $signPackage = $jssdk->GetSignPackage();
 		<div id="vote" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
-		<div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-xs-6">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-xs-6">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-xs-6">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div><!-- /.row -->
+		
+			  
+			  
+			<form action="/demo/vote.php">  
+			  <!-- two columns-->
+			  <div class="row">
+				<div class="col-xs-6">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				  <p><a class="btn btn-default" href="#" role="button">
+						<label>
+							<input type="checkbox" name="department" value="KxXqChy" >创意设计部
+						</label>
+				  View details &raquo;</a></p>
+				</div>
+				<div class="col-xs-6">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="col-xs-6">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="col-xs-6">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				
+			  </div><!-- /.row -->
+			</form> 
 	  
-	  <div class="row">
-        <div class="col-xs-6">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-xs-6">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-xs-6">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div><!-- /.row -->
 
 
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-
-    </div><!-- /.container -->
-
+      
 		</div>
 		<!-- ............................................    -->
 		
