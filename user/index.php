@@ -695,7 +695,14 @@ $signPackage = $jssdk->GetSignPackage();
 				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
 				</div>
 				
-				<hr class="featurette-divider">
+				<div class="col-xs-6">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
+				</div>
+				
+				
 				
 				<div class="col-xs-6">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
@@ -704,20 +711,25 @@ $signPackage = $jssdk->GetSignPackage();
 				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
 				</div>
 				
-				<hr class="featurette-divider">
-				
-				
 				<div class="col-xs-6">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
-				  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
 				</div>
+				
 				<div class="col-xs-6">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
-				  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><a class="btn btn-default" href="#" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</a></p>
+				</div>
+				
+				<div class="col-xs-6">
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				  <h2>Heading</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="department" value="KxXqChy" ><i>1.</i>Heading</div></p>
 				</div>
 				
 			  </div><!-- /.row -->
