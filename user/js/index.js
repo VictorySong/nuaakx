@@ -500,12 +500,12 @@ $(document).ready(function(){
 		$("#background").hide();
 	});
 	//设置活动投票表单提交
-	/*
+	
 	$("#votebutton").click(function(){
 		$("#formvote").submit()
 		alert("最多选三个部门");
-	}
-	*/
+	});
+	
 	//设置报名表单提交
 	$("#recruit").find("form").submit(function(e){
 		e.preventDefault();
