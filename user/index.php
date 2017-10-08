@@ -786,7 +786,7 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
 				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="checkbox[]" value="vote1" ><i>1.</i>Heading</div></p>
+				  <p><div class="btn btn-default" role="button"><input type="checkbox" name="vote1" value="vote1" ><i>1.</i>Heading</div></p>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">

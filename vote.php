@@ -1,7 +1,4 @@
 <?php
-	foreach($_REQUEST['checkbox'] as $checkbox)  
-　　　　　{  
-　　　　　　　　　　echo  $checkbox;  
-　　　　　}  
+	echo $_POST["vote1"];
 	echo "haha";
 ?>
