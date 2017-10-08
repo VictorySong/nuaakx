@@ -1,0 +1,201 @@
+<html lang="zh-CN"><head>
+    <meta http-equiv="Content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>vic论坛</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 仍可以用 <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+	<link href="../bootstrap-wysiwyg-master/external/google-code-prettify/prettify.css" rel="stylesheet">
+	<link href="../bootstrap-wysiwyg-master/index.css" rel="stylesheet">
+	<link href="./css/editpost.css" rel="stylesheet">
+
+  </head>
+  <body>
+	<nav class="navbar navbar-default navbar-fixed-top" style="background-color:white; position:fixed;" role="navigation">
+		<table class="table" style="margin-bottom:0px; height:50px; ">
+		  <tbody>
+			<tr >
+			  <td width="50%" to="simple"  class="active" style="text-align:center; " >简短</td>
+			  <td  style="text-align:center;"  to="texteditor">编辑器</td>
+			</tr>
+		  </tbody>
+		</table>
+	</nav>
+	<div style="height:52px;">
+	</div>
+	<div cont="content" to="simple">
+		<form role="form">
+		  <div class="form-group">
+			<textarea class="form-control" style="height:100px; border:0px;" placeholder="内容"></textarea>
+		  </div>
+		  <div class="form-group">
+			
+		  </div>
+		  
+		  <button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+		 
+		</form>
+	</div>
+	
+	
+	<div style="display:none;" cont="content" to="texteditor">
+		<hr>
+		<form role="form">
+		  <div class="form-group">
+			<input type="text" name="title" style="height:30px;" class="form-control" placeholder="标题"></textarea>
+		  </div>
+		   <div class="form-group">
+			<input type="text" name="description" class="form-control" style="height:30px;" placeholder="描述"></textarea>
+		  </div>
+		</form>
+		<div id="alerts"></div>
+		<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+		  <div class="btn-group">
+			<a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+			  <ul class="dropdown-menu">
+			  <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+			</div>
+		  <div class="btn-group">
+			<a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+			  <ul class="dropdown-menu">
+			  <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+			  <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+			  <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+			  </ul>
+		  </div>
+		  <div class="btn-group">
+			<a class="btn" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+			<a class="btn" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+			<a class="btn" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+			<a class="btn" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+		  </div>
+		  <div class="btn-group">
+			<a class="btn" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+			<a class="btn" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+			<a class="btn" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+			<a class="btn" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+		  </div>
+		  <div class="btn-group">
+			<a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+			<a class="btn" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+			<a class="btn" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+			<a class="btn" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+		  </div>
+		  <div class="btn-group">
+			  <a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+				<div class="dropdown-menu input-append">
+					<input class="span2" style="float:left; margin-left:5px; height:30px; border-top-left-radius:4px; border-bottom-left-radius:4px;" placeholder="URL" type="text" data-edit="createLink">
+					<button class="btn" type="button" style="border-top-left-radius:0px; border-bottom-left-radius:0px; ">Add</button>
+			</div>
+			<a class="btn" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+		  </div>
+		  
+		  <div class="btn-group">
+			<a class="btn" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+			<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+		  </div>
+		  <div class="btn-group">
+			<a class="btn" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+			<a class="btn" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+		  </div>
+		  <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+		</div>
+		
+		<div id="editor" style="min-height:400px;" contenteditable="true">
+		  </div>
+		 <div class="control-group" >
+						  
+
+			  <!-- Button -->
+			  <div class="controls">
+				<button class="btn btn-success" style="width:100%" to="submit">发布</button>
+			  </div>
+			  
+			</div>
+		</div>
+		<p>更改<a class="changetype" style="underline:none;">类型</a><p>
+	</div>
+	
+	<!--    每次提交时弹出类型选择界面      -->
+	<div id="background" style="">
+		
+	</div>
+	<div id="type" class="panel panel-default" style="max-width:300px; position:fixed; z-index:4;">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				请选择添加文章类型
+			</h3>
+		</div>
+		<div class="panel-body">
+			<span class="label label-default" ty="tutorials">教程</span>
+			<span class="label label-default" ty="software">软件</span>
+			<span class="label label-default" ty="dj">大疆</span>
+			<span class="label label-default" ty="simple">日常</span>
+		</div>
+	</div>
+	<!-- ...........................................    -->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 或者用 <script src="../js/jquery-3.2.1.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 或者用 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->	
+	<script src="../bootstrap-wysiwyg-master/external/jquery.hotkeys.js"></script>
+	<script src="../bootstrap-wysiwyg-master/external/google-code-prettify/prettify.js"></script>
+	<script src="../js/md5.js"></script>
+	<script src="js/editpost.js" ></script>
+	<script src="../manager/js/bootstrap-wysiwygchangedmd5.js"></script>
+	<script>
+	  $(function(){
+		function initToolbarBootstrapBindings() {
+		  var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
+				'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+				'Times New Roman', 'Verdana'],
+				fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+		  $.each(fonts, function (idx, fontName) {
+			  fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
+		  });
+		  $('a[title]').tooltip({container:'body'});
+			$('.dropdown-menu input').click(function() {return false;})
+				.change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
+			.keydown('esc', function () {this.value='';$(this).change();});
+
+		  $('[data-role=magic-overlay]').each(function () { 
+			var overlay = $(this), target = $(overlay.data('target')); 
+			overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+		  });
+		  if ("onwebkitspeechchange"  in document.createElement("input")) {
+			var editorOffset = $('#editor').offset();
+			$('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
+		  } else {
+			$('#voiceBtn').hide();
+		  }
+		};
+		function showErrorAlert (reason, detail) {
+			var msg='';
+			if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+			else {
+				console.log("error uploading file", reason, detail);
+			}
+			$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+			 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+		};
+		initToolbarBootstrapBindings();  
+		$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+		window.prettyPrint && prettyPrint();
+	  });
+	</script>
+	<script src="../js/imagesong.js"></script>
+	
+  </body>
+</html>	
