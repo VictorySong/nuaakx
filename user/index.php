@@ -46,7 +46,7 @@ $signPackage = $jssdk->GetSignPackage();
   </head>
   <body>
 	<div style="max-width:500px; margin:0 auto; position:relative; background-color:#f5f5f5; font-size:12px; min-width:347;">
-		<div id="index"  >
+		<div id="index">
 			<div id="headback" style="width:100%; max-width:500px;" cont="head">
 				
 			</div>
@@ -834,7 +834,7 @@ $signPackage = $jssdk->GetSignPackage();
 			  <!-- /.row -->
 			  
 			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
-			  <button type="submit" class="btn btn-default">点击投票</button>
+			  <div class="btn btn-lg btn-primary" id="votebutton" role="button">点击投票</div>
 			  </div>
 			</form> 
 	  
