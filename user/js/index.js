@@ -551,6 +551,35 @@ $(document).ready(function(){
 			json["description"]=description.val();
 		window.recruitjson=json;
 		window.recruitform=$("#recruit").find("form");
+		//设置活动投票表单提交
+		$("#recruit").find("form").submit(function(e){
+		e.preventDefault();
+		var json={}
+		json["vote"]=[];
+		
+		var vote =$(this).find("input[name=\"vote\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		});
+		if(vote.length<4)
+		{
+			vote.each(function(){
+				json["vote"][json["vote"].length]=$(this).val();
+			});
+		}
+		else if(vote.length==0){
+			alert("最少选一个节目");
+			return;
+		}else
+		{
+			alert("最多选三个节目");
+			return;
+		}
+		window.recruitjson=json;
+		window.recruitform=$("#recruit").find("form");
+		
 		//判断个人信息是否完整
 		/*if(window.inf["phone"]==null || window.inf["phone"]=="" || window.inf["email"]==null || window.inf["email"]=="")
 		{
