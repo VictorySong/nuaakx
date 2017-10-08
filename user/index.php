@@ -778,7 +778,7 @@ $signPackage = $jssdk->GetSignPackage();
 			<div style="width:100%;" cont="head">
 			</div>
 		
-			  
+		<!--  加label,post失败   -->	  
 			  
 			<form id="formvote" action="vote.php" method="post">  
 			  <!-- two columns-->
