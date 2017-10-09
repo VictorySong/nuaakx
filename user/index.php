@@ -780,7 +780,7 @@ $signPackage = $jssdk->GetSignPackage();
 		
 		<!--  加label,post失败   -->	  
 			  
-			<form id="formvote" action="vote.php" method="post">  
+			<form id="formvote" >  
 			  <!-- two columns-->
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
@@ -820,7 +820,8 @@ $signPackage = $jssdk->GetSignPackage();
 			  <!-- /.row -->
 			  
 			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
-			  <div class="btn btn-lg btn-primary" id="votebutton" role="button">点击投票</div>
+			 
+			  <button type="submit" class="btn btn-default" style="width:100%;">提交</button>
 			  </div>
 			</form> 
 	  
