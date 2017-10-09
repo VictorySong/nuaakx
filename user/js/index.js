@@ -511,7 +511,7 @@ $(document).ready(function(){
 			else
 				return 0;
 		});
-		if(department.length<4)
+		if(vote.length<4)
 		{
 			vote.each(function(){
 				json["vote"][json["vote"].length]=$(this).val();
