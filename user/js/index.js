@@ -501,9 +501,55 @@ $(document).ready(function(){
 	});
 	//设置活动投票表单提交
 	
-	$("#votebutton").click(function(){
-		$("#formvote").submit()
-		alert("最多选三个部门");
+	$("#actvote").find("form").submit(function(e){
+		e.preventDefault();
+		var json={}
+		json["vote"]=[];
+		var vote=$(this).find("input[name=\"vote\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		});
+		if(department.length<4)
+		{
+			vote.each(function(){
+				json["vote"][json["vote"].length]=$(this).val();
+			});
+			if(confirm("是否确认提交投票"))
+		{
+			console.log(json);
+			$.post("vote.php",json).done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				getrecruit();
+				userinfget();
+			}
+		});
+			alert("投票成功！");
+		}
+		}
+		else if(vote.length==0){
+			alert("请选择");
+			return;
+		}else
+		{
+			alert("最多选三个选项");
+			return;
+		}
+		window.recruitjson=json;
+		window.recruitform=$("#actvote").find("form");
+		
+		
+			
 	});
 	
 	//设置报名表单提交
