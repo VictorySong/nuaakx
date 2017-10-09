@@ -10,7 +10,7 @@ session_start();
 
 		foreach($vote as $value)
 		{
-			if($mysql->runsql("INSERT INTO `app_nuaakexie`.`KxVote` (`Std`, `number`, `phone`) VALUES ('1','".$value."','2')"))
+			if($mysql->runsql("INSERT INTO `app_nuaakexie`.`KxVote` (`Std`, `number`, `phone`) VALUES ('".$_SESSION["stId"]."','".$value."','2')"))
 				die($mysql->errmsg());
 		}
 		
