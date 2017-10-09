@@ -820,8 +820,8 @@ $signPackage = $jssdk->GetSignPackage();
 			  <!-- /.row -->
 			  
 			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
-			 
-			  <button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+		
+			  <button type="submit" class="btn btn-lg btn-primary" >提交</button>
 			  </div>
 			</form> 
 	  
