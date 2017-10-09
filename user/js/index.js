@@ -672,6 +672,59 @@ $(document).ready(function(){
 	
 					
 });
+
+//获取投票后界面
+function getvote(){
+
+	$.get("getvote.php").done(function(data){
+		console.log(data);
+		try{
+			var da=JSON.parse(data);
+		}
+		catch(e){
+			console.log(e);
+			return;
+		}
+		if(da["error"]==0 && da["alreadyappoint"]==1)
+		{
+			window.fixform=$("#actvote").find("form");
+			$("#actvote").find("form").remove();
+			var html='<div class="panel panel-default">\
+									<div class="panel-heading">\
+										<span >哈哈哈</span>\
+									</div>\
+									<div class="panel-body">\
+										<p>哈哈哈</p>\
+									</div>';
+							
+				html+='<div class="panel-footer" date="'+da["msg"]["date"]+'" cont="fixcancel">取消预约</div></div>';
+			$("#actvote").append(html);
+			console.log("haha");
+			$("#actvote").find("div[cont=\"fixcancel\"]").click(function(){
+				var json={};
+				window.cancelthat=this;
+				json["date"]=$(this).attr("date");
+				$.post("fixcancel.php",json).done(function(data){
+					console.log(data);
+					try{
+						var da=JSON.parse(data);
+					}
+					catch(e){
+						console.log(e);
+						return;
+					}
+					if(da["error"]==0)
+					{
+						alert("成功取消");
+						$(window.cancelthat).parent().remove();
+						$("#fixcomputer").append(window.fixform);
+					}
+				});
+			});
+		}
+	});
+}
+
 function getfix(){
 	//获取是否有维修预约的
 	$.get("getfix.php").done(function(data){
@@ -722,6 +775,7 @@ function getfix(){
 		}
 	});
 }
+
 function getrecruit(){
 	$.post("getrecruit.php").done(function(data){
 		console.log(data);
