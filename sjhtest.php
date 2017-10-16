@@ -4,10 +4,10 @@
       */  
       
     //define your token  
-    define("TOKEN", "aaabbb");  
+    define("TOKEN", "sjh");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
-    $wechatObj->responseMsg();  
+    //$wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
     {   
