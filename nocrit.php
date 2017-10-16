@@ -4,7 +4,7 @@
       */  
       
     //define your token  
-    define("TOKEN", "skywalker");  
+    define("TOKEN", "maozhuxi");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
     //$wechatObj->responseMsg();  
