@@ -689,20 +689,14 @@ function getvote(){
 		{
 			window.fixform=$("#actvote").find("form");
 			$("#actvote").find("form").remove();
-			//<span class="badge" id="noreadnotice" changed="false">0</span>
-			var html='<div class="row">\
-						<div class="col-xs-6" style="padding-bottom:15px;">\
-										<span >哈哈哈</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>哈哈哈</p>\
-									</div>';
+			
 			var html='<div class="row">\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">\
 				  <h2>Heading</h2>\
-				  <p> elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>\
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>Heading</div></p></label>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>';
 							
