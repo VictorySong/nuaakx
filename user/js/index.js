@@ -689,13 +689,16 @@ function getvote(){
 		{
 			window.fixform=$("#actvote").find("form");
 			$("#actvote").find("form").remove();
-			var html='<div class="panel panel-default">\
-									<div class="panel-heading">\
-										<span >哈哈哈</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>哈哈哈</p>\
-									</div>';
+			
+			var html='<div class="row">\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">\
+				  <h2>Heading</h2>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
+				</div>\
+				</div>';
 							
 				html+='<div class="panel-footer" date="'+da["msg"]["date"]+'" cont="fixcancel">取消预约</div></div>';
 			$("#actvote").append(html);

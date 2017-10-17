@@ -782,11 +782,13 @@ $signPackage = $jssdk->GetSignPackage();
 			  
 			<form id="formvote" >  
 			  <!-- two columns-->
+			  <div class="row">
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>Heading</div></p></label>
+				  <div class="btn btn-default" role="button" style="padding-bottom:0px;"><p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>
+					排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>
+				  </div>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
@@ -799,7 +801,7 @@ $signPackage = $jssdk->GetSignPackage();
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p>Dlus ac cursus commodo, tortor mauris condimentum nibh.</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>1.</i>Heading</div></p></label>
 				</div>
 				
@@ -813,10 +815,11 @@ $signPackage = $jssdk->GetSignPackage();
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				  <p> ac cursus commodo, tortor mauris condimentum nibh.</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
 				</div>
-				
+			
+			  </div>
 			  <!-- /.row -->
 			  
 			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
