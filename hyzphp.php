@@ -7,6 +7,12 @@
 	$tmpArr=array(TOKEN,$timestamp,$nonce);
 	sort($tmpArr,SORT_STRING);
 	$tmpStr=join($tmpArr)
-    $tmpStr=sha1($tmpStr)  
+    $tmpStr=sha1($tmpStr)
+    if ($tmpStr==$signature){
+		echo $echostr;
+	}eles{		
+		echo "error";
+		exit;
+	}
       
 ?>  
