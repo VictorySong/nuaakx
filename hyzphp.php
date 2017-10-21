@@ -6,8 +6,8 @@
 	define('TOKEN','1021');
 	$tmpArr=array(TOKEN,$timestamp,$nonce);
 	sort($tmpArr,SORT_STRING);
-	$tmpStr=join($tmpArr)
-    $tmpStr=sha1($tmpStr)
+	$tmpStr=join($tmpArr);
+    $tmpStr=sha1($tmpStr);
     if ($tmpStr==$signature){
 		echo $echostr;
 	}eles{		
