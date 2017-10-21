@@ -1,18 +1,8 @@
 <?php  
-    $signature=$_GET['signature'];
-    $timestamp=$_GET['timestatmp'];
-	$nonce=$_GET['nonce'];
-	$echostr=$_GET['echostr'];
-	define('TOKEN','1021');
-	$tmpArr=array(TOKEN,$timestamp,$nonce);
-	sort($tmpArr,SORT_STRING);
-	$tmpStr=join($tmpArr);
-    $tmpStr=sha1($tmpStr);
-    if ($tmpStr==$signature){
-		echo $echostr;
-	}else{		
-		echo "error";
-		exit;
-	}
+    //define your token
+define("TOKEN", "1021"); 
+$wechatObj = new wechatCallbackapiTest();
+$wechatObj->valid(); 
+$wechatObj->responseMsg();
       
 ?>  
