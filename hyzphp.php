@@ -10,7 +10,7 @@
     $tmpStr=sha1($tmpStr);
     if ($tmpStr==$signature){
 		echo $echostr;
-	}eles{		
+	}else{		
 		echo "error";
 		exit;
 	}
