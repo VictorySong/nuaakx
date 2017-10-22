@@ -824,6 +824,8 @@ $signPackage = $jssdk->GetSignPackage();
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>4.</i>博物馆奇妙夜</div></p></label>
 				</div>
 				
+				<div class="clearfix visible-xs-block"></div>
+				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>5.像我这样的人</h2>
@@ -837,6 +839,10 @@ $signPackage = $jssdk->GetSignPackage();
 				  <p> 汉舞，柔美;汉舞山鬼，优雅温婉。宅舞，欢脱；极乐净土，妩媚动人。汉舞与宅舞，于此齐聚一堂，极乐山鬼，就此上演。</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="6" ><i>6.</i>极乐山鬼</div></p></label>
 				</div>
+				
+				<div class="clearfix visible-xs-block"></div>
+				
+				<div class="clearfix visible-xs-block"></div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">
