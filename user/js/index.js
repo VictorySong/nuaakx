@@ -723,12 +723,14 @@ function getvote(){
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
+				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h2>5.像我这样的人</h2>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
+				</div>\
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu6.jpg" alt="Generic placeholder image" width="140" height="140">\
@@ -737,12 +739,14 @@ function getvote(){
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
+				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h2>7.武林内传</h2>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
+				</div>\
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
@@ -751,7 +755,8 @@ function getvote(){
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
-				</div>';
+				</div>\
+			</div>';
 							
 				
 			$("#actvote").append(html);
