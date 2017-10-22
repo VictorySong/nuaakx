@@ -838,8 +838,6 @@ $signPackage = $jssdk->GetSignPackage();
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="6" ><i>6.</i>极乐山鬼</div></p></label>
 				</div>
 				
-				<div class="clearfix visible-xs-block"></div>
-				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>7.武林内传</h2>
