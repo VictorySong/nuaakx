@@ -691,12 +691,14 @@ function getvote(){
 			window.fixform=$("#actvote").find("form");
 			$("#actvote").find("form").remove();
 			
-			var html='<div class="col-xs-6" style="padding-bottom:15px;">\
+			var html='<div class="row">\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h2>1.荧光舞</h2>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
+				</div>\
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">\
@@ -705,12 +707,14 @@ function getvote(){
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
+				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h2>3.Mad again</h2>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
+				</div>\
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">\

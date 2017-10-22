@@ -779,12 +779,15 @@ $signPackage = $jssdk->GetSignPackage();
 			</div>
 		
 		
-			<div class="page-header">
-				<h4>投票规则：每个人可以进行一次投票，一次投票可以勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
-			</div>
+			
 		
 		
 			<form id="formvote" >  
+			
+			<div class="page-header">
+				<h4>投票规则：每个人可以进行一次投票，一次投票可以勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
+			</div>
+			
 			  <!-- two columns-->
 			  <div class="row">
 		<!--		<div class="col-xs-6" style="padding-bottom:15px;">
