@@ -800,28 +800,28 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>1.荧光舞</h2>
 				  <p>荧光的迷乱舞步，线条的妖娆变幻，把黑夜的寂寞，奏成激荡心灵的狂想曲。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>1.</i>荧光舞</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>荧光舞</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>2.新生看点播报</h2>
 				  <p>这里有最纯粹的欢声笑语，这里有最疯狂的呐喊，军训虽短，却也刻骨铭心。在这里，我们将用不寻常的方式展现出军训的欢乐，在这里，我们将以另一种姿态带你重温军训的温情。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>2.</i>新生看点播报</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>2.</i>新生看点播报</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>3.Mad again</h2>
 				  <p>歌曲的串烧，舞蹈的喜感<br/>给大家带来欢快愉悦</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>3.</i>Mad again</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>3.</i>Mad again</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>4.博物馆奇妙夜</h2>
 				  <p>你见过凌晨两点的博物馆吗?</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>4.</i>博物馆奇妙夜</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>4.</i>博物馆奇妙夜</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
@@ -835,7 +835,7 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="votephotos/jiemu6.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>6.极乐山鬼</h2>
 				  <p> 汉舞，柔美;汉舞山鬼，优雅温婉。宅舞，欢脱；极乐净土，妩媚动人。汉舞与宅舞，于此齐聚一堂，极乐山鬼，就此上演。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>6.</i>极乐山鬼</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="6" ><i>6.</i>极乐山鬼</div></p></label>
 				</div>
 				
 				<div class="clearfix visible-xs-block"></div>
@@ -844,7 +844,7 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>7.武林内传</h2>
 				  <p>莫小贝上大学回客栈的各种问事搞事～/滑了个稽/</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>7.</i>武林内传</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="7" ><i>7.</i>武林内传</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
@@ -855,7 +855,7 @@ $signPackage = $jssdk->GetSignPackage();
 而心中闪烁的萤火 是少年肆意绽放的青春<br/>
 下面请欣赏技术服务部带来的节目 梦灯笼
 </p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>8.</i>梦灯笼</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>8.</i>梦灯笼</div></p></label>
 				</div>
 			
 			  </div>
