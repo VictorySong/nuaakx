@@ -791,6 +791,7 @@ $signPackage = $jssdk->GetSignPackage();
 				  </div>
 				</div>
 		 -->
+		 <h4>投票规则：每个人只能进行一次投票，一次投票只能勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
 		 
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
@@ -810,28 +811,28 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>3.Mad again</h2>
 				  <p>歌曲的串烧，舞蹈的喜感<br/>给大家带来欢快愉悦</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>3.</i>Mad again</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>4.博物馆奇妙夜</h2>
 				  <p>你见过凌晨两点的博物馆吗?</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>4.</i>博物馆奇妙夜</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>5.像我这样的人</h2>
 				  <p>欲戴王冠，先承其重。无论我们多么骄傲也会被现实无情击垮，不可避免陷入沮丧，黯然神伤。希望这首《像我这样的人》可以帮助你我在迷茫中寻到最初的信仰，孤独但坚定地走向前方。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>5.</i>像我这样的人</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>6.极乐山鬼</h2>
 				  <p> 汉舞，柔美;汉舞山鬼，优雅温婉。宅舞，欢脱；极乐净土，妩媚动人。汉舞与宅舞，于此齐聚一堂，极乐山鬼，就此上演。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>6.</i>极乐山鬼</div></p></label>
 				</div>
 				
 				<div class="clearfix visible-xs-block"></div>
@@ -840,7 +841,7 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>7.武林内传</h2>
 				  <p>莫小贝上大学回客栈的各种问事搞事～/滑了个稽/</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>7.</i>武林内传</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
@@ -851,7 +852,7 @@ $signPackage = $jssdk->GetSignPackage();
 而心中闪烁的萤火 是少年肆意绽放的青春<br/>
 下面请欣赏技术服务部带来的节目 梦灯笼
 </p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>8.</i>梦灯笼</div></p></label>
 				</div>
 			
 			  </div>
@@ -859,7 +860,7 @@ $signPackage = $jssdk->GetSignPackage();
 			  
 			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
 		
-			  <button type="submit" class="btn btn-lg btn-primary" >提交</button>
+			  <button type="submit" class="btn btn-lg btn-primary" >点击提交</button>
 			  </div>
 			</form> 
 	  
