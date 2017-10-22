@@ -740,6 +740,7 @@ function getvote(){
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
+				<div class="clearfix visible-xs-block"></div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h2>7.武林内传</h2>\
