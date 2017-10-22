@@ -796,14 +796,14 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>1.荧光舞</h2>
 				  <p>荧光的迷乱舞步，线条的妖娆变幻，把黑夜的寂寞，奏成激荡心灵的狂想曲。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>1.</i>荧光舞</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>2.新生看点播报</h2>
 				  <p>这里有最纯粹的欢声笑语，这里有最疯狂的呐喊，军训虽短，却也刻骨铭心。在这里，我们将用不寻常的方式展现出军训的欢乐，在这里，我们将以另一种姿态带你重温军训的温情。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>1.</i>Heading</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>2.</i>新生看点播报</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
@@ -833,6 +833,8 @@ $signPackage = $jssdk->GetSignPackage();
 				  <p> 汉舞，柔美;汉舞山鬼，优雅温婉。宅舞，欢脱；极乐净土，妩媚动人。汉舞与宅舞，于此齐聚一堂，极乐山鬼，就此上演。</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
 				</div>
+				
+				<div class="clearfix visible-xs-block"></div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
