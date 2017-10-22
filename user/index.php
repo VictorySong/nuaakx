@@ -791,7 +791,11 @@ $signPackage = $jssdk->GetSignPackage();
 				  </div>
 				</div>
 		 -->
-		 <h4>投票规则：每个人只能进行一次投票，一次投票只能勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
+		 
+		 <div class="page-header">
+  <h4>投票规则：每个人只能进行一次投票，一次投票只能勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
+</div>
+		 
 		 
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
