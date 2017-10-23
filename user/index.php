@@ -806,7 +806,9 @@ $signPackage = $jssdk->GetSignPackage();
 你手中舞动的流光 是此生唯一不变的信仰<br/>
 而心中闪烁的萤火 是少年肆意绽放的青春<br/>
 下面请欣赏技术服务部带来的节目 梦灯笼
-</p></div>
+</p>
+				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>8.</i>梦灯笼</div></p></label>
+				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">
@@ -864,9 +866,6 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 				
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>8.</i>梦灯笼</div></p></label>
-				</div>
-			
 			  </div>
 			  <!-- /.row -->
 			  
