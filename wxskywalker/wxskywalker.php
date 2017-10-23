@@ -97,14 +97,15 @@
                 return false;  
             }  
         }  
-     "button":[
+		{"button":[
 		 {
 			 "name":"百度"
 			 "type":"view"
 			 "url":"www.baidu.com"
 		 }
 		 ]
-	"button":[
+		}
+		 {"button":[
 	     {
 		     "name":"点我点我"
 			 "type":"click"
@@ -117,7 +118,8 @@
              <Content><![CDATA[你好]]></Content>
              </xml>
 	     }
-		 ]
+		]
+		}
     }  
       
     ?>  
