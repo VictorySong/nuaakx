@@ -800,11 +800,13 @@ $signPackage = $jssdk->GetSignPackage();
 		 -->
 		 
 				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h2>1.荧光舞</h2>
-				  <p>荧光的迷乱舞步，线条的妖娆变幻，把黑夜的寂寞，奏成激荡心灵的狂想曲。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>荧光舞</div></p></label>
-				</div>
+				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h2>1.梦灯笼</h2>
+				  <p> 那振翅欲飞的蝴蝶 是我心中对自由的向往<br/>
+你手中舞动的流光 是此生唯一不变的信仰<br/>
+而心中闪烁的萤火 是少年肆意绽放的青春<br/>
+下面请欣赏技术服务部带来的节目 梦灯笼
+</p>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">
@@ -855,13 +857,13 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h2>8.梦灯笼</h2>
-				  <p> 那振翅欲飞的蝴蝶 是我心中对自由的向往<br/>
-你手中舞动的流光 是此生唯一不变的信仰<br/>
-而心中闪烁的萤火 是少年肆意绽放的青春<br/>
-下面请欣赏技术服务部带来的节目 梦灯笼
-</p>
+				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h2>8.荧光舞</h2>
+				  <p>荧光的迷乱舞步，线条的妖娆变幻，把黑夜的寂寞，奏成激荡心灵的狂想曲。</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>荧光舞</div></p></label>
+				</div>
+				
+				
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>8.</i>梦灯笼</div></p></label>
 				</div>
 			

@@ -693,8 +693,8 @@ function getvote(){
 			
 			var html='<div class="row">\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
-				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h3>1.荧光舞</h3>\
+				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>1.梦灯笼</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
@@ -702,7 +702,7 @@ function getvote(){
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>2.新生看点播报</h2>\
+				  <h3>2.新生看点播报</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
@@ -710,7 +710,7 @@ function getvote(){
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>3.Mad again</h2>\
+				  <h3>3.Mad again</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
@@ -718,7 +718,7 @@ function getvote(){
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>4.博物馆奇妙夜</h2>\
+				  <h3>4.博物馆奇妙夜</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
@@ -726,7 +726,7 @@ function getvote(){
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>5.像我这样的人</h2>\
+				  <h3>5.像我这样的人</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
@@ -734,7 +734,7 @@ function getvote(){
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu6.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>6.极乐山鬼</h2>\
+				  <h3>6.极乐山鬼</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
@@ -743,15 +743,15 @@ function getvote(){
 				<div class="clearfix visible-xs-block"></div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>7.武林内传</h2>\
+				  <h3>7.武林内传</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
-				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h2>8.梦灯笼</h2>\
+				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>8.荧光舞</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
