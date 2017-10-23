@@ -17,7 +17,7 @@ if(!empty($_SESSION["stId"]))
 	{
 		$json["error"]=0;
 		$json["alreadyvote"]=1;
-		$json["msg"]=$data;
+		
 	}
 	echo json_encode($json);
 }
