@@ -4,10 +4,10 @@
       */  
       
     //define your token  
-    define("TOKEN", "zsjsandy");  
+    define("TOKEN", "fuguidan");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
-   // $wechatObj->responseMsg();  
+    //$wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
     {   
@@ -99,4 +99,4 @@
         }  
     }  
       
-?>  
+    ?>  
