@@ -11,7 +11,7 @@
       
     class wechatCallbackapiTest  
     {   
-    //ÊÂÎï´¦Àíº¯Êı  
+    //äº‹ç‰©å¤„ç†å‡½æ•°  
         public function responseMsg()  
         {  
             $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];  
@@ -31,25 +31,25 @@
                                 <FuncFlag>0</FuncFlag>  
                                 </xml>";               
     switch($keyword){  
-    case "ÂíÔÆ":  
+    case "é©¬äº‘":  
     $msgType = "text";  
-    $contentStr="ÄúºÃ£¬ÂíÔÆ£¡ÎÒÖªµÀÄú´´½¨ÁË°¢Àï°Í°Í£¡";  
+    $contentStr="æ‚¨å¥½ï¼Œé©¬äº‘ï¼æˆ‘çŸ¥é“æ‚¨åˆ›å»ºäº†é˜¿é‡Œå·´å·´ï¼";  
     break;  
-    case "Âí»¯ÌÚ":  
+    case "é©¬åŒ–è…¾":  
     $msgType = "text";  
-    $contentStr="ÄúºÃ£¬Âí»¯ÌÚ£¡ÎÒÖªµÀ´´½¨ÁËÆó¶ìµÛ¹ú£¡";  
+    $contentStr="æ‚¨å¥½ï¼Œé©¬åŒ–è…¾ï¼æˆ‘çŸ¥é“åˆ›å»ºäº†ä¼é¹…å¸å›½ï¼";  
     break;  
-    case "Ê·ÓñÖù":  
+    case "å²ç‰æŸ±":  
     $msgType = "text";  
-    $contentStr="ÄúºÃ£¬Ê·ÓñÖù£¡ÎÒÖªµÀÄú´´½¨ÁË¾ŞÈËÍøÂç£¡";  
+    $contentStr="æ‚¨å¥½ï¼Œå²ç‰æŸ±ï¼æˆ‘çŸ¥é“æ‚¨åˆ›å»ºäº†å·¨äººç½‘ç»œï¼";  
     break;  
     default :  
     $msgType = "text";  
-    $contentStr="ÄãÊÇË­°¡£¿£¡Ò»±ßÁ¹¿ìÈ¥£¡";  
+    $contentStr="ä½ æ˜¯è°å•Šï¼Ÿï¼ä¸€è¾¹å‡‰å¿«å»ï¼";  
     break;  
     }  
     if(!empty($contentStr)){  
-    //Êä³öµ½Î¢ĞÅÖÕ¶Ë  
+    //è¾“å‡ºåˆ°å¾®ä¿¡ç»ˆç«¯  
     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);  
     echo $resultStr;  
     }                 
@@ -62,7 +62,7 @@
             }  
         }  
       
-    //½Ó¿ÚÑéÖ¤º¯Êı  
+    //æ¥å£éªŒè¯å‡½æ•°  
     public function valid()  
         {  
             $echoStr = $_GET["echostr"];  
@@ -96,7 +96,17 @@
             }else{  
                 return false;  
             }  
-        }  
+        } 
+{
+    "button": [
+        {
+            "name": "é“¾æ¥", 
+            "sub_button": [
+                {
+                    "type": "view", 
+                    "name": "æœç´¢", 
+                    "url": "http://www.baidu.com/"
+                }
+
     }  
-      
     ?>  

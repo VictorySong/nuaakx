@@ -4,10 +4,10 @@
       */  
       
     //define your token  
-    define("TOKEN", "zsjsandy");  
+    define("TOKEN", "123456gl");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
-   // $wechatObj->responseMsg();  
+    $wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
     {   
@@ -33,7 +33,7 @@
     switch($keyword){  
     case "马云":  
     $msgType = "text";  
-    $contentStr="您好，马云！我知道您创建了阿里巴巴！";  
+    $contentStr="mmp";  
     break;  
     case "马化腾":  
     $msgType = "text";  
@@ -99,4 +99,4 @@
         }  
     }  
       
-?>  
+    ?>  
