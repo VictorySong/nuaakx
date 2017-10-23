@@ -1,13 +1,13 @@
-    <?php  
+<?php  
     /** 
       * wechat php test 
       */  
       
     //define your token  
-    define("TOKEN", "1021");  
+    define("TOKEN", "gyc");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
-    //$wechatObj->responseMsg();  
+   // $wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
     {   
