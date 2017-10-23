@@ -4,10 +4,10 @@
       */  
       
     //define your token  
-    define("TOKEN", "zsjsandy");  
+    define("TOKEN", "skywalker");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
-   // $wechatObj->responseMsg();  
+    //$wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
     {   
@@ -97,6 +97,27 @@
                 return false;  
             }  
         }  
+     "button":[
+		 {
+			 "name":"百度"
+			 "type":"view"
+			 "url":"www.baidu.com"
+		 }
+		 ]
+	"button":[
+	     {
+		     "name":"点我点我"
+			 "type":"click"
+			 "key":"More Lnowledge"
+			 <xml>
+             <ToUserName><![CDATA[toUser]]></ToUserName>
+             <FromUserName><![CDATA[fromUser]]></FromUserName>
+             <CreateTime>12345678</CreateTime>
+             <MsgType><![CDATA[text]]></MsgType>
+             <Content><![CDATA[你好]]></Content>
+             </xml>
+	     }
+		 ]
     }  
       
-?>  
+    ?>  

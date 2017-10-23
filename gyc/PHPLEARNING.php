@@ -1,10 +1,10 @@
-<?php  
+    <?php  
     /** 
       * wechat php test 
       */  
       
     //define your token  
-    define("TOKEN", "zsjsandy");  
+    define("TOKEN", "gyc");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
    // $wechatObj->responseMsg();  
@@ -99,4 +99,4 @@
         }  
     }  
       
-?>  
+    ?>  
