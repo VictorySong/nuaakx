@@ -812,7 +812,7 @@ $signPackage = $jssdk->GetSignPackage();
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h3>2.新生看点播报</h3>
+				  <h3>2.新生看点<br/>播报</h3>
 				  <p>这里有最纯粹的欢声笑语，这里有最疯狂的呐喊，军训虽短，却也刻骨铭心。在这里，我们将用不寻常的方式展现出军训的欢乐，在这里，我们将以另一种姿态带你重温军训的温情。</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>2.</i>新生看点播报</div></p></label>
 				</div>
@@ -826,7 +826,7 @@ $signPackage = $jssdk->GetSignPackage();
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h3>4.博物馆奇妙夜</h3>
+				  <h3>4.博物馆<br/>奇妙夜</h3>
 				  <p>你见过凌晨两点的博物馆吗?</br></p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>4.</i>博物馆奇妙夜</div></p></label>
 				</div>
@@ -835,7 +835,7 @@ $signPackage = $jssdk->GetSignPackage();
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h4>5.像我这样的人</h3>
+				  <h3>5.像我这样的人</h3>
 				  <p>欲戴王冠，先承其重。无论我们多么骄傲也会被现实无情击垮，不可避免陷入沮丧，黯然神伤。希望这首《像我这样的人》可以帮助你我在迷茫中寻到最初的信仰，孤独但坚定地走向前方。</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>5.</i>像我这样的人</div></p></label>
 				</div>
