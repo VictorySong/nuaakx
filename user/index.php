@@ -819,7 +819,7 @@ $signPackage = $jssdk->GetSignPackage();
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h2>3.Mad again</h2>
+				  <h3>3.Mad again</h3>
 				  <p>歌曲的串烧，舞蹈的喜感<br/>给大家带来欢快愉悦</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>3.</i>Mad again</div></p></label>
 				</div>
@@ -827,7 +827,7 @@ $signPackage = $jssdk->GetSignPackage();
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>4.博物馆奇妙夜</h2>
-				  <p>你见过凌晨两点的博物馆吗?</p>
+				  <p>你见过凌晨两点的博物馆吗?</br></p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>4.</i>博物馆奇妙夜</div></p></label>
 				</div>
 				
