@@ -546,8 +546,8 @@ $(document).ready(function(){
 			alert("最多选三个选项");
 			return;
 		}
-		//window.recruitjson=json;
-		//window.recruitform=$("#actvote").find("form");
+		window.recruitjson=json;
+		window.recruitform=$("#actvote").find("form");
 		
 		
 			
