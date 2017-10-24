@@ -17,14 +17,14 @@ if(!empty($_SESSION["stId"]))
 	{
 		$json["error"]=0;
 		$json["alreadyvote"]=1;
-		$data1=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'1\'");
-		$data2=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'2\'");
-		$data3=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'3\'");
-		$data4=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'4\'");
-		$data5=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'5\'");
-		$data6=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'6\'");
-		$data7=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'7\'");
-		$data8=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'8\'");
+		$data1=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '1'");
+		$data2=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '2'");
+		$data3=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '3'");
+		$data4=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '4'");
+		$data5=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '5'");
+		$data6=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '6'");
+		$data7=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '7'");
+		$data8=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '8'");
 		$json["1"]=$data1;
 		$json["2"]=$data2;
 		$json["3"]=$data3;
