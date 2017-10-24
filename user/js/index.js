@@ -762,27 +762,9 @@ function getvote(){
 				
 			$("#actvote").append(html);
 			console.log("haha");
-			$("#actvote").find("div[cont=\"fixcancel\"]").click(function(){
-				var json={};
-				window.cancelthat=this;
-				json["date"]=$(this).attr("date");
-				$.post("fixcancel.php",json).done(function(data){
-					console.log(data);
-					try{
-						var da=JSON.parse(data);
-					}
-					catch(e){
-						console.log(e);
-						return;
-					}
-					if(da["error"]==0)
-					{
-						alert("成功取消");
-						$(window.cancelthat).parent().remove();
-						$("#fixcomputer").append(window.fixform);
-					}
-				});
-			});
+			
+				
+				
 		}
 	});
 }
