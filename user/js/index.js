@@ -755,7 +755,6 @@ function getvote(){
 		
 				$("#actvote").append(html);
 			
-				console.log("hhh");
 				
 		}
 	});
