@@ -807,7 +807,7 @@ $signPackage = $jssdk->GetSignPackage();
 而心中闪烁的萤火 是少年肆意绽放的青春<br/>
 下面请欣赏技术服务部带来的节目 梦灯笼
 </p>
-				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>1.</i>梦灯笼</div></p></label>
+				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>梦灯笼</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
@@ -862,7 +862,7 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h3>8.荧光舞</h3>
 				  <p>荧光的迷乱舞步，线条的妖娆变幻，把黑夜的寂寞，奏成激荡心灵的狂想曲。</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>8.</i>荧光舞</div></p></label>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>8.</i>荧光舞</div></p></label>
 				</div>
 				
 				
