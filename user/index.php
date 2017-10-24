@@ -778,11 +778,7 @@ $signPackage = $jssdk->GetSignPackage();
 			<div style="width:100%;" cont="head">
 			</div>
 		
-		
-			
-		
-		
-			<form id="formvote" >  
+			<form id="formvote" action="">  
 			
 			<div class="page-header">
 				<h4>投票规则：每个人可以进行一次投票，一次投票可以勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
@@ -803,11 +799,11 @@ $signPackage = $jssdk->GetSignPackage();
 				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h2>1.梦灯笼</h2>
 				  <p> 那振翅欲飞的蝴蝶 是我心中对自由的向往<br/>
-你手中舞动的流光 是此生唯一不变的信仰<br/>
-而心中闪烁的萤火 是少年肆意绽放的青春<br/>
-下面请欣赏技术服务部带来的节目 梦灯笼
-</p>
-				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>梦灯笼</div></p></label>
+					  你手中舞动的流光 是此生唯一不变的信仰<br/>
+					  而心中闪烁的萤火 是少年肆意绽放的青春<br/>
+					  下面请欣赏技术服务部带来的节目 梦灯笼
+				  </p>
+				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>wota艺–梦灯笼</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
