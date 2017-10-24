@@ -546,8 +546,8 @@ $(document).ready(function(){
 			alert("最多选三个选项");
 			return;
 		}
-		window.recruitjson=json;
-		window.recruitform=$("#actvote").find("form");
+		//window.recruitjson=json;
+		//window.recruitform=$("#actvote").find("form");
 		
 		
 			
@@ -686,7 +686,7 @@ function getvote(){
 			console.log(e);
 			return;
 		}
-		if( da["error"]==0&&da["alreadyvote"]==1)
+		if( da["error"]==0 && da["alreadyvote"]==1)
 		{
 			window.fixform=$("#actvote").find("form");
 			$("#actvote").find("form").remove();
@@ -755,7 +755,7 @@ function getvote(){
 			$("#actvote").find("form").remove();
 				$("#actvote").append(html);
 			
-				console.log("haha");
+				console.log("伐开心");
 				
 		}
 	});

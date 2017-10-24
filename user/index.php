@@ -778,7 +778,7 @@ $signPackage = $jssdk->GetSignPackage();
 			<div style="width:100%;" cont="head">
 			</div>
 		
-			<form id="formvote" action="">  
+			<form class="form" action="">  
 			
 			<div class="page-header">
 				<h4>投票规则：每个人可以进行一次投票，一次投票可以勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
