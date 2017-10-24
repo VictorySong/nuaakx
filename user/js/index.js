@@ -696,7 +696,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>1.梦灯笼</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["1"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\

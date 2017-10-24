@@ -17,6 +17,25 @@ if(!empty($_SESSION["stId"]))
 	{
 		$json["error"]=0;
 		$json["alreadyvote"]=1;
+		$data1=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'1\'");
+		$data2=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'2\'");
+		$data3=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'3\'");
+		$data4=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'4\'");
+		$data5=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'5\'");
+		$data6=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'6\'");
+		$data7=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'7\'");
+		$data8=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE \'8\'");
+		$json["1"]=sizeof($data1);
+		$json["2"]=sizeof($data2);
+		$json["3"]=sizeof($data3);
+		$json["4"]=sizeof($data4);
+		$json["5"]=sizeof($data5);
+		$json["6"]=sizeof($data6);
+		$json["7"]=sizeof($data7);
+		$json["8"]=sizeof($data8);
+	
+		
+        
 		
 	}
 	echo json_encode($json);
