@@ -686,7 +686,7 @@ function getvote(){
 			console.log(e);
 			return;
 		}
-		if(da["error"]==0 && da["alreadyvote"]==1)
+		if( da["alreadyvote"]==1)
 		{
 			window.fixform=$("#actvote").find("form");
 			$("#actvote").find("form").remove();
