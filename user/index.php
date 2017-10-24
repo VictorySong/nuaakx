@@ -845,8 +845,6 @@ $signPackage = $jssdk->GetSignPackage();
 				
 				<div class="clearfix visible-xs-block"></div>
 				
-				<div class="clearfix visible-xs-block"></div>
-				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">
 				  <h3>7.武林内传</h3>

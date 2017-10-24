@@ -14,7 +14,9 @@ $(document).ready(function(){
 		//getnotice();
 		//获取未读通知数
 		getnoreadnoticenum();
+		
 		getvote();
+		//检测活动是否投票
 	
 	
 	//调整 background 高度
