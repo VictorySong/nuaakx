@@ -704,7 +704,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>2.新生看点播报</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["2"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
@@ -712,7 +712,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>3.Mad again</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["3"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
@@ -720,7 +720,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>4.博物馆奇妙夜</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["4"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
@@ -728,7 +728,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>5.像我这样的人</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["5"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
@@ -736,7 +736,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu6.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>6.极乐山鬼</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["6"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
@@ -745,7 +745,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>7.武林内传</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["7"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
@@ -753,7 +753,7 @@ function getvote(){
 				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>8.荧光舞</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
-				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>\
+				 <p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">da["8"]</span>\
 				 排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>\
 				</div>\
 				</div>\
