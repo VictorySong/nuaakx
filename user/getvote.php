@@ -25,7 +25,7 @@ if(!empty($_SESSION["stId"]))
 		$data6=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '6'");
 		$data7=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '7'");
 		$data8=$mysql->getLine("SELECT `phone` FROM `KxVote` WHERE `number` LIKE '8'");
-		$json["1"]=$data1;
+		$json["1"]=sizeof($data1);
 		$json["2"]=$data2;
 		$json["3"]=$data3;
 		$json["4"]=$data4;
