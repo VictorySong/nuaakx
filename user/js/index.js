@@ -546,8 +546,8 @@ $(document).ready(function(){
 			alert("最多选三个选项");
 			return;
 		}
-		window.recruitjson=json;
-		window.recruitform=$("#actvote").find("form");
+//		window.recruitjson=json;
+//		window.recruitform=$("#actvote").find("form");
 		
 		
 			
@@ -694,7 +694,7 @@ function getvote(){
 			var html='<div class="row">\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
-				  <h3>1.wota艺–梦灯笼</h3>\
+				  <h3>1.梦灯笼</h3>\
 				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
 				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["1"]+'</span> </p>\
 				</div>\

@@ -803,7 +803,7 @@ $signPackage = $jssdk->GetSignPackage();
 					  而心中闪烁的萤火 是少年肆意绽放的青春<br/>
 					  下面请欣赏技术服务部带来的节目 梦灯笼
 				  </p>
-				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>wota艺–梦灯笼</div></p></label>
+				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>梦灯笼</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
