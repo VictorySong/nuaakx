@@ -760,8 +760,7 @@ function getvote(){
 			</div>';
 							
 				
-			$("#actvote").append(html);
-			console.log("haha");
+			
 			
 				
 				
