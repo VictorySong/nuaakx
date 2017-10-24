@@ -755,7 +755,7 @@ function getvote(){
 			$("#actvote").find("form").remove();
 				$("#actvote").append(html);
 			
-				
+				console.log("haha");
 				
 		}
 	});

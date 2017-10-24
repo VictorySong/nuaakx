@@ -6,7 +6,7 @@ if(!empty($_SESSION["stId"]))
 {
 	$mysql=new SaeMysql();
 	
-	$data=$mysql->getData("SELECT `number`,`phone` FROM `KxVote` WHERE `Std`='".$_SESSION["stId"]."' ");
+	$data=$mysql->getLine("SELECT `number`,`phone` FROM `KxVote` WHERE `Std`='".$_SESSION["stId"]."' ");
 	if(empty($data))
 	{
 		$json["error"]=0;
