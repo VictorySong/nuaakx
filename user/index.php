@@ -808,7 +808,7 @@ $signPackage = $jssdk->GetSignPackage();
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">
-				  <h3>2.新生看点<br/>播报</h3>
+				  <h3>2.新生看点播报</h3>
 				  <p>这里有最纯粹的欢声笑语，这里有最疯狂的呐喊，军训虽短，却也刻骨铭心。在这里，我们将用不寻常的方式展现出军训的欢乐，在这里，我们将以另一种姿态带你重温军训的温情。</p>
 				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>2.</i>新生看点播报</div></p></label>
 				</div>
