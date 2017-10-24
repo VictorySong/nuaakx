@@ -26,13 +26,13 @@ if(!empty($_SESSION["stId"]))
 		$data7=$mysql->getData("SELECT `num` FROM `KxVote` WHERE `number` LIKE '7'");
 		$data8=$mysql->getData("SELECT `num` FROM `KxVote` WHERE `number` LIKE '8'");
 		$json["1"]=sizeof($data1);
-		$json["2"]=$data2;
-		$json["3"]=$data3;
-		$json["4"]=$data4;
-		$json["5"]=$data5;
-		$json["6"]=$data6;
-		$json["7"]=$data7;
-		$json["8"]=$data8;
+		$json["2"]=sizeof($data2);
+		$json["3"]=sizeof($data3);
+		$json["4"]=sizeof($data4);
+		$json["5"]=sizeof($data5);
+		$json["6"]=sizeof($data6);
+		$json["7"]=sizeof($data7);
+		$json["8"]=sizeof($data8);
 	
 		
         
