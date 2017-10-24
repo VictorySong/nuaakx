@@ -752,10 +752,10 @@ function getvote(){
 			</div>';
 							
 				
-			$("#actvote").find("form").remove();
+		
 				$("#actvote").append(html);
 			
-				console.log("伐开心");
+				console.log("hhh");
 				
 		}
 	});
