@@ -535,7 +535,7 @@ $(document).ready(function(){
 			}
 		});
 			alert("投票成功！");
-			getvote();
+			//getvote();
 		}
 		}
 		else if(vote.length==0){
@@ -546,8 +546,8 @@ $(document).ready(function(){
 			alert("最多选三个选项");
 			return;
 		}
-//		window.recruitjson=json;
-//		window.recruitform=$("#actvote").find("form");
+		window.recruitjson=json;
+		window.recruitform=$("#actvote").find("form");
 		
 		
 			
