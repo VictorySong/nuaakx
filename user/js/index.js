@@ -366,9 +366,6 @@ $(document).ready(function(){
 									<div class="panel-heading">\
 										<span >'+da["msg"][p]["date"]+'</span>\
 									</div>\
-									<div class="panel-heading">\
-										<span >'+da["msg"][p]["date"]+'</span>\
-									</div>\
 									<div class="panel-body">\
 										<p>'+da["msg"][p]["problem"]+'</p>\
 									</div>\
