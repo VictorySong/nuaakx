@@ -631,11 +631,11 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 					<div class="form-group">
 						<label >手机:</label>
-						<input type="text" class="form-control" disabled cont="phone">
+						<input type="text" class="form-control"  cont="phone">
 					</div>
 					<div class="form-group">
 						<label >邮箱:</label>
-						<input type="text" class="form-control" disabled cont="email">
+						<input type="text" class="form-control"  cont="email">
 					</div>
 					<div class="form-group">
 						<label>问题描述:</label>
@@ -669,14 +669,14 @@ $signPackage = $jssdk->GetSignPackage();
 					<div class="form-group">
 						<label>维修地点:</label>
 						<div class="" style="padding-left:10px;">
-							<div class="radio">
+							<div >
 							  <label>
 								<input type="radio" name="place" value="1" checked>东区大学生发展中心508
 							  </label>
 							</div>
-							<div class="radio">
+							<div >
 								<label>
-								<input type="radio" name="problem" value="2">西区1号教学楼5楼信息化处
+								<input type="radio" name="place" value="2">西区1号教学楼5楼信息化处
 
 								</label>
 							</div>
