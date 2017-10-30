@@ -16,11 +16,10 @@ if(!empty($_SESSION["stId"])&& !empty($_POST["problem"]) && !empty($_POST["time"
 	$data=$mysql->getLine("SELECT `num` FROM `wxyy` WHERE `date`='".$_POST["time"]."' && `stId`='".$_SESSION["stId"]."'");
 	if(empty($data) && $counts<$stdcounts["numperday"] && !($_POST["time"]<$time))
 	{
-		if(!$mysql->runsql("INSERT INTO `wxyy` (`stId`,`problem`,`date`,`place`) VALUES ('".$_SESSION["stId"]."','".$_POST["problem"]."','".$_POST["time"]."','".$_POST["place"]."')"))
+		if(!$mysql->runsql("INSERT INTO `wxyy` (`stId`,`problem`,`date`,`place`) VALUES ('".$_SESSION["stId"]."','".$_POST["problem"]."','".$_POST["time"]."','".$_POST["place"]."')")&&!$mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '".$_POST["phone"]."', `email` = '".$_POST["email"]."' WHERE `wx_user`.`number` = '".$_SESSION["stId"]."' "))
 		{
 			$json["error"]=0;
-			if($mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '".$_POST["phone"]."', `email` = '".$_POST["email"]."' WHERE `wx_user`.`number` = '".$_SESSION["stId"]."' "))
-				die($mysql->errmsg());
+			
 			echo json_encode($json);
 	
 		}
