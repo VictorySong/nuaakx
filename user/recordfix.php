@@ -2,7 +2,7 @@
 include("../SaeMysql.php");
 //session_set_cookie_params(7200*12*7,'/','nuaakx.com');
 session_start();
-if(!empty($_SESSION["stId"])&& !empty($_POST["problem"]) && !empty($_POST["time"]))
+if(!empty($_SESSION["stId"])&& !empty($_POST["problem"]) && !empty($_POST["time"])&& !empty($_POST["phone"]) && !empty($_POST["email"])&& !empty($_POST["place"]))
 {
 	$mysql=new SaeMysql();
 	if(date("G")<"19")
@@ -16,10 +16,13 @@ if(!empty($_SESSION["stId"])&& !empty($_POST["problem"]) && !empty($_POST["time"
 	$data=$mysql->getLine("SELECT `num` FROM `wxyy` WHERE `date`='".$_POST["time"]."' && `stId`='".$_SESSION["stId"]."'");
 	if(empty($data) && $counts<$stdcounts["numperday"] && !($_POST["time"]<$time))
 	{
-		if(!$mysql->runsql("INSERT INTO `wxyy` (`stId`,`problem`,`date`) VALUES ('".$_SESSION["stId"]."','".$_POST["problem"]."','".$_POST["time"]."')"))
+		if(!$mysql->runsql("INSERT INTO `wxyy` (`stId`,`problem`,`date`,`place`) VALUES ('".$_SESSION["stId"]."','".$_POST["problem"]."','".$_POST["time"]."','".$_POST["place"]."')"))
 		{
 			$json["error"]=0;
+			if($mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '".$_POST["phone"]."', `email` = '".$_POST["email"]."' WHERE `wx_user`.`number` = '".$_SESSION["stId"]."' "))
+				die($mysql->errmsg());
 			echo json_encode($json);
+	
 		}
 		else
 			echo $mysql->errmsg();

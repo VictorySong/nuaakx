@@ -283,7 +283,29 @@ $(document).ready(function(){
 	$("#fixcomputer").find("form").submit(function(e){
 		e.preventDefault();
 		var json={};
+		var phone=$(this).find("#p");
+		if(phone.val()==""){
+			
+			phone.focus();
+			return;
+		}
+		else
+			json["phone"]=phone.val();
+		var email=$(this).find("#e");
+		if(email.val()==""){
+			
+			email.focus();
+			return;
+		}
+		else
+			json["email"]=email.val();
 		json["problem"]=$(this).find("[name=\"problem\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		}).val();
+		json["place"]=$(this).find("[name=\"place\"]").filter(function(){
 			if($(this).prop("checked"))
 				return 1;
 			else

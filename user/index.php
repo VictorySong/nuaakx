@@ -170,6 +170,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
+			<!--
 				<div class="panel panel-default">
 					<a class="panel-title" href="#actvote"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -192,6 +193,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
+			-->
 				<div class="panel panel-default">
 					<a class="panel-title" href="#fixcomputer"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -661,6 +663,23 @@ $signPackage = $jssdk->GetSignPackage();
 					<div class="form-group">
 						<label>预约时间:</label>
 						<div id="fixtime" class="" style="padding-left:10px;">
+							
+						</div>
+					</div>
+					<div class="form-group">
+						<label>维修地点:</label>
+						<div class="" style="padding-left:10px;">
+							<div class="radio">
+							  <label>
+								<input type="radio" name="place" value="1" checked>东区大学生发展中心508
+							  </label>
+							</div>
+							<div class="radio">
+								<label>
+								<input type="radio" name="problem" value="2">西区1号教学楼5楼信息化处
+
+								</label>
+							</div>
 							
 						</div>
 					</div>
