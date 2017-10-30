@@ -631,11 +631,11 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 					<div class="form-group">
 						<label >手机:</label>
-						<input type="text" class="form-control"  cont="phone">
+						<input type="text" class="form-control"  cont="phone" id="p">
 					</div>
 					<div class="form-group">
 						<label >邮箱:</label>
-						<input type="text" class="form-control"  cont="email">
+						<input type="text" class="form-control"  cont="email"  id="e">
 					</div>
 					<div class="form-group">
 						<label>问题描述:</label>
