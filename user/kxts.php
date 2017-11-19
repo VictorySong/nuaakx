@@ -3,7 +3,7 @@ include("../SaeMysql.php");
 //session_set_cookie_params(7200*12*7,'/','nuaakx.com');
 session_start();
 
-if(!empty($_SESSION["stId"]) && !empty($_POST["phone"]) && !empty($_POST["email"]) && !empty($_POST["description"]) && !empty($_POST["department"]))
+if(!empty($_SESSION["stId"]) && !empty($_POST["phone"]) && !empty($_POST["email"]) && !empty($_POST["description"]))
 {
 	$mysql=new SaeMysql();
 
