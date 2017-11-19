@@ -690,6 +690,87 @@ $(document).ready(function(){
 		
 			
 	});
+	//设置投诉与建议表单提交
+	$("#kxts").find("form").submit(function(e){
+		e.preventDefault();
+		var json={}
+		
+		var phone=$(this).find("#p");
+		if(phone.val()==""){
+			
+			phone.focus();
+			return;
+		}
+		else
+			json["phone"]=phone.val();
+		var email=$(this).find("#e");
+		if(email.val()==""){
+			
+			email.focus();
+			return;
+		}
+		else
+			json["email"]=email.val();
+
+		var description=$(this).find("textarea");
+		if(description.val()==""){
+			
+			description.focus();
+			return;
+		}
+		else
+			json["description"]=description.val();
+		window.recruitjson=json;
+		window.recruitform=$("#kxts").find("form");
+		
+		if(json["phone"]==window.inf["phone"]&&json["email"]==window.inf["email"])
+		{
+			if(confirm("提交后不可修改，请确认是否提交"))
+		{
+			console.log(json);
+			$.post("kxts.php",json).done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				getrecruit();
+				userinfget();
+			}
+		});
+			alert("我们已收到您的投诉和建议！");
+		}
+		}
+		else{if(confirm("提交后不可修改，请确认是否提交"))
+		{
+			console.log(json);
+			$.post("kxts.php",json).done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				getrecruit();
+				userinfget();
+			}
+		});
+			alert("我们已收到您的投诉和建议！");
+		}
+		}
+		
+			
+	});
 	//退出登录
 	$("#logout").click(function(){
 		if(confirm("如果已绑定微信号，则退出登录后仍会根据微信号重新登录,如想换号登录，请解绑后退出")){

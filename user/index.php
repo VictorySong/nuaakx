@@ -264,8 +264,8 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				<!--
-				<div class="panel panel-default" id="kxtsas">
+				
+				<div class="panel panel-default" >
 					<a class="panel-title" href="#kxts"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table style="box-sizing:border-box;min-width:180px;">
@@ -287,7 +287,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				-->
+				
 				
 			  <div id="Kx" style="display:none;">
 				
@@ -1012,22 +1012,32 @@ $signPackage = $jssdk->GetSignPackage();
 		<!-- ............................................    -->
 		
 		
-		<!--   投诉与建议--><!--
+		<!--   投诉与建议-->
 		<div id="kxts" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
-			
-			
-			<div id="tsasuggestion" style="padding-left:15px; padding-right:15px; padding-bottom:30px;">
-				<div style="width:100%;" cont="head">
-				</div>
+			<div style="width:100%;" cont="head">
 			</div>
-			
-			
-			
 			<form class="form" action="" >
 				
 					<div class="form-group">
-						<label>投诉与建议:</label>
-						<textarea class="form-control" placeholder="请简短的描述系统出现问题时的情况..."></textarea>
+						<label >学号:</label>
+						<input type="text" class="form-control" disabled cont="stId">
+					</div>
+					<div class="form-group">
+						<label >姓名:</label>
+						<input type="text" class="form-control" disabled cont="name">
+					</div>
+					<div class="form-group">
+						<label >手机:</label>
+						<input type="text" class="form-control"  cont="phone" id="p">
+					</div>
+					<div class="form-group">
+						<label >邮箱:</label>
+						<input type="text" class="form-control"  cont="email"  id="e">
+					</div>
+					
+					<div class="form-group">
+						<label>问题与建议:</label>
+						<textarea class="form-control" placeholder="请输入..."></textarea>
 					</div>
 			
 				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
@@ -1039,8 +1049,7 @@ $signPackage = $jssdk->GetSignPackage();
 			
 			
 		</div>
-		-->
-		
+			
 		<!-- ............................................    -->
 		
 		<!--  讲座    -->
