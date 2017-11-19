@@ -311,7 +311,12 @@ $(document).ready(function(){
 			else
 				return 0;
 		}).val();
-		json["time"]=$(this).find("[name=\"time\"]").val();
+		json["time"]=$(this).find("[name=\"time\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		}).val();
 		if(json["time"]==undefined)
 			alert("请选择一个时间");
 		if(json["problem"]=="3")
@@ -646,6 +651,7 @@ $(document).ready(function(){
 			console.log(data);
 			try{
 				var da=JSON.parse(data);
+			
 			}
 			catch(e){
 				console.log(e);

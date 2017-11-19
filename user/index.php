@@ -674,6 +674,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<input type="radio" name="place" value="东区大学生发展中心508" checked>东区大学生发展中心508
 							  </label>
 							</div>
+							
 							<div >
 								<label>
 								<input type="radio" name="place" value="西区1号教学楼5楼信息化处">西区1号教学楼5楼信息化处
