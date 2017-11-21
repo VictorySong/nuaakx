@@ -524,11 +524,11 @@ $(document).ready(function(){
 	});
 	
 	//设置点击背景时 评论表单隐藏  
-	$("#background").click(function(){
+	//$("#background").click(function(){
 		//$("#rootinput").find("textarea").val("");
-		$("#rootinput").hide();
-		$("#background").hide();
-	});
+		//$("#rootinput").hide();
+		//$("#background").hide();
+	//});
 	//设置活动投票表单提交
 	
 	$("#actvote").find("form").submit(function(e){
@@ -1063,7 +1063,7 @@ function hashfunc(){
 //获取所有活动列表
 function getallhd(){
 	$.post("getallhd.php").done(function(data){
-		window.history.go(0) 
+        window.history.go(0) 		
 		console.log(data);
 		try{
 			var da=JSON.parse(data);
