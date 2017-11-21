@@ -189,8 +189,6 @@ function getrecruit(){
 		}
 			if(da["error"]==0)
 			{
-				//显示投诉总人数
-				$("#kxtsnum").text(da["num"]);
 				
 				if(da["msg"].length<1)
 					window.recruitend=true;

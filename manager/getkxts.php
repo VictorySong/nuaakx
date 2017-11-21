@@ -5,11 +5,8 @@ session_start();
 define("N",20);
 if(!empty($_SESSION["tableName"]) )
 {
-	$mysql=new SaeMysql();
-	
-	
+	$mysql=new SaeMysql();	
 	$sql="SELECT * FROM `KxTs`";
-
 	$result1=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result1);
 	$result=array();//用来存放结果
@@ -24,7 +21,7 @@ if(!empty($_SESSION["tableName"]) )
 				$result[$k]["name"]=$data["name"];
 				$result[$k]["phone"]=$data["phone"];
 				$result[$k]["email"]=$data["email"];
-				$result[$k]["department"]=$mysql->getData("SELECT `question` FROM `KxTs` WHERE `stId`='".$result[$k]["stId"]."'");
+				$result[$k]["question"]=$mysql->getData("SELECT `question` FROM `KxTs` WHERE `stId`='".$result[$k]["stId"]."'");
 				
 				$k++;
 			
