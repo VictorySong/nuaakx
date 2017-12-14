@@ -1063,7 +1063,7 @@ function hashfunc(){
 //获取所有活动列表
 function getallhd(){
 	$.post("getallhd.php").done(function(data){
-        window.history.go(0) 		
+        $("#kxhd1").empty();		
 		console.log(data);
 		try{
 			var da=JSON.parse(data);
