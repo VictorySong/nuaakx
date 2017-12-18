@@ -3,7 +3,7 @@
 <html>
 <body>
 
-<h1>hahhahahah！</h1>
+<h1>hahhahahah!</h1>
 
 <?php
 echo "yeah!";
