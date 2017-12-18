@@ -6,7 +6,7 @@
 		var jname=$(this).find("#jn");
 		if(jname.val()==""){
 			
-			phone.focus();
+			jphone.focus();
 			return;
 		}
 		else
@@ -31,12 +31,7 @@
 		var description=$(this).find("textarea");
 	    json["description"]=description.val();
 		
-
-
-
 		
-		window.recruitjson=json;
-		window.recruitform=$("#kxts").find("form");
 		
 		if(json["phone"]==window.inf["phone"]&&json["email"]==window.inf["email"])
 		{
