@@ -32,6 +32,7 @@ echo "<br>";
 myTest2();
 echo "<br>";
 myTest2();
+echo "<br>";
 
 //常量
 define("GREETING", "Welcome to W3School.com.cn!", true);
