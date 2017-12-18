@@ -17,16 +17,19 @@ $x=5; // global scope
 function myTest() {
    $y=10; // local scope
 
-   echo "x is $x";
+   echo "x is".$x;
    echo "<br>";
-   echo "y is $y";
+   echo "y is".$y;
+   echo "<br>";
+   
 } 
 
 myTest();
 
-echo "x is $x";
+
+echo "x is".$x;
 echo "<br>";
-echo "y is $y";
+echo "y is".$y;
 ?>
 
 </body>
