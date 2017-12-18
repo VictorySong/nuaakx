@@ -2,19 +2,20 @@
 
 <!DOCTYPE html>
 <html>
+
+<body>
+
+<?php 
 //数据类型
 /*
 字符串、整数、浮点数、逻辑、数组、NULL。
 */
-<body>
-
-<?php 
-//字符串
 $x = "Hello world!";
 echo $x;
 echo "<br>"; 
 $x = 'Hello world!';
 echo $x;
+//字符串
 //整数
 /*
 整数是没有小数的数字。
