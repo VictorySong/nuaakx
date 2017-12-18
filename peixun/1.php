@@ -3,10 +3,10 @@
 <html>
 <body>
 
-<h1>小布丁真可爱！</h1>
+<h1>hahhahahah！</h1>
 
 <?php
-echo "不！是超可爱的!";
+echo "yeah!";
 ?>  
 
 </body>
