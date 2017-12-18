@@ -54,7 +54,7 @@
 		});
 			alert("我们已收到您的投诉和建议！");
 		}
-		}
+
 		else{if(confirm("提交后不可修改，请确认是否提交"))
 		{
 			console.log(json);
