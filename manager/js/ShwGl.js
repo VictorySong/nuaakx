@@ -32,8 +32,8 @@
 	    json["description"]=description.val();
 		
 		
-		
-			if(confirm("提交后不可修改，请确认是否提交"))
+		var r=confirm("提交后不可修改，请确认是否提交");
+		if (r==true)
 		{
 			console.log(json);
 			$.post("kxts.php",json).done(function(data){
@@ -51,30 +51,8 @@
 				getrecruit();
 				userinfget();
 			}
-		});
-			alert("我们已收到您的投诉和建议！");
-		}
-		
-		else{if(confirm("提交后不可修改，请确认是否提交"))
-		{
-			console.log(json);
-			$.post("kxts.php",json).done(function(data){
-			console.log(data);
-			try{
-				var da=JSON.parse(data);
-			}
-			catch(e){
-				console.log(e);
-				return;
-			}
-			if(da["error"]==0)
-			{
-				getrecruit();
-				userinfget();
-			}
-		});
-			alert("我们已收到您的投诉和建议！");
-		}
+			});
+			alert("借用登记已提交");
 		}
 		
 			
