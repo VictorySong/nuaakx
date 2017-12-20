@@ -319,7 +319,145 @@
 			
 		</div>
 	</div>
+	
+<!--.................................................  -->
+<!--  物资借用管理 -->
+	<div class="container" style="overflow:auto;" id="itemlog" cont="content">
+		<div style="height:55px;"></div>
+		<div><h3>当日借用情况</h3> </div>
+		<div class="panel-group" id="itemlog1" style="margin-bottom:0px;">
+			
+			
+			
+		</div>
+		<div style="height:34px;" align="center"><button type="button" id="fixformer" class="btn btn-primary glyphicon glyphicon-chevron-left" style="float:left;" ></button><span class="" id="fixdate" style="text-align:center; padding-top:11px;"></span><button type="button" id="fixlater" class="btn btn-primary glyphicon glyphicon-chevron-right" style="float:right;"></button></div>
+	</div>
+	
+<!-- .........................................................   -->
+<!--  物资借用登记界面 -->
+	<div class="container" style="overflow:auto;" id="itemlogreg" cont="content">
+		<div style="height:55px;"></div>
+		<div><h3>借用登记</h3> </div>
+		<form class="form" action="" >
+					<div class="form-group">
+						<label >借用人姓名:</label>
+						<input type="text" class="form-control" cont="name" id="jn">
+					</div>
+					<div class="form-group">
+						<label >借用人手机:</label>
+						<input type="text" class="form-control"  cont="phone" id="jp">
+					</div>
+					<div class="form-group">
+						<label >物资种类:</label>
+						<div class="radio">
+							  <label>
+								<input type="radio" name="item" value="教室506" checked="">教室506
+							  </label>
+						</div>
+						<div class="radio">
+								<label>
+								<input type="radio" name="item" value="教室510">教室510
+								</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label >借用周:</label>
+						<div class="radio">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">本周
+							  </label>
+						</div>
+						<div class="radio">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">下一周
+							  </label>
+						</div>
+						<label >借用日期:</label>
+						</br>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期一
+							  </label>
+						</div>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期二
+							  </label>
+						</div>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期三
+							  </label>
+						</div>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期四
+							  </label>
+						</div>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期五
+							  </label>
+						</div>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期六
+							  </label>
+						</div>
+						<div class="radio-inline"">
+							  <label>
+								<input type="radio" name="time" value="8" checked="">星期日
+							  </label>
+						</div>
+						</br>
+						<label >借用时段:</label>
+						</br>
+						<div class="checkbox-inline">
+							  <label>
+								<input type="checkbox" name="time" value="8" checked="">上午8点~10点
+							  </label>
+						</div>
+						<div class="checkbox-inline">
+								<label>
+								<input type="checkbox" name="time" value="10">上午10点~12点
+								</label>
+						</div>
+						</br>
+						<div class="checkbox-inline">
+							  <label>
+								<input type="checkbox" name="time" value="14" checked="">下午2点~4点
+							  </label>
+						</div>
+						<div class="checkbox-inline">
+								<label>
+								<input type="checkbox" name="time" value="16">下午4点~6点
+								</label>
+						</div>
+						</br>
+						<div class="checkbox-inline">
+							  <label>
+								<input type="checkbox" name="time" value="19" checked="">晚上7点~9点
+							  </label>
+						</div>
+						<div class="checkbox-inline">
+								<label>
+								<input type="checkbox" name="time" value="21">晚上9点~11点
+								</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label >管理人员姓名:</label>
+						<input type="text" class="form-control"  cont="email"  id="gn">
+					</div>
+					<div class="form-group">
+						<label>备注:</label>
+						<textarea class="form-control" placeholder="请输入..."></textarea>
+					</div>
+			
+				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
 
+			</form>
+	</div>
 
 
 <!--.................................................  -->
@@ -353,6 +491,7 @@
 		window.tableName="KxShwGl";
 	</script>
 	<script src="js/getmembersindex.js"></script>	
+	<script src="js/ShwGl.js"></script>
 	<script>
 	  $(function(){
 		function initToolbarBootstrapBindings() {

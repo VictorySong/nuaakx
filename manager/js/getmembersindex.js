@@ -172,7 +172,75 @@ function getrecruit(){
 		
 	});
 }
+//获取投诉与建议的函数
+function getrecruit(){
+	console.log({p:window.recruitp,tableName:window.tableName});
+	if(window.recruitend)
+		return;
+	
+	$.post("getkxts.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
+		console.log(data);
+		
+		try{
+			var da=JSON.parse(data);
+		}catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				if(da["msg"].length<1)
+					window.recruitend=true;
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" role="button" cont="name" data-toggle="collapse" data-parent="#kxts1" data-target="#'+remove_at_fromstid(da["msg"][p]["stId"])+'">\
+										'+da["msg"][p]["stId"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["name"]+'\
+									</h3>\
+								</div>\
+								<div id="'+remove_at_fromstid(da["msg"][p]["stId"])+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >学号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["stId"]+'" cont="stId">\
+										</div>\
+										<div class="form-group">\
+											<label >姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["name"]+'" cont="name">\
+										</div>\
+										<div class="form-group">\
+											<label >手机:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["phone"]+'" cont="phone">\
+										</div>\
+										<div class="form-group">\
+											<label >邮箱:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["email"]+'" cont="email">\
+										</div>\
+										<div class="form-group">\
+											<label >问题与建议:</label>\
+											<div class="" style="padding-left:6px; padding-right:6px; padding-top:5px; padding-bottom:5px; border-radius:4px; min-height:71px; overflow:scroll; border:1px solid #ccc;" cont="question">'+da["msg"][p]["question"]+'</div>\
+										</div>';
 
+										
+						html+='</div>\
+									</div>\
+								</div>';
+					$("#kxts1").append(html);
+				}
+
+				if(window.recruitend && $("#nomore").length==0 )
+				{
+					$("#kxts").append('<div id="nomore" style="text-align:center;">无更多</div>');
+				}
+				console.log(window.recruitp);
+				//使显示长度要超过屏幕高度
+				$("#kexts").trigger("scroll");
+			}
+		
+	});
+}
 //意向确认函数
 function recruitintention(){
 	if($(this).hasClass("label-success"))

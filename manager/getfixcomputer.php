@@ -5,7 +5,7 @@ session_start();
 if(!empty($_SESSION["tableName"]) && !empty($_POST["date"]))
 {
 	$mysql=new SaeMysql();
-	$data=$mysql->getData("SELECT `stId` ,`problem`,`evaluate`,`solution`,`response` FROM `wxyy` WHERE `date`='".$_POST["date"]."' || `date`='".$_POST["date1"]."'");
+	$data=$mysql->getData("SELECT `stId` ,`problem`,`evaluate`,`solution`,`response`,`place` FROM `wxyy` WHERE `date`='".$_POST["date"]."' || `date`='".$_POST["date1"]."'");
 	//判断查询人是不是技服的
 	$t=false;
 	foreach($_SESSION["tableName"] as $value)

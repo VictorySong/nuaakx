@@ -14,6 +14,9 @@ $(document).ready(function(){
 		//getnotice();
 		//获取未读通知数
 		getnoreadnoticenum();
+		
+		getvote();
+		//检测活动是否投票
 	
 	
 	//调整 background 高度
@@ -280,13 +283,40 @@ $(document).ready(function(){
 	$("#fixcomputer").find("form").submit(function(e){
 		e.preventDefault();
 		var json={};
+		var phone=$(this).find("#p");
+		if(phone.val()==""){
+			
+			phone.focus();
+			return;
+		}
+		else
+			json["phone"]=phone.val();
+		var email=$(this).find("#e");
+		if(email.val()==""){
+			
+			email.focus();
+			return;
+		}
+		else
+			json["email"]=email.val();
 		json["problem"]=$(this).find("[name=\"problem\"]").filter(function(){
 			if($(this).prop("checked"))
 				return 1;
 			else
 				return 0;
 		}).val();
-		json["time"]=$(this).find("[name=\"time\"]").val();
+		json["place"]=$(this).find("[name=\"place\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		}).val();
+		json["time"]=$(this).find("[name=\"time\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		}).val();
 		if(json["time"]==undefined)
 			alert("请选择一个时间");
 		if(json["problem"]=="3")
@@ -494,11 +524,11 @@ $(document).ready(function(){
 	});
 	
 	//设置点击背景时 评论表单隐藏  
-	$("#background").click(function(){
+	//$("#background").click(function(){
 		//$("#rootinput").find("textarea").val("");
-		$("#rootinput").hide();
-		$("#background").hide();
-	});
+		//$("#rootinput").hide();
+		//$("#background").hide();
+	//});
 	//设置活动投票表单提交
 	
 	$("#actvote").find("form").submit(function(e){
@@ -530,11 +560,12 @@ $(document).ready(function(){
 			}
 			if(da["error"]==0)
 			{
-				getrecruit();
+				getvote();
 				userinfget();
 			}
 		});
 			alert("投票成功！");
+			//getvote();
 		}
 		}
 		else if(vote.length==0){
@@ -620,6 +651,7 @@ $(document).ready(function(){
 			console.log(data);
 			try{
 				var da=JSON.parse(data);
+			
 			}
 			catch(e){
 				console.log(e);
@@ -658,6 +690,87 @@ $(document).ready(function(){
 		
 			
 	});
+	//设置投诉与建议表单提交
+	$("#kxts").find("form").submit(function(e){
+		e.preventDefault();
+		var json={}
+		
+		var phone=$(this).find("#p");
+		if(phone.val()==""){
+			
+			phone.focus();
+			return;
+		}
+		else
+			json["phone"]=phone.val();
+		var email=$(this).find("#e");
+		if(email.val()==""){
+			
+			email.focus();
+			return;
+		}
+		else
+			json["email"]=email.val();
+
+		var description=$(this).find("textarea");
+		if(description.val()==""){
+			
+			description.focus();
+			return;
+		}
+		else
+			json["description"]=description.val();
+		window.recruitjson=json;
+		window.recruitform=$("#kxts").find("form");
+		
+		if(json["phone"]==window.inf["phone"]&&json["email"]==window.inf["email"])
+		{
+			if(confirm("提交后不可修改，请确认是否提交"))
+		{
+			console.log(json);
+			$.post("kxts.php",json).done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				getrecruit();
+				userinfget();
+			}
+		});
+			alert("我们已收到您的投诉和建议！");
+		}
+		}
+		else{if(confirm("提交后不可修改，请确认是否提交"))
+		{
+			console.log(json);
+			$.post("kxts.php",json).done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				getrecruit();
+				userinfget();
+			}
+		});
+			alert("我们已收到您的投诉和建议！");
+		}
+		}
+		
+			
+	});
 	//退出登录
 	$("#logout").click(function(){
 		if(confirm("如果已绑定微信号，则退出登录后仍会根据微信号重新登录,如想换号登录，请解绑后退出")){
@@ -685,42 +798,76 @@ function getvote(){
 			console.log(e);
 			return;
 		}
-		if(da["error"]==0 && da["alreadyvote"]==1)
+		if( da["error"]==0 && da["alreadyvote"]==1)
 		{
 			window.fixform=$("#actvote").find("form");
 			$("#actvote").find("form").remove();
-			var html='<div class="panel panel-default">\
-									<div class="panel-heading">\
-										<span >哈哈哈</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>哈哈哈</p>\
-									</div>';
+			
+			var html='<div class="row">\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>1.梦灯笼</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["1"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>2.新生看点播报</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["2"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>3.Mad again</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["3"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>4.博物馆奇妙夜</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["4"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>5.像我这样的人</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["5"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu6.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>6.极乐山鬼</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["6"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="clearfix visible-xs-block"></div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>7.武林内传</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["7"]+'</span> </p>\
+				</div>\
+				</div>\
+				<div class="col-xs-6" style="padding-bottom:15px;">\
+				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">\
+				  <h3>8.荧光舞</h3>\
+				 <div class="btn btn-default" role="button" style="padding-bottom:0px;">\
+				 <p>已有票数<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">'+da["8"]+'</span> </p>\
+				</div>\
+				</div>\
+			</div>';
 							
-				html+='<div class="panel-footer" date="'+da["msg"]["date"]+'" cont="fixcancel">取消预约</div></div>';
-			$("#actvote").append(html);
-			console.log("haha");
-			$("#actvote").find("div[cont=\"fixcancel\"]").click(function(){
-				var json={};
-				window.cancelthat=this;
-				json["date"]=$(this).attr("date");
-				$.post("fixcancel.php",json).done(function(data){
-					console.log(data);
-					try{
-						var da=JSON.parse(data);
-					}
-					catch(e){
-						console.log(e);
-						return;
-					}
-					if(da["error"]==0)
-					{
-						alert("成功取消");
-						$(window.cancelthat).parent().remove();
-						$("#fixcomputer").append(window.fixform);
-					}
-				});
-			});
+				
+		
+				$("#actvote").append(html);
+			
+				
 		}
 	});
 }
@@ -916,6 +1063,7 @@ function hashfunc(){
 //获取所有活动列表
 function getallhd(){
 	$.post("getallhd.php").done(function(data){
+        $("#kxhd1").empty();		
 		console.log(data);
 		try{
 			var da=JSON.parse(data);

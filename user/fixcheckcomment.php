@@ -9,7 +9,7 @@ if(!empty($_SESSION["stId"]))
 		$time=date("Y-m-d");
 	else
 		$time=date("Y-m-d",time()+86400);
-	$data=$mysql->getData("SELECT `date`,`problem` FROM `wxyy` WHERE `stId`='".$_SESSION["stId"]."' && `judge`='0' && `date`<'".$time."' order by date desc");
+	$data=$mysql->getData("SELECT `date`,`problem` ,`place` FROM `wxyy` WHERE `stId`='".$_SESSION["stId"]."' && `judge`='0' && `date`<'".$time."' order by date desc");
 	
 	if(!empty($data))
 	{

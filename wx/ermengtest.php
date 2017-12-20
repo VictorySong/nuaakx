@@ -72,42 +72,8 @@ class wechatCallbackapiTest
 					case "image";
              		{
                        
-   						$mysql=new SaeMysql();
-						$sql="SELECT * FROM `2017picture` WHERE `openid` LIKE '".$fromUsername."'";
-						$data=$mysql->getLine($sql);
-						if(empty($data))
-						{
-							$t=true;
-							while($t)
-							{
-								$str="";
-								for($i=0;$i<3;$i++)
-								{
-									$str.=rand(0,9);
-								}
-								$sql="SELECT * FROM `2017picture` WHERE `num` LIKE '".$str."'";
-								$data=$mysql->getLine($sql);
-								if(empty($data))
-								{
-									$t=false;
-									$sql="INSERT INTO `2017picture` (`openid`,`num`) VALUES ('".$fromUsername."','".$str."')";
-									$mysql->runsql($sql);
-								}
-							}
-						}
-						else{
-						}
-						
-                        $contentStr="请等待工作人员审核";
-						$this->http_post(array('url'=>$postObj->PicUrl,'confirm'=>'http://1.nuaakexie.sinaapp.com/1111111confirm.php?openid='.$fromUsername),"http://nuaakx.com/ftp/send.php");
-						$contentStr=array(
-								array("Title"=>"科沃斯抽奖",
-									  "Description"=>"欢迎报名科沃斯",
-									  "PicUrl"=>"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=551374359,3026972293&fm=117&gp=0.jpg",
-									  "Url"=>"http://1.nuaakexie.sinaapp.com/1111111lottery.php?openid=".$fromUsername)
-								);
-						
-						$resultStr = $this->transmitNews($postObj, $contentStr);
+   						$contentStr = "让我猜猜你发的是美图还是表情包呢( ⊙o⊙ )";
+						$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $contentStr);
                 	}break;
 					case "location";
              		{
@@ -240,8 +206,11 @@ class wechatCallbackapiTest
 			}
 		}
 		
-		if(empty($contentStr))
-			die("");
+		if(empty($contentStr)){
+			$resultStr=$this->customerservice($object);
+			return $resultStr;
+		}
+			
 		
         if (is_array($contentStr)){
             $resultStr = $this->transmitNews($object, $contentStr);
@@ -336,7 +305,7 @@ class wechatCallbackapiTest
 					<FuncFlag>0</FuncFlag>
 					</xml>";
         $contentStr = "";
-        $stor = new SaeStorage();				//storage服务
+       	
         switch ($object->Event)
         {
             case "subscribe":
@@ -349,10 +318,10 @@ class wechatCallbackapiTest
                 $mysql->runSql($sql);
                 
                 $contentStr = array(
-                              array("Title" =>"       <欢迎订阅NUAA科协>", 
-                        "Description" =>"给你20万，让你来搞事", 
-                        "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_jpg/AXZnZY3B8N9kqU3zNpdCJjgQhAY7qibDKjhSvlQvicBZGGJ8N7mEAUfZYRn3KpDe2jQTneMQypwPFic72fjU0licsA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1", 
-                        "Url" =>"http://mp.weixin.qq.com/s/8Ju2hk0KStMSiQnyDqgiUQ"),
+                              array("Title" =>" 【南航学生科协】风雨三十八载", 
+                    //    "Description" =>"【科协•招新】We Want You ", 
+                        "PicUrl" =>"https://mmbiz.qpic.cn/mmbiz/AXZnZY3B8NicL1X5CerwxMiaCySQibjLlTrQoxPVgQRZox50YVPINZrb7dgsMetwicXzehjWtbpyJ5ic45eW3yVBzyw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1", 
+                        "Url" =>"http://mp.weixin.qq.com/s/IvnztAzm-i5cTsPoXu-L3Q"),
                               array("Title" =>"全景！720°的南航，你值得拥有！", 
                         "Description" =>"", 
                         "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_jpg/AXZnZY3B8N8GoV2Nau7YgBV86hicq8maant6AdwibtZ0sUXO4Cic42CYb7tss9WUvhRiclHDiclNLUibFILLYoPrTLTQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1", 
@@ -372,14 +341,65 @@ class wechatCallbackapiTest
                 $mysql=new SaeMysql();
                 $mysql->runSql($sql);
                 break;
-            case "CLICK":
+            case "CLICK"://不知道为什么 但是click必须要大写
             {
-                include("click.php");
-                $contentStr = click($object->EventKey,$object);
+                switch ($object->EventKey)
+				{
+					case "sanchuangjie":
+					{
+						$contentStr = array(
+                              array("Title" =>"“三创节”震撼回归！", 
+                        "Description" =>"“三创节”来了！小伙伴们快来围观！", 
+                        "PicUrl" =>"https://mmbiz.qpic.cn/mmbiz_jpg/AXZnZY3B8Nib8UQYqwNvZc2sibAxyzN3TIH26ib6c5iawWiaJS0wMic7Eia4qp0jbic68DvElOclQLqJqBOjdzy4EPA3Yg/0?wx_fmt=jpeg", 
+                        "Url" =>"https://mp.weixin.qq.com/s?__biz=MjM5NzMxODYyMA==&mid=2650195808&idx=1&sn=4125ea62ba806ec89be1e44de2be967f&chksm=bed9bdd389ae34c5b4f95ad6971ca8ce31ea8c3c5257f9f35ee3d44d01a7e9c50672ea3886b0#rd")
+						     );
+					}
+					break ;
+					case "xiaokexie":
+					{
+						$contentStr = array(
+                              array("Title" =>"【三创节】校大学生科协趣味活动等你来战 ", 
+ //                       "Description" =>"“三创节”来了！小伙伴们快来围观！", 
+                        "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_png/AXZnZY3B8NibSXgu3FjGknGtlC4rtIvuRxxpp8qJp1rib16sOSbA5ib43kleqzAyDLAVwqFLXFDPrLLbLrzllmZ9g/640?wx_fmt=png&wxfrom=5&wx_lazy=1", 
+                        "Url" =>"https://mp.weixin.qq.com/s?__biz=MjM5NzMxODYyMA==&mid=2650195820&idx=2&sn=60103b563e2bd8580f419a42614db38b&chksm=bed9bddf89ae34c99bc23d203865475c566261379b9f90d6317398fa18d9629f428ba5db54b5#rd")
+						   
+                				);
+					}
+					break ;
+					case "yuankexie":
+					{
+						$contentStr = array(
+                              array("Title" =>"【三创节】院科协参展项目介绍（上） ", 
+ //                       "Description" =>"“三创节”来了！小伙伴们快来围观！", 
+                        "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_jpg/AXZnZY3B8NibSXgu3FjGknGtlC4rtIvuRV9WG3RgkNmyJ4LbbGASoHhDfx5GsewN6s4ggW9Q7hvTDGNa1yPaEiaA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1", 
+                        "Url" =>"https://mp.weixin.qq.com/s?__biz=MjM5NzMxODYyMA==&mid=2650195820&idx=3&sn=596347359c04ab745913961a9bbb4fe5&chksm=bed9bddf89ae34c958ee4003f27e47db6627719b647acc7741989e61d85245f8f930c06d31a2#rd"),
+						array("Title" =>"【三创节】院科协参展项目介绍（下） ", 
+ //                       "Description" =>"“三创节”来了！小伙伴们快来围观！", 
+                        "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_jpg/AXZnZY3B8NicjmJR3g55ribmvjxgQicqkyDm4bBFh0zD43KAWw5SNXYopCxsZib2wCtyGKUAaW9os5jn0ga0jMGeIw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1", 
+                        "Url" =>"https://mp.weixin.qq.com/s?__biz=MjM5NzMxODYyMA==&mid=2650195847&idx=3&sn=10755f8075c7b445bceea44c7f8530f3&chksm=bed9bd3489ae3422749d03c78687649cf92e088ffebce3938fde0416e10afa6f0c93bb7f4389#rd")
+						   
+                				);
+					}
+					break ;
+					case "waixiao":
+					{
+						$contentStr = array(
+                              array("Title" =>"【三创节】外校参展项目介绍 ", 
+ //                       "Description" =>"“三创节”来了！小伙伴们快来围观！", 
+                        "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_png/AXZnZY3B8NicjmJR3g55ribmvjxgQicqkyDvdZGgrv9ntGb1GrcmrrIjOWF6l5We6ViaaWSzG3Dic7ibue0uZVCDlM1A/640?wx_fmt=png&wxfrom=5&wx_lazy=1", 
+                        "Url" =>"https://mp.weixin.qq.com/s?__biz=MjM5NzMxODYyMA==&mid=2650195847&idx=2&sn=d4fce994f48ca4def1faed954bac83c8&chksm=bed9bd3489ae3422f892666aeb1bcc7a81124a77d0cf7ff6eaac5a726348acd9f6f056d9d54d#rd")
+						   
+                				);
+					}
+					break ;
+					default:
+					break;
+				}
+//				$contentStr = "滚！";
                 
             }
                 break;
-            default:
+            default: 
                 break;      
 
         }
@@ -434,7 +454,17 @@ class wechatCallbackapiTest
         $resultStr = sprintf($newsTpl, $object->FromUserName, $object->ToUserName, time(), count($arr_item), $funcFlag);
         return $resultStr;
     }
-    
+     private function customerservice($object)
+    {
+        $textTpl = "<xml>
+					<ToUserName><![CDATA[%s]]></ToUserName>
+					<FromUserName><![CDATA[%s]]></FromUserName>
+					<CreateTime>%s</CreateTime>
+					<MsgType><![CDATA[transfer_customer_service]]></MsgType>
+					</xml>";
+        $resultStr = sprintf($textTpl, $object->FromUserName, $object->ToUserName, time());
+        return $resultStr;
+    }
 
     private function checkSignature()
     {
@@ -455,5 +485,5 @@ class wechatCallbackapiTest
         }
     }
 }
- 
+
 ?>

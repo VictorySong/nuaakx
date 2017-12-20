@@ -170,6 +170,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
+			<!--
 				<div class="panel panel-default">
 					<a class="panel-title" href="#actvote"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -192,6 +193,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
+			-->
 				<div class="panel panel-default">
 					<a class="panel-title" href="#fixcomputer"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -262,8 +264,8 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				<!--
-				<div class="panel panel-default" id="kxtsas">
+				
+				<div class="panel panel-default" >
 					<a class="panel-title" href="#kxts"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table style="box-sizing:border-box;min-width:180px;">
@@ -285,7 +287,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				-->
+				
 				
 			  <div id="Kx" style="display:none;">
 				
@@ -629,11 +631,11 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 					<div class="form-group">
 						<label >手机:</label>
-						<input type="text" class="form-control" disabled cont="phone">
+						<input type="text" class="form-control"  cont="phone" id="p">
 					</div>
 					<div class="form-group">
 						<label >邮箱:</label>
-						<input type="text" class="form-control" disabled cont="email">
+						<input type="text" class="form-control"  cont="email"  id="e">
 					</div>
 					<div class="form-group">
 						<label>问题描述:</label>
@@ -661,6 +663,24 @@ $signPackage = $jssdk->GetSignPackage();
 					<div class="form-group">
 						<label>预约时间:</label>
 						<div id="fixtime" class="" style="padding-left:10px;">
+							
+						</div>
+					</div>
+					<div class="form-group">
+						<label>维修地点:</label>
+						<div class="" style="padding-left:10px;">
+							<div >
+							  <label>
+								<input type="radio" name="place" value="东区大学生发展中心508" checked>东区大学生发展中心508
+							  </label>
+							</div>
+							
+							<div >
+								<label>
+								<input type="radio" name="place" value="西区1号教学楼5楼信息化处">西区1号教学楼5楼信息化处
+
+								</label>
+							</div>
 							
 						</div>
 					</div>
@@ -778,50 +798,94 @@ $signPackage = $jssdk->GetSignPackage();
 			<div style="width:100%;" cont="head">
 			</div>
 		
-		<!--  加label,post失败   -->	  
-			  
-			<form id="formvote" >  
+			<form class="form" action="">  
+			
+			<div class="page-header">
+				<h4>投票规则：每个人可以进行一次投票，一次投票可以勾选1~3个节目。快来为你喜欢的节目，投上你宝贵的一票吧！</h4>
+			</div>
+			
 			  <!-- two columns-->
-				<div class="col-xs-6" style="padding-bottom:15px;">
+			  <div class="row">
+		<!--		<div class="col-xs-6" style="padding-bottom:15px;">
 				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>Heading</div></p></label>
+				  <div class="btn btn-default" role="button" style="padding-bottom:0px;"><p>投票<span class="badge" id="noreadnotice" changed="false style" style="background-color:#5bc0de;">0</span>
+					排名<span class="badge" id="noreadnotice" changed="false" style="background-color:#5bc0de;">0</span></p>
+				  </div>
+				</div>
+		 -->
+		 
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h2>1.梦灯笼</h2>
+				  <p> 那振翅欲飞的蝴蝶 是我心中对自由的向往<br/>
+					  你手中舞动的流光 是此生唯一不变的信仰<br/>
+					  而心中闪烁的萤火 是少年肆意绽放的青春<br/>
+					  下面请欣赏技术服务部带来的节目 梦灯笼
+				  </p>
+				 <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="1" ><i>1.</i>梦灯笼</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>1.</i>Heading</div></p></label>
+				  <img class="img-circle" src="votephotos/jiemu2.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h3>2.新生看点<br/>播报</h3>
+				  <p>这里有最纯粹的欢声笑语，这里有最疯狂的呐喊，军训虽短，却也刻骨铭心。<br/>在这里，我们将用不寻常的方式展现出军训的欢乐，在这里，我们将以另一种姿态带你重温军训的温情。</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="2" ><i>2.</i>新生看点播报</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>1.</i>Heading</div></p></label>
+				  <img class="img-circle" src="votephotos/jiemu3.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h3>3.Mad again</h3>
+				  <p>歌曲的串烧，舞蹈的喜感<br/>给大家带来欢快愉悦</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="3" ><i>3.</i>Mad again</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>1.</i>Heading</div></p></label>
+				  <img class="img-circle" src="votephotos/jiemu4.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h3>4.博物馆<br/>奇妙夜</h3>
+				  <p>你见过凌晨两点的博物馆吗?</br></p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="4" ><i>4.</i>博物馆奇妙夜</div></p></label>
+				</div>
+				
+				<div class="clearfix visible-xs-block"></div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="votephotos/jiemu5.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h4>5.像我这样的人</h4>
+				  <p>欲戴王冠，先承其重。无论我们多么骄傲也会被现实无情击垮，不可避免陷入沮丧，黯然神伤。希望这首《像我这样的人》可以帮助你我在迷茫中寻到最初的信仰，孤独但坚定地走向前方。</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>5.</i>像我这样的人</div></p></label>
 				</div>
 				
 				<div class="col-xs-6" style="padding-bottom:15px;">
-				  <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				  <h2>Heading</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="5" ><i>1.</i>Heading</div></p></label>
+				  <img class="img-circle" src="votephotos/jiemu6.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h3>6.极乐山鬼</h3>
+				  <p> 汉舞，柔美;汉舞山鬼，优雅温婉。宅舞，欢脱；极乐净土，妩媚动人。汉舞与宅舞，于此齐聚一堂，极乐山鬼，就此上演。</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="6" ><i>6.</i>极乐山鬼</div></p></label>
 				</div>
 				
+				<div class="clearfix visible-xs-block"></div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="votephotos/jiemu7.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h3>7.武林内传</h3>
+				  <p>莫小贝上大学回客栈的各种问事搞事～/滑了个稽/</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="7" ><i>7.</i>武林内传</div></p></label>
+				</div>
+				
+				<div class="col-xs-6" style="padding-bottom:15px;">
+				  <img class="img-circle" src="votephotos/jiemu1.jpg" alt="Generic placeholder image" width="140" height="140">
+				  <h3>8.荧光舞</h3>
+				  <p>荧光的迷乱舞步，线条的妖娆变幻，把黑夜的寂寞，奏成激荡心灵的狂想曲。</p>
+				  <label><p><div class="btn btn-default" role="button"><input type="checkbox" name="vote" value="8" ><i>8.</i>荧光舞</div></p></label>
+				</div>
+				
+				
+			  </div>
 			  <!-- /.row -->
 			  
 			  <div class="col-xs-12" style="padding-bottom:25px;text-align:center;">
 		
-			  <button type="submit" class="btn btn-lg btn-primary" >提交</button>
+			  <button type="submit" class="btn btn-lg btn-primary" >点击提交</button>
 			  </div>
 			</form> 
 	  
@@ -948,22 +1012,32 @@ $signPackage = $jssdk->GetSignPackage();
 		<!-- ............................................    -->
 		
 		
-		<!--   投诉与建议--><!--
+		<!--   投诉与建议-->
 		<div id="kxts" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
-			
-			
-			<div id="tsasuggestion" style="padding-left:15px; padding-right:15px; padding-bottom:30px;">
-				<div style="width:100%;" cont="head">
-				</div>
+			<div style="width:100%;" cont="head">
 			</div>
-			
-			
-			
 			<form class="form" action="" >
 				
 					<div class="form-group">
-						<label>投诉与建议:</label>
-						<textarea class="form-control" placeholder="请简短的描述系统出现问题时的情况..."></textarea>
+						<label >学号:</label>
+						<input type="text" class="form-control" disabled cont="stId">
+					</div>
+					<div class="form-group">
+						<label >姓名:</label>
+						<input type="text" class="form-control" disabled cont="name">
+					</div>
+					<div class="form-group">
+						<label >手机:</label>
+						<input type="text" class="form-control"  cont="phone" id="p">
+					</div>
+					<div class="form-group">
+						<label >邮箱:</label>
+						<input type="text" class="form-control"  cont="email"  id="e">
+					</div>
+					
+					<div class="form-group">
+						<label>问题与建议:</label>
+						<textarea class="form-control" placeholder="请输入..."></textarea>
 					</div>
 			
 				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
@@ -975,8 +1049,7 @@ $signPackage = $jssdk->GetSignPackage();
 			
 			
 		</div>
-		-->
-		
+			
 		<!-- ............................................    -->
 		
 		<!--  讲座    -->

@@ -1,4 +1,4 @@
- <?php  
+<?php  
     /** 
       * wechat php test 
       */  
@@ -7,7 +7,7 @@
     define("TOKEN", "shenxx");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
-    $wechatObj->responseMsg();  
+  //  $wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
     {   
