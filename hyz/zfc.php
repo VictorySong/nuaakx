@@ -15,7 +15,7 @@ while($i<$length)
      echo "<br>";
      $i++;
  }
- $a=""
+ $a="";
  for($i=0;$i<5;$i++)
   {
       $a=$a.$sz[$i];
