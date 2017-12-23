@@ -3,7 +3,7 @@
 <html>
 <body>
 
-<h1>hahhahahah!</h1>
+
 
 <?php
 $sz=array("V","BMW","SAAB","as","we"); 
@@ -12,7 +12,7 @@ $length=count($sz);
 while($i<$length)
  {
      echo $sz[$i];
-     echo "<br>"
+     echo "<br>";
      $i++;
  }
  $a=""
