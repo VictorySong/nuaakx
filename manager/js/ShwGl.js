@@ -31,7 +31,7 @@
 		var description=$(this).find("textarea");
 	    json["description"]=description.val();
 		
-		var wuzi=$(this).find("input[name='wuzi']:checked").val();
+		var wuzi=$(this).find("input[name='wuzi']:checked");
 		json["wuzi"]=wuzi.val();
 		
 		var r=confirm("提交后不可修改，请确认是否提交");
