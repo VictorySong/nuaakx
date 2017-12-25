@@ -37,7 +37,12 @@
 		var jdate=$(this).find("input[name='jdate']");
 		json["jdate"]=jdate.val();
 		
-		var jtime=$(this).find("input[name='jtime']");
+		var jtime=$(this).find("input[name='jtime']").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		});
 		json["jtime"]=[];
 		jtime.each(function(){
 				json["jtime"][json["jtime"].length]=$(this).val();
