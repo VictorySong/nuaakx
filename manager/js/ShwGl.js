@@ -34,8 +34,11 @@
 		var wuzi=$(this).find("input[name='wuzi']:checked");
 		json["wuzi"]=wuzi.val();
 		
-		var wuzi=$(this).find("input[name='jdate']");
+		var jdate=$(this).find("input[name='jdate']");
 		json["jdate"]=jdate.val();
+		
+		var jtime=$(this).find("input[name='jtime']");
+		json["jtime"]=jtime.val();
 		
 		var r=confirm("提交后不可修改，请确认是否提交");
 		if (r==true)
