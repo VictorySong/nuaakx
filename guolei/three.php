@@ -8,8 +8,8 @@ for($k=0;$k<=$len;$k++)
             $temp = $b[$j];
             $b[$j] = $b[$j-1];
             $b[$j-1] = $temp;
-			$echo $b[$j-1];
-			$echo "<br>";
+			echo $b[$j-1];
+			echo "<br>";
         }
     }
 }
