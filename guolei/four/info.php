@@ -4,6 +4,6 @@
     姓名：<?php echo $_POST["2"]; ?><br>
     性别：<?php echo $_POST["3"]; ?><br>
     是否单身：<?php echo $_POST["4"]; ?><br>
-    年龄：<?php echo $_POST["name"]; ?><br>
+    年龄：<?php echo $_POST["5"]; ?><br>
 </body>
 </html>

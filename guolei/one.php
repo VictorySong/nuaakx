@@ -6,5 +6,5 @@ for($x=o;$x<$arrlength;$x++){
     echo "<br>";
 }
 $you=$we[0].$we[1].$we[2].$we[3].$we[4].$we[5]
-echo $you
+echo $you;
 ?>
