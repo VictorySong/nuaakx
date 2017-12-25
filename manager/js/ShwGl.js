@@ -38,7 +38,7 @@
 		json["jdate"]=jdate.val();
 		
 		var jtime=$(this).find("input[name='jtime']");
-		json["jtime"]=jtime.val();
+		json["jtime"]=jtime;
 		
 		var r=confirm("提交后不可修改，请确认是否提交");
 		if (r==true)
