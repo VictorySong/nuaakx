@@ -1,6 +1,7 @@
 <?php
 $we=array("1","2","3","4","5","6");
 $arrlength=count($we);
+$x=0;
 for($x=o;$x<$arrlength;$x++){
     echo $we[$x];
     echo "<br>";
