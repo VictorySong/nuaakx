@@ -38,6 +38,7 @@
 		json["jdate"]=jdate.val();
 		
 		var jtime=$(this).find("input[name='jtime']");
+		json["department"]=[];
 		jtime.each(function(){
 				json["jtime"][json["jtime"].length]=$(this).val();
 			});
