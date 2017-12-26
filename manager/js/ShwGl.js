@@ -1,4 +1,4 @@
-	//设置投诉与建议表单提交
+	//设置物资借用表单提交
 	$("#itemlogreg").find("form").submit(function(e){
 		e.preventDefault();
 		var json={}
@@ -52,7 +52,7 @@
 		if (r==true)
 		{
 			console.log(json);
-			$.post("kxts.php",json).done(function(data){
+			$.post("kxwzjy.php",json).done(function(data){
 			console.log(data);
 			try{
 				var da=JSON.parse(data);

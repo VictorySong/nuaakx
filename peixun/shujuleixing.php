@@ -10,12 +10,13 @@
 /*
 字符串、整数、浮点数、逻辑、数组、NULL。
 */
+//字符串
 $x = "Hello world!";
 echo $x;
 echo "<br>"; 
 $x = 'Hello world!';
 echo $x;
-//字符串
+
 //整数
 /*
 整数是没有小数的数字。
@@ -57,7 +58,7 @@ var_dump($cars);
 //null
 $t="Hello world!";
 $t=null;
-var_dump($x);
+var_dump($t);
 ?>
 
 </body>
