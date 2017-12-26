@@ -12,7 +12,7 @@ if(!empty($_SESSION["jname"])&& !empty($_POST["jphone"]) && !empty($_POST["gname
 	$result=mysql_query($sql,$mysql->ico);
 	$counts=mysql_num_rows($result);
 
-		if(!$mysql->runsql("INSERT INTO `KxGlwz` (`jname`,`jphone`,`jdate`,`gname`,`description`,`wuzi`,`jtime`) VALUES ('".$_SESSION["stId"]."','".$_POST["problem"]."','".$_POST["time"]."','".$_POST["place"]."')")&&!$mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '".$_POST["phone"]."', `email` = '".$_POST["email"]."' WHERE `wx_user`.`number` = '".$_SESSION["stId"]."' "))
+		if(!$mysql->runsql("INSERT INTO `KxGlwz` (`jname`,`jphone`,`jdate`,`gname`,`description`,`wuzi`,`jtime`) VALUES ('".$_POST["jname"]."','".$_POST["jphone"]."','".$_POST["jdate"]."','".$_POST["gname"]."','".$_POST["description"]."','".$_POST["wuzi"]."','".$_POST["jtime"]."')"))
 		{
 			$json["error"]=0;
 			
