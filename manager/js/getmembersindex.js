@@ -180,6 +180,7 @@ function getkxts(){
 	
 	$.post("getkxts.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
 		console.log(data);
+		$("#kxts1").append('<div id="nomore" style="text-align:center;">无更多</div>');
 		try{
 			var da=JSON.parse(data);
 		}catch(e){
