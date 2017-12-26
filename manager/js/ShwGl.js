@@ -145,10 +145,8 @@
 						html+='</div>\
 									</div>\
 								</div>';
-					$("#fixcomputer1").append(html);
+					$("#itemlog1").append(html);
 				}
-				$("#fixcomputer1").find("[cont=\"solution\"]").click(fixSR);//解决措施
-				$("#fixcomputer1").find("[cont=\"response\"]").click(fixSR);//回复
 				
 			}
 		
