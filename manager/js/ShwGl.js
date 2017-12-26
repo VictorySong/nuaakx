@@ -140,8 +140,9 @@
 										</div>\
 										<div class="form-group">\
 											<label >时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00-'(+da["msg"][p]["wuzi"]+2)+'" cont="time">\				
-										</div>';			
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+'" cont="room">\
+										</div>';
+													
 						html+='</div>\
 									</div>\
 								</div>';
