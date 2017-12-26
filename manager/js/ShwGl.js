@@ -126,7 +126,7 @@
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
 									<div class="panel-body">\
 										<div class="form-group">\
-											<label >借用人名称:</label>\
+											<label >借用人姓名:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
 										</div>\
 										<div class="form-group">\
@@ -140,6 +140,10 @@
 										<div class="form-group">\
 											<label >时间:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+'" cont="room">\
+										</div>\
+										<div class="form-group">\
+											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
 										</div>';
 													
 						html+='</div>\
