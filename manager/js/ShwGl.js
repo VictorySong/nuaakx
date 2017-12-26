@@ -119,8 +119,8 @@
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
-										'+da["msg"]["jname"]+'\
-										&nbsp;&nbsp;&nbsp; '+da["msg"][p]["wuzi"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["time"]+'\
+										'+da["msg"][p]["jname"]+'\
+										&nbsp;&nbsp;&nbsp; '+da["msg"][p]["room"]+'&nbsp;&nbsp;&nbsp; '+da["msg"][p]["time"]+'\
 									</h3>\
 								</div>\
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
