@@ -12,6 +12,7 @@ session_start();
 			
 			$json["error"]=0;
 			$json["msg"]=$data;
+			$data["time1"]=$data["time"]+2;
 			echo json_encode($json);
 		}
 	
