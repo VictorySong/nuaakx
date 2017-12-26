@@ -180,7 +180,6 @@ function getkxts(){
 	
 	$.post("getkxts.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
 		console.log(data);
-		$("a").append('<div id="nomore" style="text-align:center;">无更多</div>');
 		try{
 			var da=JSON.parse(data);
 		}catch(e){
@@ -351,7 +350,6 @@ $(document).ready(function(){
 	$("#addform").submit(function(e){
 		e.preventDefault();
 	});
-	
 	
 	
 	//为 add 按钮添加 切换 

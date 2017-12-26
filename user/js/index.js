@@ -17,8 +17,9 @@ $(document).ready(function(){
 		
 		getvote();
 		//检测活动是否投票
-	
-	
+		getkxts();
+		//检测投诉与建议
+		
 	//调整 background 高度
 	$("#background").css("height",window.innerHeight+"px");
 	
