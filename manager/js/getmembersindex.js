@@ -173,7 +173,7 @@ function getrecruit(){
 	});
 }
 //获取投诉与建议的函数
-function getrecruit(){
+function getkxts(){
 	console.log({p:window.recruitp,tableName:window.tableName});
 	if(window.recruitend)
 		return;
@@ -189,7 +189,7 @@ function getrecruit(){
 		}
 			if(da["error"]==0)
 			{
-				
+				$("#kxts1").append('<div id="nomore" style="text-align:center;">无更多</div>');
 				if(da["msg"].length<1)
 					window.recruitend=true;
 				for(var p in da["msg"])
