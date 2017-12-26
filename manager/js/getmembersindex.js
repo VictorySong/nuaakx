@@ -351,7 +351,7 @@ $(document).ready(function(){
 	$("#addform").submit(function(e){
 		e.preventDefault();
 	});
-	getkxts()；
+	getkxts();
 	
 	//为 add 按钮添加 切换 
 	/*
