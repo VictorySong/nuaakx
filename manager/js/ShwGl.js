@@ -130,6 +130,10 @@
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
 										</div>\
 										<div class="form-group">\
+											<label >借出人名称:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
 											<label >电话:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
 										</div>\
@@ -139,7 +143,7 @@
 										</div>\
 										<div class="form-group">\
 											<label >时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+'" cont="room">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00'+da["msg"][p]["time1"]+':00" cont="room">\
 										</div>\
 										<div class="form-group">\
 											<label >管理人员姓名:</label>\

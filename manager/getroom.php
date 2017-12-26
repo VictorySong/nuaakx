@@ -9,9 +9,10 @@ session_start();
 	
 		if(!empty($data))
 		{
-			
+			$data["time1"]=$data["time"]+2;
 			$json["error"]=0;
 			$json["msg"]=$data;
+			
 			echo json_encode($json);
 		}
 	
