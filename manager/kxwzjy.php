@@ -2,9 +2,7 @@
 include("../SaeMysql.php");
 //session_set_cookie_params(7200*12*7,'/','nuaakx.com');
 session_start();
-if(!empty($_POST["jname"])&& !empty($_POST["jphone"]) && !empty($_POST["gname"])&& !empty($_POST["description"]) && !empty($_POST["wuzi"])&& !empty($_POST["jdate"]&& !empty($_POST["jtime"]))
-{
-	$mysql=new SaeMysql();
+$mysql=new SaeMysql();
 	if(date("G")<"19")
 		$time=date("Y-m-d");
 	else
@@ -22,7 +20,7 @@ if(!empty($_POST["jname"])&& !empty($_POST["jphone"]) && !empty($_POST["gname"])
 		else
 			echo $mysql->errmsg();
 	
-}
+
 	
 
 
