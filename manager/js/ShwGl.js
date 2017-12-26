@@ -1,11 +1,11 @@
 	$(document).ready(function(){
-	//确定获取预约维修时间
+	//确定获取物资借用时间
 	window.fixdate=new Date();
 	window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
 	window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
 
-	//切换获取维修预约的时间
-	$("#fixformer").click(function(){
+	//切换获取物资借用的时间
+	$("#roomformer").click(function(){
 		console.log(window.fixdate.getTime());
 		window.fixdate.setTime(window.fixdate.getTime()-86400000);
 		console.log(window.fixdate.getTime());
@@ -14,7 +14,7 @@
 
 		getwzjy()
 	});  
-	$("#fixlater").click(function(){
+	$("#roomlater").click(function(){
 		console.log(window.fixdate.getTime());
 		window.fixdate.setTime(window.fixdate.getTime()+86400000);
 		console.log(window.fixdate.getTime());
