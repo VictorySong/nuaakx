@@ -174,13 +174,13 @@ function getrecruit(){
 }
 //获取投诉与建议的函数
 function getkxts(){
+	$("#kxts1").append('<div id="nomore" style="text-align:center;">无更多</div>');
 	console.log({p:window.recruitp,tableName:window.tableName});
 	if(window.recruitend)
 		return;
 	
 	$.post("getkxts.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
 		console.log(data);
-		$("#kxts1").append('<div id="nomore" style="text-align:center;">无更多</div>');
 		try{
 			var da=JSON.parse(data);
 		}catch(e){
