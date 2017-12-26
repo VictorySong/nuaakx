@@ -1,3 +1,33 @@
+	$(document).ready(function(){
+	//确定获取预约维修时间
+	window.fixdate=new Date();
+	window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
+	window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
+
+	//切换获取维修预约的时间
+	$("#fixformer").click(function(){
+		console.log(window.fixdate.getTime());
+		window.fixdate.setTime(window.fixdate.getTime()-86400000);
+		console.log(window.fixdate.getTime());
+		window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
+		window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
+
+		getwzjy()
+	});  
+	$("#fixlater").click(function(){
+		console.log(window.fixdate.getTime());
+		window.fixdate.setTime(window.fixdate.getTime()+86400000);
+		console.log(window.fixdate.getTime());
+		window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
+		window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
+
+		getwzjy()
+	});
+	
+			
+		
+});
+	
 	//设置物资借用表单提交
 	$("#itemlogreg").find("form").submit(function(e){
 		e.preventDefault();
