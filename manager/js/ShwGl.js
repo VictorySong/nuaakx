@@ -120,7 +120,7 @@
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
 										'+da["msg"][p]["jname"]+'\
-										&nbsp;&nbsp;&nbsp; '+da["msg"][p]["room"]+'&nbsp;&nbsp;&nbsp;开始借用时间： '+da["msg"][p]["time"]+':00\
+										&nbsp;&nbsp;&nbsp; 教室：'+da["msg"][p]["room"]+'&nbsp;&nbsp;&nbsp;开始借用时间： '+da["msg"][p]["time"]+':00\
 									</h3>\
 								</div>\
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
@@ -138,7 +138,7 @@
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["room"]+'" cont="room">\
 										</div>\
 										<div class="form-group">\
-											<label >时间（使用时间为两小时）:</label>\
+											<label >开始使用时间（使用时间为两小时）:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
 										</div>\
 										<div class="form-group">\
