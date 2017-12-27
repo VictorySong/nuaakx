@@ -139,15 +139,11 @@
 										</div>\
 										<div class="form-group">\
 											<label >时间:</label>\
-<<<<<<< HEAD
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00'+da["msg"][p]["time1"]+':00" cont="room">\
 										</div>\
 										<div class="form-group">\
 											<label >管理人员姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
-=======
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+'" cont="room">\
->>>>>>> d86fb1918c8903a579890e0d910e171ef608ed71
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="jname">\
 										</div>';
 													
 						html+='</div>\
