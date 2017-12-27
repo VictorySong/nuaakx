@@ -5,7 +5,7 @@ session_start();
 
 	$mysql=new SaeMysql();
 	$data=$mysql->getData("SELECT `jname`,`jphone`,`date`,`gname`,`description`,`room`,`time` FROM `KxGlwz` WHERE `date`='".$_POST["date"]."' || `date`='".$_POST["date1"]."'");
-	$data["time1"]=$data["time"]+2;
+	//$data["time1"]=$data["time"]+2;
 	
 		if(!empty($data))
 		{
