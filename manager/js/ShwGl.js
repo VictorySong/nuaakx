@@ -40,6 +40,7 @@
 		}
 		else
 			json["jname"]=jname.val();
+		
 		var jphone=$(this).find("#jp");
 		if(jphone.val()==""){
 			
@@ -48,6 +49,7 @@
 		}
 		else
 			json["jphone"]=jphone.val();
+		
 		var gname=$(this).find("#gn");
 		if(gname.val()==""){
 			
@@ -57,15 +59,21 @@
 		else
 			json["gname"]=gname.val();
 		
+		var jdate=$(this).find("input[name='jdate']");
+		if(gname.val()==""){
+			
+			gname.focus();
+			return;
+		}
+		else
+			json["jdate"]=jdate.val();
+		
 		var description=$(this).find("textarea");
 	    json["description"]=description.val();
 		
 		var wuzi=$(this).find("input[name='wuzi']:checked");
 		json["wuzi"]=wuzi.val();
-		
-		var jdate=$(this).find("input[name='jdate']");
-		json["jdate"]=jdate.val();
-		
+			
 		var jtime=$(this).find("input[name='jtime']:checked");
 		json["jtime"]=jtime.val();
 		
