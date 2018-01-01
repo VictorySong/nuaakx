@@ -155,7 +155,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-chevron-right" ></span>
+											<span class="glyphicon glyphicon-envelope" ></span>
 										</td>
 										<td>
 											<span id="personal"></span>
@@ -272,7 +272,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-chevron-right" ></span>
+											<span class="glyphicon glyphicon-pencil" ></span>
 										</td>
 										<td>
 											<span ></span>
