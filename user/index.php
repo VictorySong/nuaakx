@@ -111,14 +111,14 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-pencil" ></span>
+											<span class="glyphicon glyphicon-edit" style="color:red;" ></span>
 										</td>
 										<td>
 											<span id="name"></span>
 											 <br>个人资料
 										</td>
 										<td align="right">
-											<span class="glyphicon glyphicon-edit" style="color:red;"  changed="false"></span>
+											<span class="glyphicon glyphicon-chevron-right"  changed="false"></span>
 										</td>
 									</tr>
 								</tbody>
@@ -155,7 +155,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-envelope" ></span>
+											<span class="glyphicon glyphicon-chevron-right" ></span>
 										</td>
 										<td>
 											<span id="personal"></span>
@@ -201,14 +201,14 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-tag" style="color:red;" ></span>
 										</td>
 										<td>
 											<span ></span>
 											<br>电脑报修
 										</td>
 										<td align="right">
-											<span class="glyphicon glyphicon-tag" style="color:red;" changed="false"></span>
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
 										</td>
 									</tr>
 								</tbody>
@@ -224,14 +224,14 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-tag" ></span>
 										</td>
 										<td>
 											<span ></span>
 											<br>查看预约
 										</td>
 										<td align="right">
-											<span class="glyphicon glyphicon-tag" changed="false"></span>
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
 										</td>
 									</tr>
 								</tbody>
@@ -249,14 +249,14 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-heart" style="color:red;" ></span>
 										</td>
 										<td>
 											<span ></span>
 											<br>活动/赛事/讲座
 										</td>
 										<td align="right">
-											<span class="glyphicon glyphicon-heart" style="color:red;" changed="false"></span>
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
 										</td>
 									</tr>
 								</tbody>
@@ -272,7 +272,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-cog" ></span>
+											<span class="glyphicon glyphicon-chevron-right" ></span>
 										</td>
 										<td>
 											<span ></span>
