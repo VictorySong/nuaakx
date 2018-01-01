@@ -744,6 +744,7 @@ $(document).ready(function(){
 			}
 		});
 			alert("我们已收到您的投诉和建议！");
+			window.history.go(-1);
 		}
 		}
 		else{if(confirm("提交后不可修改，请确认是否提交"))

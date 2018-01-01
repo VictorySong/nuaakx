@@ -1040,7 +1040,7 @@ $signPackage = $jssdk->GetSignPackage();
 						<textarea class="form-control" placeholder="请输入..."></textarea>
 					</div>
 			
-				<button type="submit" class="btn btn-default" style="width:100%;" onclick="javascript:window.history.go(-1);">提交</button>
+				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
 
 			</form>
 			
