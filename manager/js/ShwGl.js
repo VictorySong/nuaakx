@@ -1,6 +1,7 @@
 	$(document).ready(function(){
 	//确定获取物资借用时间
 	window.fixdate=new Date();
+	window.fixdate.setTime(window.fixdate.getTime());
 	window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
 	window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
 
@@ -27,7 +28,7 @@
 			
 });
 	
-	//设置物资借用表单提交
+	//物资借用表单提交
 	$("#itemlogreg").find("form").submit(function(e){
 		e.preventDefault();
 		var json={}
@@ -105,7 +106,7 @@
 	
 	
 	
-	
+	//物资借用情况显示
 	function getwzjy(){
 	$("#roomdate").text(window.fixcomputerdate);
 	$("#itemlog1").children().remove();
