@@ -4,7 +4,8 @@
 	window.fixdate.setTime(window.fixdate.getTime());
 	window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
 	window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
-
+	getwzjy()
+	
 	//切换获取物资借用的时间
 	$("#roomformer").click(function(){
 		console.log(window.fixdate.getTime());
