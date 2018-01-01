@@ -60,9 +60,9 @@
 			json["gname"]=gname.val();
 		
 		var jdate=$(this).find("input[name='jdate']");
-		if(gname.val()==""){
+		if(jdate.val()==""){
 			
-			gname.focus();
+			jdate.focus();
 			return;
 		}
 		else
