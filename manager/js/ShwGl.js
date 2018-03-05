@@ -36,13 +36,13 @@ $(document).ready(function(){
 	$("#itemtype").text(item[x]);
 	
 	
-	$("#previous").click(function(x){
+	$("#previous").click(function(){
 		if (x>0){x= x-1;}
 		else{x=3;}
 		$("#itemtype").text(item[x]);
 	
 	});
-	$("#next").click(function(x){
+	$("#next").click(function(){
 		if (x<3){x= x+1;}
 		else{x=0;}
 		$("#itemtype").text(item[x]);
