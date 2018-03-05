@@ -86,29 +86,15 @@ $(document).ready(function(){
 		}
 		else
 			json["gname"]=gname.val();
-		
+			
 		
 		var jdatetime=$(this).find("input[name='jdatetime']");
-		if(jdatetime.val()==""){
-			
-			jdatetime.focus();
-			return;
-		}
-		else
-			json["jdatetime"]=jdatetime.val();
+		json["jdatetime"]=jdatetime.val();
 		
 		
 		var jdatetime1=$(this).find("input[name='jdatetime1']");
-		if(jdatetime1.val()==""){
-			
-			jdatetime1.focus();
-			return;
-		}
-		else
-			json["jdatetime1"]=jdatetime1.val();
-		
-		
-		
+		json["jdatetime1"]=jdatetime1.val();
+
 		var description=$(this).find("textarea");
 	    json["description"]=description.val();
 		
