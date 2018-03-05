@@ -26,7 +26,7 @@ $(document).ready(function(){
 		getwzjy()
 	});
 */	
-	getwzjy()	
+		
 	var item=[];
 			item[0]="教室506";
 			item[1]="教室510";
@@ -34,15 +34,19 @@ $(document).ready(function(){
 			item[3]="帐篷";
 	var x = 2;	
 	$("#itemtype").text(item[x]);
+	getwzjy();
+	
 	$("#previous").click(function(){
 		if (x>0){x= x-1;}
 		else{x=3;}
 		$("#itemtype").text(item[x]);
+		getwzjy();
 	});
 	$("#next").click(function(){
 		if (x<3){x= x+1;}
 		else{x=0;}
 		$("#itemtype").text(item[x]);
+		getwzjy();
 	});
 });
 
@@ -51,6 +55,8 @@ $(document).ready(function(){
 	$("#itemlogreg").find("form").submit(function(e){
 		e.preventDefault();
 		var json={}
+		
+		
 		
 		var jname=$(this).find("#jn");
 		if(jname.val()==""){
@@ -61,6 +67,7 @@ $(document).ready(function(){
 		else
 			json["jname"]=jname.val();
 		
+		
 		var jphone=$(this).find("#jp");
 		if(jphone.val()==""){
 			
@@ -69,6 +76,7 @@ $(document).ready(function(){
 		}
 		else
 			json["jphone"]=jphone.val();
+		
 		
 		var gname=$(this).find("#gn");
 		if(gname.val()==""){
@@ -79,14 +87,27 @@ $(document).ready(function(){
 		else
 			json["gname"]=gname.val();
 		
-		var jdate=$(this).find("input[name='jdate']");
-		if(jdate.val()==""){
+		
+		var jdatetime=$(this).find("input[name='jdatetime']");
+		if(jdatetime.val()==""){
 			
-			jdate.focus();
+			jdatetime.focus();
 			return;
 		}
 		else
-			json["jdate"]=jdate.val();
+			json["jdatetime"]=jdatetime.val();
+		
+		
+		var jdatetime1=$(this).find("input[name='jdatetime1']");
+		if(jdatetime1.val()==""){
+			
+			jdatetime1.focus();
+			return;
+		}
+		else
+			json["jdatetime1"]=jdatetime1.val();
+		
+		
 		
 		var description=$(this).find("textarea");
 	    json["description"]=description.val();
@@ -94,8 +115,6 @@ $(document).ready(function(){
 		var wuzi=$(this).find("input[name='wuzi']:checked");
 		json["wuzi"]=wuzi.val();
 			
-		var jtime=$(this).find("input[name='jtime']:checked");
-		json["jtime"]=jtime.val();
 		
 		var r=confirm("提交后不可修改，请确认是否提交");
 		if (r==true)
@@ -128,7 +147,7 @@ function getwzjy(){
 	$("#itemlog1").children().remove();
 
 	
-	$.post("getroom.php",{date:window.fixcomputerdate,date1:window.fixcomputerdate1}).done(function(data){
+	$.post("getroom.php",{item:x}).done(function(data){
 		console.log(data);
 			
 		try{
