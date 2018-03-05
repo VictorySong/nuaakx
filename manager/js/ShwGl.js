@@ -120,7 +120,7 @@ function getwzjy(){
 	$("#itemtype").text("哈哈");
 	
 	$("#itemlog1").children().remove();
-	console.log(window.fixcomputerdate);
+	console.log(x);
 	
 	$.post("getroom.php",{date:window.fixcomputerdate,date1:window.fixcomputerdate1}).done(function(data){
 		console.log(data);
