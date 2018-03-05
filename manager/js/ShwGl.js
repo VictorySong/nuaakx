@@ -40,6 +40,7 @@ $(document).ready(function(){
 	});
 	$("#next").click(function(){
 		x= x+1;
+		$("#itemtype").text(item[x]);
 		console.log(x);
 	});
 });
