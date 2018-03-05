@@ -35,11 +35,11 @@ $(document).ready(function(){
 	var x = 2;	
 	$("#itemtype").text(item[x]);
 	$("#previous").click(function(){
-		$("#itemtype").text(item[--x]);
+		$("#itemtype").text(item[1]);
 		console.log(x);
 	});
 	$("#next").click(function(){
-		$("#itemtype").text(item[++x]);
+		$("#itemtype").text(item[3]);
 		console.log(x);
 	});
 });
