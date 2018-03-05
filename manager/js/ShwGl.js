@@ -89,11 +89,23 @@ $(document).ready(function(){
 			
 		
 		var jdatetime=$(this).find("input[name='jdatetime']");
-		json["jdatetime"]=jdatetime.val();
+		if(jdatetime.val()==""){
+			
+			jdatetime.focus();
+			return;
+		}
+		else
+			json["jdatetime"]=jdatetime.val();
 		
 		
 		var jdatetime1=$(this).find("input[name='jdatetime1']");
-		json["jdatetime1"]=jdatetime1.val();
+		if(jdatetime1.val()==""){
+			
+			jdatetime1.focus();
+			return;
+		}
+		else
+			json["jdatetime1"]=jdatetime1.val();
 
 		var description=$(this).find("textarea");
 	    json["description"]=description.val();
