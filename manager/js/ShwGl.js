@@ -1,4 +1,4 @@
-	$(document).ready(function(){
+/*	$(document).ready(function(){
 	//确定获取物资借用时间
 	window.fixdate=new Date();
 	window.fixdate.setTime(window.fixdate.getTime());
@@ -28,6 +28,7 @@
 	
 			
 });
+*/
 	
 	//物资借用表单提交
 	$("#itemlogreg").find("form").submit(function(e){
@@ -104,11 +105,9 @@
 		
 			
 	});
-	
-	
-	
-	//物资借用情况显示
-	function getwzjy(){
+
+//物资借用情况显示	
+function getwzjy(){
 	$("#roomdate").text(window.fixcomputerdate);
 	$("#itemlog1").children().remove();
 	console.log(window.fixcomputerdate);
@@ -167,4 +166,66 @@
 	});
 	
 	
-}
+}	
+	
+	//物资借用情况显示
+/*	function getwzjy(){
+	$("#roomdate").text(window.fixcomputerdate);
+	$("#itemlog1").children().remove();
+	console.log(window.fixcomputerdate);
+	$.post("getroom.php",{date:window.fixcomputerdate,date1:window.fixcomputerdate1}).done(function(data){
+		console.log(data);
+			
+		try{
+			var da=JSON.parse(data);
+		}catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
+										'+da["msg"][p]["jname"]+'\
+										&nbsp;&nbsp;&nbsp; 教室：'+da["msg"][p]["room"]+'&nbsp;&nbsp;&nbsp;开始借用时间： '+da["msg"][p]["time"]+':00\
+									</h3>\
+								</div>\
+								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >借用人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
+											<label >电话:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
+										</div>\
+										<div class="form-group">\
+											<label >教室:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["room"]+'" cont="room">\
+										</div>\
+										<div class="form-group">\
+											<label >开始使用时间（使用时间为两小时）:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
+										</div>\
+										<div class="form-group">\
+											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="jname">\
+										</div>';
+													
+						html+='</div>\
+									</div>\
+								</div>';
+					$("#itemlog1").append(html);
+				}
+				
+			}
+		
+	});
+	
+	
+}*/
