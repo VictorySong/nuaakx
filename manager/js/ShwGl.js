@@ -113,19 +113,19 @@ function getwzjy(){
 			item[1]="教室510";
 			item[2]="投影仪";
 			item[3]="帐篷";
-	var x = 0;	
+	var x = 2;	
 	$("#itemtype").text(item[x]);
 	$("#previous").click(function(){
-		x+= 1;
-		$("#itemtype").text(item[x]);
+		$("#itemtype").text(item[--x]);
+		console.log(x);
 	});
 	$("#next").click(function(){
-		x-= 1;
-		$("#itemtype").text(item[x]);
+		$("#itemtype").text(item[++x]);
+		console.log(x);
 	});
 		
 	$("#itemlog1").children().remove();
-	console.log(x);
+
 	
 	$.post("getroom.php",{date:window.fixcomputerdate,date1:window.fixcomputerdate1}).done(function(data){
 		console.log(data);
