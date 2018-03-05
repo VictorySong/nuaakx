@@ -27,6 +27,14 @@ $(document).ready(function(){
 	});
 */	
 	getwzjy()	
+	$("#previous").click(function(){
+		$("#itemtype").text(item[--x]);
+		console.log(x);
+	});
+	$("#next").click(function(){
+		$("#itemtype").text(item[++x]);
+		console.log(x);
+	});
 });
 
 	
@@ -115,15 +123,6 @@ function getwzjy(){
 			item[3]="帐篷";
 	var x = 2;	
 	$("#itemtype").text(item[x]);
-	$("#previous").click(function(){
-		$("#itemtype").text(item[--x]);
-		console.log(x);
-	});
-	$("#next").click(function(){
-		$("#itemtype").text(item[++x]);
-		console.log(x);
-	});
-		
 	$("#itemlog1").children().remove();
 
 	
