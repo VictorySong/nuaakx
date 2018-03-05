@@ -27,6 +27,13 @@ $(document).ready(function(){
 	});
 */	
 	getwzjy()	
+	var item=[];
+			item[0]="教室506";
+			item[1]="教室510";
+			item[2]="投影仪";
+			item[3]="帐篷";
+	var x = 2;	
+	$("#itemtype").text(item[x]);
 	$("#previous").click(function(){
 		$("#itemtype").text(item[--x]);
 		console.log(x);
@@ -116,13 +123,6 @@ $(document).ready(function(){
 
 //物资借用情况显示
 function getwzjy(){
-	var item=[];
-			item[0]="教室506";
-			item[1]="教室510";
-			item[2]="投影仪";
-			item[3]="帐篷";
-	var x = 2;	
-	$("#itemtype").text(item[x]);
 	$("#itemlog1").children().remove();
 
 	
