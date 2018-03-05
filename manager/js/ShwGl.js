@@ -26,7 +26,8 @@ $(document).ready(function(){
 		getwzjy()
 	});
 */	
-	getwzjy()		
+	getwzjy()	
+	$("#itemtype").text("哈哈");
 });
 
 	
