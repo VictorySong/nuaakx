@@ -1,5 +1,5 @@
-/*	$(document).ready(function(){
-	//确定获取物资借用时间
+$(document).ready(function(){
+/*		//确定获取物资借用时间
 	window.fixdate=new Date();
 	window.fixdate.setTime(window.fixdate.getTime());
 	window.fixcomputerdate=window.fixdate.getFullYear()+"-"+((Number(window.fixdate.getMonth())+1)<10?"0"+(Number(window.fixdate.getMonth())+1):(Number(window.fixdate.getMonth())+1))+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
@@ -25,10 +25,10 @@
 
 		getwzjy()
 	});
-	
+*/	
 			
 });
-*/
+
 	
 	//物资借用表单提交
 	$("#itemlogreg").find("form").submit(function(e){
@@ -118,9 +118,9 @@ function getwzjy(){
 	$("#next").click(x-= 1);
 	$("#itemtype").text("哈哈");
 	
-	
 	$("#itemlog1").children().remove();
 	console.log(window.fixcomputerdate);
+	
 	$.post("getroom.php",{date:window.fixcomputerdate,date1:window.fixcomputerdate1}).done(function(data){
 		console.log(data);
 			
