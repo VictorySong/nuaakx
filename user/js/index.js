@@ -1332,7 +1332,7 @@ function checkfixtime(){
 					else
 					{
 						next=true;
-						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
+						dday=Number(da["msg"][0]["week"])-Number(da["msg"][i]["week"]);
 						d.setTime(d.getTime()+86400000*dday);
 						i=0;
 					}
@@ -1359,7 +1359,7 @@ function checkfixtime(){
 					else
 					{
 						next=true;
-						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
+						dday=Number(da["msg"][0]["week"])-Number(da["msg"][i]["week"]);
 						d.setTime(d.getTime()+86400000*dday);
 						i=0;
 					}
@@ -1387,7 +1387,7 @@ function checkfixtime(){
 				else
 				{
 					next=true;
-					dday=Number(da["msg"][0]["week"])+7-Number(day);
+					dday=Number(da["msg"][0]["week"])-Number(day);
 					d.setTime(d.getTime()+86400000*dday);
 					i=0;
 				}
@@ -1413,7 +1413,7 @@ function checkfixtime(){
 					else
 					{
 						next=true;
-						dday=Number(da["msg"][0]["week"])+7-Number(da["msg"][i]["week"]);
+						dday=Number(da["msg"][0]["week"])-Number(da["msg"][i]["week"]);
 						d.setTime(d.getTime()+86400000*dday);
 						i=0;
 					}
