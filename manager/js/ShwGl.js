@@ -106,9 +106,19 @@
 			
 	});
 
-//物资借用情况显示	
+//物资借用情况显示
 function getwzjy(){
-	$("#roomdate").text(window.fixcomputerdate);
+	var item=[];
+			item[0]="教室506";
+			item[1]="教室510";
+			item[2]="投影仪";
+			item[3]="帐篷";
+			
+	$("#previous").click();
+	$("#next").click();
+	$("#itemtype").text(item[0]);
+	
+	
 	$("#itemlog1").children().remove();
 	console.log(window.fixcomputerdate);
 	$.post("getroom.php",{date:window.fixcomputerdate,date1:window.fixcomputerdate1}).done(function(data){
