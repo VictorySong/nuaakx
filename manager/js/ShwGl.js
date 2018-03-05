@@ -156,19 +156,27 @@ function getwzjy(){
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
 										</div>\
 										<div class="form-group">\
-											<label >电话:</label>\
+											<label >借用人手机:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
 										</div>\
 										<div class="form-group">\
-											<label >教室:</label>\
+											<label >物资种类:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["room"]+'" cont="room">\
 										</div>\
 										<div class="form-group">\
-											<label >开始使用时间（使用时间为两小时）:</label>\
+											<label >借出时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
+										</div>\
+										<div class="form-group">\
+											<label >归还时间:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
 										</div>\
 										<div class="form-group">\
 											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
+										</div>\
+										<div class="form-group">\
+											<label >备注:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="jname">\
 										</div>';
 													
