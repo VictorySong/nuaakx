@@ -113,10 +113,10 @@ function getwzjy(){
 			item[1]="教室510";
 			item[2]="投影仪";
 			item[3]="帐篷";
-			
-	$("#previous").click();
-	$("#next").click();
-	$("#itemtype").text(item[0]);
+	var x = 0;		
+	$("#previous").click(x+= 1);
+	$("#next").click(x-= 1);
+	$("#itemtype").text(item[x]);
 	
 	
 	$("#itemlog1").children().remove();
