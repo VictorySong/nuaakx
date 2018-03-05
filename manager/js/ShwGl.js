@@ -143,8 +143,6 @@ $(document).ready(function(){
 //物资借用情况显示
 function getwzjy(){
 	$("#itemlog1").children().remove();
-
-	
 	$.post("getroom.php",{item:x}).done(function(data){
 		console.log(data);
 			
@@ -163,7 +161,7 @@ function getwzjy(){
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
 										'+da["msg"][p]["jname"]+'\
-										&nbsp;&nbsp;&nbsp; 教室：'+da["msg"][p]["room"]+'&nbsp;&nbsp;&nbsp;开始借用时间： '+da["msg"][p]["time"]+':00\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["datetime"]+'&nbsp;&nbsp;&nbsp;归还时间： '+da["msg"][p]["datetime1"]+':00\
 									</h3>\
 								</div>\
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
@@ -178,23 +176,23 @@ function getwzjy(){
 										</div>\
 										<div class="form-group">\
 											<label >物资种类:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["room"]+'" cont="room">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["wuzi"]+'" cont="wuzi">\
 										</div>\
 										<div class="form-group">\
 											<label >借出时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+':00" cont="jdatetime">\
 										</div>\
 										<div class="form-group">\
 											<label >归还时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+':00" cont="jdatetime1">\
 										</div>\
 										<div class="form-group">\
 											<label >管理人员姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["time"]+':00" cont="room">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+':00" cont="gname">\
 										</div>\
 										<div class="form-group">\
 											<label >备注:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="jname">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
 										</div>';
 													
 						html+='</div>\
