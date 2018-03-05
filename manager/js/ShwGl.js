@@ -35,11 +35,13 @@ $(document).ready(function(){
 	var x = 2;	
 	$("#itemtype").text(item[x]);
 	$("#previous").click(function(){
-		x= x-1;	
+		if (x>0){x= x-1;}
+		else{x=3;}
 		$("#itemtype").text(item[x]);
 	});
 	$("#next").click(function(){
-		x= x+1;
+		if (x<3){x= x+1;}
+		else{x=0;}
 		$("#itemtype").text(item[x]);
 	});
 });
