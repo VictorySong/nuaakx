@@ -34,19 +34,19 @@ $(document).ready(function(){
 			item[3]="帐篷";
 	var x = 2;	
 	$("#itemtype").text(item[x]);
-	getwzjy();
+	
 	
 	$("#previous").click(function(){
 		if (x>0){x= x-1;}
 		else{x=3;}
 		$("#itemtype").text(item[x]);
-		getwzjy();
+	
 	});
 	$("#next").click(function(){
 		if (x<3){x= x+1;}
 		else{x=0;}
 		$("#itemtype").text(item[x]);
-		getwzjy();
+		
 	});
 });
 
