@@ -116,7 +116,7 @@ function getwzjy(){
 	var x = 0;		
 	$("#previous").click(x+= 1);
 	$("#next").click(x-= 1);
-	$("#itemtype").text("哈哈");
+	$("#itemtype").text(item[x]);
 	
 	$("#itemlog1").children().remove();
 	console.log(x);
