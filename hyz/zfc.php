@@ -9,7 +9,7 @@
 $sz=array("V","BMW","AB","as","we"); 
 $i=0;
 $j;
-echo "$j"."123"
+echo "$j"."123";
 $length=count($sz);
 while($i<$length)
  {
