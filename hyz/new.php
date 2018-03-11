@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+<form method="post" action="http://nuaakx.com/m/hyz/new.php">
 Name: <input type="text" name="fname">
 <input type="submit">
 </form>
