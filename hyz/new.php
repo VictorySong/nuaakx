@@ -9,6 +9,7 @@ class Car
     var $color;
     function Car() {
       $color="green";
+	  return $this->color;
 	  //$this->color = $color;
     }
     //function what_color() {
