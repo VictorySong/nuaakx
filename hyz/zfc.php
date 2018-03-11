@@ -6,7 +6,7 @@
 
 
 <?php
-$sz=array("V","BMW","SAAB","as","we"); 
+$sz=array("V","BMW","AB","as","we"); 
 $i=0;
 $length=count($sz);
 while($i<$length)
