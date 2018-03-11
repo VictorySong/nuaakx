@@ -1,36 +1,16 @@
 
-<!DOCTYPE html>
 <html>
 <body>
 
-<?php
-class Car
-{
-    var $color;
-    function Car() {
-      $color="green";
-	  return $color;
-	  //$this->color = $color;
-    }
-    //function what_color() {
-     // return $this->color;
-    //}
-}
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+Name: <input type="text" name="fname">
+<input type="submit">
+</form>
 
-function print_vars($obj) {
-   foreach (get_object_vars($obj) as $prop => $val) {
-     echo "\t$prop = $val\n";
-   }
-}
-
-// instantiate one object
-$herbie = new Car();
-
-// show herbie properties
-echo "\herbie: Properties\n";
-print_vars($herbie);
-
-?>  
+<?php 
+$name = $_POST['fname']; 
+echo $name; 
+?>
 
 </body>
 </html>
