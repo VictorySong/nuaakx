@@ -20,8 +20,8 @@ while($i<$length)
   {
       $a=$a.$sz[$i];
   }
-  $b=$a;
-  echo $b;
+ 
+  echo $a;
 ?>  
 
 </body>
