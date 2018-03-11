@@ -8,6 +8,7 @@
 <?php
 $sz=array("V","BMW","AB","as","we"); 
 $i=0;
+$j;
 $length=count($sz);
 while($i<$length)
  {
