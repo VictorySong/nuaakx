@@ -9,8 +9,8 @@
  
  <?php 
   
-    echo $_POST['abc'];
- 
+    $a=$_POST['abc'];
+    echo $a;
  ?>
  
 </body>
