@@ -16,7 +16,6 @@ session_start();
 			
 			echo json_encode($json);
 		}
-		echo json_encode($json);
 	
 
 
