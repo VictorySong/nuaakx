@@ -45,7 +45,8 @@ $(document).ready(function(){
 */	
 	$("#wuziselect0").click(function(){
 		
-		getwzjy();
+		var x="506";
+		getwzjy(x);
 		
 	});
 	$("#wuziselect1").click(function(){
@@ -159,9 +160,9 @@ $("#itemlogreg").find("form").submit(function(e){
 	});
 
 //物资借用情况显示
-function getwzjy(){
+function getwzjy(var x){
 	$("#itemlog2").children().remove();
-	$.post("getwzjy.php").done(function(data){
+	$.post("getwzjy.php",x).done(function(data){
 		console.log(data);
 			
 		try{
