@@ -4,7 +4,7 @@ include("../SaeMysql.php");
 session_start();
 
 	$mysql=new SaeMysql();
-	$data=$mysql->getData("SELECT `jname`,`jphone`,`jdatetime`,`gname`,`description`,`jdatetime1` FROM `KxGlwz` WHERE `wz`='touyy'");
+	$data=$mysql->getData("SELECT `jname`,`jphone`,`jdatetime`,`gname`,`description`,`jdatetime1` FROM `KxGlwz2` WHERE `wz`='touyy'");
 	 
 	
 		if(!empty($data))
