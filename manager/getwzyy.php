@@ -4,7 +4,7 @@ include("../SaeMysql.php");
 session_start();
 
 	$mysql=new SaeMysql();
-	$data=$mysql->getData("SELECT `jname`,`jphone`,`date`,`gname`,`description`,`room`,`time` FROM `KxGlwz` WHERE `date`='".$_POST["date"]."' || `date`='".$_POST["date1"]."'");
+	$data=$mysql->getData("SELECT `jname`,`jphone`,`jdatetime`,`gname`,`description`,`jdatetime1` FROM `KxGlwz` WHERE `wz`='".$_POST["item"]."'");
 	 
 	
 		if(!empty($data))
