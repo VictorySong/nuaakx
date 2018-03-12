@@ -145,6 +145,72 @@ $(document).ready(function(){
 //物资借用情况显示
 function getwzjy(){
 	$("#itemlog1").children().remove();
+	$.post("getroom506.php").done(function(data){
+		console.log(data);
+			
+		try{
+			var da=JSON.parse(data);
+		}catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
+										'+da["msg"][p]["jname"]+'\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["jdatetime1"]+'&nbsp;&nbsp;&nbsp;归还时间： '+da["msg"][p]["jdatetime2"]+':00\
+									</h3>\
+								</div>\
+								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >借用人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
+											<label >借用人手机:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
+										</div>\
+										<div class="form-group">\
+											<label >物资种类:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["wuzi"]+'" cont="wuzi">\
+										</div>\
+										<div class="form-group">\
+											<label >借出时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+':00" cont="jdatetime">\
+										</div>\
+										<div class="form-group">\
+											<label >归还时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+':00" cont="jdatetime1">\
+										</div>\
+										<div class="form-group">\
+											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+':00" cont="gname">\
+										</div>\
+										<div class="form-group">\
+											<label >备注:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
+										</div>';
+													
+						html+='</div>\
+									</div>\
+								</div>';
+					$("#itemlog1").append(html);
+				}
+				
+			}
+		
+	});
+	
+	
+}	
+function getwzjy(){
+	$("#itemlog1").children().remove();
 	$.post("getwzyy.php",{item:x}).done(function(data){
 		console.log(data);
 			
@@ -208,8 +274,137 @@ function getwzjy(){
 	});
 	
 	
-}	
+}	function getwzjy(){
+	$("#itemlog1").children().remove();
+	$.post("getwzyy.php",{item:x}).done(function(data){
+		console.log(data);
+			
+		try{
+			var da=JSON.parse(data);
+		}catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
+										'+da["msg"][p]["jname"]+'\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["datetime"]+'&nbsp;&nbsp;&nbsp;归还时间： '+da["msg"][p]["datetime1"]+':00\
+									</h3>\
+								</div>\
+								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >借用人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
+											<label >借用人手机:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
+										</div>\
+										<div class="form-group">\
+											<label >物资种类:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["wuzi"]+'" cont="wuzi">\
+										</div>\
+										<div class="form-group">\
+											<label >借出时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+':00" cont="jdatetime">\
+										</div>\
+										<div class="form-group">\
+											<label >归还时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+':00" cont="jdatetime1">\
+										</div>\
+										<div class="form-group">\
+											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+':00" cont="gname">\
+										</div>\
+										<div class="form-group">\
+											<label >备注:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
+										</div>';
+													
+						html+='</div>\
+									</div>\
+								</div>';
+					$("#itemlog1").append(html);
+				}
+				
+			}
+		
+	});
 	
+	
+}	function getwzjy(){
+	$("#itemlog1").children().remove();
+	$.post("getwzyy.php",{item:x}).done(function(data){
+		console.log(data);
+			
+		try{
+			var da=JSON.parse(data);
+		}catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
+										'+da["msg"][p]["jname"]+'\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["datetime"]+'&nbsp;&nbsp;&nbsp;归还时间： '+da["msg"][p]["datetime1"]+':00\
+									</h3>\
+								</div>\
+								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >借用人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
+											<label >借用人手机:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
+										</div>\
+										<div class="form-group">\
+											<label >物资种类:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["wuzi"]+'" cont="wuzi">\
+										</div>\
+										<div class="form-group">\
+											<label >借出时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+':00" cont="jdatetime">\
+										</div>\
+										<div class="form-group">\
+											<label >归还时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+':00" cont="jdatetime1">\
+										</div>\
+										<div class="form-group">\
+											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+':00" cont="gname">\
+										</div>\
+										<div class="form-group">\
+											<label >备注:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
+										</div>';
+													
+						html+='</div>\
+									</div>\
+								</div>';
+					$("#itemlog1").append(html);
+				}
+				
+			}
+		
+	});
+	
+	
+}		
 	//物资借用情况显示
 /*	function getwzjy(){
 	$("#roomdate").text(window.fixcomputerdate);
