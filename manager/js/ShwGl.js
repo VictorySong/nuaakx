@@ -162,7 +162,9 @@ $("#itemlogreg").find("form").submit(function(e){
 //物资借用情况显示
 function getwzjy(x){
 	$("#itemlog2").children().remove();
-	$.post("getwzjy.php",x).done(function(data){
+	console.log(x);
+	
+	$.post("getwzjy.php",{item:x}).done(function(data){
 		console.log(data);
 			
 		try{
