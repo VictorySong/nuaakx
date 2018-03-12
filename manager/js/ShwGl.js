@@ -179,7 +179,8 @@ function getwzjy(){
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
-										'+da["msg"][p]["jname"]+'\
+										借用人：'+da["msg"][p]["jname"]+'\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["jdatetime"]+'<br/>归还时间:   '+da["msg"][p]["jdatetime1"]+'\
 									</h3>\
 								</div>\
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
@@ -191,10 +192,6 @@ function getwzjy(){
 										<div class="form-group">\
 											<label >借用人手机:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
-										</div>\
-										<div class="form-group">\
-											<label >物资种类:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["wuzi"]+'" cont="wuzi">\
 										</div>\
 										<div class="form-group">\
 											<label >借出时间:</label>\
