@@ -24,27 +24,31 @@ $(document).ready(function(){
 		window.fixcomputerdate1=window.fixdate.getFullYear()+"-"+(Number(window.fixdate.getMonth())+1)+"-"+(Number(window.fixdate.getDate())<10?"0"+window.fixdate.getDate():window.fixdate.getDate());
 
 		getwzjy()
-	});
-	$("#itemtype").text(item[x]);
-	
-	
-	$("#previous").click(function(){
+	});*/
+	var x=0;
+	var item[0]="教室506";
+	var item[1]="教室510";
+	var item[2]="投影仪";
+	var item[3]="帐篷";
+	$("#thing").text(item[x]);
+	getwzjy()
+	$("#thingformer").click(function(){
 		if (x>0){x= x-1;}
 		else{x=3;}
 		$("#itemtype").text(item[x]);
-		getwzjy();
+		getwzjy()
 	
 	});
-	$("#next").click(function(){
+	$("#thinglater").click(function(){
 		if (x<3){x= x+1;}
 		else{x=0;}
 		$("#itemtype").text(item[x]);
-		getwzjy();
+		getwzjy()
 		
 	});
-*/	
 	
-		getwzjy();
+	
+		
 		
 	
 	
@@ -52,7 +56,7 @@ $(document).ready(function(){
 
 	
 	//物资借用表单提交
-	$("#itemlogreg").find("form").submit(function(e){
+$("#itemlogreg").find("form").submit(function(e){
 		e.preventDefault();
 		var json={}
 		
@@ -149,10 +153,10 @@ function getwzjy(){
 		try{
 			var da=JSON.parse(data);
 		}
-		//catch(e){
-			//console.log(e);
-			//return;
-		//}
+		catch(e){
+			console.log(e);
+			return;
+		}
 			if(da["error"]==0)
 			{
 				
