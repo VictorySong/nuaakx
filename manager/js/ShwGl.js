@@ -213,7 +213,7 @@ function getwzjy(x){
 						html+='</div>\
 									</div>\
 								</div>';
-					$("#itemlog1").append(html);
+					$("#itemlog2").append(html);
 				}
 				
 			}
