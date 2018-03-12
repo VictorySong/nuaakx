@@ -26,11 +26,10 @@ $(document).ready(function(){
 		getwzjy()
 	});*/
 	var x=0;
-	var item[];
-	 item[0]="教室506";
-	 item[1]="教室510";
-	 item[2]="投影仪";
-	 item[3]="帐篷";
+	var item[0]="教室506";
+	var item[1]="教室510";
+	var item[2]="投影仪";
+	var item[3]="帐篷";
 	$("#thing").text(item[0]);
 	getwzjy()
 	$("#thingformer").click(function(){
