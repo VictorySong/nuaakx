@@ -10,7 +10,7 @@ $mysql=new SaeMysql();
 	$result=mysql_query($sql,$mysql->ico);
 	$counts=mysql_num_rows($result);
 
-		if(!$mysql->runsql("INSERT INTO `KxGlwz` (`jname`,`jphone`,`date`,`gname`,`description`,`room`,`time`) VALUES ('".$_POST["jname"]."','".$_POST["jphone"]."','".$_POST["jdate"]."','".$_POST["gname"]."','".$_POST["description"]."','".$_POST["wuzi"]."','".$_POST["jtime"]."')"))
+		if(!$mysql->runsql("INSERT INTO `KxGlwz2` (`jname`,`jphone`,`gname`,`jdatetime`,`jdatetime1`,`description`,`wz`) VALUES ('".$_POST["jname"]."','".$_POST["jphone"]."','".$_POST["gname"]."','".$_POST["jdatetime"]."','".$_POST["jdatetime1"]."','".$_POST["description"]."','".$_POST["wuzi"]."')"))
 		{
 			$json["error"]=0;
 			
