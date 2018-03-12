@@ -4,7 +4,7 @@ include("../SaeMysql.php");
 session_start();
 
 	$mysql=new SaeMysql();
-	$data=$mysql->getData("SELECT `jname`,`jphone`,`jdatetime`,`gname`,`description`,`jdatetime1` FROM `KxGlwz` WHERE `wz`='506'");
+	$data=$mysql->getData("SELECT `jname`,`jphone`,`jdatetime`,`gname`,`description`,`jdatetime1` FROM `KxGlwz` WHERE `wz`='".$_POST["item"]."'");
 	 
 	
 		if(!empty($data))
@@ -17,7 +17,6 @@ session_start();
 			echo json_encode($json);
 		}
 	
-
 
 
 ?>

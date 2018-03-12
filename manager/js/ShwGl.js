@@ -25,14 +25,6 @@ $(document).ready(function(){
 
 		getwzjy()
 	});
-*/	
-		
-	var item=[];
-			item[0]="教室506";
-			item[1]="教室510";
-			item[2]="投影仪";
-			item[3]="帐篷";
-	var x = 2;	
 	$("#itemtype").text(item[x]);
 	
 	
@@ -50,6 +42,25 @@ $(document).ready(function(){
 		getwzjy();
 		
 	});
+*/	
+	$("#wuziselect0").click(function(){
+		var x="506";
+		getwzjy(x);	
+	});	
+	$("#wuziselect1").click(function(){
+		var x="510";
+		getwzjy(x);	
+	});	
+	$("#wuziselect2").click(function(){
+		var x="touyy";
+		getwzjy(x);	
+	});	
+	$("#wuziselect3").click(function(){
+		var x="zhangp";
+		getwzjy(x);	
+	});	
+	
+	
 });
 
 	
@@ -143,9 +154,9 @@ $(document).ready(function(){
 	});
 
 //物资借用情况显示
-function getwzjy(){
-	$("#itemlog1").children().remove();
-	$.post("getroom506.php").done(function(data){
+function getwzjy(x){
+	$("#itemlog").children().remove();
+	$.post("getwzjy.php",{item:x}).done(function(data){
 		console.log(data);
 			
 		try{
@@ -163,7 +174,7 @@ function getwzjy(){
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
 										'+da["msg"][p]["jname"]+'\
-										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["jdatetime1"]+'&nbsp;&nbsp;&nbsp;归还时间： '+da["msg"][p]["jdatetime2"]+':00\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["jdatetime1"]+'&nbsp;&nbsp;&nbsp;归还时间： '+da["msg"][p]["jdatetime2"]+'\
 									</h3>\
 								</div>\
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
@@ -182,15 +193,15 @@ function getwzjy(){
 										</div>\
 										<div class="form-group">\
 											<label >借出时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+':00" cont="jdatetime">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+'" cont="jdatetime">\
 										</div>\
 										<div class="form-group">\
 											<label >归还时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+':00" cont="jdatetime1">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+'" cont="jdatetime1">\
 										</div>\
 										<div class="form-group">\
 											<label >管理人员姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+':00" cont="gname">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="gname">\
 										</div>\
 										<div class="form-group">\
 											<label >备注:</label>\
@@ -212,6 +223,11 @@ function getwzjy(){
 function getwzjy(){
 	$("#itemlog1").children().remove();
 	$.post("getwzyy.php",{item:x}).done(function(data){
+=======
+<<<<<<< HEAD
+	$.post("getroom.php",x).done(function(data){
+
+>>>>>>> 09bdca769c7a3b4f5039bc68b9a535cb01a5cd26
 		console.log(data);
 			
 		try{
