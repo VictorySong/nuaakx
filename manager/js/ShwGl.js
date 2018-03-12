@@ -210,7 +210,7 @@ function getwzjy(x){
 											<label >备注:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
 										</div>\
-										<div class="panel-footer" id="clickme" cont="return">归还请戳我</div>';
+										<button type="submit" cont="return" id="clickme" class="btn btn-default" style="width:100%;">归还请戳我</button>';
 													
 						html+='</div>\
 									</div>\
