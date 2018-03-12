@@ -25,14 +25,6 @@ $(document).ready(function(){
 
 		getwzjy()
 	});
-*/	
-		
-	var item=[];
-			item[0]="教室506";
-			item[1]="教室510";
-			item[2]="投影仪";
-			item[3]="帐篷";
-	var x = 2;	
 	$("#itemtype").text(item[x]);
 	
 	
@@ -50,6 +42,25 @@ $(document).ready(function(){
 		getwzjy();
 		
 	});
+*/	
+	$("#wuziselect0").click(function(){
+		var x="506";
+		getwzjy(x);	
+	});	
+	$("#wuziselect1").click(function(){
+		var x="510";
+		getwzjy(x);	
+	});	
+	$("#wuziselect2").click(function(){
+		var x="touyy";
+		getwzjy(x);	
+	});	
+	$("#wuziselect3").click(function(){
+		var x="zhangp";
+		getwzjy(x);	
+	});	
+	
+	
 });
 
 	
@@ -143,9 +154,9 @@ $(document).ready(function(){
 	});
 
 //物资借用情况显示
-function getwzjy(){
+function getwzjy(x){
 	$("#itemlog1").children().remove();
-	$.post("getroom.php",{item:x}).done(function(data){
+	$.post("getroom.php",x).done(function(data){
 		console.log(data);
 			
 		try{
