@@ -142,7 +142,7 @@ $("#itemlogreg").find("form").submit(function(e){
 
 //物资借用情况显示
 function getwzjy(){
-	$("#itemlog2").children().remove();
+	$("#itemlog1").children().remove();
 	$.post("getwzjy.php").done(function(data){
 		console.log(data);
 			
@@ -199,7 +199,7 @@ function getwzjy(){
 						html+='</div>\
 									</div>\
 								</div>';
-					$("#itemlog2").append(html);
+					$("#itemlog1").append(html);
 				}
 				
 			}
