@@ -145,7 +145,7 @@ $(document).ready(function(){
 //物资借用情况显示
 function getwzjy(){
 	$("#itemlog1").children().remove();
-	$.post("getroom.php",{item:x}).done(function(data){
+	$.post("getwzyy.php",{item:x}).done(function(data){
 		console.log(data);
 			
 		try{
