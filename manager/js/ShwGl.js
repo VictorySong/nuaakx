@@ -26,6 +26,7 @@ $(document).ready(function(){
 		getwzjy()
 	});*/
 	var x=0;
+	var item[];
 	 item[0]="教室506";
 	 item[1]="教室510";
 	 item[2]="投影仪";
