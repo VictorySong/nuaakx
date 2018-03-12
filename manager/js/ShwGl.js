@@ -43,8 +43,11 @@ $(document).ready(function(){
 		
 	});
 */	
-	
+	$("#wuziselect0").click(function(){
+		
 		getwzjy();
+		
+	});
 		
 	
 	
