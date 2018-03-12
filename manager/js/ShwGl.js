@@ -51,16 +51,19 @@ $(document).ready(function(){
 	});
 	$("#wuziselect1").click(function(){
 		
+		var x="510";
 		getwzjy();
 		
 	});
 	$("#wuziselect2").click(function(){
 		
+		var x="touyy";
 		getwzjy();
 		
 	});
 	$("#wuziselect3").click(function(){
 		
+		var x="zhangp";
 		getwzjy();
 		
 	});
