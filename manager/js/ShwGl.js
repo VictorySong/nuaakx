@@ -45,25 +45,25 @@ $(document).ready(function(){
 */	
 	$("#wuziselect0").click(function(){
 		
-		getwzjy("506");
+		getwzjy();
 		
 	});
 	$("#wuziselect1").click(function(){
 		
-		getwzjy("510");
+		getwzjy();
 		
 	});
 	$("#wuziselect2").click(function(){
 		
-		getwzjy("touyy");
+		getwzjy();
 		
 	});
 	$("#wuziselect3").click(function(){
 		
-		getwzjy("zhangp");
+		getwzjy();
 		
 	});
-		
+	
 	
 	
 });
@@ -159,9 +159,9 @@ $("#itemlogreg").find("form").submit(function(e){
 	});
 
 //物资借用情况显示
-function getwzjy(var e){
+function getwzjy(){
 	$("#itemlog1").children().remove();
-	$.post("getwzjy.php",{item:e}).done(function(data){
+	$.post("getwzjy.php").done(function(data){
 		console.log(data);
 			
 		try{
