@@ -50,8 +50,7 @@ $(document).ready(function(){
 	});
 	$("#wuziselect1").click(function(){
 		
-		var x="510";
-		getwzjy();
+		getwzjy("510");
 		
 	});
 	$("#wuziselect2").click(function(){
@@ -61,8 +60,7 @@ $(document).ready(function(){
 	});
 	$("#wuziselect3").click(function(){
 		
-		var x="zhangp";
-		getwzjy();
+		getwzjy("zhangp");
 		
 	});
 	
@@ -211,12 +209,40 @@ function getwzjy(x){
 										<div class="form-group">\
 											<label >备注:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
-										</div>';
+										</div>\
+										<div class="panel-footer" id="clickme" cont="return">归还请戳我</div>';
 													
 						html+='</div>\
 									</div>\
 								</div>';
+						
+						
 					$("#itemlog2").append(html);
+					$("#clickme").click(function(){
+						var json={};
+						window.cancelthat=this;
+						json["jname"]=da["msg"][p]["jname"];
+						json["gname"]=da["msg"][p]["gname"];
+						json["jdatetime"]=da["msg"][p]["jdatetime"];
+						json["jdatetime1"]=da["msg"][p]["jdatetime1"];
+						json["item"]=x;
+						
+						$.post("return.php",json).done(function(data){
+						console.log(data);
+						try{
+							var da=JSON.parse(data);
+						}
+						catch(e){
+							console.log(e);
+							return;
+						}
+						if(da["error"]==0)
+						{
+							alert("成功归还");
+							window.history.go(-1);
+						}
+					});
+					});
 				}
 				
 			}

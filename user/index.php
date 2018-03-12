@@ -661,7 +661,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</div>
 					<div class="form-group">
-						<label>预约时间:</label>
+						<label>预约时间:(不可选表示已约满，请过几日重试)</label>
 						<div id="fixtime" class="" style="padding-left:10px;">
 							
 						</div>
