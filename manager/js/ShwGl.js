@@ -44,7 +44,7 @@ $(document).ready(function(){
 	});
 */	
 	
-		getwzjy()
+		getwzjy();
 		
 	
 	
@@ -148,10 +148,11 @@ function getwzjy(){
 			
 		try{
 			var da=JSON.parse(data);
-		}catch(e){
-			console.log(e);
-			return;
 		}
+		//catch(e){
+			//console.log(e);
+			//return;
+		//}
 			if(da["error"]==0)
 			{
 				
