@@ -160,7 +160,7 @@ $("#itemlogreg").find("form").submit(function(e){
 
 //物资借用情况显示
 function getwzjy(){
-	$("#itemlog1").children().remove();
+	$("#itemlog2").children().remove();
 	$.post("getwzjy.php").done(function(data){
 		console.log(data);
 			
@@ -168,8 +168,8 @@ function getwzjy(){
 			var da=JSON.parse(data);
 		}
 		catch(e){
-			//console.log(e);
-			//return;
+			console.log(e);
+			return;
 		}
 			if(da["error"]==0)
 			{
@@ -217,7 +217,7 @@ function getwzjy(){
 						html+='</div>\
 									</div>\
 								</div>';
-					$("#itemlog1").append(html);
+					$("#itemlog2").append(html);
 				}
 				
 			}
