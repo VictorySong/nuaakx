@@ -40,12 +40,14 @@ $(document).ready(function(){
 		if (x>0){x= x-1;}
 		else{x=3;}
 		$("#itemtype").text(item[x]);
+		getwzjy();
 	
 	});
 	$("#next").click(function(){
 		if (x<3){x= x+1;}
 		else{x=0;}
 		$("#itemtype").text(item[x]);
+		getwzjy();
 		
 	});
 });
@@ -75,7 +77,7 @@ $(document).ready(function(){
 			return;
 		}
 		else
-			json["jphone"]=jphone.val();
+			json["jphone"]=jphone.val(); //借用者电话
 		
 		
 		var gname=$(this).find("#gn");
@@ -85,10 +87,10 @@ $(document).ready(function(){
 			return;
 		}
 		else
-			json["gname"]=gname.val();
+			json["gname"]=gname.val(); //管理人员姓名
 			
 		
-		var jdatetime=$(this).find("input[name='jdatetime']");
+		var jdatetime=$(this).find("input[name='jdatetime']");  //借用时间
 		if(jdatetime.val()==""){
 			
 			jdatetime.focus();
@@ -98,7 +100,7 @@ $(document).ready(function(){
 			json["jdatetime"]=jdatetime.val();
 		
 		
-		var jdatetime1=$(this).find("input[name='jdatetime1']");
+		var jdatetime1=$(this).find("input[name='jdatetime1']"); //归还时间
 		if(jdatetime1.val()==""){
 			
 			jdatetime1.focus();
@@ -108,10 +110,10 @@ $(document).ready(function(){
 			json["jdatetime1"]=jdatetime1.val();
 
 		var description=$(this).find("textarea");
-	    json["description"]=description.val();
+	    json["description"]=description.val(); //备注
 		
 		var wuzi=$(this).find("input[name='wuzi']:checked");
-		json["wuzi"]=wuzi.val();
+		json["wuzi"]=wuzi.val(); //借用的什么物资
 			
 		
 		var r=confirm("提交后不可修改，请确认是否提交");
