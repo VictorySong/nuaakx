@@ -45,19 +45,19 @@ $(document).ready(function(){
 */	
 	$("#wuziselect0").click(function(){
 		var x="506";
-		getwzjy(x);	
+		getwzjy(x)
 	});	
 	$("#wuziselect1").click(function(){
 		var x="510";
-		getwzjy(x);	
+		getwzjy(x)
 	});	
 	$("#wuziselect2").click(function(){
 		var x="touyy";
-		getwzjy(x);	
+		getwzjy(x)
 	});	
 	$("#wuziselect3").click(function(){
 		var x="zhangp";
-		getwzjy(x);	
+		getwzjy(x)
 	});	
 	
 	
