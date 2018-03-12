@@ -180,7 +180,7 @@ function getwzjy(){
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
 										'+da["msg"][p]["jname"]+'\
-										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["jdatetime1"]+'&nbsp;&nbsp;&nbsp;归还时间:'+da["msg"][p]["jdatetime2"]+'\
+										&nbsp;&nbsp;&nbsp;借用时间： '+da["msg"][p]["jdatetime"]+'&nbsp;&nbsp;&nbsp;归还时间:'+da["msg"][p]["jdatetime1"]+'\
 									</h3>\
 								</div>\
 								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
