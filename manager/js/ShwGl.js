@@ -158,9 +158,7 @@ function getwzjy(x){
 	$("#itemlog1").children().remove();
 <<<<<<< HEAD
 	$.post("getroom.php",x).done(function(data){
-=======
-	$.post("getwzyy.php",{item:x}).done(function(data){
->>>>>>> 045b2bdbee008fcea0947384d6e2820970d27433
+
 		console.log(data);
 			
 		try{
