@@ -218,17 +218,17 @@ function getwzjy(x){
 						
 						
 					$("#itemlog2").append(html);
-					$("#clickme").click(function(){
-						var json={};
-						window.cancelthat=this;
-						json["jname"]=da["msg"][p]["jname"];
-						json["gname"]=da["msg"][p]["gname"];
-						json["jdatetime"]=da["msg"][p]["jdatetime"];
-						json["jdatetime1"]=da["msg"][p]["jdatetime1"];
-						json["item"]=x;
-						console.log("hahah");
-						console.log(json);
-						$.post("return.php",json).done(function(data){
+				$("#clickme").click(function(){
+					var json={};
+					window.cancelthat=this;
+					json["jname"]=da["msg"][p]["jname"];
+					json["gname"]=da["msg"][p]["gname"];
+					json["jdatetime"]=da["msg"][p]["jdatetime"];
+					json["jdatetime1"]=da["msg"][p]["jdatetime1"];
+					json["item"]=x;
+					console.log("hahah");
+					console.log(json);
+					$.post("return.php",json).done(function(data){
 						console.log(data);
 						try{
 							var da=JSON.parse(data);
@@ -243,7 +243,7 @@ function getwzjy(x){
 							window.history.go(-1);
 						}
 					});
-					});
+				});
 				}
 				
 			}
