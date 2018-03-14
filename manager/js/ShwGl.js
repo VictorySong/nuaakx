@@ -244,7 +244,7 @@ function getwzjy(x){
 						}
 					});
 				});
-				}
+			}
 				
 			}
 		
