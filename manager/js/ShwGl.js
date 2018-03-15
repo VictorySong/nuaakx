@@ -217,7 +217,10 @@ function getwzjy(x){
 						
 					$("#itemlog2").append(html);
 						
-//归还物资函数
+
+				
+			}
+				//归还物资函数
 $(".clickme").click(function(){
 	var json={};
 	window.cancelthat=this;
@@ -244,9 +247,6 @@ $(".clickme").click(function(){
 		}
 	});
 });	
-				
-			}
-				
 			}
 		
 	});
