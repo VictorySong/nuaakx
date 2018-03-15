@@ -177,7 +177,7 @@ function getwzjy(x){
 				{
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
-									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+da["msg"][p]["jname"]+'">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
 										借用人姓名：'+da["msg"][p]["jname"]+'\
 										<br/>借用时间：'+da["msg"][p]["jdatetime"]+'<br/>归还时间：'+da["msg"][p]["jdatetime1"]+'\
 									</h3>\
