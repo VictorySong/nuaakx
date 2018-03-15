@@ -182,7 +182,7 @@ function getwzjy(x){
 										<br/>借用时间：'+da["msg"][p]["jdatetime"]+'<br/>归还时间：'+da["msg"][p]["jdatetime1"]+'\
 									</h3>\
 								</div>\
-								<div id="'+da["msg"][p]["jname"]+'" class="panel-collapse collapse">\
+								<div id="'+p+'" class="panel-collapse collapse">\
 									<div class="panel-body">\
 										<div class="form-group">\
 											<label >借用人姓名:</label>\
