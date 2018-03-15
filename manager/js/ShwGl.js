@@ -63,34 +63,7 @@ $(document).ready(function(){
 		getwzjy("zhangp");
 		
 	});
-	
-//归还物资函数
-$("#clickme").click(function(){
-	var json={};
-	window.cancelthat=this;
-	json["jname"]=da["msg"][p]["jname"];
-	json["gname"]=da["msg"][p]["gname"];
-	json["jdatetime"]=da["msg"][p]["jdatetime"];
-	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
-	json["item"]=x;
-	console.log("hahah");
-	console.log(json);
-	$.post("return.php",json).done(function(data){
-	console.log(data);
-	try{
-			var da=JSON.parse(data);
-		}
-	catch(e){
-			console.log(e);
-			return;
-			}
-	if(da["error"]==0)
-		{
-			alert("成功归还");
-			window.history.go(-1);
-		}
-	});
-});	
+
 	
 });
 
@@ -235,7 +208,7 @@ function getwzjy(x){
 											<label >备注:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
 										</div>\
-										<button type="submit" cont="return" id="clickme" class="btn btn-default" style="width:100%;">归还请戳我</button>';
+										<button type="submit" cont="return"  class="btn btn-default clickme" style="width:100%;">归还请戳我</button>';
 													
 						html+='</div>\
 									</div>\
@@ -243,6 +216,34 @@ function getwzjy(x){
 						
 						
 					$("#itemlog2").append(html);
+						
+//归还物资函数
+$(".clickme").click(function(){
+	var json={};
+	window.cancelthat=this;
+	json["jname"]=da["msg"][p]["jname"];
+	json["gname"]=da["msg"][p]["gname"];
+	json["jdatetime"]=da["msg"][p]["jdatetime"];
+	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
+	json["item"]=x;
+	console.log("hahah");
+	console.log(json);
+	$.post("return.php",json).done(function(data){
+	console.log(data);
+	try{
+			var da=JSON.parse(data);
+		}
+	catch(e){
+			console.log(e);
+			return;
+			}
+	if(da["error"]==0)
+		{
+			alert("成功归还");
+			window.history.go(-1);
+		}
+	});
+});	
 				
 			}
 				
