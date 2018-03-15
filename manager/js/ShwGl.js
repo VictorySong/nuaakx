@@ -64,9 +64,6 @@ $(document).ready(function(){
 		
 	});
 	
-	
-	
-});
 //归还物资函数
 $("#clickme").click(function(){
 	var json={};
@@ -93,7 +90,10 @@ $("#clickme").click(function(){
 			window.history.go(-1);
 		}
 	});
+});	
+	
 });
+
 	//物资借用表单提交
 $("#itemlogreg").find("form").submit(function(e){
 		e.preventDefault();
