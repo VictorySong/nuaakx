@@ -223,6 +223,7 @@ function getwzjy(x){
 				//归还物资函数
 $(".clickme").click(function(){
 	var json={};
+	p = $(this).parent().parent().attr("id");
 	window.cancelthat=this;
 	json["jname"]=da["msg"][p]["jname"];
 	json["gname"]=da["msg"][p]["gname"];
