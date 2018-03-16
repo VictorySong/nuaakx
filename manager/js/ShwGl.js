@@ -63,14 +63,7 @@ $(document).ready(function(){
 		getwzjy("zhangp");
 		
 	});
-	
-	
-	//返回上一页
-	$("#back").click(function(){
-		
-		window.history.go(-1);
-		
-	});
+
 });
 
 	//物资借用表单提交
