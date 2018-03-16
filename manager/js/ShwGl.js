@@ -67,10 +67,7 @@ $(document).ready(function(){
 	//返回至管理部界面
 	$("#back").click(function(){
 		window.history.go(-1);
-		$("div[to=\""管理部"\"]").show("fast");
-		$("div[cont=\"content\"]").filter(function(){
-		return this.getAttribute("to")!=to;}).hide();
-	});
+		
 });
 
 	//物资借用表单提交
