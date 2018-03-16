@@ -63,7 +63,16 @@ $(document).ready(function(){
 		getwzjy("zhangp");
 		
 	});
-
+	
+	//返回至管理部界面
+	$("#back").click(function(){
+		window.history.go(index.html);
+		$("div[to=\""管理部"\"]").show("fast");
+		$("div[cont=\"content\"]").filter(function(){
+		return this.getAttribute("to")!=to;}).hide();
+	
+		return false;
+	});
 });
 
 	//物资借用表单提交
