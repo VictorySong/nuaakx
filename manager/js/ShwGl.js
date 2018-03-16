@@ -60,11 +60,17 @@ $(document).ready(function(){
 	});
 	$("#wuziselect3").click(function(){
 		
+		window.history.go(-1);
+		
+	});
+	
+	
+	//返回上一页
+	$("#back").click(function(){
+		
 		getwzjy("zhangp");
 		
 	});
-
-	
 });
 
 	//物资借用表单提交
