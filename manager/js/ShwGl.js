@@ -114,7 +114,7 @@ $("#itemlogreg").find("form").submit(function(e){
 			json["jdatetime"]=jdatetime;
 		
 		
-		var jdatetime1=$(this).find("input[name='jdatetime1']").val() + $(this).find("input[name='jdatetime11']").val();//归还时间
+		var jdatetime1=$(this).find("input[name='jdatetime1']").val() + "的" + $(this).find("input[name='jdatetime11']").val();//归还时间
 		if(jdatetime1==""){
 			
 			jdatetime1.focus();
