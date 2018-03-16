@@ -65,11 +65,7 @@ $(document).ready(function(){
 	});
 	
 	//返回至管理部界面
-	$("#back").click(function(){
-		
-		window.history.go(-1);
-		
-});
+	
 
 	//物资借用表单提交
 $("#itemlogreg").find("form").submit(function(e){
