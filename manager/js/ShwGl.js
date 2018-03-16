@@ -66,7 +66,7 @@ $(document).ready(function(){
 	
 	//返回至管理部界面
 	$("#back").click(function(){
-		window.history.go(index.html);
+		window.history.go(-1);
 		$("div[to=\""管理部"\"]").show("fast");
 		$("div[cont=\"content\"]").filter(function(){
 		return this.getAttribute("to")!=to;}).hide();
