@@ -104,7 +104,7 @@ $("#itemlogreg").find("form").submit(function(e){
 			json["gname"]=gname.val(); //管理人员姓名
 			
 		
-		var jdatetime=$(this).find("input[name='jdatetime0']");//借用时间
+		var jdatetime=$(this).find("input[name='jdatetime']") + $(this).find("input[name='jdatetime0']");//借用时间
 		if(jdatetime.val()==""){
 			
 			jdatetime.focus();
@@ -114,7 +114,7 @@ $("#itemlogreg").find("form").submit(function(e){
 			json["jdatetime"]=jdatetime.val();
 		
 		
-		var jdatetime1=$(this).find("input[name='jdatetime11']");//归还时间
+		var jdatetime1=$(this).find("input[name='jdatetime1']") + $(this).find("input[name='jdatetime11']");//归还时间
 		if(jdatetime1.val()==""){
 			
 			jdatetime1.focus();
