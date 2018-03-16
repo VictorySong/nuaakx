@@ -70,8 +70,6 @@ $(document).ready(function(){
 		$("div[to=\""管理部"\"]").show("fast");
 		$("div[cont=\"content\"]").filter(function(){
 		return this.getAttribute("to")!=to;}).hide();
-	
-		return false;
 	});
 });
 
