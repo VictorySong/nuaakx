@@ -104,24 +104,24 @@ $("#itemlogreg").find("form").submit(function(e){
 			json["gname"]=gname.val(); //管理人员姓名
 			
 		
-		var jdatetime=$(this).find("input[name='jdatetime']") + $(this).find("input[name='jdatetime0']");//借用时间
-		if(jdatetime.val()==""){
+		var jdatetime=$(this).find("input[name='jdatetime']").val() + $(this).find("input[name='jdatetime0']").val();//借用时间
+		if(jdatetime==""){
 			
 			jdatetime.focus();
 			return;
 		}
 		else
-			json["jdatetime"]=jdatetime.val();
+			json["jdatetime"]=jdatetime;
 		
 		
-		var jdatetime1=$(this).find("input[name='jdatetime1']") + $(this).find("input[name='jdatetime11']");//归还时间
-		if(jdatetime1.val()==""){
+		var jdatetime1=$(this).find("input[name='jdatetime1']").val() + $(this).find("input[name='jdatetime11']").val();//归还时间
+		if(jdatetime1==""){
 			
 			jdatetime1.focus();
 			return;
 		}
 		else
-			json["jdatetime1"]=jdatetime1.val();
+			json["jdatetime1"]=jdatetime1;
 
 		var description=$(this).find("textarea");
 	    json["description"]=description.val(); //备注
