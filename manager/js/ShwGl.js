@@ -66,6 +66,7 @@ $(document).ready(function(){
 	
 	//返回至管理部界面
 	$("#back").click(function(){
+		
 		window.history.go(-1);
 		
 });
