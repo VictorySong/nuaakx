@@ -102,11 +102,8 @@ $("#itemlogreg").find("form").submit(function(e){
 		}
 		else
 			json["gname"]=gname.val(); //管理人员姓名
-			
-		$("input[type='datetime-local']").bind("jdatetime",function(){
-		$("input").blur();
-		$(this).focus();
-		});
+	
+	
 		var jdatetime=$(this).find("input[name='jdatetime']");  //借用时间
 		if(jdatetime.val()==""){
 			
@@ -114,12 +111,9 @@ $("#itemlogreg").find("form").submit(function(e){
 			return;
 		}
 		else
-			json["jdatetime"]=jdatetime.val();
+			json["jdatetime"]= new Date(jdatetime.val.replace(/-/g,'/').replace('T',' ')).toISOString();
 		
-		$("input[type='datetime-local']").bind("jdatetime1",function(){
-		$("input").blur();
-		$(this).focus();
-		});
+		
 		var jdatetime1=$(this).find("input[name='jdatetime1']"); //归还时间
 		if(jdatetime1.val()==""){
 			
