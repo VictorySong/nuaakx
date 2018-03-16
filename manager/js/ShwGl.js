@@ -221,14 +221,6 @@ function getwzjy(x){
 				
 			}
 			
-//返回至管理部界面
-	$("#backgl").click(function(){
-		window.history.go(-1);
-		$("div[to=\""管理部"\"]").show("fast");
-		$("div[cont=\"content\"]").filter(function(){
-		return this.getAttribute("to")!=to;}).hide();
-	});			
-			
 			
 //归还物资函数
 $(".clickme").click(function(){
