@@ -102,19 +102,21 @@ $("#itemlogreg").find("form").submit(function(e){
 		}
 		else
 			json["gname"]=gname.val(); //管理人员姓名
-	
-	
-		var jdatetime=$(this).find("input[name='jdatetime']");  //借用时间
+			
+		
+		var jdatetime=$(this).find("input[name='jdatetime']");
+		jdatetime+= $(this).find("input[name='jdatetime0']");//借用时间
 		if(jdatetime.val()==""){
 			
 			jdatetime.focus();
 			return;
 		}
 		else
-			json["jdatetime"]= new Date(jdatetime.val.replace(/-/g,'/').replace('T',' ')).toISOString();
+			json["jdatetime"]=jdatetime.val();
 		
 		
-		var jdatetime1=$(this).find("input[name='jdatetime1']"); //归还时间
+		var jdatetime1=$(this).find("input[name='jdatetime1']"); 
+		jdatetime1+= $(this).find("input[name='jdatetime11']");//归还时间
 		if(jdatetime1.val()==""){
 			
 			jdatetime1.focus();
