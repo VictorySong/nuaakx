@@ -60,7 +60,7 @@ $(document).ready(function(){
 	});
 	$("#wuziselect3").click(function(){
 		
-		window.history.go(-1);
+		getwzjy("zhangp");
 		
 	});
 	
@@ -68,7 +68,7 @@ $(document).ready(function(){
 	//返回上一页
 	$("#back").click(function(){
 		
-		getwzjy("zhangp");
+		window.history.go(-1);
 		
 	});
 });
