@@ -104,7 +104,7 @@ $("#itemlogreg").find("form").submit(function(e){
 			json["gname"]=gname.val(); //管理人员姓名
 			
 		
-		var jdatetime=$(this).find("input[name='jdatetime']").val() + $(this).find("input[name='jdatetime0']").val();//借用时间
+		var jdatetime=$(this).find("input[name='jdatetime']").val() + "的" + $(this).find("input[name='jdatetime0']").val();//借用时间
 		if(jdatetime==""){
 			
 			jdatetime.focus();
