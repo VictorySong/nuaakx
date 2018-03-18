@@ -63,7 +63,7 @@ $(document).ready(function(){
 		getwzjy("zhangp");
 		
 	});
-
+	
 	
 });
 
@@ -103,31 +103,25 @@ $("#itemlogreg").find("form").submit(function(e){
 		else
 			json["gname"]=gname.val(); //管理人员姓名
 			
-		$("input[type='datetime-local']").bind("jdatetime",function(){
-		$("input").blur();
-		$(this).focus();
-		});
-		var jdatetime=$(this).find("input[name='jdatetime']");  //借用时间
-		if(jdatetime.val()==""){
+		
+		var jdatetime=$(this).find("input[name='jdatetime']").val() + "的" + $(this).find("input[name='jdatetime0']").val();//借用时间
+		if(jdatetime==""){
 			
 			jdatetime.focus();
 			return;
 		}
 		else
-			json["jdatetime"]=jdatetime.val();
+			json["jdatetime"]=jdatetime;
 		
-		$("input[type='datetime-local']").bind("jdatetime1",function(){
-		$("input").blur();
-		$(this).focus();
-		});
-		var jdatetime1=$(this).find("input[name='jdatetime1']"); //归还时间
-		if(jdatetime1.val()==""){
+		
+		var jdatetime1=$(this).find("input[name='jdatetime1']").val() + "的" + $(this).find("input[name='jdatetime11']").val();//归还时间
+		if(jdatetime1==""){
 			
 			jdatetime1.focus();
 			return;
 		}
 		else
-			json["jdatetime1"]=jdatetime1.val();
+			json["jdatetime1"]=jdatetime1;
 
 		var description=$(this).find("textarea");
 	    json["description"]=description.val(); //备注
@@ -226,7 +220,9 @@ function getwzjy(x){
 
 				
 			}
-				//归还物资函数
+			
+			
+//归还物资函数
 $(".clickme").click(function(){
 	var json={};
 	p = $(this).parent().parent().attr("id");
