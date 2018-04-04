@@ -188,7 +188,6 @@ $(".clickme").click(function(){
 	json["jdatetime"]=da["msg"][p]["jdatetime"];
 	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
 	json["item"]=x;
-	console.log("hahah");
 	console.log(json);
 	$.post("return.php",json).done(function(data){
 	console.log(data);

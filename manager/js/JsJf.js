@@ -127,7 +127,7 @@ $(document).ready(function(){
 function getvolunfix(x){
 	$("#volunfixstatus2").children().remove();
 	
-	$.post("getwzjy.php",{item:x}).done(function(data){
+	$.post("getvolunfix.php",{item:x}).done(function(data){
 		console.log(data);
 			
 		try{
@@ -190,7 +190,6 @@ $(".clickme").click(function(){
 	json["jdatetime"]=da["msg"][p]["jdatetime"];
 	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
 	json["item"]=x;
-	console.log("hahah");
 	console.log(json);
 	$.post("return.php",json).done(function(data){
 	console.log(data);
@@ -203,7 +202,7 @@ $(".clickme").click(function(){
 			}
 	if(da["error"]==0)
 		{
-			alert("成功归还");
+			alert("提交成功");
 			window.history.go(-1);
 		}
 	});
