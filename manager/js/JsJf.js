@@ -145,48 +145,75 @@ function getvolunfix(x){
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
-										借用人姓名：'+da["msg"][p]["jname"]+'\
-										<br/>借用时间：'+da["msg"][p]["jdatetime"]+'<br/>归还时间：'+da["msg"][p]["jdatetime1"]+'\
+										预约人姓名：'+da["msg"][p]["jname"]+'\
 									</h3>\
 								</div>\
 								<div id="'+p+'" class="panel-collapse collapse">\
 									<div class="panel-body">\
 										<div class="form-group">\
-											<label >借用人姓名:</label>\
+											<label >预约人姓名:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
 										</div>\
 										<div class="form-group">\
-											<label >借用人手机:</label>\
+											<label >预约人手机:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
 										</div>\
 										<div class="form-group">\
-											<label >借出时间:</label>\
+											<label >预约人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
+											<label >具体问题:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+'" cont="jdatetime">\
 										</div>\
 										<div class="form-group">\
-											<label >归还时间:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+'" cont="jdatetime1">\
-										</div>\
-										<div class="form-group">\
-											<label >管理人员姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="gname">\
-										</div>\
-										<div class="form-group">\
-											<label >备注:</label>\
+											<label >附加要求:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
 										</div>\
-										<button type="submit" cont="return"  class="btn btn-default clickme" style="width:100%;">归还请戳我</button>';
+										<button type="submit" cont="return"  class="btn btn-default clickme" style="width:100%;">已完成维修请戳我</button>';
 													
 						html+='</div>\
 									</div>\
 								</div>';
 						
 						
-					$("#volunfixstatus2").append(html);
-						
-
-				
+					$("#volunfixstatus2").append(html);		
 			}
+			
+//完成维修函数
+$(".clickme").click(function(){
+	var json={};
+	p = $(this).parent().parent().attr("id");
+	window.cancelthat=this;
+	json["jname"]=da["msg"][p]["jname"];
+	json["gname"]=da["msg"][p]["gname"];
+	json["jdatetime"]=da["msg"][p]["jdatetime"];
+	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
+	json["item"]=x;
+	console.log("hahah");
+	console.log(json);
+	$.post("return.php",json).done(function(data){
+	console.log(data);
+	try{
+			var da=JSON.parse(data);
+		}
+	catch(e){
+			console.log(e);
+			return;
+			}
+	if(da["error"]==0)
+		{
+			alert("成功归还");
+			window.history.go(-1);
+		}
+	});
+});	
+			}
+		
+	});
+	
+	
+}
 			
 //获取维修预约信息的函数
 function getfixcomputer(){
