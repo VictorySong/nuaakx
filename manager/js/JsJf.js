@@ -112,9 +112,82 @@ $(document).ready(function(){
 			}
 		});
 	});
-			
+
+//大型义务维修	
+	$("#volunfix0").click(function(){	
+		getvolunfix("rjfix");	
+	});
+	$("#volunfix1").click(function(){	
+		getvolunfix("yjfix");
+	});
 		
 });
+
+//获取大型义务维修的数据
+function getvolunfix(x){
+	$("#volunfixstatus2").children().remove();
+	
+	$.post("getwzjy.php",{item:x}).done(function(data){
+		console.log(data);
+			
+		try{
+			var da=JSON.parse(data);
+		}
+		catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
+										借用人姓名：'+da["msg"][p]["jname"]+'\
+										<br/>借用时间：'+da["msg"][p]["jdatetime"]+'<br/>归还时间：'+da["msg"][p]["jdatetime1"]+'\
+									</h3>\
+								</div>\
+								<div id="'+p+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >借用人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+										</div>\
+										<div class="form-group">\
+											<label >借用人手机:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
+										</div>\
+										<div class="form-group">\
+											<label >借出时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+'" cont="jdatetime">\
+										</div>\
+										<div class="form-group">\
+											<label >归还时间:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime1"]+'" cont="jdatetime1">\
+										</div>\
+										<div class="form-group">\
+											<label >管理人员姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["gname"]+'" cont="gname">\
+										</div>\
+										<div class="form-group">\
+											<label >备注:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
+										</div>\
+										<button type="submit" cont="return"  class="btn btn-default clickme" style="width:100%;">归还请戳我</button>';
+													
+						html+='</div>\
+									</div>\
+								</div>';
+						
+						
+					$("#volunfixstatus2").append(html);
+						
+
+				
+			}
+			
 //获取维修预约信息的函数
 function getfixcomputer(){
 	$("#fixdate").text(window.fixcomputerdate);
