@@ -148,7 +148,7 @@ function getvolunfix(x){
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
-										预约人姓名：'+da["msg"][p]["sname"]+'\
+										维修编号：x'+da["msg"][p]["number"]+'  预约人姓名：'+da["msg"][p]["sname"]+'  \
 									</h3>\
 								</div>\
 								<div id="'+p+'" class="panel-collapse collapse">\
