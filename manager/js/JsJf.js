@@ -123,10 +123,19 @@ $(document).ready(function(){
 	$("#volunfix2").click(function(){	
 		getvolunfix("B");
 	});
+	$("#volunfix3").click(function(){	
+		getvolunfix2("R");	
+	});
+	$("#volunfix4").click(function(){	
+		getvolunfix2("Y");
+	});
+	$("#volunfix5").click(function(){	
+		getvolunfix2("B");
+	});
 		
 });
 
-//获取大型义务维修的数据
+//获取大型义务维修未完成的数据
 function getvolunfix(x){
 	$("#volunfixstatus2").children().remove();
 	
@@ -216,7 +225,79 @@ $(".clickme2").click(function(){
 	
 	
 }
+//获取大型义务维修已完成的数据
+function getvolunfix2(x){
+	$("#volunfixstatus3").children().remove();
+	
+	$.post("getvolunfix2.php",{item:x}).done(function(data){
+		console.log(data);
 			
+		try{
+			var da=JSON.parse(data);
+		}
+		catch(e){
+			console.log(e);
+			return;
+		}
+			if(da["error"]==0)
+			{
+				
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default" >\
+								<div class="panel-heading">\
+									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
+										维修编号：'+x+''+da["msg"][p]["number"]+' </br></br> 维修人姓名：'+da["msg"][p]["fixname"]+'  \
+									</h3>\
+								</div>\
+								<div id="'+p+'" class="panel-collapse collapse">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >预约人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["sname"]+'" cont="sname">\
+										</div>\
+										<div class="form-group">\
+											<label >预约人学号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["sid"]+'" cont="sid">\
+										</div>\
+										<div class="form-group">\
+											<label >预约人手机号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["tel"]+'" cont="tel">\
+										</div>\
+										<div class="form-group">\
+											<label >具体问题:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["ques"]+'" cont="ques">\
+										</div>\
+										<div class="form-group">\
+											<label >附加要求:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["des"]+'" cont="desc">\
+										</div>\
+										<div class="form-group">\
+											<label >维修人:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["fixname"]+'" cont="desc">\
+										</div>\
+										
+													
+						html+='</div>\
+									</div>\
+								</div>';
+						
+						
+					$("#volunfixstatus3").append(html);		
+			}
+			
+			
+			
+			
+			
+			
+			
+			}
+		
+	});
+	
+	
+}			
 //获取维修预约信息的函数
 function getfixcomputer(){
 	$("#fixdate").text(window.fixcomputerdate);
