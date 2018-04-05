@@ -157,7 +157,7 @@ function getvolunfixx(x){
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
-										维修编号：'+x+''+da["msg"][p]["number"]+' </br></br> 预约人姓名：'+da["msg"][p]["sname"]+'  \
+										维修编号：'+x+''+da["msg"][p]["number"]+' </br></br> 维修人姓名：'+da["msg"][p]["fixname"]+'  \
 									</h3>\
 								</div>\
 								<div id="'+p+'" class="panel-collapse collapse">\
@@ -175,14 +175,18 @@ function getvolunfixx(x){
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["tel"]+'" cont="tel">\
 										</div>\
 										<div class="form-group">\
+											<label >维修地点:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["addr"]+'" cont="tel">\
+										</div>\
+										<div class="form-group">\
 											<label >具体问题:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["ques"]+'" cont="ques">\
 										</div>\
 										<div class="form-group">\
 											<label >附加要求:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["des"]+'" cont="desc">\
-										</div>\
-										<button type="submit" cont="fixok"  class="btn btn-default clickme2" style="width:100%;">已完成维修请戳我</button>';
+										</div>';
+										
 													
 						html+='</div>\
 									</div>\
@@ -237,6 +241,10 @@ function getvolunfix(x){
 										<div class="form-group">\
 											<label >预约人手机号:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"][p]["tel"]+'" cont="tel">\
+										</div>\
+										<div class="form-group">\
+											<label >维修地点:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["addr"]+'" cont="tel">\
 										</div>\
 										<div class="form-group">\
 											<label >具体问题:</label>\
