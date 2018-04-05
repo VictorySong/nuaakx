@@ -115,10 +115,13 @@ $(document).ready(function(){
 
 //大型义务维修	
 	$("#volunfix0").click(function(){	
-		getvolunfix("rjfix");	
+		getvolunfix("R");	
 	});
 	$("#volunfix1").click(function(){	
-		getvolunfix("yjfix");
+		getvolunfix("Y");
+	});
+	$("#volunfix2").click(function(){	
+		getvolunfix("B");
 	});
 		
 });
@@ -145,32 +148,32 @@ function getvolunfix(x){
 					var html='<div class="panel panel-default" >\
 								<div class="panel-heading">\
 									<h3 class="panel-title" cont="name"  role="button" data-toggle="collapse" data-parent="#recruit1" data-target="#'+p+'">\
-										预约人姓名：'+da["msg"][p]["jname"]+'\
+										预约人姓名：'+da["msg"][p]["sname"]+'\
 									</h3>\
 								</div>\
 								<div id="'+p+'" class="panel-collapse collapse">\
 									<div class="panel-body">\
 										<div class="form-group">\
 											<label >预约人姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["sname"]+'" cont="sname">\
 										</div>\
 										<div class="form-group">\
-											<label >预约人手机:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jphone"]+'" cont="jphone">\
+											<label >预约人学号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["sid"]+'" cont="sid">\
 										</div>\
 										<div class="form-group">\
-											<label >预约人姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jname"]+'" cont="jname">\
+											<label >预约人手机号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["tel"]+'" cont="tel">\
 										</div>\
 										<div class="form-group">\
 											<label >具体问题:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["jdatetime"]+'" cont="jdatetime">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["ques"]+'" cont="ques">\
 										</div>\
 										<div class="form-group">\
 											<label >附加要求:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"][p]["description"]+'" cont="description">\
+											<input type="text" class="form-control" disabled value="'+da["msg"][p]["des"]+'" cont="desc">\
 										</div>\
-										<button type="submit" cont="return"  class="btn btn-default clickme" style="width:100%;">已完成维修请戳我</button>';
+										<button type="submit" cont="fixok"  class="btn btn-default clickme2" style="width:100%;">已完成维修请戳我</button>';
 													
 						html+='</div>\
 									</div>\
@@ -181,17 +184,17 @@ function getvolunfix(x){
 			}
 			
 //完成维修函数
-$(".clickme").click(function(){
+$(".clickme2").click(function(){
 	var json={};
 	p = $(this).parent().parent().attr("id");
 	window.cancelthat=this;
-	json["jname"]=da["msg"][p]["jname"];
-	json["gname"]=da["msg"][p]["gname"];
-	json["jdatetime"]=da["msg"][p]["jdatetime"];
-	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
-	json["item"]=x;
+	json["sname"]=da["msg"][p]["sname"];
+	json["sid"]=da["msg"][p]["sid"];
+	json["tel"]=da["msg"][p]["tel"];
+	json["ques"]=da["msg"][p]["ques"];
+	json["wx"]=x;
 	console.log(json);
-	$.post("return.php",json).done(function(data){
+	$.post("fixok.php",json).done(function(data){
 	console.log(data);
 	try{
 			var da=JSON.parse(data);
