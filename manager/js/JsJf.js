@@ -123,6 +123,15 @@ $(document).ready(function(){
 	$("#volunfix2").click(function(){	
 		getvolunfix("B");
 	});
+	$("#volunfix6").click(function(){	
+		getvolunfixx("R");	
+	});
+	$("#volunfix7").click(function(){	
+		getvolunfixx("Y");
+	});
+	$("#volunfix8").click(function(){	
+		getvolunfixx("B");
+	});
 		
 });
 
