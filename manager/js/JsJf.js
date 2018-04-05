@@ -226,7 +226,7 @@ $(".clickme2").click(function(){
 	
 }
 //获取大型义务维修已完成的数据
-function getvolunfix(x){
+function getvolunfix2(x){
 	$("#volunfixstatus3").children().remove();
 	
 	$.post("getvolunfix2.php",{item:x}).done(function(data){
