@@ -983,14 +983,14 @@ function getnotice(){
 			console.log(window.sortarr);
 			for(var p in da["notice"])
 			{
-				var html='<a href="'+(da["notice"][p]["url"]==null? "javascript:void(0);":da["notice"][p]["url"])+'" style="text-decoration:none;" ><div class="panel panel-default">\
+				var html='<div class="panel panel-default">\
 									<div class="panel-heading">\
 										<span >通知:'+da["notice"][p]["title"]+'</span>\
 									</div>\
 									<div class="panel-body">\
 										<p>'+da["notice"][p]["description"]+'</p>\
                                         <button class="btn btn-default" style="width:100%;" noticeid="'+da["notice"][p]["noticeid"]+'" alreadyread="'+da["notice"][p]["already"]+'" cont="noticereadmark">'+(da["notice"][p]["already"]==1?"已读":"标记已读")+'</button>\
-									</div></div></a>';
+									</div></div>';
 				$("#notice").append(html);
 			}
             $("[cont=\"noticereadmark\"]").click(marknoticeread);
