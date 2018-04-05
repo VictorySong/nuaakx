@@ -5,6 +5,7 @@ session_start();
 
 	$mysql=new SaeMysql();
 	$data1=$mysql->getData("SELECT `name`,`phone` FROM `wx_user` WHERE `number`='".$_SESSION["stId"]."'");
+	echo $data1;
 	$name1=$data1["name"];
 	if($mysql->runsql("UPDATE `app_nuaakexie`.`bigfix` SET `ok` = 1,`fixname` = '".$name1."' WHERE `bigfix`.`sname` = '".$_POST["sname"]."'&&`sid` = '".$_POST["sid"]."'&&`tel` = '".$_POST["tel"]."'&&`ques` = '".$_POST["ques"]."'"))
 				die($mysql->errmsg());
