@@ -111,7 +111,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-edit" style="color:red;" ></span>
+											<span class="glyphicon glyphicon-edit" ></span>
 										</td>
 										<td>
 											<span id="name"></span>
@@ -195,13 +195,36 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 			-->
 				<div class="panel panel-default">
-					<a class="panel-title" href="#fixcomputer"  data-parent="#accordion">
+					<a class="panel-title" href="#fixform"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
 								<tbody>
 									<tr>
 										<td valign="top">
 											<span class="glyphicon glyphicon-tag" style="color:red;" ></span>
+										</td>
+										<td>
+											<span ></span>
+											<br>查看义务维修编号
+										</td>
+										<td align="right">
+											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a>
+				</div>
+				
+				<div class="panel panel-default">
+					<a class="panel-title" href="#fixcomputer"  data-parent="#accordion">
+						<div class="panel-heading">
+							<table>
+								<tbody>
+									<tr>
+										<td valign="top">
+											<span class="glyphicon glyphicon-tag"></span>
 										</td>
 										<td>
 											<span ></span>
@@ -249,7 +272,7 @@ $signPackage = $jssdk->GetSignPackage();
 								<tbody>
 									<tr>
 										<td valign="top">
-											<span class="glyphicon glyphicon-heart" style="color:red;" ></span>
+											<span class="glyphicon glyphicon-heart"></span>
 										</td>
 										<td>
 											<span ></span>
@@ -612,6 +635,23 @@ $signPackage = $jssdk->GetSignPackage();
 
 			
 		</div>
+		</div>
+		
+		<!--     .................................  -->
+		<!-- 查看义务维修编号     -->
+		<div id="fixform" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
+			<div style="width:100%;" cont="head">
+			</div>
+			
+			<div class="jumbotron col-xs-12" style="background-color:pink">
+				<h2>编号:'+json["wx"]+''+da["number"]+'</h2>
+				<p>请向工作人员说明您的编号，然后就可以离开了</p>
+			</div>
+			<div class="jumbotron col-xs-12">
+				<p>我们每天的值班时间为早上8：00到下午4：00；您的电脑修好之后会有工作人员发信息到您的手机上，我们将会在每天晚上的7：00到10：00在东区大学生发展中心508室等您前来领取您的电脑。\
+				</p>
+			</div>
+				
 		</div>
 		
 		<!--     .................................  -->
