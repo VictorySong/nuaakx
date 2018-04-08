@@ -5,6 +5,7 @@ session_start();
 
 	$mysql=new SaeMysql();
 	$data=$mysql->getline("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number`,`ok`,`wx` FROM `bigfix` WHERE `sid`='".$_SESSION["stId"]."'");
+	echo $data;
 	if($data)
 	{
 		$json["if"]=0;
