@@ -72,9 +72,8 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 			</div>
 			
-			
-			<!--  下边是个人主页菜单列表  -->
 			<!--
+			<!--  下边是个人主页菜单列表  -->
 			<div id="accordion" cont="content">
 				<div style="width:100%;" cont="head">
 				</div>
@@ -102,7 +101,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-			-->
+				
 				
 				<div class="panel panel-default">
 					
