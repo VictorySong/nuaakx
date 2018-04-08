@@ -5,13 +5,10 @@ session_start();
 
 	$mysql=new SaeMysql();
 	$data=$mysql->getline("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number`,`ok`,`wx`  FROM `bigfix` WHERE `sid`='".$_SESSION["stId"]."'");
-	echo $data;
 	if($data)
 	{
 		$json["if"]=0;
-	}
-	else $json["if"]=1;
-	if($data["wx"]=='R')
+		if($data["wx"]=='R')
 	{
 		$data["wx"]="软件";
 	}
@@ -25,7 +22,7 @@ session_start();
 	}
 	
 	
-/*	if($data["ok"]==1)
+	if($data["ok"]==1)
 	{
 		$data["ok"]="已经维修完成";
 	}
@@ -33,18 +30,20 @@ session_start();
 	{
 		$data["ok"]="未维修完成";
 	}
-	*/
+		
+		
+	}
+	else $json["if"]=1;
 	
-		if(!empty($data))
-		{
+	
+		
 			
 			$json["error"]=0;
 			$json["msg"]=$data;
 			
 			
 			echo json_encode($json);
-		}
-	
+		
 
 
 ?>

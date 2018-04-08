@@ -971,7 +971,7 @@ function getno(){
 										</div>\
 										<div class="form-group">\
 											<label >是否维修完成:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["ok"]+'" cont="ques">\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["ok"]+'" cont="ok">\
 										</div>\
 										<div class="form-group">\
 											<label >附加要求:</label>\
