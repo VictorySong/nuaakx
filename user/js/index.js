@@ -962,6 +962,10 @@ function getno(){
 											<input type="text" class="form-control" disabled value="'+da["msg"]["tel"]+'" cont="tel">\
 										</div>\
 										<div class="form-group">\
+											<label >维修部分:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["wx"]+'" cont="wx">\
+										</div>\
+										<div class="form-group">\
 											<label >维修地点:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"]["addr"]+'" cont="tel">\
 										</div>\
@@ -970,13 +974,14 @@ function getno(){
 											<input type="text" class="form-control" disabled value="'+da["msg"]["ques"]+'" cont="ques">\
 										</div>\
 										<div class="form-group">\
-											<label >是否维修完成:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["ok"]+'" cont="ok">\
-										</div>\
-										<div class="form-group">\
 											<label >附加要求:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"]["des"]+'" cont="desc">\
+										</div>\
+										<div class="form-group">\
+											<label >是否维修完成:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["ok"]+'" cont="ok">\
 										</div>';
+										
 										
 													
 						html+='</div>\
