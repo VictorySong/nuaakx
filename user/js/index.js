@@ -484,76 +484,7 @@ $(document).ready(function(){
 	//	});
 	});			
 	
-	//获取大型义务维修的数据
-function getno(){
-	$("#fixform0").remove();
-	$.post("getno.php").done(function(data){
-		console.log(data);
-			
-		try{
-			var da=JSON.parse(data);
-		}
-		catch(e){
-			console.log(e);
-			return;
-		}
-		
-			if(da["msg"]["if"]==1)
-			{
-				
-				
-					var html='<div class="panel panel-default" >\
-								<div  class="panel-collapse collapse in ">\
-									<div class="panel-body">\
-										<div class="form-group">\
-											<label >预约人姓名:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["sname"]+'" cont="sname">\
-										</div>\
-										<div class="form-group">\
-											<label >预约人学号:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["sid"]+'" cont="sid">\
-										</div>\
-										<div class="form-group">\
-											<label >预约人手机号:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["tel"]+'" cont="tel">\
-										</div>\
-										<div class="form-group">\
-											<label >维修地点:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["addr"]+'" cont="tel">\
-										</div>\
-										<div class="form-group">\
-											<label >具体问题:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["ques"]+'" cont="ques">\
-										</div>\
-										<div class="form-group">\
-											<label >是否维修完成:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["ok"]+'" cont="ques">\
-										</div>\
-										<div class="form-group">\
-											<label >附加要求:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["des"]+'" cont="desc">\
-										</div>';
-										
-													
-						html+='</div>\
-									</div>\
-								</div>';	
-					$("#fixform0").append(html);		
-			
-			
 
-		    }
-			else
-			{
-				
-					$("#fixform0").append("您未参加大型义务维修");	
-				
-			}
-		
-	});
-	
-	
-}
 
 
 	
@@ -763,6 +694,7 @@ function getno(){
 		
 			
 	});
+	
 	//设置投诉与建议表单提交
 	$("#kxts").find("form").submit(function(e){
 		e.preventDefault();
@@ -995,6 +927,76 @@ function getfix(){
 			});
 		}
 	});
+}
+	//获取大型义务维修的数据
+function getno(){
+	$("#fixform0").remove();
+	$.post("getno.php").done(function(data){
+		console.log(data);
+			
+		try{
+			var da=JSON.parse(data);
+		}
+		catch(e){
+			console.log(e);
+			return;
+		}
+		
+			if(da["msg"]["if"]==1)
+			{
+				
+				
+					var html='<div class="panel panel-default" >\
+								<div  class="panel-collapse collapse in ">\
+									<div class="panel-body">\
+										<div class="form-group">\
+											<label >预约人姓名:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["sname"]+'" cont="sname">\
+										</div>\
+										<div class="form-group">\
+											<label >预约人学号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["sid"]+'" cont="sid">\
+										</div>\
+										<div class="form-group">\
+											<label >预约人手机号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["tel"]+'" cont="tel">\
+										</div>\
+										<div class="form-group">\
+											<label >维修地点:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["addr"]+'" cont="tel">\
+										</div>\
+										<div class="form-group">\
+											<label >具体问题:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["ques"]+'" cont="ques">\
+										</div>\
+										<div class="form-group">\
+											<label >是否维修完成:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["ok"]+'" cont="ques">\
+										</div>\
+										<div class="form-group">\
+											<label >附加要求:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["des"]+'" cont="desc">\
+										</div>';
+										
+													
+						html+='</div>\
+									</div>\
+								</div>';	
+					$("#fixform0").append(html);		
+			
+			
+
+		    }
+			else
+			{
+				
+					$("#fixform0").append("您未参加大型义务维修");	
+				
+			}
+		
+	});
+	
+	
 }
 
 function getrecruit(){
