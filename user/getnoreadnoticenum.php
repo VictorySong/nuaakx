@@ -15,7 +15,7 @@ if(!empty($_SESSION["stId"]))
 	{
 		$json["error"]=0;
 	
-		$data=$mysql->getData("SELECT `noticeid` FROM `Notice` WHERE 1 order by `date` desc");
+		$data=$mysql->getData("SELECT `noticeid` FROM `Notice` WHERE `tostId`='".$_SESSION["stId"]."'");
 		
 		
 	}
@@ -23,7 +23,7 @@ if(!empty($_SESSION["stId"]))
 	{
 		$json["error"]=1;
 		
-		$data=$mysql->getData("SELECT `noticeid` FROM `Notice` WHERE `noticetype`='Personal' || `noticetype`='External' order by `date` desc");
+		$data=$mysql->getData("SELECT `noticeid` FROM `Notice` WHERE `tostId`='".$_SESSION["stId"]."'");
 	}
     $later=0;
     foreach($data as $key=>$value){
