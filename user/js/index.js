@@ -930,7 +930,7 @@ function getfix(){
 }
 	//获取大型义务维修的数据
 function getno(){
-	$("#fixform0").remove();
+	$("#fixform0").child().remove();
 	$.post("getno.php").done(function(data){
 		console.log(data);
 			
