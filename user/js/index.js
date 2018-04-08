@@ -485,8 +485,8 @@ $(document).ready(function(){
 	});			
 	
 	//获取大型义务维修的数据
-function getno(x){
-	$("#fixform0").empty();
+function getno(){
+	$("#fixform0").remove();
 	$.post("getno.php").done(function(data){
 		console.log(data);
 			
