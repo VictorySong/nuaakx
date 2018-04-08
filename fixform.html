@@ -58,7 +58,14 @@ $(document).ready(function(){
 	  json["ques"]=ques.val();
 	}
 	var desc=$(this).find("#desc");
-	json["desc"]=desc.val();
+    if(desc.val()==""){		
+		desc.focus();
+		return;
+	}
+	else {
+	  json["desc"]=desc.val();
+	}
+
 	if (confirm("检查一下有没有填错信息，点击确认提交哟"))
 	{
 		$.post("form_fixcomputer.php",json).done(function(data){
@@ -102,7 +109,7 @@ $(document).ready(function(){
 <body>
 <div class="container">
 <div class="starter-template">
-     <h2>校大学生科协预约维修</h2>
+     <h2>校科协大型义务维修</h2>
      <p class="lead"></p>
 </div> 
 
@@ -163,7 +170,7 @@ $(document).ready(function(){
 	
 	<div class="jumbotron col-xs-12">
 		<p>
-			1.请留下您的电脑电源，并在附加要求处留下并注明您的开机密码，以方便我们的维修工作。（苹果笔记本电脑请再留下您的苹果ID和密码）<br/>
+			1.请留下您的电脑电源，并在附加要求注明您的开机密码，以方便我们的维修工作。（苹果笔记本电脑请再留下您的苹果ID和密码）<br/>
 			2.如您有急用，请与现场的工作人员说明。
 		</p>	
 	</div>
