@@ -4,7 +4,7 @@ include("../SaeMysql.php");
 session_start();
 
 	$mysql=new SaeMysql();
-	$data=$mysql->getData("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number` FROM `bigfix` WHERE `wx`='".$_POST["item"]."'&&`ok`='0' order by `number` desc");
+	$data=$mysql->getData("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number` FROM `bigfix` WHERE `wx`='".$_POST["item"]."'&&`ok`='0' order by `number` asc");
 	
 	
 		if(!empty($data))
