@@ -205,7 +205,7 @@ $signPackage = $jssdk->GetSignPackage();
 										</td>
 										<td>
 											<span ></span>
-											<br>查看义务维修编号
+											<br>义务维修编号
 										</td>
 										<td align="right">
 											<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
