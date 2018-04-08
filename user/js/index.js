@@ -942,7 +942,7 @@ function getno(){
 			return;
 		}
 		
-			if(da["msg"]["if"]==1)
+			if(da["if"]==1)
 			{
 				
 				
