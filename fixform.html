@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+	<title>提交表单</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script>
+$(document).ready(function(){
+  $("form").submit(function(e){
+	e.preventDefault();
+	var json={};
+	var sid=$(this).find("#sid");
+    if(sid.val()==""){		
+		sid.focus();
+		return;
+	}
+	else {
+	  json["sid"]=sid.val();
+	}
+	var sname=$(this).find("#sname");
+    if(sname.val()==""){		
+		sname.focus();
+		return;
+	}
+	else {
+	  json["sname"]=sname.val();
+	}
+	var tel=$(this).find("#tel");
+    if(tel.val()==""){		
+		tel.focus();
+		return;
+	}
+	else {
+	  json["tel"]=tel.val();
+	}
+	json["wx"]=$(this).find("[name=\"wx\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		}).val();
+	json["addr"]=$(this).find("[name=\"addr\"]").filter(function(){
+			if($(this).prop("checked"))
+				return 1;
+			else
+				return 0;
+		}).val();
+	var ques=$(this).find("#ques");
+    if(ques.val()==""){		
+		ques.focus();
+		return;
+	}
+	else {
+	  json["ques"]=ques.val();
+	}
+	var desc=$(this).find("#desc");
+	json["desc"]=desc.val();
+	if (confirm("检查一下有没有填错信息，点击确认提交哟"))
+	{
+		$.post("form_fixcomputer.php",json).done(function(data){
+			console.log(data);
+			
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				alert("提交成功");
+				//getback(json);
+				$("div.fix").remove();
+				var html='<div class="jumbotron col-xs-12" style="background-color:pink">\
+						<h2>编号:'+json["wx"]+''+da["number"]+'\
+						</h2><p>请向工作人员说明您的编号，然后就可以离开了\
+						</p></div>\
+						<div class="jumbotron col-xs-12">\
+						<p>我们每天的值班时间为早上8：00到下午4：00；您的电脑修好之后会有工作人员发信息到您的手机上，我们将会在每天晚上的7：00到10：00在东区大学生发展中心508室等您前来领取您的电脑。\
+						</p></div>';
+				$("div.container").append(html);
+			}
+		});
+	}
+	
+			
+
+  });
+
+  
+
+});
+
+</script>
+
+
+<body>
+<div class="container">
+<div class="starter-template">
+     <h2>校大学生科协预约维修</h2>
+     <p class="lead"></p>
+</div> 
+
+<div class="fix">
+<form role="form">
+	<div class="form-group">
+		<label >学号:</label>
+		<input type="text" class="form-control" placeholder="" id="sid">
+	</div>
+	<div class="form-group">
+		<label >姓名:</label>
+		<input type="text" class="form-control" placeholder="" id="sname">
+	</div>
+	<div class="form-group">
+		<label >电话号码:</label>
+		<input type="text" class="form-control" placeholder="" id="tel">
+	</div>
+	
+	<div class="form-group">
+		<label >维修部分:</label>
+		<div class="radio">
+			<label>
+				<input type="radio" name="wx" value="Y">硬件
+				</label>
+		</div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="wx" value="R" >软件
+			</label>
+		</div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="wx" value="B" >硬件和软件
+			</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label >维修地点:</label>
+		<div class="radio">
+			<label>
+				<input type="radio" name="addr" value="east">东区
+				</label>
+		</div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="addr" value="west" >西区
+			</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label >具体问题:</label>
+		<input type="text" class="form-control" placeholder="" id="ques">
+	</div>
+	<div class="form-group">
+		<label >附加要求(留下开机密码):</label>
+		<input type="text" class="form-control" placeholder="" id="desc">
+	</div>
+	
+	<div class="jumbotron col-xs-12">
+		<p>
+			1.请留下您的电脑电源，并在附加要求处留下并注明您的开机密码，以方便我们的维修工作。（苹果笔记本电脑请再留下您的苹果ID和密码）<br/>
+			2.如您有急用，请与现场的工作人员说明。
+		</p>	
+	</div>
+
+	<button type="submit" class="btn btn-default" name="sub">提交</button>
+	<br/><br/>
+</form>
+</div>
+
+</body>
+</html>
