@@ -14,7 +14,7 @@ session_start();
 	{
 		$data["wx"]="软件";
 	}
-	else if($_POST["wx"]=='Y')
+	else if($data["wx"]=='Y')
 	{
 		$data["wx"]="硬件";
 	}
