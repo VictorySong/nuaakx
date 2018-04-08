@@ -270,6 +270,33 @@ $(document).ready(function(){
 		});
 		
 	});
+	
+	$.post("form_fixcomputer.php",json).done(function(data){
+			console.log(data);
+			
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				alert("提交成功");
+				//getback(json);
+				$("div.fix").remove();
+				var html='<div class="jumbotron col-xs-12" style="background-color:pink">\
+						<h2>编号:'+json["wx"]+''+da["number"]+'\
+						</h2><p>请向工作人员说明您的编号，然后就可以离开了\
+						</p></div>\
+						<div class="jumbotron col-xs-12">\
+						<p>我们每天的值班时间为早上8：00到下午4：00；您的电脑修好之后会有工作人员发信息到您的手机上，我们将会在每天晚上的7：00到10：00在东区大学生发展中心508室等您前来领取您的电脑。\
+						</p></div>';
+				$("#fixform").append(html);
+			}
+		});
+		
 	//预约维修提交
 	$("#fixcomputer").find("input[name=\"problem\"]").on("change",function(){
 		if($(this).val()=="3")
