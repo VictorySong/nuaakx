@@ -5,7 +5,7 @@ session_start();
 
 	$mysql=new SaeMysql();
 	$data=$mysql->getData("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number` FROM `bigfix` WHERE `wx`='".$_POST["item"]."'&&`ok`='0'");
-	sort($data["number"]);
+	ksort($data["number"]);
 	
 		if(!empty($data))
 		{
