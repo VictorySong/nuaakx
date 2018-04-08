@@ -4,7 +4,7 @@ include("../SaeMysql.php");
 session_start();
 
 	$mysql=new SaeMysql();
-	$data=$mysql->getline("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number`,`ok`,`wx` FROM `bigfix` WHERE `sid`='".$_SESSION["stId"]."'");
+	$data=$mysql->getline("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number`,`ok`,`wx`  FROM `bigfix` WHERE `sid`='".$_SESSION["stId"]."'");
 	echo $data;
 	if($data)
 	{
@@ -23,7 +23,9 @@ session_start();
 	{
 		$data["wx"]="软件和硬件";
 	}
-	if($data["ok"]==1)
+	
+	
+/*	if($data["ok"]==1)
 	{
 		$data["ok"]="已经维修完成";
 	}
@@ -31,6 +33,8 @@ session_start();
 	{
 		$data["ok"]="未维修完成";
 	}
+	*/
+	
 		if(!empty($data))
 		{
 			
