@@ -7,11 +7,11 @@ session_start();
 	$data=$mysql->getline("SELECT `sid`,`sname`,`tel`,`addr`,`ques`,`des`,`number`,`ok`,`wx`  FROM `bigfix` WHERE `sid`='".$_SESSION["stId"]."'");
 	if($data)
 	{
-		$json["if"]=0;
+		$json["if"]=1;
 		if($data["wx"]=='R')
-	{
-		$data["wx"]="软件";
-	}
+		{
+			$data["wx"]="软件";
+		}
 	else if($data["wx"]=='Y')
 	{
 		$data["wx"]="硬件";
@@ -33,7 +33,7 @@ session_start();
 		
 		
 	}
-	else $json["if"]=1;
+	else $json["if"]=0;
 	
 	
 		
