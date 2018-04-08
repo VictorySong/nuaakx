@@ -642,15 +642,11 @@ $signPackage = $jssdk->GetSignPackage();
 		<div id="fixform" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
+			<div id="fixform0">
 			
-			<div class="jumbotron col-xs-12" style="background-color:pink">
-				<h2>编号:'+json["wx"]+''+da["number"]+'</h2>
-				<p>请向工作人员说明您的编号，然后就可以离开了</p>
+			
 			</div>
-			<div class="jumbotron col-xs-12">
-				<p>我们每天的值班时间为早上8：00到下午4：00；您的电脑修好之后会有工作人员发信息到您的手机上，我们将会在每天晚上的7：00到10：00在东区大学生发展中心508室等您前来领取您的电脑。\
-				</p>
-			</div>
+			
 				
 		</div>
 		

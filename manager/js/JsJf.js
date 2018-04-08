@@ -217,6 +217,7 @@ function getvolunfix(x){
 			console.log(e);
 			return;
 		}
+			
 			if(da["error"]==0)
 			{
 				
