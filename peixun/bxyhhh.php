@@ -6,13 +6,13 @@
 <body>
 
 <form action="bxywelcome.php" method="post">
-学号：<input type="number" name="id"><br>
+学号：<input type="number" id="stId"><br>
 <input type="submit">
 </form>
 	
 <?php//实现搜索功能。通过网页搜索，输入学号，能在科协数据库查找名字等相关信息并显示出来，通过网页显示
 $json=array(); 
-$_SESSION["stId"]=$_POST['id'];
+$_SESSION["stId"]=document.getElementById("stId").value;
 
 include("../SaeMysql.php");
 //session_set_cookie_params(7200*12*7,'/','nuaakx.com');
