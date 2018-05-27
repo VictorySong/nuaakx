@@ -33,7 +33,6 @@ if(!empty($_SESSION["stId"]))
 	{
 		$json["error"]=1;
 	}
-
 }
 ?>
 
