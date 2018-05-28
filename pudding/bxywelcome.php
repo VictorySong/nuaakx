@@ -15,7 +15,7 @@ if(!empty($_POST["stid"]))
 	{
 		$json["error"]=1;
 	}
-	echo json_encode($json);
+	echo json_encode($json);//把数组转化为json格式传给客户端 方便js处理（问题：此处用echo可以吗）
 }
 
 

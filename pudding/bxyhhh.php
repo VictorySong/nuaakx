@@ -9,22 +9,22 @@
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <script>
-$(document).ready(function(){
-  $("form").submit(function(e){
-	e.preventDefault();
+$(document).ready(function(){		//文件ready之后执行函数
+  $("form").submit(function(e){		//表单提交之后执行函数，只适用于form元素
+	e.preventDefault();				//点击提交按钮时阻止对表单的提交
 	var json={};
-	var sid=$(this).find("#stid");
+	var sid=$(this).find("#stid");	//sid定义为输入框元素 sid.val是获得的值
     if(sid.val()==""){		
-		sid.focus();
+		sid.focus();				//输入框获得焦点
 		return;
 	}
 	else {
-	  json["stid"]=sid.val();
+	  json["stid"]=sid.val();		//赋值给json数组
 	}
-	if (confirm("检查一下有没有填错信息，点击确认提交哟"))
+	if (confirm("检查一下有没有填错信息，点击确认提交哟"))		//弹出确认对话框
 	{
-		$.post("bxywelcome.php",json).done(function(data){
-			console.log(data);
+		$.post("bxywelcome.php",json).done(function(data){		//	问题：这里的.post.done是在此处判断还是在此处执行？
+			console.log(data);									//  问题：26-37行是post的标准格式吗
 			try{
 				var da=JSON.parse(data);
 			}
@@ -45,7 +45,7 @@ $(document).ready(function(){
 							</div>';
 				
 				
-					$("div.container").append(html);
+					$("div.container").append(html);			//把上述html变量包含的内容追加到已经remove了的网页中
 			}
 		});
 	}
