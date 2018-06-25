@@ -6,7 +6,7 @@
     //define your token  
     define("TOKEN", "1021");  
     $wechatObj = new wechatCallbackapiTest();  
-    $wechatObj->valid();  
+    //$wechatObj->valid();  
     $wechatObj->responseMsg();  
       
     class wechatCallbackapiTest  
