@@ -38,7 +38,11 @@
     case "马化腾":  
     $msgType = "text";  
     $contentStr="您好，马化腾！我知道创建了企鹅帝国！";  
-    break;  
+    break; 
+    case "苏苏":  
+    $msgType = "text";  
+    $contentStr="千万";  
+    break;	
     case "史玉柱":  
     $msgType = "text";  
     $contentStr="您好，史玉柱！我知道您创建了巨人网络！";  
