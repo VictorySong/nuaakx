@@ -4,7 +4,7 @@
       */  
       
     //define your token  
-    define("TOKEN", "fuguidan");  
+    define("TOKEN", "fgd");  
     $wechatObj = new wechatCallbackapiTest();  
     $wechatObj->valid();  
     //$wechatObj->responseMsg();  
