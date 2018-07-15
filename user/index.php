@@ -126,7 +126,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				<div class="panel panel-default" style="display:none;">
+				<div class="panel panel-default" ">
 					<a class="panel-title" href="../Forum/index.html"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
