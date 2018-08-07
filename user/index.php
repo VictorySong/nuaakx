@@ -78,7 +78,7 @@ $signPackage = $jssdk->GetSignPackage();
 				<div style="width:100%;" cont="head">
 				</div>
 				
-				<!-- 
+				 
 				<div class="panel panel-default">
 					<a class="panel-title" href="#recruit"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -101,7 +101,7 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				-->
+				
 				
 				<div class="panel panel-default">
 					
