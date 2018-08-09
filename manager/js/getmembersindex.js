@@ -248,7 +248,7 @@ function recruitintention(){
 	if($(this).hasClass("label-default"))
 	{
 		//$(this).removeClass("label-default");
-		window.intentionthat=$(this);
+		window.intentiontha=$(this);
 		//$(this).addClass("label-success"); 
 	}
 	var json={};
@@ -268,8 +268,8 @@ function recruitintention(){
 		{
 			//$(this).removeClass("label-default");
 		    //$(this).addClass("label-success"); 
-			window.intentionthat.removeClass("label-default");
-			window.intentionthat.addClass("label-success");
+			window.intentiontha.removeClass("label-default");
+			window.intentiontha.addClass("label-success");
 		}
 	});
 }
