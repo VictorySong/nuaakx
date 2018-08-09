@@ -248,7 +248,7 @@ function recruitintention(){
 	if($(this).hasClass("label-default"))
 	{
 		//$(this).removeClass("label-default");
-		window.intentiontha=$(this);
+		//window.intentionthat=$(this);
 		//$(this).addClass("label-success"); 
 	}
 	var json={};
@@ -266,10 +266,10 @@ function recruitintention(){
 		}
 		if(da["error"]==0)
 		{
-			//$(this).removeClass("label-default");
-		    //$(this).addClass("label-success"); 
-			window.intentiontha.removeClass("label-default");
-			window.intentiontha.addClass("label-success");
+			$(this).removeClass("label-default");
+		    $(this).addClass("label-success"); 
+			//window.intentionthat.removeClass("label-default");
+			//window.intentionthat.addClass("label-success");
 		}
 	});
 }
