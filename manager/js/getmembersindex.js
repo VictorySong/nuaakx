@@ -245,12 +245,12 @@ function getkxts(){
 function recruitintention(){
 	if($(this).hasClass("label-success"))
 		return;
-	if($(this).hasClass("label-default"))
+	/*if($(this).hasClass("label-default"))
 	{
 		//$(this).removeClass("label-default");
 		window.intentionthat=$(this);
 		//$(this).addClass("label-success"); 
-	}
+	}*/
 	var json={};
 	json["stId"]=$(this).attr("stId");
 	json["intention"]=$(this).attr("intention");
@@ -266,8 +266,10 @@ function recruitintention(){
 		}
 		if(da["error"]==0)
 		{
-			window.intentionthat.removeClass("label-default");
-			window.intentionthat.addClass("label-success");
+			$(this).removeClass("label-default");
+		    $(this).addClass("label-success"); 
+			//window.intentionthat.removeClass("label-default");
+			//window.intentionthat.addClass("label-success");
 		}
 	});
 }
