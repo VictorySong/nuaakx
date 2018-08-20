@@ -74,12 +74,12 @@ function sendmailto(){
 	
 }
 //获取招新报名信息的函数
-function getrecruit(){
+function getrecruit(x){
 	console.log({p:window.recruitp,tableName:window.tableName});
 	if(window.recruitend)
 		return;
 	
-	$.post("getrecruit.php",{p:window.recruitp,tableName:window.tableName}).done(function(data){
+	$.post("getrecruit.php",{p:window.recruitp,tableName:window.tableName,item:x}).done(function(data){
 		console.log(data);
 		var department={};
 		department["KxXqDm"]="WEB研发部";
@@ -312,10 +312,21 @@ function hashrequest(){
 			chapage();
 		}
 		break;
-		case "#recruit":
+		case "#recruitstatus":
 		{
-			//查看招新报名本部门成员
-			getrecruit();
+			
+			$("#recruitstatus0").click(function(){	
+				getrecruit("0");	
+			});
+			$("#recruitstatus1").click(function(){	
+				getrecruit("1");
+			});
+			$("#recruitstatus2").click(function(){	
+				getrecruit("2");
+			});
+			$("#recruitstatus3").click(function(){	
+				getrecruit("3");	
+			
 		}
 		break;
 		case "#fixcomputer":
