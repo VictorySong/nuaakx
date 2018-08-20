@@ -312,7 +312,7 @@ function hashrequest(){
 			chapage();
 		}
 		break;
-		case "#recruitstatus":
+		/*case "#recruitstatus":
 		{
 			
 			$("#recruitstatus0").click(function(){	
@@ -328,7 +328,7 @@ function hashrequest(){
 				getrecruit("3");	
 			
 		}
-		break;
+		break;*/
 		case "#fixcomputer":
 		{
 			//查看预约维修信息
@@ -364,8 +364,18 @@ $(document).ready(function(){
 	$("#addform").submit(function(e){
 		e.preventDefault();
 	});
-	getkxts();
-	
+	//getkxts();
+	        $("#recruitstatus0").click(function(){	
+				getrecruit("0");	
+			});
+			$("#recruitstatus1").click(function(){	
+				getrecruit("1");
+			});
+			$("#recruitstatus2").click(function(){	
+				getrecruit("2");
+			});
+			$("#recruitstatus3").click(function(){	
+				getrecruit("3");
 	//为 add 按钮添加 切换 
 	/*
 	$("a[to=\"add\"]").click(function(){
