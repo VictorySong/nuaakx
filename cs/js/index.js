@@ -39,14 +39,16 @@ $(document).ready(function(){
 			{
 				for(var p in Da)
 				{
-					var html+=' <div class="panel-heading">\
+					var html=' <div class="panel-heading">\
 										<span >'+Da[p][num]+'</span>\
 									    <span     style="float:right;" >'+Da[p][vue]+'</span>\
 									</div>';
-					
+									
+									
+					$("#get").append(html);
 				}
 				
-				$("#get").append(html);
+				
 				
 			}
 		});
