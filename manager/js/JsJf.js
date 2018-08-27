@@ -121,7 +121,7 @@ $(document).ready(function(){
 		getvolunfix("Y");
 	});
 	$("#volunfix2").click(function(){	
-		getvolunfix("B");
+		getvolunfix("Z");
 	});
 	$("#volunfix6").click(function(){	
 		getvolunfixx("R");	
@@ -130,7 +130,7 @@ $(document).ready(function(){
 		getvolunfixx("Y");
 	});
 	$("#volunfix8").click(function(){	
-		getvolunfixx("B");
+		getvolunfixx("Z");
 	});
 		
 });

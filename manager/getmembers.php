@@ -12,11 +12,7 @@ if(isset($_GET["tableName"]) && isset($_GET["p"]) && !empty($_SESSION["tableName
 			$t=true;
 	}
 	$mysql=new SaeMysql();
-	/* 多个表记录部门人数
-	//取得该部门总人数
-	$result1=mysql_query("SELECT `stId` FROM `".$_GET["tableName"]."` WHERE 1 order by `date` desc",$mysql->ico);
-	$num=mysql_num_rows($result1);
-	*/
+	
 	//单个表记录部门人数
 	$result1=mysql_query("SELECT `stId` FROM `KxBm` WHERE `Department`='".$_GET["tableName"]."' order by `date` desc",$mysql->ico);
 	$num=mysql_num_rows($result1);

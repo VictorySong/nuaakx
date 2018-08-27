@@ -7,7 +7,7 @@ if(!empty($_SESSION["stId"]) && !empty($_POST["phone"]) && !empty($_POST["email"
 {
 	$mysql=new SaeMysql();
 
-		if($mysql->runsql("INSERT INTO `app_nuaakexie`.`KxTs` (`Std`,`question`) VALUES ('".$_SESSION["stId"]."','".$_POST["description"]."')"))
+		if($mysql->runsql("INSERT INTO `app_nuaakexie`.`KxTs` (`Std`,`question`,`ok`) VALUES ('".$_SESSION["stId"]."','".$_POST["description"]."','0')"))
 				die($mysql->errmsg());
 		if($mysql->runsql("UPDATE `app_nuaakexie`.`wx_user` SET `phone` = '".$_POST["phone"]."', `email` = '".$_POST["email"]."' WHERE `wx_user`.`number` = '".$_SESSION["stId"]."' "))
 				die($mysql->errmsg());

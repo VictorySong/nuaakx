@@ -51,30 +51,23 @@ $signPackage = $jssdk->GetSignPackage();
 				
 			</div>
 			<div style="width:100%; top:0px; display:table;" id="head" cont="head">
-			<!--
-				<div style="display:table-row;">
-					<div style="display:table-cell; vertical-align:top;">
-						<a href="#" id="back">
-							<span class="glyphicon glyphicon-chevron-left" style="margin-top:20px; margin-left:20px;font-size:20px;"></span> 
-						</a>
-					</div>
-				</div>-->
 				<div style="font-size:30px; margin-left:20px; color:rgb(221, 221, 221); display:table-row; padding-bottom:10px;padding-left:10px;" to="login">
 					<div style="display:table-cell; vertical-align:top;">
 						<!--<span class="glyphicon glyphicon-user" style="margin-bottom:20px; margin-left:20px;font-size:40px;"></span> -->
 						<div class="img-circle" onclick="javascript:window.history.back(-1);" style="width: 40px;height: 40px;margin-top: 15px;margin-left:15px;overflow: hidden;float:left;color:rgb(221, 221, 221);">
 							<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 						</div>
+						<!--//不要头像
 						<div id="logoutbutton" class="img-circle"  style="width: 40px;height: 40px;margin-top: 10px;margin-right:20px;overflow: hidden;float:right;">
 						<img class="" id="headimgurl" src="getimg.php" style="width: 40px;margin-top: -2px;"></div>
-						<!--<span id="nickname" cont="nickname"></span>-->
+						-->
 					</div>
 				</div>
 			</div>
 			
 			
 			<!--  下边是个人主页菜单列表  -->
-			<div id="accordion" cont="content">
+			<div id="accordion" cont="content" style="display:none;">
 				<div style="width:100%;" cont="head">
 				</div>
 				
@@ -126,7 +119,9 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				<div class="panel panel-default" ">
+				
+	<!--			
+				<div class="panel panel-default" style="display:none;">
 					<a class="panel-title" href="../Forum/index.html"  data-parent="#accordion">
 						<div class="panel-heading">
 							<table>
@@ -148,6 +143,8 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
+				
+		-->
 				<div class="panel panel-default">
 					<a class="panel-title" href="#notice"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -158,7 +155,7 @@ $signPackage = $jssdk->GetSignPackage();
 											<span class="glyphicon glyphicon-envelope" ></span>
 										</td>
 										<td>
-											<span id="personal"></span>
+											<span ></span>
 											<br>个人通知
 										</td>
 										<td align="right">
@@ -194,6 +191,8 @@ $signPackage = $jssdk->GetSignPackage();
 					</a>
 				</div>
 			-->
+			
+	<!--		
 				<div class="panel panel-default">
 					<a class="panel-title" href="#fixform"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -216,7 +215,9 @@ $signPackage = $jssdk->GetSignPackage();
 						</div>
 					</a>
 				</div>
-				
+	-->
+  
+	
 				<div class="panel panel-default">
 					<a class="panel-title" href="#fixcomputer"  data-parent="#accordion">
 						<div class="panel-heading">
@@ -339,7 +340,7 @@ $signPackage = $jssdk->GetSignPackage();
 				</div>
 			  </div>
 			  <div class="panel panel-default" id="logout" style="margin-top:10px;">
-					<a class="panel-title" href="##"  data-parent="#accordion">
+					<a class="panel-title"   data-parent="#accordion">
 						<div class="panel-heading" style="padding-top: 0px;">
 							<table>
 								<tbody>
@@ -348,7 +349,7 @@ $signPackage = $jssdk->GetSignPackage();
 											
 										</td>
 										<td align="center">
-											<span id="personal"></span>
+											<span ></span>
 											<br>退出登录
 										</td>
 										<td align="right">
@@ -426,29 +427,6 @@ $signPackage = $jssdk->GetSignPackage();
 									</td>
 									<td>
 										<span cont="stId" >无</span>
-										
-									</td>
-									<td align="right">
-										<span class="glyphicon glyphicon-chevron-right" changed="false"></span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</a>
-				
-			</div>
-			<div class="panel panel-default" style="display:none;">
-				<a class="panel-title" href="javascript:void(0)"  >
-					<div class="panel-heading">
-						<table>
-							<tbody>
-								<tr>
-									<td valign="top">
-										<span class="" >性别</span>
-									</td>
-									<td>
-										<span cont="sex" ></span>
 										
 									</td>
 									<td align="right">
@@ -566,7 +544,7 @@ $signPackage = $jssdk->GetSignPackage();
 					
 				</div>
 				
-				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+				<!--<button type="submit" class="btn btn-default" style="width:100%;">提交</button>-->
 			</form>
 
 			
@@ -586,7 +564,7 @@ $signPackage = $jssdk->GetSignPackage();
 					
 				</div>
 				
-				<button type="submit" class="btn btn-default" style="width:100%;">提交</button>
+				<!--<button type="submit" class="btn btn-default" style="width:100%;">提交</button-->
 			</form>
 
 			
@@ -980,6 +958,8 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 				</a>
 			</div>
+			
+		<!--
 			<div class="panel panel-default">
 				<a class="panel-title" href="#"  data-parent="#fixcheck">
 					<div class="panel-heading">
@@ -1002,6 +982,10 @@ $signPackage = $jssdk->GetSignPackage();
 					</div>
 				</a>
 			</div>
+			
+		-->	
+			
+			
 		</div>
 		<!--...................................................... -->
 		
@@ -1019,7 +1003,7 @@ $signPackage = $jssdk->GetSignPackage();
 		<!--   ........................................   -->
 		
 		
-		<!--  活动赛事    -->
+		<!--  活动赛事  讲座   -->
 		<div id="kxhd" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
 			<div style="width:100%;" cont="head">
 			</div>
@@ -1088,11 +1072,7 @@ $signPackage = $jssdk->GetSignPackage();
 			
 		<!-- ............................................    -->
 		
-		<!--  讲座    -->
-		<div id="kxjz" style="padding-left:15px; padding-right:15px; padding-bottom:30px; display:none;" cont="content">
-			<div style="width:100%;" cont="head">
-			</div>
-				
+
 			
 		</div>
 		<!-- ............................................    -->

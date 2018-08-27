@@ -23,7 +23,7 @@ if(!empty($_POST["Password"]) && !empty($_POST["email"]) && !empty($_POST["nickn
 				if(!$mysql->runsql("INSERT INTO `wx_user` (`code`,`number`,`email`,`nickname`,`name`) VALUE ('".$_POST["Password"]."','".$_POST["email"]."','".$_POST["email"]."','".$_POST["nickname"]."','".$_POST["name"]."')"))
 				{
 					echo "200";
-					$_SESSION["stId"]=$stId;
+					$_SESSION["stId"]=$_POST["email"];
 				}
 				else
 					echo $mysql->errmsg();

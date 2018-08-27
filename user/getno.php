@@ -10,15 +10,15 @@ session_start();
 		$json["if"]=1;
 		if($data["wx"]=='R')
 		{
-			$data["wx"]="软件";
+			$data["wx1"]="软件";
 		}
 	else if($data["wx"]=='Y')
 	{
-		$data["wx"]="硬件";
+		$data["wx1"]="硬件";
 	}
 	else
 	{
-		$data["wx"]="软件和硬件";
+		$data["wx1"]="软件和硬件";
 	}
 	
 	
@@ -29,6 +29,14 @@ session_start();
 	else
 	{
 		$data["ok"]="未维修完成";
+	}
+	if($data["addr"]=='east')
+	{
+		$data["addr"]="东区";
+	}
+	else
+	{
+		$data["addr"]="西区";
 	}
 		
 		

@@ -6,7 +6,7 @@ define("N",20);
  
 
 	$mysql=new SaeMysql();	
-	$sql="SELECT * FROM `KxTs`";
+	$sql="SELECT * FROM `KxTs` WHERE `ok`=0 ";
 	$result1=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result1);
 	$result=array();//用来存放结果
@@ -15,11 +15,11 @@ define("N",20);
 		{
 			
 				$result[$k]=mysql_fetch_assoc($result1);
-				$data=$mysql->getLine("SELECT `name`,`phone`,`email` FROM `wx_user` WHERE `number`='".$result[$k]["stId"]."'");
+				$data=$mysql->getLine("SELECT `name`,`phone`,`email` FROM `wx_user` WHERE `number`='".$result[$k]["Std"]."'");
 				$result[$k]["name"]=$data["name"];
 				$result[$k]["phone"]=$data["phone"];
 				$result[$k]["email"]=$data["email"];
-				$result[$k]["question"]=$mysql->getData("SELECT `question` FROM `KxTs` WHERE `stId`='".$result[$k]["stId"]."'");
+				//$result[$k]["question"]=$mysql->getData("SELECT `question` FROM `KxTs` WHERE `stId`='".$result[$k]["stId"]."'");
 				
 				$k++;
 			

@@ -3,7 +3,7 @@ include("../SaeMysql.php");
 //session_set_cookie_params(7200,'/','nuaakx.com');
 session_start();
 define("N",20);
-if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["tableName"] && !empty($_POST["item"]))
+if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["tableName"]) && !empty($_POST["item"]))
 {
 	$mysql=new SaeMysql();
 	//判断查询人是不是要查询的部门的
@@ -14,25 +14,25 @@ if(!empty($_SESSION["tableName"]) && !empty($_POST["p"]) && !empty($_POST["table
 			$t=true;
 	}
 	
-	//报名这个部门的总人数
+	//报名这个部门的总人数 
 	//$data=$mysql->getData("SELECT `stId`,`description` FROM `KxRecruit` AS A WHERE num = (SELECT MAX(num) FROM `KxRecruit` WHERE `stId`=A.stId order by `stId`) && `department`='".$_POST["tableName"]."' ");
-	switch ($_POST["item"]) {
-    case 0:
+   switch ($_POST["item"]) {
+    case 1:
        	$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."'&& `first`='0'&&`second`='0'  group by `stId` order by `stId` ";
         break;
-    case 1:
+    case 2:
         $sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."'&& `first`='1'&&`second`='0'  group by `stId` order by `stId` ";
         break;
-    case 2:
+    case 3:
         $sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."'&& `first`='1'&&`second`='1'  group by `stId` order by `stId` ";
         break;
-	case 3:
-	$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."'&& `fromstid` is not null   group by `stId` order by `stId` ";
+	case 4:
+	$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."'&& `fromdpstId` is not null   group by `stId` order by `stId` ";
         break;
+	case 5:
+	$sql="SELECT `stId`,`description` FROM `KxRecruit` WHERE `department`='".$_POST["tableName"]."'&& `first`='0'&&`second`='1'   group by `stId` order by `stId` ";
+        break;	
   }
-	
-	
-	
 	$result1=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result1);
 	

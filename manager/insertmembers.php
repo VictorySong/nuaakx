@@ -14,15 +14,7 @@ if(!empty($_SESSION["tableName"]) && !empty($_POST["tableName"]) && !empty($_POS
 			$data=$mysql->getLine("SELECT `number` FROM `wx_user` WHERE `number` ='".$_POST["stId"]."' || `email`='".$_POST["stId"]."'");			
 			if(!empty($data))
 			{
-				/* 多表记录部门成员时
-				if(!$mysql->runsql("INSERT INTO `".$value."` SET `stId`='".$_POST["stId"]."'"))
-				{
-					echo "200";
-				}
-				else{
-					echo $mysql->errmsg();
-				}
-				*/
+				
 				$dataexist=$mysql->getLine("SELECT `stId` FROM `KxBm` WHERE `stId`='".$_POST["stId"]."'&& `Department`='".$_POST["tableName"]."' ");
 				if(empty($dataexist))
 				{

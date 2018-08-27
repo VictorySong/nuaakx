@@ -16,6 +16,7 @@ if(!empty($_SESSION["stId"]) && !empty($_POST["id"]) && !empty($_SESSION["tableN
 		if(empty($data)){
 			if(!$mysql->runsql("UPDATE `KxRecruitSign` SET `interviewing`='1' WHERE `stId`='".$_POST["id"]."' && `department`='".$_POST["tableName"]."'"))
 			{
+				$mysql->runsql("UPDATE `KxRecruit` SET `cgjudge`='1' WHERE `stId`='".$_POST["id"]."'");
 				$json["error"]=0;
 				$json["status"]="200";
 			}

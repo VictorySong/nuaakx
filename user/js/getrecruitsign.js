@@ -10,14 +10,31 @@ $(document).ready(function(){
 		window.department["KxXqTs"]="网络宣传部";
 		window.department["KxShwWl"]="外联部";
 		window.department["KxShwGl"]="管理部";
-		window.department["KxShwYj"]="院校交流部";
 		window.department["KxJsJf"]="技术服务部";
-		window.department["KxJsDj"]="大疆俱乐部";
-		window.department["KxHdKh"]="科创活动部";
-		window.department["KxHdKp"]="科技培训部";
+		window.department["KxJsKy"]="科技研究部";
+		window.department["KxHdKh"]="科技活动部";
+		window.department["KxHdXj"]="学术交流部";
 	
 	//var t=setInterval(getrecruit,20000);
 	//添加hash改变监听
+		console.log(location.hash);
+		$(location.hash).show();
+		getrecruithashfunc();
+		$("[cont=\"department\"]").filter(function(){
+			
+			if(("#"+$(this).attr("id"))==location.hash)
+				return 0;
+			else
+				return 1;
+		}).hide();
+		$(".control").filter(function(){
+			if($(this).attr("href")==location.hash){
+				$(this).find("span").removeClass("label-default").addClass("label-success");
+				return 0;
+			}
+			else 
+				return 1;
+		}).find("span").removeClass("label-success").addClass("label-default");
 	$(window).on("hashchange",function(){
 		console.log(location.hash);
 		$(location.hash).show();
@@ -40,7 +57,7 @@ $(document).ready(function(){
 		
 	});
 	
-});
+});//fdsafsdafsad
 function userinfget(){
 	//获取用户个人信息
 	$.get("userinf.php").done(function(data){
@@ -99,12 +116,17 @@ function funcbound(){
 	//确认进场 确认结束 推迟一位
 	$("[func=\"confirm\"]").off("click",funcconfirm);
 	$("[func=\"end\"]").off("click",funcend);
-	$("[func=\"postpone\"]").off("click",funcpostpone);
+	//$("[func=\"intention\"]").off("click",funcpostpone);
 	
 	$("[func=\"confirm\"]").click(funcconfirm);
 	$("[func=\"end\"]").click(funcend);
-	$("[func=\"postpone\"]").click(funcpostpone);
+	//$("[func=\"intention\"]").click(funcrecruitintention);
 }
+
+
+	
+
+
 function funcconfirm(){
 	var id=$(this).attr("stid");
 	var tableName=$(this).attr("tableName");
@@ -141,6 +163,8 @@ function funcconfirm(){
 	});
 }
 function funcend(){
+	if(confirm("确认后不可修改意向，请确认是否提交"))
+	{
 	var id=$(this).attr("stid");
 	var tableName=$(this).attr("tableName");
 	window.tem=this;
@@ -155,7 +179,7 @@ function funcend(){
 		if(da["error"]==0){
 			switch(da["status"]){
 				case "200":{
-					alert("确认成功");
+					//alert("确认成功");
 					$(window.tem).text("面试结束");
 					$(window.tem).addClass("disabled");
 					$(window.tem).off("click",funcend);
@@ -163,7 +187,7 @@ function funcend(){
 				}
 				break;
 				case "400":{
-					alert("已确认");
+					//alert("已确认");
 					$(window.tem).text("面试结束");
 					$(window.tem).addClass("disabled");
 					$(window.tem).off("click",funcend);
@@ -177,6 +201,7 @@ function funcend(){
 			alert("出错");
 		}
 	});
+	}
 }
 
 function funcpostpone(){
@@ -237,7 +262,7 @@ function getrecruit(){
 				//对顺序进行重新调整
 				da["result"][p]=newsort(da["result"][p]);
 				
-				if(window.inf["tableName"]!=undefined){
+				if(window.inf["tableName"]!=undefined){//管理者
 					for(var p1 in da["result"][p]){
 						
 						sta="等待";
@@ -249,7 +274,7 @@ function getrecruit(){
 						  <td style="color:#337ab7;" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" func="status">'+sta+'</td>\
 						  <td><button type="button" class="btn btn-success btn-sm" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" func="confirm" >确认进场</button></td>\
 						  <td><button type="button" class="btn btn-success btn-sm" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" func="end">确认结束</button></td>\
-						  <td><button type="button" class="btn btn-success btn-sm" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" func="postpone">推迟一位</button></td>\
+						  <td><a class="btn btn-success" href="'+("../manager/get"+department+"members.html?id="+da["result"][p][p1]["stId"]+"&bm="+department+"#recruit")+'" "id="sureintention"  role="button">确定意向</a></td>\
 						</tr>';
 						if(da["result"][p][p1]["interviewing"]==1 && da["result"][p][p1]["end"]==0){
 							sta="面试中";
@@ -260,14 +285,14 @@ function getrecruit(){
 						  <td style="color:#337ab7;">'+sta+'</td>\
 						  <td><button type="button" class="btn btn-success btn-sm disabled" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'"  >面试中</button></td>\
 						  <td><button type="button" class="btn btn-success btn-sm" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" func="end">确认结束</button></td>\
-						  <td><button type="button" class="btn btn-success btn-sm disabled" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" >无法推迟</button></td>\
-						</tr>';
+						  <td><a class="btn btn-success" href="'+("../manager/get"+department+"members.html?id="+da["result"][p][p1]["stId"]+"&bm="+department+"#recruit")+'" "id="sureintention"  role="button">确定意向</a></td>\
+						</tr>';  
 						}
 						else if(da["result"][p][p1]["interviewing"]==1 && da["result"][p][p1]["end"]==1){
 							sta="面试结束";
 							html="";
 						}
-						else if(da["result"][p][p1]["postpone"]!=0){
+						/*else if(da["result"][p][p1]["postpone"]!=0){
 							sta="已推迟"+(da["result"][p][p1]["postpone"])+"次";
 							html='<tr>\
 						  <td>'+da["result"][p][p1]["number"]+'</td>\
@@ -279,7 +304,7 @@ function getrecruit(){
 						  <td><button type="button" class="btn btn-success btn-sm" stid="'+da["result"][p][p1]["stId"]+'" tableName="'+p+'" func="postpone">推迟一位</button></td>\
 						</tr>';
 							getpersonstatus(da["result"][p][p1]["stId"],p);
-						}
+						}*/
 						else{
 							getpersonstatus(da["result"][p][p1]["stId"],p);
 						}
@@ -289,7 +314,7 @@ function getrecruit(){
 						funcbound();
 						
 					}
-				}else{
+				}else{//非管理者
 					for(var p1 in da["result"][p]){
 						
 						sta="等待";

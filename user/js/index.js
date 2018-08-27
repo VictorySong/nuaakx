@@ -1,23 +1,12 @@
 $(document).ready(function(){
-	//获取用户信息 ，如获取出现问题则跳到登录界面 
-	window.inf={};
-	
-	
-		getno();
-		//获取可预约时间
-		checkfixtime();
-		//评价
-		fixcomment();
-		//检测是否已经参加招新报名，以及报名了哪些部门
-		getrecruit();
-		//获取通知
-		//getnotice();
-		//获取未读通知数
+   
+  userinfget();//获取个人信息 确保整个页面加载后获取
+  //获取未读通知数
 		getnoreadnoticenum();
-		
-		getvote();
-		//检测活动是否投票
-		
+   
+   
+   
+   
 	//调整 background 高度
 	$("#background").css("height",window.innerHeight+"px");
 	
@@ -61,6 +50,8 @@ $(document).ready(function(){
 	window.imgurl="http://nuaakx.com/ftp/img/"+window.mao[a];
 	$("#headback").css("background-image","url(\""+window.imgurl+"\")");
 	//设置背景图像处的高度
+	
+	
 	(function(){
 		var img=new Image();
 		//img.src="../manager/image/title.jpg";
@@ -80,7 +71,7 @@ $(document).ready(function(){
 				$("div[cont=\"head\"]").css("height",500*rate);
 				window.headheight=500*rate;
 			}
-			userinfget();//获取个人信息 确保整个页面加载后获取
+			
 		}
 	})();
 	//设置间距
@@ -89,88 +80,19 @@ $(document).ready(function(){
 		$("#Kx>.panel").css("margin-bottom","1px").css("border","0px").css("border-radius","0px");
 		$(".panel").css("margin-bottom","1px").css("border","0px").css("border-radius","0px");
 		$(".panel-title").css("font-size","14px");
-		//实现点击后 小箭头 转向
-		/*
-		$("a.panel-title").click(function(){
-			console.log("a");
-			$(this).find("span").each(function(){
-				if($(this).attr("changed")=="true")
-				{
-					$(this).attr("changed","false");
-					$(this).removeClass("glyphicon-chevron-down");
-					$(this).addClass("glyphicon-chevron-right");
-				}
-				else if($(this).attr("changed")=="false"){
-					$(this).attr("changed","true");
-					$(this).removeClass("glyphicon-chevron-right");
-					$(this).addClass("glyphicon-chevron-down");
-				}
-			});
-		});*/
 		
 	})();
-	/*
-	window.pre=["#accordion"];//设置每个界面的 #id 方便退回切换
-	//为所有 a 添加click 事件 
-	$("a").filter(function(){
-		var ob=$($(this).attr("href"));
-		
-		if(ob.selector!="#")
-		{
-			return 1
-		}
-		else
-		{
-			$(this).click(function(){
-				return false;
-			});
-			return 0;
-		}
-	}).click(function(){
-		var ob=$($(this).attr("href"));
-		ob.show();
-		console.log(ob.attr("class"));
-		window.pre[window.pre.length]=$(this).attr("href");
-		console.log(window.pre);
-		$("[cont=\"content\"]").filter(function(){
-			console.log($(this).attr("id"));
-			if(("#"+$(this).attr("id"))==window.pre[window.pre.length-1])
-				return 0;
-			else
-				return 1;
-		}).hide();
-		return false;
-	});
-	//为 id="back" 添加功能
-	$("#back").click(function(){
-		if(window.pre.length>1)
-		{
-			$(window.pre[window.pre.length-2]).show();
-			window.pre.splice(window.pre.length-1,1);
-			console.log(window.pre);
-			$("[cont=\"content\"]").filter(function(){
-				console.log($(this).attr("id"));
-				if(("#"+$(this).attr("id"))==window.pre[window.pre.length-1])
-					return 0;
-				else
-					return 1;
-			}).hide();
-			
-		}
-		return false;
-	});
-	*/
-	//为所有 a 添加click 事件 
+	
+	
+	
+	/*//为所有 a 添加click 事件 
 	$("a").filter(function(){
 		if($(this).attr("href")!="#" && $(this).attr("href").slice(0,1)=="#")
 		{
 			return 1
 		}
 		else
-		{/*
-			$(this).click(function(){
-				return false;
-			});*/
+		{
 			return 0;
 		}
 	}).click(function(){
@@ -186,7 +108,11 @@ $(document).ready(function(){
 			else
 				return 1;
 		}).hide();
-	});
+	});*/
+	
+	
+	
+	
 	//设置初始 hash 并显示
 	if(location.hash=="")
 		history.replaceState(null,null,"#accordion");
@@ -200,21 +126,11 @@ $(document).ready(function(){
 			return 1;
 	}).hide();
 	
-	//为 id="back" 添加功能
-	$("#back").click(function(){
-		history.back();
-		console.log(location.hash);
-		$("[cont=\"content\"]").filter(function(){
-			
-			if(("#"+$(this).attr("id"))==location.hash)
-				return 0;
-			else
-				return 1;
-		}).hide();
-		$(location.hash).show();
-		return false;
-	});
-	//添加返回键监听
+	
+	
+	
+	
+	//添加监听
 	$(window).on("hashchange",function(){
 		console.log(location.hash);
 		$(location.hash).show();
@@ -229,7 +145,19 @@ $(document).ready(function(){
 		
 	});
 	
-	//获取用户参与活动
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//设置修改信息功能
 	$("#changeperinf").find("form").submit(function(e){
 		e.preventDefault();
@@ -346,146 +274,13 @@ $(document).ready(function(){
 			if(da["error"]==0)
 			{
 				alert("预约成功");
+				userinfget();
 				getfix();
+				
 			}
 		});
 	});
 	
-	//获取待评价预约维修信息
-	$("#fixcheck").find("a[href=\"#fixcheckcomment\"]").click(function(){
-		$.post("fixcheckcomment.php").done(function(data){
-			console.log(data);
-			try{
-				var da=JSON.parse(data);
-			}
-			catch(e){
-				console.log(e);
-				return;
-			}
-			if(da["error"]==0)
-			{
-				$("#fixcheckcomment>div").remove();
-				$("#fixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				for(var p in da["msg"])
-				{
-					var html='<div class="panel panel-default">\
-									<div class="panel-heading">\
-										<span >'+da["msg"][p]["date"]+'</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>'+da["msg"][p]["problem"]+'</p>\
-									</div>\
-									<div class="panel-footer"><div class="form-control" toaction="recordfixcomment.php" date="'+da["msg"][p]["date"]+'">评价<div></div>\
-							</div>';
-					$("#fixcheckcomment").append(html);
-				}
-			}
-			else if(da["error"]==1)
-			{
-				$("#fixcheckcomment>div").remove();
-				$("#fixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				$("#fixcheckcomment").append('<p style="text-align:center;">无</p>');
-			}
-			fixcomment();//必须的
-		});
-	});
-	//获取已评价预约维修信息
-	$("#fixcheck").find("a[href=\"#hfixcheckcomment\"]").click(function(){
-		$.post("hfixcheckcomment.php").done(function(data){
-			console.log(data);
-			try{
-				var da=JSON.parse(data);
-			}
-			catch(e){
-				console.log(e);
-				return;
-			}
-			if(da["error"]==0)
-			{
-				$("#hfixcheckcomment>div").remove();
-				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				for(var p in da["msg"])
-				{
-					var html='<div class="panel panel-default">\
-									<div class="panel-heading">\
-										<span >'+da["msg"][p]["date"]+'</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>'+da["msg"][p]["problem"]+'</p>\
-										<span style="font-weight:bold;">解决措施:</span>\
-										<p style="padding-left:10px;">'+da["msg"][p]["solution"]+'</p>\
-										<span style="font-weight:bold;">评价:</span>\
-										<p style="padding-left:10px;">'+da["msg"][p]["evaluate"]+'</p>\
-										<span style="font-weight:bold;">回复:</span>\
-										<p style="padding-left:10px;">'+da["msg"][p]["response"]+'</p>\
-									</div>\
-							</div>';
-					$("#hfixcheckcomment").append(html);
-				}
-			}
-			else if(da["error"]==1)
-			{
-				$("#hfixcheckcomment>div").remove();
-				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				$("#hfixcheckcomment").append('<p style="text-align:center;">无</p>');
-			}
-		});
-	});			
-	
-	
-	
-	//显示已提交的投诉与建议
-	$("#kxtsas").click(function(){
-		//$.post("                  .php").done(function(data){
-			var data="{\"error\":0,\"msg\":[{\"time\":\"2017-05-07\",\"content\":\"233\",\"response\":\"233\"},{\"time\":\"2017-05-07\",\"content\":\"233\",\"response\":\"233\"}]}";
-			console.log(data);
-			try{
-				var da=JSON.parse(data);
-			}
-			catch(e){
-				console.log(e);
-				return;
-			}
-			if(da["error"]==0)
-			{
-				$("#tsasuggestion>div").remove();
-				$("#tsasuggestion").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				for(var p in da["msg"])
-				{
-					var html='<div class="panel panel-default">\
-									<div class="panel-heading">\
-										<span >'+da["msg"][p]["date"]+'</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>'+da["msg"][p]["problem"]+'</p>\
-										<span style="font-weight:bold;">解决措施:</span>\
-										<p style="padding-left:10px;">'+da["msg"][p]["solution"]+'</p>\
-										<span style="font-weight:bold;">评价:</span>\
-										<p style="padding-left:10px;">'+da["msg"][p]["evaluate"]+'</p>\
-										<span style="font-weight:bold;">回复:</span>\
-										<p style="padding-left:10px;">'+da["msg"][p]["response"]+'</p>\
-									</div>\
-							</div>';
-					$("#tsasuggestion").append(html);
-				}
-			}
-			else if(da["error"]==1)
-			{
-				$("#tsasuggestion>div").remove();
-				$("#tsasuggestion").append('<div style="width:100%;" cont="head"></div>');
-				$("div[cont=\"head\"]").css("height",window.headheight+"px");
-				$("#tsasuggestion").append('<p style="text-align:center;">无</p>');
-			}
-	//	});
-	});			
-	
-
-
 
 	
 	//设置评价提交
@@ -528,11 +323,13 @@ $(document).ready(function(){
 	});
 	
 	//设置点击背景时 评论表单隐藏  
-	//$("#background").click(function(){
-		//$("#rootinput").find("textarea").val("");
-		//$("#rootinput").hide();
-		//$("#background").hide();
-	//});
+	$("#background").click(function(){
+		$("#rootinput").find("textarea").val("");
+		$("#rootinput").hide();
+		$("#background").hide();
+	});
+	
+	
 	//设置活动投票表单提交
 	
 	$("#actvote").find("form").submit(function(e){
@@ -639,13 +436,6 @@ $(document).ready(function(){
 			json["description"]=description.val();
 		window.recruitjson=json;
 		window.recruitform=$("#recruit").find("form");
-		//判断个人信息是否完整
-		/*if(window.inf["phone"]==null || window.inf["phone"]=="" || window.inf["email"]==null || window.inf["email"]=="")
-		{
-			alert("请先完善个人信息");
-			location.hash="#personalinf";
-			return;
-		}*/
 		if(json["phone"]==window.inf["phone"]&&json["email"]==window.inf["email"])
 		{
 			if(confirm("提交后不可修改，请确认是否提交"))
@@ -664,7 +454,6 @@ $(document).ready(function(){
 			if(da["error"]==0)
 			{
 				getrecruit();
-				userinfget();
 			}
 		});
 			alert("恭喜你报名成功！");
@@ -745,12 +534,14 @@ $(document).ready(function(){
 			}
 			if(da["error"]==0)
 			{
-				getrecruit();
-				userinfget();
+				//getrecruit();
+				location.reload();
+			
 			}
 		});
 			alert("我们已收到您的投诉和建议！");
-			window.history.go(-1);
+			
+			location.reload();
 		}
 		}
 		else{if(confirm("提交后不可修改，请确认是否提交"))
@@ -767,11 +558,12 @@ $(document).ready(function(){
 			}
 			if(da["error"]==0)
 			{
-				getrecruit();
 				userinfget();
 			}
 		});
-			alert("我们已收到您的投诉和建议！");
+			alert("我们已收到您的投诉和建议！s");
+			
+			location.reload();
 		}
 		}
 		
@@ -785,12 +577,117 @@ $(document).ready(function(){
 				
 				location.replace("./");
 			});
+			//清除缓存
 			window.close();
 		}
 	});
 	
 					
 });
+
+
+
+
+//***************************************************************************************************
+
+   //获取待评价预约维修信息
+	function gethfixcheckcomment(){
+		$.post("fixcheckcomment.php").done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				$("#fixcheckcomment").empty();
+				$("#fixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default">\
+									<div class="panel-heading">\
+										<span >'+da["msg"][p]["date"]+'</span>\
+									</div>\
+									<div class="panel-body">\
+										<p>'+da["msg"][p]["problem"]+'</p>\
+									</div>\
+									<div class="panel-footer"><div class="form-control" toaction="recordfixcomment.php" date="'+da["msg"][p]["date"]+'">评价<div></div>\
+							</div>';
+					$("#fixcheckcomment").append(html);
+				}
+			}
+			else if(da["error"]==1)
+			{
+				
+				$("#fixcheckcomment").empty();
+				$("#fixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				$("#fixcheckcomment").append('<p style="text-align:center;">无</p>');
+			}
+			fixcomment();//必须的
+		});
+	}
+	
+	
+	
+	
+	//获取已评价预约维修信息
+	function gethfixcheckcomment(){
+		$.post("hfixcheckcomment.php").done(function(data){
+			console.log(data);
+			try{
+				var da=JSON.parse(data);
+			}
+			catch(e){
+				console.log(e);
+				return;
+			}
+			if(da["error"]==0)
+			{
+				$("#fixcheckcomment").empty();
+				$("#hfixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				for(var p in da["msg"])
+				{
+					var html='<div class="panel panel-default">\
+									<div class="panel-heading">\
+										<span >'+da["msg"][p]["date"]+'</span>\
+									</div>\
+									<div class="panel-body">\
+										<p>'+da["msg"][p]["problem"]+'</p>\
+										<span style="font-weight:bold;">解决措施:</span>\
+										<p style="padding-left:10px;">'+da["msg"][p]["solution"]+'</p>\
+										<span style="font-weight:bold;">评价:</span>\
+										<p style="padding-left:10px;">'+da["msg"][p]["evaluate"]+'</p>\
+										<span style="font-weight:bold;">回复:</span>\
+										<p style="padding-left:10px;">'+da["msg"][p]["response"]+'</p>\
+									</div>\
+							</div>';
+					$("#hfixcheckcomment").append(html);
+				}
+			}
+			else if(da["error"]==1)
+			{
+				
+				//$("#fixcheckcomment>div").remove();
+				$("#fixcheckcomment").empty();
+				$("#fixcheckcomment").append('<div style="width:100%;" cont="head"></div>');
+				$("div[cont=\"head\"]").css("height",window.headheight+"px");
+				$("#fixcheckcomment").append('<p style="text-align:center;">无</p>');
+			}
+		});
+	}		
+
+
+
+
+
+
+
 
 //获取投票后界面
 function getvote(){
@@ -807,9 +704,11 @@ function getvote(){
 		if( da["error"]==0 && da["alreadyvote"]==1)
 		{
 			window.fixform=$("#actvote").find("form");
-			$("#actvote").find("form").remove();
+			$("#actvote").empty();
 			
-			var html='<div class="row">\
+			var html='<div style="width:100%;" cont="head">\
+			</div>\
+			  <div class="row">\
 				<div class="col-xs-6" style="padding-bottom:15px;">\
 				  <img class="img-circle" src="votephotos/jiemu8.jpg" alt="Generic placeholder image" width="140" height="140">\
 				  <h3>1.梦灯笼</h3>\
@@ -891,9 +790,10 @@ function getfix(){
 		}
 		if(da["error"]==0 && da["alreadyappoint"]==1)
 		{
-			window.fixform=$("#fixcomputer").find("form");
-			$("#fixcomputer").find("form").remove();
-			var html='<div class="panel panel-default">\
+			
+			$("#fixcomputer").find("form").hide();
+			$("#fixinf").remove();
+			var html='<div class="panel panel-default" id="fixinf">\
 									<div class="panel-heading">\
 										<span >'+da["msg"]["date"]+'</span>\
 									</div>\
@@ -906,7 +806,6 @@ function getfix(){
 			console.log("haha");
 			$("#fixcomputer").find("div[cont=\"fixcancel\"]").click(function(){
 				var json={};
-				window.cancelthat=this;
 				json["date"]=$(this).attr("date");
 				$.post("fixcancel.php",json).done(function(data){
 					console.log(data);
@@ -920,17 +819,25 @@ function getfix(){
 					if(da["error"]==0)
 					{
 						alert("成功取消");
-						$(window.cancelthat).parent().remove();
-						$("#fixcomputer").append(window.fixform);
+					    $("#fixinf").remove();
+						$("#fixcomputer").find("form").show(); 
+						$("#fixtime").empty();
+						checkfixtime();
+						
+						
 					}
 				});
 			});
+		}
+		else{
+			 $("#fixtime").empty();
+			 checkfixtime();
 		}
 	});
 }
 	//获取大型义务维修的数据
 function getno(){
-	$("#fixform0").children().remove();
+	$("#fixform0").empty();
 	$.post("getno.php").done(function(data){
 		console.log(data);
 			
@@ -950,6 +857,10 @@ function getno(){
 								<div  class="panel-collapse collapse in ">\
 									<div class="panel-body">\
 										<div class="form-group">\
+											<label >编号:</label>\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["wx"]+''+da["msg"]["number"]+'" cont="number">\
+										</div>\
+										<div class="form-group">\
 											<label >预约人姓名:</label>\
 											<input type="text" class="form-control" disabled value="'+da["msg"]["sname"]+'" cont="sname">\
 										</div>\
@@ -963,7 +874,7 @@ function getno(){
 										</div>\
 										<div class="form-group">\
 											<label >维修部分:</label>\
-											<input type="text" class="form-control" disabled value="'+da["msg"]["wx"]+'" cont="wx">\
+											<input type="text" class="form-control" disabled value="'+da["msg"]["wx1"]+'" cont="wx">\
 										</div>\
 										<div class="form-group">\
 											<label >维修地点:</label>\
@@ -1020,30 +931,51 @@ function getrecruit(){
 		department["KxXqTs"]="网络宣传部";
 		department["KxShwWl"]="外联部";
 		department["KxShwGl"]="管理部";
-		department["KxShwYj"]="院校交流部";
 		department["KxJsJf"]="技术服务部";
-		department["KxJsDj"]="大疆俱乐部";
+		department["KxJsKy"]="科技研究部";
 		department["KxHdKh"]="科创活动部";
-		department["KxHdKp"]="科技培训部";
-		
+		department["KxHdXj"]="学术交流部";
+		var html='<div class="panel panel-default" id="recruitresult">';
 		if(da["error"]==0)
 		{
+			$("#recruit").find("form").hide();
+			$("#recruitresult").remove();
 			for(var p in da["department"])
 			{
-				var html='<div class="panel panel-default">\
-									<div class="panel-heading">\
+				html+=' <div class="panel-heading">\
 										<span >'+department[da["department"][p]["department"]]+'</span>\
-									</div>\
-									<div class="panel-body">\
-										<p>个人描述:<br>'+da["description"]+'</p>\
+									    <span     style="float:right;"  class="label '+(da["department"][p]["second"]==1? "label-primary":"label-default")+'">second</span>\
+										<span   style="margin-right:6px;float:right;"  class="label '+(da["department"][p]["first"]==1? "label-primary":"label-default")+'">first</span>\
 									</div>';
-					html+='<div class="panel-footer" ><span class="label '+(da["department"][p]["first"]==1? "label-success":"label-default")+'">一面</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="label '+(da["department"][p]["second"]==1? "label-success":"label-default")+'">二面</span></div></div>';
-					
-				$("#recruit").find("form").remove();
-				$("#recruit").append(html);
 			}
-		}
-	});
+			html+=' <div class="panel-heading">\
+						      <span >没有咯</span>\
+			                  <span type="submit" cont="repost" style="float:right;" class="label label-default repost" >重新报名</span>\
+		                   </div>\
+				    </div>';
+			$("#recruit").append(html);
+		    $(".repost").click(function(){
+							$.post("cgjudge.php").done(function(data){
+							console.log(data);
+							try{
+									var da=JSON.parse(data);
+								}
+							catch(e){
+									console.log(e);
+									return;
+									}
+							
+						if(da["error"]==0){
+						$("#recruitresult").remove();
+						$("#recruit").find("form").show();	
+						}
+						else{
+                         alert("已参加面试，无法再次报名");
+ 						}
+						});	
+						});	
+		    }
+		});
 }
 function getnotice(){
 	$.post("getnotice.php").done(function(data){
@@ -1058,6 +990,8 @@ function getnotice(){
 		}
 		if(da["error"]==0)
 		{
+			
+			$("#notice").find("a").remove();
 			window.sortarr=da["notice"];
 			keywordsSort(0,da["notice"].length-1,"date");
 			da["notice"]=window.sortarr;
@@ -1139,6 +1073,48 @@ function hashfunc(){
             //获取通知
             getnotice();
         }
+		break;
+		case "#fixform":
+        {
+            //获取大型义务维修的数据
+            getno();
+        }
+		break;
+		case "#actvote":
+        {
+            //检测活动是否投票
+            getvote();
+        }
+		break;
+		case "#recruit":
+        {
+            //检测是否已经参加招新报名，以及报名了哪些部门
+            getrecruit();;
+        }
+		break;
+		case "#fixcomputer":
+        {
+            //预约页面
+            getfix();
+        }
+		break;
+		case "#fixcheckcomment":
+        {
+            //获取待评价预约维修信息
+            gethfixcheckcomment()
+        }
+		break;
+		case "#hfixcheckcomment":
+        {
+            //获取已评价预约维修信息
+            gethfixcheckcomment();
+        }
+		break;
+		
+		
+		
+		
+		
 	}
 }
 //获取所有活动列表
@@ -1281,8 +1257,7 @@ function userinfget(){
 					$("input[cont=\""+p+"\"]").val(da["inf"][p]);
 				}
 			}
-			if(da["inf"]["sex"]!=null)
-				da["inf"]["sex"]==1 ?$("span[cont=\"sex\"]").text("男"):$("span[cont=\"sex\"]").text("女");
+			
 			if(da["inf"]["openid"]==da["inf"]["seopenid"]){
 				$("span[cont=\"bound\"]").text("已绑定当前微信号,点击解绑");
 				//解绑微信号
@@ -1292,16 +1267,19 @@ function userinfget(){
 				//绑定当前微信号
 				$("span[cont=\"bound\"]").parent().parent().click(bound);
 			}
+			
+			/*
 			//关于头像的处理
 			var img=new Image();
 			img.src="getimg.php";
+			//发生错误就用微信的头像
 			img.onerror=function(){
 				$("#headimgurl").attr("src",window.inf["headimgurl"]);
 			}
+			*/
 			
 			
-			
-			$("#head a").attr("href","#");
+			//$("#head a").attr("href","#");
 			
 		}
 		
@@ -1320,11 +1298,16 @@ function kxjudge(){
 		
 		if(data=="")
 		{
+			//隐藏招新报名通道
+			//$("#kxrecruit").show();
+			
 			//document.location.href="login.html";
 		}
 		else if(da["inf"]["tableName"].length>0)
 		{
 			$("#Kx").show();
+			
+		
 		}
 	});
 }
@@ -1519,7 +1502,6 @@ function checkfixtime(){
 					console.log(e);
 					return;
 				}
-				getfix();//获取是否已经有预约
 				for(var p in da)
 				{
 					if(!(da[p]<window.fixconf["numperday"]))
@@ -1575,8 +1557,6 @@ function bound(){
 				var da=JSON.parse(data);
 			}catch(e){
 				console.log(e);
-				
-
 			}
 		});
 	}

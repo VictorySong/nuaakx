@@ -209,11 +209,7 @@ $(document).ready(function(){
 			if(data=="200")
 			{
 				alert("注册成功");
-				
-				setTimeout($.get("KxJudge.php?1").done(function(data){
-					if(data!="")
-						history.back();
-				}),2000);
+			    location.href="http://nuaakx.com/t/user/";
 			}
 			else if(data!="")
 			{
