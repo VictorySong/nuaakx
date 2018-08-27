@@ -37,11 +37,11 @@ $(document).ready(function(){
 			}
 			if(Da["error"]==0)
 			{
-				for(var p in Da[data])
+				for(var p in Da["data"])
 				{
 					var html=' <div class="panel-heading">\
-										<span >'+Da[data][p][num]+'</span>\
-									    <span     style="float:right;" >'+Da[data][p][vue]+'</span>\
+										<span >'+Da["data"][p]["num"]+'</span>\
+									    <span     style="float:right;" >'+Da["data"][p]["vue"]+'</span>\
 									</div>';
 									
 									
