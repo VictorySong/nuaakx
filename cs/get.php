@@ -6,7 +6,7 @@ include("SaeMysql.php");
 	if(!empty($data))
 	{
 		$json["error"]=0;
-		$json["department"]=$data;
+		$json["data"]=$data;
 		
 	}		
 	else{
