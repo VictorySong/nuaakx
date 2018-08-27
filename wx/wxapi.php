@@ -319,10 +319,10 @@ class wechatCallbackapiTest
                 $mysql->runSql($sql);
                 
                 $contentStr = array(
-                              array("Title" =>" 【南航学生科协】风雨三十八载", 
+                              //array("Title" =>" 【南航学生科协】风雨三十八载", 
                     //    "Description" =>"【科协•招新】We Want You ", 
-                        "PicUrl" =>"https://mmbiz.qpic.cn/mmbiz/AXZnZY3B8NicL1X5CerwxMiaCySQibjLlTrQoxPVgQRZox50YVPINZrb7dgsMetwicXzehjWtbpyJ5ic45eW3yVBzyw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1", 
-                        "Url" =>"http://mp.weixin.qq.com/s/IvnztAzm-i5cTsPoXu-L3Q"),
+                       // "PicUrl" =>"https://mmbiz.qpic.cn/mmbiz/AXZnZY3B8NicL1X5CerwxMiaCySQibjLlTrQoxPVgQRZox50YVPINZrb7dgsMetwicXzehjWtbpyJ5ic45eW3yVBzyw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1", 
+                       // "Url" =>"http://mp.weixin.qq.com/s/IvnztAzm-i5cTsPoXu-L3Q"),
                               array("Title" =>"全景！720°的南航，你值得拥有！", 
                         "Description" =>"", 
                         "PicUrl" =>"http://mmbiz.qpic.cn/mmbiz_jpg/AXZnZY3B8N8GoV2Nau7YgBV86hicq8maant6AdwibtZ0sUXO4Cic42CYb7tss9WUvhRiclHDiclNLUibFILLYoPrTLTQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1", 
