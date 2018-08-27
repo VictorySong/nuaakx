@@ -4,7 +4,7 @@ include("SaeMysql.php");
 if(!empty($_POST["number"]))
 {
 	$mysql=new SaeMysql();
-	if($mysql->runsql("INSERT INTO `cs1` `stId` VALUES '".$_POST["number"]."' "))
+	if($mysql->runsql("INSERT INTO `cs1` `vue` VALUES '".$_POST["number"]."' "))
 				die($mysql->errmsg());
 			
 	$json["error"]=0;
