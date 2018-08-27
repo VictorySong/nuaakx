@@ -80,7 +80,7 @@ $(document).ready(function(){
 					console.log(data);
 					if(data=="200")
 					{
-						history.back();
+						location.href="http://nuaakx.com/m/user/";
 						return;
 					}
 					if(data=="405")
@@ -140,8 +140,7 @@ $(document).ready(function(){
 			if(data=="200")
 			{
 				alert("注册成功");
-				location.href="http://nuaakx.com/t/user/";
-
+				location.href="http://nuaakx.com/m/user/";
 			}
 			else if(data!="")
 			{
