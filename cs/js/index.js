@@ -24,6 +24,36 @@ $(document).ready(function(){
 				alert("success");
 			}
 		});
+		
+		$.post("get.php").done(function(Data){
+			console.log(Data);
+			try{
+				var Da=JSON.parse(Data);
+			}
+			catch(e)
+			{
+				console.log(e);
+				return;
+			}
+			if(Da["error"]==0)
+			{
+				for(var p in Da)
+				{
+					var html+=' <div class="panel-heading">\
+										<span >'+Da[p][num]+'</span>\
+									    <span     style="float:right;" >'+Da[p][vue]+'</span>\
+									</div>';
+					
+				}
+				
+				$("#get").append(html);
+				
+			}
+		});
+		
+		
+		
+		
 	});
 	
 	});					
