@@ -2,10 +2,10 @@
 require_once "../wx/jssdk.php";
 require_once "../SaeMysql.php";
 session_start();
-if(!isset($_SESSION["openid"])){
-	header("Location: ../wx/scope.php");
-	die();
-}
+//if(!isset($_SESSION["openid"])){
+	//header("Location: ../wx/scope.php");
+	//die();
+//}
 $mysql=new SaeMysql();
 $app=$mysql->getLine("SELECT `appid`,`secret` FROM `wxappid` WHERE 1");
 $jssdk = new JSSDK($app["appid"], $app["secret"]);
