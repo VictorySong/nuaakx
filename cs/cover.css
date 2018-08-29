@@ -26,14 +26,14 @@ a:hover {
  */
 
 html {
-  background:url(timg.jpg) left up;
+
 }
 
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  background:url(timg.jpg) right up;
+  background:url(timg.jpg);
 
 }
 
