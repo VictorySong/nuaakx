@@ -26,15 +26,15 @@ a:hover {
  */
 
 html {
-  background-color: white;
+
 }
 
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  background:url(timg.jpg);
-  max-width:1280px;
+  background:url(timg.jpg) no-repeat;;
+
   margin-right: auto;
   margin-left: auto;
 }
