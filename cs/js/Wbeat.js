@@ -5,9 +5,6 @@ var pulse = 70;
 var dada = 1500;	//测试心电图折线的实现
 var time = 0;	//用作clock函数的分频变量，6*500ms
 
-
-$(document).ready(function(){
-
 //心电图初始化
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -23,6 +20,8 @@ var myChart = new Chart(ctx, {
 		}]
     }	
 });
+
+$(document).ready(function(){
 
 //开始测试
 $("#button").click(function(){int = setInterval("clock()",500)});
@@ -73,8 +72,7 @@ function clock()
 	if(time > 6){
 	time = 0;
 	
-	//测试心电图折线的实现(6*500ms更新一次)begin
-	console.log("bb");	
+	//测试心电图折线的实现(6*500ms更新一次)begin	
 	var j = 1;
 	for(i=149;i>=5;i--){
 		linedata[i] = linedata[i-5];
@@ -88,8 +86,8 @@ function clock()
 	linedata[0] = j?dada++:dada--;
 	//测试心电图折线的实现(6*500ms更新一次)end
 	
-	$("iframe").remove();
-	var myChart = new Chart(ctx, {
+	myChart.update();
+/*	var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",],
@@ -101,8 +99,8 @@ function clock()
 			data : linedata,
 			pointRadius:0
 		}]
-    }
+    }	
 	});
-	
+*/	
 	} //if(time> 6)的括号
 }
