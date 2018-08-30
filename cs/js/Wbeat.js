@@ -4,6 +4,7 @@ var linedata = new Array(150);
 var pulse = 70;
 var dada = 1500;	//测试心电图折线的实现
 var time = 0;	//用作clock函数的分频变量，6*500ms
+var cutout = 0; //用于终止定时器，120*500ms后终止
 
 //心电图初始化
 var myChart = new Chart(ctx, {
@@ -30,8 +31,13 @@ $("#button").click(function(){int = setInterval("clock()",500)});
 
 function clock()
 {	
+	cutout++;
+	if(cutout >= 120) {
+		clearInterval(int);
+		return;
+	}
 	var i;
-	
+
 	//测试心跳的渐入减出效果
 	$("#pulsespan").fadeOut("slow",function(){
 		$("#pulsespan").text(" "+ pulse++);
