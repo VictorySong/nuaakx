@@ -56,9 +56,10 @@ function clock()
 			return ;
 		}
 		
-		/*if(da["error"]==0)
-		{*/
-			for(i= 0;i< 25;i++){
+		if(da["error"]==0)
+		{	
+			linedata[time*25] = (da.data)[0].num;
+			for(i= 1;i< 25;i++){
 				
 				if((da.data)[i].vue != 0){
 					pulse = (da.data)[i].vue;
@@ -70,7 +71,7 @@ function clock()
 				linedata[i+ time*25] = (da.data)[i].num;
 				//对接数据表
 			}			
-	//	}		
+		}		
 	});	
 	//用get获取数据end
 
