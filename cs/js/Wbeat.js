@@ -75,7 +75,7 @@ function clock()
 	//用get获取数据end
 
 	time++;
-	if(time >= 6){
+	if(time > 6){
 	time = 0;
 	
 /*	//测试心电图折线的实现(6*500ms更新一次)begin	
