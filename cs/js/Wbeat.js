@@ -3,7 +3,7 @@ var ctx = document.getElementById("myChart");
 var linedata = new Array(150);
 var pulse = 70;
 var dada = 1500;	//测试心电图折线的实现
-var time = 0;	//用作clock函数的分频变量，6*500ms
+var time = -1;	//用作clock函数的分频变量，6*500ms
 var cutout = 0; //用于终止定时器，120*500ms后终止
 
 //心电图初始化
@@ -25,7 +25,7 @@ var myChart = new Chart(ctx, {
 $(document).ready(function(){
 
 //开始测试
-$("#button").click(function(){ var time = 0;int = setInterval("clock()",500)});
+$("#button").click(function(){int = setInterval("clock()",500)});
 
 });	
 
@@ -59,7 +59,7 @@ function clock()
 		if(da["error"]==0)
 		{	
 			for(i= 0;i< 25;i++){
-				linedata[i+ time*25] = (da.data)[i].num;
+				
 				if((da.data)[i].vue != 0){
 					pulse = (da.data)[i].vue;
 					$("#pulsespan").fadeOut("slow",function(){
@@ -67,7 +67,7 @@ function clock()
 					$("#pulsespan").fadeIn("slow");
 					});
 				}			
-				
+				linedata[i+ time*25] = (da.data)[i].num;
 				//对接数据表
 			}			
 		}		
