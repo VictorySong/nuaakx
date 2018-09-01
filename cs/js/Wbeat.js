@@ -59,7 +59,7 @@ function clock()
 		if(da["error"]==0)
 		{	
 			for(i= 0;i< 25;i++){
-				
+				linedata[i+ time*25] = (da.data)[i].num;
 				if((da.data)[i].vue != 0){
 					pulse = (da.data)[i].vue;
 					$("#pulsespan").fadeOut("slow",function(){
@@ -67,7 +67,7 @@ function clock()
 					$("#pulsespan").fadeIn("slow");
 					});
 				}			
-				linedata[i+ time*25] = (da.data)[i].num;
+				
 				//对接数据表
 			}			
 		}		
