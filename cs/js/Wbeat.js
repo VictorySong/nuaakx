@@ -60,14 +60,14 @@ function clock()
 		{
 			for(i= 0;i< 25;i++){
 				
-				if(da[data][i][vue] != 0){
-					pulse = da[data][i][vue];
+				if((da.data)[i].vue != 0){
+					pulse = (da.data)[i].vue;
 					$("#pulsespan").fadeOut("slow",function(){
 					$("#pulsespan").text(" "+ pulse++);
 					$("#pulsespan").fadeIn("slow");
 					});
 				}			
-				linedata[i+ time*25] = da[data][i][num];
+				linedata[i+ time*25] = (da.data)[i].num;
 				//对接数据表
 			}			
 		}		
