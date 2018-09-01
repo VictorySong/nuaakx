@@ -38,13 +38,13 @@ function clock()
 	}
 	var i;
 
-	//测试心跳的渐入减出效果
+/*	//测试心跳的渐入减出效果
 	$("#pulsespan").fadeOut("slow",function(){
 		$("#pulsespan").text(" "+ pulse++);
 		$("#pulsespan").fadeIn("slow");
 	});
-	
-/*	//用get获取数据begin
+*/	
+	//用get获取数据begin
 	$.get("get.php").done(function(data){
 		console.log(data);
 		try{
@@ -58,27 +58,27 @@ function clock()
 		
 		if(da["error"]==0)
 		{
-			linedata[0] = da[data][num];
-			if(da[data][vue] != 0) {
-				pulse = da[data][vue];	//对接数据表
-				$("#pulsespan").fadeOut("slow",function(){
-				$("#pulsespan").text(" "+ pulse);
-				$("#pulsespan").fadeIn("slow");
-				});
-			}
-			for(i= 0 + time*25 ;i< 25;i++){
-				linedata[i] = da[data][num];
+			for(i= 0;i< 25;i++){
+				
+				if(da[data][i][vue] != 0){
+					pulse = da[data][i][vue];
+					$("#pulsespan").fadeOut("slow",function(){
+					$("#pulsespan").text(" "+ pulse++);
+					$("#pulsespan").fadeIn("slow");
+					});
+				}			
+				linedata[i+ time*25] = da[data][i][num];
 				//对接数据表
 			}			
 		}		
 	});	
-*/	//用get获取数据end
+	//用get获取数据end
 
 	time++;
-	if(time > 6){
+	if(time >= 6){
 	time = 0;
 	
-	//测试心电图折线的实现(6*500ms更新一次)begin	
+/*	//测试心电图折线的实现(6*500ms更新一次)begin	
 	var j = 1;
 	for(i=149;i>=5;i--){
 		linedata[i] = linedata[i-5];
@@ -90,7 +90,7 @@ function clock()
 	linedata[2] = j?dada++:dada--;
 	linedata[1] = j?dada++:dada--;
 	linedata[0] = j?dada++:dada--;
-	//测试心电图折线的实现(6*500ms更新一次)end
+*/	//测试心电图折线的实现(6*500ms更新一次)end
 	
 	myChart.update();
 
