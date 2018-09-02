@@ -1,10 +1,10 @@
 <?php
 include("SaeMysql.php");
 
-if(!empty($_POST["number"]))
+if(!empty($_POST["num"]) && !empty($_POST["vue"]))
 {
 	$mysql=new SaeMysql();
-	if($mysql->runsql("INSERT INTO `text` (`vue`) VALUES ('".$_POST["number"]."') "))
+	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$_POST["num"]."','".$_POST["vue"]."') "))
 				die($mysql->errmsg());
 			
 	$json["error"]=0;

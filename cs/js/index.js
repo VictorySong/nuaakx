@@ -4,8 +4,10 @@ $(document).ready(function(){
 	$("#post").find("form").submit(function(e){
 		e.preventDefault();
 		var json={};
-		var input=$(this).find("input");
-		json["number"]=input.val();
+		var inputnum=$(this).find("#num");
+		json["num"]=inputnum.val();
+		var inputvue=$(this).find("#vue");
+		json["vue"]=inputvue.val();
 		console.log(json);
 		
 		
