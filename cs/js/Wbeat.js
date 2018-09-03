@@ -3,10 +3,8 @@ var ctx = document.getElementById("myChart");
 var linedata = new Array(150);
 var pulse = 70;
 var dada = 1500;	//测试心电图折线的实现
-var time = 0;	//用作clock函数的分频变量，6*500ms
-
-
-$(document).ready(function(){
+var time = -1;	//用作clock函数的分频变量，6*500ms
+var cutout = 0; //用于终止定时器，120*500ms后终止
 
 //心电图初始化
 var myChart = new Chart(ctx, {
@@ -24,6 +22,8 @@ var myChart = new Chart(ctx, {
     }	
 });
 
+$(document).ready(function(){
+
 //开始测试
 $("#button").click(function(){int = setInterval("clock()",500)});
 
@@ -31,15 +31,20 @@ $("#button").click(function(){int = setInterval("clock()",500)});
 
 function clock()
 {	
+	cutout++;
+	if(cutout >= 120) {
+		clearInterval(int);
+		return;
+	}
 	var i;
-	
-	//测试心跳的渐入减出效果
+
+/*	//测试心跳的渐入减出效果
 	$("#pulsespan").fadeOut("slow",function(){
 		$("#pulsespan").text(" "+ pulse++);
 		$("#pulsespan").fadeIn("slow");
 	});
-	
-/*	//用get获取数据begin
+*/	
+	//用get获取数据begin
 	$.get("get.php").done(function(data){
 		console.log(data);
 		try{
@@ -52,29 +57,28 @@ function clock()
 		}
 		
 		if(da["error"]==0)
-		{
-			linedata[0] = da[data][num];
-			if(da[data][vue] != 0) {
-				pulse = da[data][vue];	//对接数据表
-				$("#pulsespan").fadeOut("slow",function(){
-				$("#pulsespan").text(" "+ pulse);
-				$("#pulsespan").fadeIn("slow");
-				});
-			}
-			for(i= 0 + time*25 ;i< 25;i++){
-				linedata[i] = da[data][num];
+		{	
+			for(i= 0;i< 25;i++){
+				
+				if((da.data)[i].vue != 0){
+					pulse = (da.data)[i].vue;
+					$("#pulsespan").fadeOut("slow",function(){
+					$("#pulsespan").text(" "+ pulse++);
+					$("#pulsespan").fadeIn("slow");
+					});
+				}			
+				linedata[i+ time*25] = (da.data)[i].num;
 				//对接数据表
 			}			
 		}		
 	});	
-*/	//用get获取数据end
+	//用get获取数据end
 
 	time++;
 	if(time > 6){
 	time = 0;
 	
-	//测试心电图折线的实现(6*500ms更新一次)begin
-	console.log("bb");	
+/*	//测试心电图折线的实现(6*500ms更新一次)begin	
 	var j = 1;
 	for(i=149;i>=5;i--){
 		linedata[i] = linedata[i-5];
@@ -86,22 +90,9 @@ function clock()
 	linedata[2] = j?dada++:dada--;
 	linedata[1] = j?dada++:dada--;
 	linedata[0] = j?dada++:dada--;
-	//测试心电图折线的实现(6*500ms更新一次)end
+*/	//测试心电图折线的实现(6*500ms更新一次)end
 	
-	var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",],
-        datasets : [{	
-			label: '心电图',
-			backgroundColor: [
-                'rgba(255, 99, 132, 0.6)',             
-            ],
-			data : linedata,
-			pointRadius:0
-		}]
-    }
-	});
-	
+	myChart.update();
+
 	} //if(time> 6)的括号
 }
