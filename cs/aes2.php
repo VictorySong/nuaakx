@@ -36,7 +36,8 @@ $aes = new aes();
 $aes->setKey('key');
  
 // 加密
-$string = $aes->encode('string');
+$string = $aes->encode("string");
+echo $string;
 // 解密
-$aes->decode($string);
+echo $aes->decode($string);
 ?>
