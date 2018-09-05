@@ -5,7 +5,7 @@ include("SaeMysql.php");
 {
 	$mysql=new SaeMysql();
 	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$_POST["num"]."','".$_POST["vue"]."') "))
-				die($mysql->errmsg());
+//				die($mysql->errmsg());
 			
 	$json["error"]=0;
 	echo json_encode($json);
