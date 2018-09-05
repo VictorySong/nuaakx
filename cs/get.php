@@ -19,16 +19,16 @@ include("SaeMysql.php");
 			$data[$i]=$Data[$num-25+$i];
 		}
 	
-	if(!empty($data))
+//	if(!empty($data))
 	{
 		$json["error"]=0;
 		$json["data"]=$data;
 		
 	}		
-	else{
+/*	else{
     
           $json["error"]=1;
-    }	
+    }	*/
 	echo json_encode($json);
 		
 
