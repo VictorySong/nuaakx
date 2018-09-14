@@ -9,7 +9,7 @@ $(document).ready(function(){
 		var inputvue=$(this).find("#vue");
 		json["vue"]=inputvue.val();*/
 		
-		var json = [{"num":"2500","vue":"120"},{"num":"2500","vue":"12"}];
+		var json = [{"num":"2500","vue":"120"}];
 		console.log(json);
 		
 		
