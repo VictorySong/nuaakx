@@ -9,7 +9,7 @@ $(document).ready(function(){
 		var inputvue=$(this).find("#vue");
 		json["vue"]=inputvue.val();*/
 		
-		var json = [{"num":"2500","vue":"120"}];
+		var json = {"error":0,"data":[{"num":"2500","vue":"120"},{"num":"2500","vue":"12"},{"num":"2500","vue":"110"},{"num":"2500","vue":"10"},{"num":"2500","vue":"12"},{"num":"2500","vue":"12"},{"num":"2500","vue":"120"},{"num":"2500","vue":"20"},{"num":"2500","vue":"20"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"2500","vue":"29"},{"num":"3600","vue":"101"},{"num":"3600","vue":"101"}]};
 		console.log(json);
 		
 		
