@@ -1,6 +1,6 @@
 <?php
 include("SaeMysql.php");
-/*
+
 if(!empty($_POST["num"]) && !empty($_POST["vue"]))
 {
 	$mysql=new SaeMysql();
@@ -10,8 +10,8 @@ if(!empty($_POST["num"]) && !empty($_POST["vue"]))
 	$json["error"]=0;
 	echo json_encode($json);	
 }
-*/
 
+/*
 if(!empty($_POST["data"]))
 {	
 	$mysql=new SaeMysql();
@@ -23,6 +23,6 @@ if(!empty($_POST["data"]))
 	echo json_encode($json);	
 	}
 }
-		
+*/		
 
 ?>
