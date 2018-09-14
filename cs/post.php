@@ -1,6 +1,6 @@
 <?php
 include("SaeMysql.php");
-
+/*
 if(!empty($_POST["num"]) && !empty($_POST["vue"]))
 {
 	$mysql=new SaeMysql();
@@ -8,8 +8,20 @@ if(!empty($_POST["num"]) && !empty($_POST["vue"]))
 				//die($mysql->errmsg());
 			
 	$json["error"]=0;
-	echo json_encode($json);
-	
+	echo json_encode($json);	
+}
+*/
+
+if(!empty($_POST["data"]))
+{	
+	$mysql=new SaeMysql();
+	for(int i=0; i<25; i++){
+	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$_POST["data"][i]["num"]."','".$_POST["data"][i]["vue"]."') "))
+				//die($mysql->errmsg());
+			
+	$json["error"]=0;
+	echo json_encode($json);	
+	}
 }
 		
 
