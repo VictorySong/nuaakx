@@ -63,10 +63,9 @@ function clock()
 				if((da.data)[i].vue != 0){
 					pulse = (da.data)[i].vue;
 					$("#pulsespan").fadeOut("slow",function(){
-					$("#pulsespan").text(" "+ pulse);
+					$("#pulsespan").text(" "+ pulse++);
 					$("#pulsespan").fadeIn("slow");
 					});
-					break;
 				}			
 				linedata[i+ time*25] = (da.data)[i].num;
 				//对接数据表
