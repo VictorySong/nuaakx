@@ -10,9 +10,9 @@ $mypost = json_decode($rws_post,ture);
 echo json_encode($mypost);
 
 //[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
-//for($i=0;$i<150;$i++){
-$num = (string)$mypost[1]['num'];
-$vue = (string)$mypost[1]['vue'];
+for($i=0;$i<75;$i++){
+$num = (string)$mypost[$i]['num'];
+$vue = (string)$mypost[$i]['vue'];
 
 //receive http json end
 if(!empty($num) && !empty($vue))
@@ -20,7 +20,7 @@ if(!empty($num) && !empty($vue))
 	$mysql=new SaeMysql();
 	$mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$num."','".$vue."') ");
 }
-//}
+}
 
 
 /*
