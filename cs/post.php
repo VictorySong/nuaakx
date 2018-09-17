@@ -9,7 +9,7 @@ $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $mypost = json_decode($rws_post);
 echo json_encode($mypost);
 
-//{"error":0,"data":[{"num":"2583","vue":"78"}{"num":"2583","vue":"78"}]}
+//[{"num":"2583","vue":"78"}{"num":"2583","vue":"78"}]
 
 $array = array($mypost->data);
 $num = (string)$array[1]->num;
