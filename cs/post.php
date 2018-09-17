@@ -12,7 +12,7 @@ $vue = (string)$mypost->vue;*/
 $num = 1200;
 $vue = 111;
 //receive http json end
-if(!empty(num) && !empty(vue))
+//if(!empty(num) && !empty(vue))
 {
 	$mysql=new SaeMysql();
 	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".num."','".vue."') "))
