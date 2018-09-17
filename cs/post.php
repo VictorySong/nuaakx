@@ -11,7 +11,7 @@ echo json_encode($mypost);
 
 //{"error":0,"data":[{"num":"2583","vue":"78"}{"num":"2583","vue":"78"}]}
 
-$array = $mypost->data
+$array = array($mypost->data);
 $num = (string)$array[1]->num;
 $vue = (string)$array[1]->vue;
 
