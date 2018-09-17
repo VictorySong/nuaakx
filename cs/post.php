@@ -19,6 +19,7 @@ if(!empty($num) && !empty($vue))
 {
 	$mysql=new SaeMysql();
 	$mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$num."','".$vue."') ");
+	sleep(0.01);
 }
 }
 
