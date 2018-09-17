@@ -11,8 +11,8 @@ echo json_encode($mypost);
 
 //{"0":{"num":"2583","vue":"78"},"1":{"num":"2583","vue":"71"}
 
-$num = (string)$mypost[1]->num;
-$vue = (string)$mypost[1]->vue;
+$num = (string)$mypost->b->num;
+$vue = (string)$mypost->b->vue;
 
 /*//{"num":"2583","vue":"78"}
 $num = (string)$mypost->num;
