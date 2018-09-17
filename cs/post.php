@@ -18,8 +18,8 @@ $vue = (string)$mypost[1]->vue;
 /*//{"num":"2583","vue":"78"}
 $num = (string)$mypost->num;
 $vue = (string)$mypost->vue;*/
-$num = (string)$mypost->data->num;
-$vue = (string)$mypost->data->vue;
+$num = (string)$mypost->d->num;
+$vue = (string)$mypost->d->vue;
 
 //receive http json end
 if(!empty($num) && !empty($vue))
