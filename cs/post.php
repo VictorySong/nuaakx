@@ -9,19 +9,19 @@ $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $mypost = json_decode($rws_post);
 echo json_encode($mypost);
 
+//{"error":0,"data":{"num":"2583","vue":"78"}}
+$num = (string)$mypost->data->num;
+$vue = (string)$mypost->data->vue;
+
+/*//{"num":"2583","vue":"78"}
 $num = (string)$mypost->num;
-$vue = (string)$mypost->vue;
-/*$num = 1200;
-$vue = 111;*/
+$vue = (string)$mypost->vue;*/
+
 //receive http json end
 if(!empty($num) && !empty($vue))
 {
 	$mysql=new SaeMysql();
-	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$num."','".$vue."') "))
-				//die($mysql->errmsg());
-			
-	$json["error"]=0;
-	//echo json_encode($json);	
+	$mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$num."','".$vue."') ");
 }
 
 
