@@ -9,17 +9,10 @@ $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $mypost = json_decode($rws_post,ture);
 echo json_encode($mypost);
 
-//{"0":{"num":"2583","vue":"78"},"1":{"num":"2583","vue":"71"}
-
-/*$num = (string)$mypost[1]->num;
-$vue = (string)$mypost[1]->vue;
-*/
-
-/*//{"num":"2583","vue":"78"}
-$num = (string)$mypost->num;
-$vue = (string)$mypost->vue;*/
-$num = (string)$mypost[1]['num'];
-$vue = (string)$mypost[1]['vue'];
+//[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
+for($i=0;$i<150;$i++){
+$num = (string)$mypost[$i]['num'];
+$vue = (string)$mypost[$i]['vue'];
 
 //receive http json end
 if(!empty($num) && !empty($vue))
@@ -27,7 +20,7 @@ if(!empty($num) && !empty($vue))
 	$mysql=new SaeMysql();
 	$mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$num."','".$vue."') ");
 }
-
+}
 
 
 /*
@@ -41,20 +34,5 @@ if(!empty($_POST["num"]) && !empty($_POST["vue"]))
 	echo json_encode($json);	
 }
 */
-
-
-/*
-if(!empty($_POST["data"]))
-{	
-	$mysql=new SaeMysql();
-	for(int i=0; i<25; i++){
-	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$_POST["data"][i]["num"]."','".$_POST["data"][i]["vue"]."') "))
-				//die($mysql->errmsg());
-			
-	$json["error"]=0;
-	echo json_encode($json);	
-	}
-}
-*/		
 
 ?>
