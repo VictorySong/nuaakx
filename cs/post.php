@@ -6,7 +6,7 @@ header("Access-Control-Allow-Origin:*");
 header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
 
 $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
-$mypost = json_decode($rws_post);
+$mypost = json_decode($rws_post,ture);
 echo json_encode($mypost);
 
 //{"0":{"num":"2583","vue":"78"},"1":{"num":"2583","vue":"71"}
@@ -18,8 +18,8 @@ $vue = (string)$mypost[1]->vue;
 /*//{"num":"2583","vue":"78"}
 $num = (string)$mypost->num;
 $vue = (string)$mypost->vue;*/
-$num = (string)$mypost->1->num;
-$vue = (string)$mypost->1->vue;
+$num = (string)$mypost[1]['num'];
+$vue = (string)$mypost[1]['vue'];
 
 //receive http json end
 if(!empty($num) && !empty($vue))
