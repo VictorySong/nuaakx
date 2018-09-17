@@ -11,12 +11,15 @@ echo json_encode($mypost);
 
 //{"0":{"num":"2583","vue":"78"},"1":{"num":"2583","vue":"71"}
 
-$num = (string)$mypost->b->num;
-$vue = (string)$mypost->b->vue;
+/*$num = (string)$mypost[1]->num;
+$vue = (string)$mypost[1]->vue;
+*/
 
 /*//{"num":"2583","vue":"78"}
 $num = (string)$mypost->num;
 $vue = (string)$mypost->vue;*/
+$num = (string)$mypost->data->num;
+$vue = (string)$mypost->data->vue;
 
 //receive http json end
 if(!empty($num) && !empty($vue))
