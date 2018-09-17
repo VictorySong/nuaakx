@@ -20,7 +20,7 @@ if(!empty($num) && !empty($vue))
 	if($mysql->runsql("INSERT INTO `text` (`num`,`vue`) VALUES ('".$num."','".$vue."') "))
 				//die($mysql->errmsg());
 			
-	//$json["error"]=0;
+	$json["error"]=0;
 	//echo json_encode($json);	
 }
 
