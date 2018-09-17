@@ -9,11 +9,10 @@ $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $mypost = json_decode($rws_post);
 echo json_encode($mypost);
 
-//[{"num":"2583","vue":"78"}{"num":"2583","vue":"78"}]
+//{"0":{"num":"2583","vue":"78"},"1":{"num":"2583","vue":"71"}]
 
-$array = array($mypost->data);
-$num = (string)$array[1]->num;
-$vue = (string)$array[1]->vue;
+$num = (string)$mypost[1]->num;
+$vue = (string)$mypost[1]->vue;
 
 /*//{"num":"2583","vue":"78"}
 $num = (string)$mypost->num;
