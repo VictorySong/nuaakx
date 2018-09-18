@@ -94,5 +94,5 @@ function clock()
 	
 	myChart.update();
 
-	} //if(time> 6)的括号
+	//} //if(time> 6)的括号
 }
