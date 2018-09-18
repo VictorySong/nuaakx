@@ -19,7 +19,16 @@ var myChart = new Chart(ctx, {
 			data : linedata,
 			pointRadius:0
 		}]
-    }	
+    }
+	options: {
+	  scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero:true
+            }
+        }]
+    }
+}
 });
 
 $(document).ready(function(){
