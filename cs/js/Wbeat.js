@@ -32,7 +32,7 @@ $("#button").click(function(){int = setInterval("clock()",1500)});
 function clock()
 {	
 	cutout++;
-	if(cutout >= 20) {
+	if(cutout >= 40) {
 		clearInterval(int);
 		return;
 	}
