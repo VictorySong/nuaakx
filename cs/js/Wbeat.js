@@ -25,14 +25,14 @@ var myChart = new Chart(ctx, {
 $(document).ready(function(){
 
 //开始测试
-$("#button").click(function(){int = setInterval("clock()",500)});
+$("#button").click(function(){int = setInterval("clock()",3000)});
 
 });	
 
 function clock()
 {	
 	cutout++;
-	if(cutout >= 120) {
+	if(cutout >= 20) {
 		clearInterval(int);
 		return;
 	}
@@ -58,7 +58,7 @@ function clock()
 		
 		if(da["error"]==0)
 		{	
-			for(i= 0;i< 25;i++){
+			for(i= 0;i< 150;i++){
 				
 				if((da.data)[i].vue != 10){
 					pulse = (da.data)[i].vue;
@@ -67,16 +67,16 @@ function clock()
 					$("#pulsespan").fadeIn("slow");
 					});
 				}			
-				linedata[i+ time*25] = (da.data)[i].num;
+				linedata[i] = (da.data)[i].num;
 				//对接数据表
 			}			
 		}		
 	});	
 	//用get获取数据end
 
-	time++;
+	/*time++;
 	if(time > 6){
-	time = 0;
+	time = 0;*/
 	
 /*	//测试心电图折线的实现(6*500ms更新一次)begin	
 	var j = 1;
