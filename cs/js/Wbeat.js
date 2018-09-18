@@ -63,7 +63,7 @@ function clock()
 				if((da.data)[i].vue != 10){
 					pulse = (da.data)[i].vue;
 					$("#pulsespan").fadeOut("slow",function(){
-					$("#pulsespan").text(" "+ pulse++);
+					$("#pulsespan").text(" "+ pulse);
 					$("#pulsespan").fadeIn("slow");
 					});
 				}			
