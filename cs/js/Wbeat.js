@@ -3,7 +3,7 @@ var ctx = document.getElementById("myChart");
 var linedata = new Array(150);
 var pulse = 70;
 var dada = 1500;	//测试心电图折线的实现
-var time = -1;	//用作clock函数的分频变量，6*500ms
+var time = 0;	//用作clock函数的分频变量，6*500ms
 var cutout = 0; //用于终止定时器，120*500ms后终止
 
 //心电图初始化
@@ -74,9 +74,9 @@ function clock()
 	});	
 	//用get获取数据end
 
-	/*time++;
-	if(time > 6){
-	time = 0;*/
+	time++;
+	if(time > 1){
+	time = 0;
 	
 /*	//测试心电图折线的实现(6*500ms更新一次)begin	
 	var j = 1;
@@ -94,5 +94,5 @@ function clock()
 	
 	myChart.update();
 
-	//} //if(time> 6)的括号
+	}
 }
