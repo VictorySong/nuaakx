@@ -19,7 +19,7 @@ var myChart = new Chart(ctx, {
 			data : linedata,
 			pointRadius:0
 		}]
-    }
+    },
 	options: {
     scales: {
         yAxes: [{
