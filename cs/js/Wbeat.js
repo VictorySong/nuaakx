@@ -34,7 +34,7 @@ var myChart = new Chart(ctx, {
 $(document).ready(function(){
 
 //开始测试
-$("#button").click(function(){int = setInterval("clock()",1500)});
+$("#button").click(function(){int = setInterval("clock()",3000)});
 
 });	
 
