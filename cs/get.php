@@ -14,9 +14,9 @@ include("SaeMysql.php");
 			$Data[$i]=mysql_fetch_assoc($result);
 		}
 	$data=array();
-	for($i=0;$i<300; $i++)
+	for($i=0;$i<150; $i++)
 	 {
-			$data[$i]=$Data[$num-300+$i];
+			$data[$i]=$Data[$num-150+$i];
 		}
 	
 //	if(!empty($data))
