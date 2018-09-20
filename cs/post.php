@@ -11,7 +11,7 @@ echo json_encode($mypost);
 
 $mysql=new SaeMysql();
 //[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
-for($i=0;$i<75;$i++){
+for($i=0;$i<150;$i++){
 $num = (string)$mypost[$i]['num'];
 $vue = (string)$mypost[$i]['vue'];
 
