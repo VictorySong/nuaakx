@@ -34,14 +34,14 @@ var myChart = new Chart(ctx, {
 $(document).ready(function(){
 
 //开始测试
-$("#button").click(function(){int = setInterval("clock()",3000)});
+$("#button").click(function(){int = setInterval("clock()",1500)});
 
 });	
 
 function clock()
 {	
 	cutout++;
-	if(cutout >= 40) {
+	if(cutout >= 80) {
 		clearInterval(int);
 		return;
 	}
