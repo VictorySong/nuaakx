@@ -3,7 +3,7 @@ require_once('phpaes-master/src/Aes.php');
 use PhpAes\Aes;
 
 $in = "Hello, World!";
-$key[32] = "Demo-Key";
+$key = "Demo-Key";
 $aes = new Aes($key, 'ECB');
 
 $y = $aes->encrypt($in);
