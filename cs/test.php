@@ -2,7 +2,7 @@
 require_once('phpaes-master/src/Aes.php');
 use PhpAes\Aes;
 
-$aes = new Aes('abcdefgh01234567', 'CBC', '1234567890abcdef');
+$aes = new Aes('abcdefgh01234567', 'ECB');
 
 $y = $aes->encrypt('hello world!');
 $x = $aes->decrypt($y);
