@@ -1,5 +1,5 @@
 <?php
-namespace PhpAes;
+//namespace PhpAes;
 
 /**
  *  AES cipher
