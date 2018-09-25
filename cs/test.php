@@ -2,8 +2,8 @@
 require_once('phpaes-master/src/Aes.php');
 use PhpAes\Aes;
 
-$in = "aaaabbbbccccdddd";
-$key = "abcdefgh01234234234234234242342432567";
+$in = "aaaabb34234243324324234234234234bbccccdddd";
+$key = "abcdefgh01234567";
 $aes = new Aes($key, 'ECB');
 
 $y = $aes->encrypt($in);
