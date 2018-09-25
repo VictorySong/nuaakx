@@ -1,13 +1,18 @@
 <?php
 include("SaeMysql.php");
 
+require_once('phpaes-master/src/Aes.php');
+use PhpAes\Aes;
+$key = "abcdefgh01234567";
+$aes = new Aes($key, 'ECB');
+
 //receive http json begin
 header("Access-Control-Allow-Origin:*"); 
 header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
 
 $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
-$mypost = json_decode($rws_post,ture);
-echo json_encode($mypost);
+$aes_post = $aes->decrypt(rws_post);				//aes_decrypt
+$mypost = json_decode($aes_post,ture);
 
 $mysql=new SaeMysql();
 //[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
