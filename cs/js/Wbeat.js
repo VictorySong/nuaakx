@@ -14,10 +14,10 @@ var myChart = new Chart(ctx, {
         datasets : [{	
 			label: '心电图',
 			backgroundColor: [
-               'rgba(255, 99, 132, 0.2)',             
+               'rgba(255, 99, 132, 0.4)',             
             ],
 			borderColor:[
-				'rgba(255, 99, 132, 1)',
+				'rgba(255, 99, 132, 0.6)',
 			],//各类型数据展示颜色
 
 			data : linedata,
