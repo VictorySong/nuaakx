@@ -18,7 +18,7 @@ var myChart = new Chart(ctx, {
             ],
 			data : linedata,
 			pointRadius:0,
-			scaleShowLabels : false
+			//scaleShowLabels : false
 		}]
     },
 	options: {
