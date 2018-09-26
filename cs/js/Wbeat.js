@@ -14,7 +14,7 @@ var myChart = new Chart(ctx, {
         datasets : [{	
 			label: '心电图',
 			backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',             
+                'rgba(255, 99, 132, 0.6)',             
             ],
 			data : linedata,
 			pointRadius:0,
