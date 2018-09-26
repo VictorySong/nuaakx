@@ -14,17 +14,18 @@ var myChart = new Chart(ctx, {
         datasets : [{	
 			label: '心电图',
 			backgroundColor: [
-                'rgba(255, 99, 132, 0.6)',             
+                'rgba(255, 99, 132, 0.2)',             
             ],
 			data : linedata,
-			pointRadius:0
+			pointRadius:0,
+			scaleShowLabels : false
 		}]
     },
 	options: {
     scales: {
         yAxes: [{
             ticks: {
-                beginAtZero:true
+                //beginAtZero:true
             }
         }]
     }
