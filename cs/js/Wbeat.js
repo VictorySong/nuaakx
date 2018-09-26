@@ -16,7 +16,7 @@ var myChart = new Chart(ctx, {
 			//backgroundColor: [
             //    'rgba(255, 99, 132, 0.5)',             
             //],
-			fillColor: "rgba(255, 99, 132,0.5)",
+			fillColor: "rgba(255, 99, 132,0.6)",
             strokeColor: "rgba(255, 99, 132,0.8)",
             highlightFill: "rgba(255, 99, 132,0.75)",
             highlightStroke: "rgba(255, 99, 132,1)",
