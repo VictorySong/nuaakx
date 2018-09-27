@@ -2,15 +2,16 @@
 require_once('phpaes-master/src/Aes.php');
 use PhpAes\Aes;
 
-$in = "aaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvvvvvvvvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvvvvvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccddddvvaaaabb342342433243242342342342xjcnvlxvnlxc34bbccccdddddd";
+$in = "0D0AE143183F0D553F39D2CAF8E83F3B";
 $key = "abcdefgh01234567";
 $aes = new Aes($key, 'ECB');
 
-$y = $aes->encrypt($in);
+$y = hex2bin($in);
+//$y = $aes->encrypt($in);
 $x = $aes->decrypt($y);
 
 //echo base64_encode($y);
-echo bin2hex($y);
-//echo $x;
+//echo bin2hex($y);
+echo $x;
 
 ?>
