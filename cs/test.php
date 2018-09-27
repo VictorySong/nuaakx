@@ -11,8 +11,8 @@ $aes = new Aes($key, 'ECB');
 $y = $aes->encrypt($in);
 //$x = $aes->decrypt($y);
 
-echo base64_encode($y);
-//echo bin2hex($y);
+//echo base64_encode($y);
+echo bin2hex($y);
 echo $x;
 
 ?>
