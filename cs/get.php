@@ -8,7 +8,7 @@ include("SaeMysql.php");
 	$sql="SELECT `num`,`vue` FROM `text`";
 	$result=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result);
-	if($num> 30 000)	//10min的心率数据
+	if($num> 30 000);	//10min的心率数据
 		
 	$Data=array();
 	for($i=0;$i<$num; $i++)

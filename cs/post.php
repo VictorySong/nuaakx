@@ -7,8 +7,8 @@ use PhpAes\Aes;
 $key = "abcdefgh01234567";
 $aes = new Aes($key, 'ECB');
 
-header("Access-Control-Allow-Origin:*"); 
-header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
+//header("Access-Control-Allow-Origin:*"); 
+//header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
 
 $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $aes_post = $aes->decrypt(rws_post);				//aes_decrypt
