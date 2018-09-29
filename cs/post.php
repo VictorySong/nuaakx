@@ -11,7 +11,8 @@ $aes = new Aes($key, 'ECB');
 //header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
 
 $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
-$aes_post = $aes->decrypt(rws_post);				//aes_decrypt
+//$aes_post = $aes->decrypt(rws_post);				//aes_decrypt
+$aes_post = $aes->decrypt(hex2bin(rws_post));
 $mypost = json_decode($aes_post,ture);
 //receive aes end
 
