@@ -26,7 +26,7 @@ include("SaeMysql.php");
 		$mysql->runsql("DELETE FROM `text`");
 	}
 	if(!empty($data));
-=======
+
 	
 //	if(!empty($data))
 
