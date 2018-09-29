@@ -21,15 +21,14 @@ var myChart = new Chart(ctx, {
 		}]
     },
 	options: {
-		scaleShowLabels : false,
 		//scaleStepWidth : 5, //y轴每个刻度的宽度
-        scaleStartValue : 0,  //y轴的起始值
+        //scaleStartValue : 0,  //y轴的起始值
 		scales: {
 			yAxes: [{
 				ticks: {
-					//display:false,
-					//beginAtZero:true,
-					//stepSize:20,
+					display:false,
+					beginAtZero:true,
+					stepSize:20,
 					//scaleStepWidth : 20,
 				}
 			}]
