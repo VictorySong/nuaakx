@@ -20,16 +20,16 @@ include("SaeMysql.php");
 	 {
 			$data[$i]=$Data[$num-150+$i];
 		}
-<<<<<<< HEAD
+
 	if($num>5000)
 	{
 		$mysql->runsql("DELETE FROM `text`");
 	}
-	if(!empty($data))
+	if(!empty($data));
 =======
 	
 //	if(!empty($data))
->>>>>>> 2dbdd1d2cf9497530ef93d933281df843ea28171
+
 	{
 		$json["error"]=0;
 		$json["data"]=$data;
