@@ -28,7 +28,7 @@ var myChart = new Chart(ctx, {
 					display:false,
 					//beginAtZero:true,
 					//stepSize:20,
-					scaleStartValue : 1500,
+					scaleStartValue : 1000,
 					//scaleStepWidth : 20,
 				}
 			}]
