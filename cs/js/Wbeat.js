@@ -25,8 +25,9 @@ var myChart = new Chart(ctx, {
 		scales: {
 			yAxes: [{
 				ticks: {
-					//beginAtZero:true,
-					display:false
+					beginAtZero:true,
+					display:false,
+					stepSize:20,
 				}
 			}]
 		}
