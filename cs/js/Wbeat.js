@@ -25,7 +25,7 @@ var myChart = new Chart(ctx, {
 		scales: {
 			yAxes: [{
 				ticks: {
-					beginAtZero:true,
+					//beginAtZero:true,
 					display:false
 				}
 			}]
@@ -43,7 +43,7 @@ $("#button").click(function(){int = setInterval("clock()",1500)});
 function clock()
 {	
 	cutout++;
-	if(cutout >= 80) {
+	if(cutout >= 200) {
 		clearInterval(int);
 		return;
 	}
