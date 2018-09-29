@@ -27,8 +27,10 @@ var myChart = new Chart(ctx, {
 			yAxes: [{
 				ticks: {
 					display:false,
-					beginAtZero:true,
-					stepSize:1,
+					//beginAtZero:true,
+					//stepSize:1,
+					max:3000,
+					min:1500,
 					//scaleStepWidth : 20,
 				}
 			}]
