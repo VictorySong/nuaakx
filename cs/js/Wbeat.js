@@ -22,12 +22,12 @@ var myChart = new Chart(ctx, {
     },
 	options: {
 		scaleShowLabels : false,
-		scaleStartValue : 1500,
+		scaleStartValue : null,
 		scales: {
 			yAxes: [{
 				ticks: {
 					display:false,
-					beginAtZero:true,
+					//beginAtZero:true,
 					//stepSize:20,
 					//scaleStepWidth : 20,
 				}
