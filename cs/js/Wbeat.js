@@ -22,8 +22,8 @@ var myChart = new Chart(ctx, {
     },
 	options: {
 		scaleShowLabels : false,
-		scaleStepWidth : 5, //y轴每个刻度的宽度
-        scaleStartValue : 2000,  //y轴的起始值
+		//scaleStepWidth : 5, //y轴每个刻度的宽度
+        scaleStartValue : 0,  //y轴的起始值
 		scales: {
 			yAxes: [{
 				ticks: {
