@@ -21,7 +21,7 @@ include("SaeMysql.php");
 			$data[$i]=$Data[$num-150+$i];
 		}
 
-	if($num>5000)
+	if($num>30 000)
 	{
 		$mysql->runsql("DELETE FROM `text`");
 	}
