@@ -14,10 +14,9 @@ if(!empty($_SESSION["stId"]))
 	}
 	if($t)
 	{
-		$data=$mysql->getLine("SELECT `days`, `numperday` FROM `KxFixConf` WHERE `num`='1'");
+		$data=$mysql->getLine("SELECT  `numperday` FROM `KxFixConf` WHERE `num`='1'");
 		$data1=$mysql->getData("SELECT `week` FROM `KxFixTime` WHERE 1");
 		$json["error"]=0;
-		$json["days"]=$data["days"];
 		$json["numperday"]=$data["numperday"];
 		$json["week"]=$data1;
 		echo json_encode($json);

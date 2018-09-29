@@ -115,7 +115,6 @@ $("#itemlogreg").find("form").submit(function(e){
 //物资借用情况显示
 function getwzjy(x){
 	$("#itemlog2").children().remove();
-	
 	$.post("getwzjy.php",{item:x}).done(function(data){
 		console.log(data);
 			
@@ -175,37 +174,46 @@ function getwzjy(x){
 						
 
 				
+			    }
+						
+								
+					//归还物资函数
+					$(".clickme").click(function(){
+						var json={};
+						p = $(this).parent().parent().attr("id");
+						window.cancelthat=this;
+						json["jname"]=da["msg"][p]["jname"];
+						json["gname"]=da["msg"][p]["gname"];
+						json["jdatetime"]=da["msg"][p]["jdatetime"];
+						json["jdatetime1"]=da["msg"][p]["jdatetime1"];
+						json["item"]=x;
+						console.log(json);
+						$.post("return.php",json).done(function(data){
+						console.log(data);
+						try{
+								var da=JSON.parse(data);
+							}
+						catch(e){
+								console.log(e);
+								return;
+								}
+						if(da["error"]==0)
+							{
+								alert("成功归还");
+								window.history.go(-1);
+							}
+						});
+					});	
+			}			
+			
+			else{
+				
+				$("#itemlog2").append('<div  style="text-align:center;">无更多</div>');
 			}
 			
 			
-//归还物资函数
-$(".clickme").click(function(){
-	var json={};
-	p = $(this).parent().parent().attr("id");
-	window.cancelthat=this;
-	json["jname"]=da["msg"][p]["jname"];
-	json["gname"]=da["msg"][p]["gname"];
-	json["jdatetime"]=da["msg"][p]["jdatetime"];
-	json["jdatetime1"]=da["msg"][p]["jdatetime1"];
-	json["item"]=x;
-	console.log(json);
-	$.post("return.php",json).done(function(data){
-	console.log(data);
-	try{
-			var da=JSON.parse(data);
-		}
-	catch(e){
-			console.log(e);
-			return;
-			}
-	if(da["error"]==0)
-		{
-			alert("成功归还");
-			window.history.go(-1);
-		}
-	});
-});	
-			}
+			
+		
 		
 	});
 	

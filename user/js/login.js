@@ -87,7 +87,7 @@ $(document).ready(function(){
 					console.log(data);
 					if(data=="200")
 					{
-						location.href="http://nuaakx.com/m/user/";
+						history.back();
 						return ;
 					}
 					if(data=="405")
@@ -149,7 +149,7 @@ $(document).ready(function(){
 			if(data=="200")
 			{
 				alert("注册成功");
-				location.href="http://nuaakx.com/m/user/";
+				location.href="http://nuaakx.com/t/user/";
 			
 			}
 			else if(data!="")

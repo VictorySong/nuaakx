@@ -82,36 +82,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-	//关于显示可预约天数
-	$("span[cont=\"numday\"]").click(function(){
-		window.numday=$(this);
-		var json={};
-		json["numday"]=window.numday.attr("numday");
-		$.post("changedays.php",json).done(function(data){
-			console.log(data);
-			try{
-				var da=JSON.parse(data);
-			}catch(e){
-				console.log(e);
-				return;
-			}
-			if(da["error"]==0)
-			{
-				$("span[cont=\"numday\"]").removeClass("label-primary");
-				$("span[cont=\"numday\"]").addClass("label-default");
-				if(window.numday.hasClass("label-default"))
-				{
-					window.numday.removeClass("label-default");
-					window.numday.addClass("label-primary");
-				}
-				else if(window.numday.hasClass("label-primary"))
-				{
-					window.numday.removeClass("label-primary");
-					window.numday.addClass("label-default");
-				}
-			}
-		});
-	});
+	
 
 //大型义务维修	
 	$("#volunfix0").click(function(){	
@@ -399,8 +370,6 @@ function getfixconf(){
 		{
 			$("span[cont=\"fixperday\"][perday=\""+da["numperday"]+"\"]").removeClass("label-default");
 			$("span[cont=\"fixperday\"][perday=\""+da["numperday"]+"\"]").addClass("label-primary");
-			$("span[cont=\"numday\"][numday=\""+da["days"]+"\"]").removeClass("label-default");
-			$("span[cont=\"numday\"][numday=\""+da["days"]+"\"]").addClass("label-primary");
 			for(var p in da["week"])
 			{
 				$("span[cont=\"date\"][day=\""+da["week"][p]["week"]+"\"]").removeClass("label-default");

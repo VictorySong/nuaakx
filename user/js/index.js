@@ -24,23 +24,23 @@ $(document).ready(function(){
 			}
 			break;
 			case 1:{
-				window.mao[i]="title.jpg";
+				window.mao[i]="1.jpg";
 			}
 			break;
 			case 2:{
-				window.mao[i]="gouye.jpg";
+				window.mao[i]="2.jpg";
 			}
 			break;
 			case 3:{
-				window.mao[i]="gouye1.jpg";
+				window.mao[i]="3.jpg";
 			}
 			break;
 			case 4:{
-				window.mao[i]="gouye2.jpg";
+				window.mao[i]="4.jpg";
 			}
 			break;
 			case 5:{
-				window.mao[i]="gouye3.jpg";
+				window.mao[i]="5.jpg";
 			}
 			break;
 		}
@@ -1323,12 +1323,8 @@ function checkfixtime(){
 			return;
 		}
 		if(da["error"]==0)
-		{
-			window.fixconf=da["conf"];
-			var timeallowed={};//用来记录可预约的时间
-			var time;
-			var d=new Date();
-			var weekdays=[];
+		{   
+		    var weekdays=[];
 			weekdays[0]="周日";
 			weekdays[1]="周一";
 			weekdays[2]="周二";
@@ -1337,163 +1333,96 @@ function checkfixtime(){
 			weekdays[5]="周五";
 			weekdays[6]="周六";
 			
-			var day=d.getDay();
-			var hours=d.getHours();
-			var t=false;//今天是否可以预约
-			var i=-1;
-			//找到今天是否符合预约条件
-			console.log(day);
+			window.fixmaxnum=da["conf"];//用于记录一天的维修人数
+			var time_allowed={};//用来记录可预约的时间
+			var time;//用于记录显示内容
+			var date=new Date();
+			var now_week=date.getDay();//获取星期几
+			var now_time=date.getHours();
+			var t;//判断之前还是之后
 			
-			for(var p in da["msg"])
-			{
-				if(day>da["msg"][p]["week"])
-				{
-					i=p;
+			console.log(now_week);
+			console.log(now_time);
+			console.log(da["msg"][0]["week"]);
+			
+			var max_week=da["msg"][da["msg"].length-1]["week"];
+			if(now_week>max_week)
+			 {
+			    t=true;
+			 }
+			else{
+			   if(now_week==max_week&&now_time>"21")
+			    {
+				    t=true;
 				}
-				if(day==da["msg"][p]["week"])
-				{
-					t=true;
-					i=p;
-					break;
-				}
-				if(day<da["msg"][p]["week"])
-				{
-					break;
+				else{
+			        t=false;
 				}
 			}
-			console.log(i);
-			i=Number(i);
-			//如果今天符合预约条件，按照可预约几天的设置，找到最近的符合预约条件的几天
+            console.log(t);
+		    
+
 			if(t)
 			{
-				console.log(hours);
-				var next=false;//判断是不是下周；
-				var dday;
-				if(hours<"19")
-				{
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" checked week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-				else
-				{
-					next=false;		
-					console.log(i+1);
-					console.log(da["msg"].length);
+			  var d;
+			   for(var i=0;i<da["msg"].length;i++)
+			     {
+				    
+				    d=new Date();
+					d.setDate(d.getDate()+Number(da["msg"][i]["week"])+7-now_week);
+					console.log(d);
 					
-					if((i+1)<da["msg"].length)
-					{
-						i++;
-						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						console.log(d.getTime());
-						console.log(d.getDate());
-					}
-					else
-					{
-						next=true;
-						dday=Number(da["msg"][0]["week"])-Number(da["msg"][i]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						i=0;
-					}
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" checked week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-				timeallowed[time]=1;
-				for(var j=1;j<da["conf"]["days"];j++)
-				{
+				    time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+					time_allowed[time]=1;
+					console.log(time);
 					
-					if((i+1)<da["msg"].length)
-					{
-						i++;
-						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						console.log(d.getTime());
-						console.log(d.getDate());
-					}
-					else
-					{
-						next=true;
-						dday=Number(da["msg"][0]["week"])-Number(da["msg"][i]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						i=0;
-					}
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					timeallowed[time]=1;
 					var html='<div class="radio">\
 								<label>\
-								<input type="radio" name="time" week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
+								<input type="radio" name="time" value="'+time+'">'+time+'晚7:00-9:00\
 								</label>\
 							</div>'
 					$("#fixtime").append(html);
-				}
+				 }
+			   
+			}  
+			else{
+			   var d;
+			   for(var i=0;i<da["msg"].length;i++)
+			   {
+			      if(now_week>da["msg"][i]["week"])
+				   {
+				      continue;
+				   }
+				   else if(now_week==da["msg"][i]["week"]&&now_time>"21")
+				   {
+					   continue;
+				   }
+			       else{
+				        
+				        d=new Date();
+						d.setDate(d.getDate()+Number(da["msg"][i]["week"])-now_week);
+						console.log(d);
+						
+						time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
+						time_allowed[time]=1;
+						console.log(time);
+						
+						var html='<div class="radio">\
+									<label>\
+									<input type="radio" name="time" value="'+time+'">'+time+'晚7:00-9:00\
+									</label>\
+								</div>'
+						$("#fixtime").append(html);
+				   }
+			   }
+			
 			}
-			else
-			{
-				next=false;//判断是不是下周；
-				if((i+1)<da["msg"].length && i!=-1)
-				{
-					i++;
-					dday=Number(da["msg"][i]["week"])-Number(day);
-					d.setTime(d.getTime()+86400000*dday);
-					console.log(d.getTime());
-					console.log(d.getDate());
-				}
-				else
-				{
-					next=true;
-					dday=Number(da["msg"][0]["week"])-Number(day);
-					d.setTime(d.getTime()+86400000*dday);
-					i=0;
-				}
-				time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-				timeallowed[time]=1;
-				var html='<div class="radio">\
-							<label>\
-							<input type="radio" name="time" week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
-							</label>\
-						</div>'
-				$("#fixtime").append(html);
-				for(var j=1;j<da["conf"]["days"];j++)
-				{
-					
-					if((i+1)<da["msg"].length)
-					{
-						i++;
-						dday=Number(da["msg"][i]["week"])-Number(da["msg"][i-1]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						console.log(d.getTime());
-						console.log(d.getDate());
-					}
-					else
-					{
-						next=true;
-						dday=Number(da["msg"][0]["week"])-Number(da["msg"][i]["week"]);
-						d.setTime(d.getTime()+86400000*dday);
-						i=0;
-					}
-					time=d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate());
-					timeallowed[time]=1;
-					var html='<div class="radio">\
-								<label>\
-								<input type="radio" name="time" week="'+(next?"下":"")+weekdays[da["msg"][i]["week"]]+'晚7:00-9:00'+' "value="'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'">'+d.getFullYear()+"-"+(Number(d.getMonth()+1)<10? ("0"+Number(d.getMonth()+1)):Number(d.getMonth()+1))+"-"+(d.getDate()<10? ("0"+d.getDate()):d.getDate())+'晚7:00-9:00\
-								</label>\
-							</div>'
-					$("#fixtime").append(html);
-				}
-			}
+			
+
+			
 			//验证几个日期是否都满了
-			console.log(timeallowed);
-			$.post("getfixfull.php",timeallowed).done(function(data){
+			console.log(time_allowed);
+			$.post("getfixfull.php",time_allowed).done(function(data){
 				console.log(data);
 				try{
 					var da=JSON.parse(data);
@@ -1504,12 +1433,16 @@ function checkfixtime(){
 				}
 				for(var p in da)
 				{
-					if(!(da[p]<window.fixconf["numperday"]))
+					if(!(da[p]<window.fixmaxnum["numperday"]))
 					{
 						$("#fixtime").find(("input[name=\"time\"][value="+p+"]")).prop("disabled",true);
 						$("#fixtime").find(("input[name=\"time\"][value="+p+"]")).prop("checked",false);
 					}
 				}
+				
+				
+				
+				
 				//设定时间预选项
 				var alreadychoised=false;
 				$("#fixtime").find("input[name=\"time\"]").each(function(){

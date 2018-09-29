@@ -6,9 +6,8 @@ if(!empty($_SESSION["stId"]))
 {
 	$mysql=new SaeMysql();
 	$data=$mysql->getData("SELECT `week` FROM `KxFixTime` WHERE 1 order by `week` ");//一定要顺序排
-	$data1=$mysql->getLine("SELECT `days` ,`numperday` FROM `KxFixConf` WHERE 1 order by `time` desc");
+	$data1=$mysql->getLine("SELECT `numperday` FROM `KxFixConf` WHERE 1 order by `time` desc");
 	$json=array();
-	
 	$json["error"]=0;
 	$json["msg"]=$data;
 	$json["conf"]=$data1;

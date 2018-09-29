@@ -2,10 +2,10 @@
 require_once "../wx/jssdk.php";
 require_once "../SaeMysql.php";
 session_start();
-//if(!isset($_SESSION["openid"])){
-	//header("Location: ../wx/scope.php");
-	//die();
-//}
+if(!isset($_SESSION["openid"])){
+	header("Location: ../wx/scope.php");
+	die();
+}
 $mysql=new SaeMysql();
 $app=$mysql->getLine("SELECT `appid`,`secret` FROM `wxappid` WHERE 1");
 $jssdk = new JSSDK($app["appid"], $app["secret"]);
@@ -688,14 +688,14 @@ $signPackage = $jssdk->GetSignPackage();
 								<input type="radio" name="place" value="东区大学生发展中心508" checked>东区大学生发展中心508
 							  </label>
 							</div>
-							
+							<!--
 							<div >
 								<label>
 								<input type="radio" name="place" value="西区1号教学楼5楼信息化处">西区1号教学楼5楼信息化处
 
 								</label>
 							</div>
-							
+							-->
 						</div>
 					</div>
 			
@@ -760,7 +760,7 @@ $signPackage = $jssdk->GetSignPackage();
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" name="department" value="KxJsDj">大疆俱乐部
+								<input type="checkbox" name="department" value="KxJsKy">科技研究部
 							  </label>
 							</div>
 							<div class="checkbox">
@@ -775,17 +775,12 @@ $signPackage = $jssdk->GetSignPackage();
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" name="department" value="KxShwYj">院校交流部
+								<input type="checkbox" name="department" value="KxHdXj">学术交流部
 							  </label>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" name="department" value="KxHdKh">科技活动部
-							  </label>
-							</div>
-							<div class="checkbox">
-							  <label>
-								<input type="checkbox" name="department" value="KxHdKp">科创培训部
+								<input type="checkbox" name="department" value="KxHdKh">科创活动部
 							  </label>
 							</div>
 							
