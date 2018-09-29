@@ -4,11 +4,9 @@ include("SaeMysql.php");
     $mysql=new SaeMysql();
 	//$data=$mysql->getData("SELECT `num`,`vue` FROM `text` ");
 	
-	
 	$sql="SELECT `num`,`vue` FROM `text`";
 	$result=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result);
-	//if($num> 30 000);	//10min_data
 		
 	$Data=array();
 	for($i=0;$i<$num; $i++)
