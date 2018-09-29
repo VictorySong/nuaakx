@@ -22,7 +22,7 @@ var myChart = new Chart(ctx, {
     },
 	options: {
 		scaleShowLabels : false,
-		scaleStartValue : 1000,
+		scaleStartValue : 1500,
 		scales: {
 			yAxes: [{
 				ticks: {
