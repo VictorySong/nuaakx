@@ -26,7 +26,7 @@ var myChart = new Chart(ctx, {
 				ticks: {
 					display:false,
 					//beginAtZero:true,
-					max:3500,
+					max:3300,
 					min:1000,
 
 				}
