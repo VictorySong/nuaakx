@@ -27,7 +27,7 @@ var myChart = new Chart(ctx, {
 				ticks: {
 					beginAtZero:true,
 					display:false,
-					stepSize:20,
+					//stepSize:20,
 				}
 			}]
 		}
