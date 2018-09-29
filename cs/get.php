@@ -8,30 +8,37 @@ include("SaeMysql.php");
 	$sql="SELECT `num`,`vue` FROM `text`";
 	$result=mysql_query($sql,$mysql->ico);
 	$num=mysql_num_rows($result);
+	//if($num> 30 000);	//10min_data
+		
 	$Data=array();
 	for($i=0;$i<$num; $i++)
 	 {
 			$Data[$i]=mysql_fetch_assoc($result);
 		}
 	$data=array();
-	for($i=0;$i<25; $i++)
+	for($i=0;$i<150; $i++)
 	 {
-			$data[$i]=$Data[$num-25+$i];
+			$data[$i]=$Data[$num-150+$i];
 		}
+<<<<<<< HEAD
 	if($num>5000)
 	{
 		$mysql->runsql("DELETE FROM `text`");
 	}
 	if(!empty($data))
+=======
+	
+//	if(!empty($data))
+>>>>>>> 2dbdd1d2cf9497530ef93d933281df843ea28171
 	{
 		$json["error"]=0;
 		$json["data"]=$data;
 		
 	}		
-	else{
+/*	else{
     
           $json["error"]=1;
-    }	
+    }	*/
 	echo json_encode($json);
 		
 

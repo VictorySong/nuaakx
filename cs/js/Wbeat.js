@@ -3,7 +3,7 @@ var ctx = document.getElementById("myChart");
 var linedata = new Array(150);
 var pulse = 70;
 var dada = 1500;	//测试心电图折线的实现
-var time = -1;	//用作clock函数的分频变量，6*500ms
+var time = 0;	//用作clock函数的分频变量，6*500ms
 var cutout = 0; //用于终止定时器，120*500ms后终止
 
 //心电图初始化
@@ -12,27 +12,41 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",],
         datasets : [{	
-			label: '心电图',
-			backgroundColor: [
-                'rgba(255, 99, 132, 0.6)',             
-            ],
+			label: '心电图 / 3秒更新',
+			backgroundColor: ['rgba(255, 99, 132, 0.6)'],
+			//borderColor:['rgba(255, 99, 132, 0.6)'],
+
 			data : linedata,
-			pointRadius:0
+			pointRadius:0,
 		}]
-    }	
+    },
+	options: {
+		scaleShowLabels : false,
+		scales: {
+			yAxes: [{
+				ticks: {
+					display:false,
+					beginAtZero:true,
+					//stepSize:20,
+					//scaleStartValue : 1500,
+					//scaleStepWidth : 20,
+				}
+			}]
+		}
+}
 });
 
 $(document).ready(function(){
 
 //开始测试
-$("#button").click(function(){int = setInterval("clock()",500)});
+$("#button").click(function(){int = setInterval("clock()",1500)});
 
 });	
 
 function clock()
 {	
 	cutout++;
-	if(cutout >= 120) {
+	if(cutout >= 80) {
 		clearInterval(int);
 		return;
 	}
@@ -58,16 +72,16 @@ function clock()
 		
 		if(da["error"]==0)
 		{	
-			for(i= 0;i< 25;i++){
+			for(i= 0;i< 150;i++){
 				
-				if((da.data)[i].vue != 0){
+				if((da.data)[i].vue != 10){
 					pulse = (da.data)[i].vue;
 					$("#pulsespan").fadeOut("slow",function(){
-					$("#pulsespan").text(" "+ pulse++);
+					$("#pulsespan").text(" "+ pulse);
 					$("#pulsespan").fadeIn("slow");
 					});
 				}			
-				linedata[i+ time*25] = (da.data)[i].num;
+				linedata[i] = (da.data)[i].num;
 				//对接数据表
 			}			
 		}		
@@ -75,7 +89,7 @@ function clock()
 	//用get获取数据end
 
 	time++;
-	if(time > 6){
+	if(time > 1){
 	time = 0;
 	
 /*	//测试心电图折线的实现(6*500ms更新一次)begin	
@@ -94,5 +108,5 @@ function clock()
 	
 	myChart.update();
 
-	} //if(time> 6)的括号
+	}
 }
