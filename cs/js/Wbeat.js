@@ -32,6 +32,14 @@ var myChart = new Chart(ctx, {
         },
 		 legend: {
             display: true,
+			position : 'left',
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+        },
+		 legend: {
+            display: true,
+			position : 'bottom',
             labels: {
                 fontColor: 'rgb(255, 99, 132)'
             }
