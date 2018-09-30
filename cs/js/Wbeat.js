@@ -25,13 +25,14 @@ var myChart = new Chart(ctx, {
             display: true,
 			position : 'bottom',
 			fontColor: 'rgb(255, 255, 255)',
-            text: '纵坐标:电压/mV ,横坐标:时间/3秒每张'
+            text: '纵坐标:电压/mV ,横坐标:时间/3秒'
         },
 		legend: {
             display: true,
-			position : 'top',
-			fontColor: 'rgb(255, 255, 255)'
-        },
+            labels: {
+                fontColor: 'rgb(255, 255, 255)'
+            }
+        }，
 		scales: {
 			yAxes: [{
 				ticks: {
