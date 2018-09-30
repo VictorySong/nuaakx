@@ -15,7 +15,7 @@ var myChart = new Chart(ctx, {
 			label: '实时心电图 / 3秒更新',
 			backgroundColor: ['rgba(255, 99, 132, 0.6)'],
 			//borderColor:['rgba(255, 99, 132, 0.6)'],
-
+			lineItemName : "test2",
 			data : linedata,
 			pointRadius:0,
 		}]
