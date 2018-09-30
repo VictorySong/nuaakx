@@ -30,6 +30,12 @@ var myChart = new Chart(ctx, {
 			position : 'left',
             text: 'Custom Chart Title'
         },
+		 legend: {
+            display: true,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+        }
 		scales: {
 			yAxes: [{
 				ticks: {
