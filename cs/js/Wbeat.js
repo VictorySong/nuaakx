@@ -25,7 +25,7 @@ var myChart = new Chart(ctx, {
             display: true,
 			position : 'bottom',
 			fontColor: 'rgb(255, 255, 255)',
-            text: '纵坐标：电压/mV，横坐标：时间/3秒'
+            text: '纵坐标：电压，横坐标：时间'
         },
 		legend: {
             display: true,
