@@ -22,27 +22,12 @@ var myChart = new Chart(ctx, {
 	options: {
 		title: {
             display: true,
-			position : 'bottom',
-            text: 'Custom Chart Title'
-        },
-		title: {
-            display: true,
 			position : 'left',
             text: 'Custom Chart Title'
         },
 		 legend: {
             display: true,
-			position : 'left',
-            labels: {
-                fontColor: 'rgb(255, 99, 132)'
-            }
-        },
-		 legend: {
-            display: true,
 			position : 'bottom',
-            labels: {
-                fontColor: 'rgb(255, 99, 132)'
-            }
         },
 		scales: {
 			yAxes: [{
