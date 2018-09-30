@@ -25,6 +25,11 @@ var myChart = new Chart(ctx, {
 			position : 'bottom',
             text: 'Custom Chart Title'
         },
+		title: {
+            display: true,
+			position : 'left',
+            text: 'Custom Chart Title'
+        },
 		scales: {
 			yAxes: [{
 				ticks: {
