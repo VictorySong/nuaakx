@@ -32,7 +32,7 @@ var myChart = new Chart(ctx, {
 		legend: {
             display: true,
             labels: {
-                fontColor: 'rgb(255, 99, 132)'
+                fontColor: 'rgb(255, 255, 255)'
             }
         },
 		scales: {
