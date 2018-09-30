@@ -28,7 +28,7 @@ var myChart = new Chart(ctx, {
 		legend: {
             display: true,
 			position : 'top',
-			text: '实时心电图 / 3秒更新'
+			text: '实时心电图 / 3秒更新',
 			fontColor: 'rgb(255, 99, 132)'
         },
 		scales: {
