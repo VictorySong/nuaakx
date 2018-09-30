@@ -22,6 +22,7 @@ var myChart = new Chart(ctx, {
 	options: {
 		title: {
             display: true,
+			position : 'bottom',
             text: 'Custom Chart Title'
         },
 		scales: {
