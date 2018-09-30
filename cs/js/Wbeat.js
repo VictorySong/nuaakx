@@ -30,6 +30,7 @@ var myChart = new Chart(ctx, {
 					mid:2000
 				},
 				id: 'first-y-axis',
+				type: 'linear'
 			}]
 		}
 	}
