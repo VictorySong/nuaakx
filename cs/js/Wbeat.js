@@ -28,13 +28,13 @@ var myChart = new Chart(ctx, {
 			fontColor: 'rgb(255, 255, 255)',
             //text: '纵坐标：电压，横坐标：时间'
 			text: '实时心电图 / 3秒更新'
-        },
+        },*/
 		legend: {
             display: true,
             labels: {
-                fontColor: 'rgb(255, 255, 255)'
+                fontColor: 'rgb(255, 99, 132)'
             }
-        },*/
+        },
 		scales: {
 			yAxes: [{
 				ticks: {
