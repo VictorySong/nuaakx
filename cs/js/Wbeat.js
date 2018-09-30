@@ -25,10 +25,11 @@ var myChart = new Chart(ctx, {
 			position : 'bottom',
             text: '纵坐标:电压/mV ,横坐标:时间/3秒每张'
         },
-		/*legend: {
+		legend: {
             display: true,
-			position : 'bottom',
-        },*/
+			position : 'top',
+			fontColor: 'white'
+        },
 		scales: {
 			yAxes: [{
 				ticks: {
