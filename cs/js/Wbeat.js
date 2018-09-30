@@ -68,13 +68,13 @@ $("#button").click(function(){
 		}		
 	});	
 	myChart.update();
-	int = setInterval("clock()",1500)});
+	int = setInterval("clock()",3000)});
 });	
 
 function clock()
 {	
 	cutout++;
-	if(cutout >= 80) {
+	if(cutout >= 40) {
 		clearInterval(int);
 		return;
 	}
@@ -116,10 +116,10 @@ function clock()
 	});	
 	//用get获取数据end
 
-	time++;
+/*	time++;
 	if(time > 1){
 	time = 0;
-	
+*/	
 /*	//测试心电图折线的实现(6*500ms更新一次)begin	
 	var j = 1;
 	for(i=149;i>=5;i--){
