@@ -22,7 +22,7 @@ var myChart = new Chart(ctx, {
 		}],
     },
 	options: {
-		title: {
+		/*title: {
             display: true,
 			position : 'bottom',
 			fontColor: 'rgb(255, 255, 255)',
@@ -34,7 +34,7 @@ var myChart = new Chart(ctx, {
             labels: {
                 fontColor: 'rgb(255, 255, 255)'
             }
-        },
+        },*/
 		scales: {
 			yAxes: [{
 				ticks: {
