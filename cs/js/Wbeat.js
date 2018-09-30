@@ -25,8 +25,8 @@ var myChart = new Chart(ctx, {
 				ticks: {
 					//display:false,
 					//beginAtZero:true,
-					//max:3300,
-					//min:1000,
+					max:3300,
+					min:1000,
 					mid:2000
 				},
 				id: 'first-y-axis',
