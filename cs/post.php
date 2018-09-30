@@ -1,6 +1,6 @@
 <?php
 include("SaeMysql.php");
-
+/*
 //receive aes begin
 require_once('phpaes-master/src/Aes.php');
 use PhpAes\Aes;
@@ -17,11 +17,12 @@ $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $aes_post = $aes->decrypt(hex2bin($rws_post));
 $mypost = json_decode($aes_post,ture);
 //receive aes end
+*/
 
-/*
+
 $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $mypost = json_decode($rws_post,ture);
-*/
+
 $mysql=new SaeMysql();
 //[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
 for($i=0;$i<150;$i++){
