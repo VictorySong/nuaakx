@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
 		legend: {
             display: true,
 			position : 'top',
-			fontColor: 'rgb(255, 255, 255)'
+			fontColor: 'rgb(237, 237, 237)'
         },
 		scales: {
 			yAxes: [{
