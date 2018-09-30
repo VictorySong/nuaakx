@@ -23,7 +23,7 @@ var myChart = new Chart(ctx, {
 		scales: {
 			yAxes: [{
 				ticks: {
-					display:false,
+					//display:false,
 					//beginAtZero:true,
 					//max:3300,
 					//min:1000,
