@@ -22,13 +22,13 @@ var myChart = new Chart(ctx, {
 	options: {
 		title: {
             display: true,
-			position : 'left',
-            text: 'Custom Chart Title'
+			position : 'bottom',
+            text: '纵坐标:电压/mV ,横坐标:时间/3秒每张'
         },
-		 legend: {
+		/*legend: {
             display: true,
 			position : 'bottom',
-        },
+        },*/
 		scales: {
 			yAxes: [{
 				ticks: {
