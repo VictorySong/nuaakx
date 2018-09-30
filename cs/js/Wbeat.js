@@ -35,7 +35,7 @@ var myChart = new Chart(ctx, {
             labels: {
                 fontColor: 'rgb(255, 99, 132)'
             }
-        }
+        },
 		scales: {
 			yAxes: [{
 				ticks: {
