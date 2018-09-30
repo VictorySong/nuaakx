@@ -136,5 +136,5 @@ function clock()
 	
 	myChart.update();
 
-	}
+	//}
 }
