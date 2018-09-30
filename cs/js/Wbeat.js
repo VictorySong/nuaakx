@@ -40,8 +40,8 @@ $(document).ready(function(){
 
 //开始测试
 $("#button").click(function(){
-	int = setInterval("clock()",1500)});
 	myChart.update();
+	int = setInterval("clock()",1500)});
 });	
 
 function clock()
