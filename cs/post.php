@@ -18,6 +18,14 @@ $rws_post = $GLOBALS['HTTP_RAW_POST_DATA'];
 $mypost = json_decode($rws_post,ture);
 */
 $mysql=new SaeMysql();
+//10min_data ,then delete
+$sql="SELECT `num`,`vue` FROM `text`";
+$result=mysql_query($sql,$mysql->ico);
+$rows=mysql_num_rows($result);
+if($rows>30000)
+{
+	$mysql->runsql("DELETE FROM `text`");
+}
 //[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
 for($i=0;$i<150;$i++){
 	$num = (string)$mypost[$i]['num'];
