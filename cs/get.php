@@ -19,7 +19,7 @@ include("SaeMysql.php");
 			$data[$i]=$Data[$num-150+$i];
 		}
 
-	//if($num>30000)	$mysql->runsql("DELETE FROM `text`");
+	if($num>40000)	$mysql->runsql("DELETE FROM `text`");
 
 	if(!empty($data));
 
