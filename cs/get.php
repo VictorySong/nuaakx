@@ -20,7 +20,7 @@ include("SaeMysql.php");
 		}
 
 	if($num>40000)	$mysql->runsql("DELETE FROM `text`");
-	$mysql->runsql("TRUNCATE FROM `text`");
+	//$mysql->runsql("TRUNCATE FROM `text`");
 	
 	TRUNCATE TABLE
 	if(!empty($data));
