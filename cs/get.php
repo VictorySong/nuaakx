@@ -24,7 +24,7 @@ include("SaeMysql.php");
 
 	if(!empty($data));
 
-	 
+	
 //	if(!empty($data))
 
 	{
