@@ -49,7 +49,7 @@ var myChart = new Chart(ctx, {
 });
 
 $(document).ready(function(){
-
+/*
 //开始测试
 $("#button").click(function(){
 	$.get("get.php").done(function(data){
@@ -82,7 +82,7 @@ $("#button").click(function(){
 	myChart.update();
 	int = setInterval("clock()",1500)});
 });	
-
+*/
 function clock()
 {	
 	cutout++;
