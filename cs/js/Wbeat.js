@@ -87,6 +87,7 @@ function clock()
 {	
 	cutout++;
 	if(cutout >= 80) {
+		
 		//clearInterval(int);
 		return;
 	}
