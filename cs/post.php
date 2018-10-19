@@ -22,7 +22,7 @@ $mysql=new SaeMysql();
 $sql="SELECT `num`,`vue` FROM `text`";
 $result=mysql_query($sql,$mysql->ico);
 $rows=mysql_num_rows($result);
-if($rows>300)
+if($rows>40000)
 {
 	$mysql->runsql("DELETE FROM `text`");
 }
