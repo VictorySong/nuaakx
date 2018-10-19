@@ -37,6 +37,6 @@ include("SaeMysql.php");
           $json["error"]=1;
     }	*/
 	echo json_encode($json);
-	if($num>1000)	$mysql->runsql("DELETE FROM `text`");	1
+	if($num>1000)	$mysql->runsql("DELETE FROM `text`");
 
 ?>
