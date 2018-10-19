@@ -22,9 +22,9 @@ $mysql=new SaeMysql();
 $sql="SELECT `num`,`vue` FROM `text`";
 $result=mysql_query($sql,$mysql->ico);
 $rows=mysql_num_rows($result);
-if($rows>30000)
+if($rows>300)
 {
-	//$mysql->runsql("DELETE FROM `text`");
+	$mysql->runsql("DELETE FROM `text`");
 }
 //[{"num":"2583","vue":"78"},{"num":"2583","vue":"71"},...]
 for($i=0;$i<150;$i++){
